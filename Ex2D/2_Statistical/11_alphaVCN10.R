@@ -15,8 +15,8 @@ ASHES$P2.samplePeriod = c('05-01', '11-30')
 ASHES$P2.NApct_lim = 20
 ASHES$P2.NAyear_lim = 10
 
-ASHES$P3.funct = list(alpha=get_MKalpha,
-                      H=get_MKH)
+ASHES$P3.funct = list(alphaVCN10=get_MKalpha,
+                      HVCN10=get_MKH)
 ASHES$P3.funct_args = list(list("VCN10", level=0.1),
                            list("VCN10", level=0.1))
 ASHES$P3.timeStep = "none"

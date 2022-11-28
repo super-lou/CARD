@@ -10,8 +10,8 @@ ASHES$P1.samplePeriod = '09-01'
 ASHES$P1.NApct_lim = 20
 ASHES$P1.NAyear_lim = 10
 
-ASHES$P2.funct = list(alpha=get_MKalpha,
-                      H=get_MKH)
+ASHES$P2.funct = list(alphaQJXA=get_MKalpha,
+                      HQJXA=get_MKH)
 ASHES$P2.funct_args = list(list("QJXA", level=0.1),
                            list("QJXA", level=0.1))
 ASHES$P2.timeStep = "none"

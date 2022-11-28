@@ -16,7 +16,7 @@ ASHES$P2.samplePeriod = c('05-01', '11-30')
 ASHES$P2.NApct_lim = 20
 ASHES$P2.NAyear_lim = 10
 
-ASHES$P3.funct = list(X=get_Xn)
+ASHES$P3.funct = list("QMNA-5"=get_Xn)
 ASHES$P3.funct_args = list("QMNA", waterType="low")
 ASHES$P3.timeStep = "none"
 ASHES$P3.NApct_lim = 20

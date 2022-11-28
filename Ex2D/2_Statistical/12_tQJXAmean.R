@@ -1,4 +1,4 @@
-ASHES$P.var = "QJXA-10"
+ASHES$P.var = "tQJXAmean"
 ASHES$P.unit = "jour de l'année"
 ASHES$P.glose = "Moyenne des dates maximums annuels des débits journaliers"
 ASHES$P.event = "Crue"
