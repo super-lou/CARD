@@ -2,7 +2,8 @@ ASHES$P.var = "epsilon_T"
 ASHES$P.unit = ""
 ASHES$P.glose = "Élasticité annuelle du débit aux températures"
 ASHES$P.event = "model"
-
+ASHES$P.samplePeriod = '09-01'
+    
 ASHES$P1.funct = list(QA=mean, TA=mean)
 ASHES$P1.funct_args = list(list("Q", na.rm=TRUE),
                            list("T", na.rm=TRUE))

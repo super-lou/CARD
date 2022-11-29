@@ -2,7 +2,8 @@ ASHES$P.var = "tCrue"
 ASHES$P.unit = "jour"
 ASHES$P.glose = "Médiane de l’ensemble des nombres de jour où la différence entre le débit journalier et le débit de base est supérieur à la moitié du maximum annuel"
 ASHES$P.event = "Crue"
-
+ASHES$P.samplePeriod = '09-01'
+    
 ASHES$P1.funct = list(BF=BFS)
 ASHES$P1.funct_args = list("Q")
 ASHES$P1.timeStep = "none"
@@ -20,6 +21,7 @@ ASHES$P2.keep = TRUE
 ASHES$P3.funct = list(lowLim=maxNA)
 ASHES$P3.funct_args = list("Q", div=2, na.rm=TRUE)
 ASHES$P3.timeStep = "year"
+ASHES$P3.samplePeriod = '09-01'
 ASHES$P3.NApct_lim = 20
 ASHES$P3.NAyear_lim = 10
 ASHES$P3.keep = TRUE
@@ -31,6 +33,7 @@ ASHES$P4.funct_args = list("dQ",
                            what="length",
                            select_longest=TRUE)
 ASHES$P4.timeStep = "year"
+ASHES$P4.samplePeriod = '09-01'
 ASHES$P4.NApct_lim = 20
 ASHES$P4.NAyear_lim = 10
 

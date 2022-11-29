@@ -2,6 +2,7 @@ ASHES$P.var = "vDEF_etiage"
 ASHES$P.unit = "hm^{3}"
 ASHES$P.glose = "Volume de déficite de l'étiage (intégrale de la courbe de la moyenne sur 10 jours sous le maximum des VCN10)"
 ASHES$P.event = "Étiage"
+ASHES$P.samplePeriod = c('05-01', '11-30')
 
 ASHES$P1.funct = list(Q=rollmean_center)
 ASHES$P1.funct_args = list("Q", k=10)

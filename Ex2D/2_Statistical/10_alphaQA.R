@@ -2,7 +2,8 @@ ASHES$P.var = "alphaQA"
 ASHES$P.unit = "m^{3}.s^{-1}.an^{-1}"
 ASHES$P.glose = "Pente de Sen et résultat du test de Mann-Kendall pour les moyennes annuelles des débits journaliers"
 ASHES$P.event = "Moyennes Eaux"
-
+ASHES$P.samplePeriod = '09-01'
+    
 ASHES$P1.funct = list(QA=mean)
 ASHES$P1.funct_args = list("Q", na.rm=TRUE)
 ASHES$P1.timeStep = "year"

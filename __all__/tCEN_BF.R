@@ -2,7 +2,8 @@ ASHES$P.var = "tCEN_BF"
 ASHES$P.unit = "jour de l'année"
 ASHES$P.glose = "Centre des écoulements lents (date lorsque 50% de l’intégrale sous la courbe du débit de base est atteinte)"
 ASHES$P.event = "Crue Nivale"
-
+ASHES$P.samplePeriod = '09-01'
+    
 ASHES$P1.funct = list(X=compute_tVolSnowmelt)
 ASHES$P1.funct_args = list("Q", p=0.5)
 ASHES$P1.timeStep = "year"

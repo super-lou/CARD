@@ -2,7 +2,8 @@ ASHES$P.var = "epsilon_P,SEA"
 ASHES$P.unit = ""
 ASHES$P.glose = "Élasticités saisonnières du débit aux précipitations"
 ASHES$P.event = "model"
-
+ASHES$P.samplePeriod = '09-01'
+    
 ASHES$P1.funct = list(QA=mean, PA=mean)
 ASHES$P1.funct_args = list(list("Q", na.rm=TRUE),
                            list("P", na.rm=TRUE))

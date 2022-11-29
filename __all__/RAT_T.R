@@ -2,7 +2,8 @@ ASHES$P.var = "RAT_T"
 ASHES$P.unit = "bool"
 ASHES$P.glose = "Robustness Assessment Test pour la température"
 ASHES$P.event = "model"
-
+ASHES$P.samplePeriod = '09-01'
+    
 ASHES$P1.funct = list(BiasA=compute_Bias,
                       TA=mean)
 ASHES$P1.funct_args = list(list("Qobs", "Qsim"),

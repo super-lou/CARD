@@ -2,6 +2,7 @@ ASHES$P.var = "var"
 ASHES$P.unit = "unit"
 ASHES$P.glose = "glose"
 ASHES$P.event = "event"
+ASHES$P.samplePeriod = NULL
 
 ASHES$P1.funct = NULL
 ASHES$P1.funct_args = NULL

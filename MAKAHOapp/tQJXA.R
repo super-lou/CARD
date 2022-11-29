@@ -2,6 +2,7 @@ ASHES$P.var = "tQJXA"
 ASHES$P.unit = "jour de l'année"
 ASHES$P.glose = "Date du maximum annuel du débit journalier"
 ASHES$P.event = "Crue"
+ASHES$P.samplePeriod = '09-01'
 
 ASHES$P1.funct = list(X=which.maxNA)
 ASHES$P1.funct_args = list("Q")

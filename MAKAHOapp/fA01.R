@@ -2,7 +2,8 @@ ASHES$P.var = "fA01"
 ASHES$P.unit = "jour.an^{-1}"
 ASHES$P.glose = "Fréquence annuelle de dépassement (Q > Q01)"
 ASHES$P.event = "Crue"
-
+ASHES$P.samplePeriod = '09-01'
+    
 ASHES$P1.funct = list(lowLim=compute_Qp)
 ASHES$P1.funct_args = list("Q", p=0.01)
 ASHES$P1.timeStep = "none"

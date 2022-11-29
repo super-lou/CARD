@@ -2,6 +2,7 @@ ASHES$P.var = "v_BF"
 ASHES$P.unit = "hm^{3}"
 ASHES$P.glose = "Volume des écoulements lents (volume de l’intégrale sous la courbe du débit de base)"
 ASHES$P.event = "Crue Nivale"
+ASHES$P.samplePeriod = '09-01'
 
 ASHES$P1.funct = list(X=compute_VolSnowmelt)
 ASHES$P1.funct_args = list("Q")
