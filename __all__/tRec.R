@@ -10,4 +10,3 @@ ASHES$P1.timeStep = "year"
 ASHES$P1.samplePeriod = '09-01'
 ASHES$P1.NApct_lim = 20
 ASHES$P1.NAyear_lim = 10
-ASHES$P1.rmNApct = FALSE

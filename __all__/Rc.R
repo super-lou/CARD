@@ -8,4 +8,3 @@ ASHES$P1.funct_args = list("Q", "P")
 ASHES$P1.timeStep = "none"
 ASHES$P1.NApct_lim = 20
 ASHES$P1.NAyear_lim = 10
-ASHES$P1.rmNApct = FALSE

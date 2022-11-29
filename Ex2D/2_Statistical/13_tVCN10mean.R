@@ -1,6 +1,6 @@
-ASHES$P.var = "tVCN10mean"
+ASHES$P.var = "tVCN10median"
 ASHES$P.unit = "jour de l'année"
-ASHES$P.glose = "Moyenne des dates des minimums annuels de la moyenne sur 10 jours du débit journalier"
+ASHES$P.glose = "Mediane des dates des minimums annuels de la moyenne sur 10 jours du débit journalier"
 ASHES$P.event = "Étiage"
 ASHES$P.samplePeriod = c('05-01', '11-30')
     
@@ -17,9 +17,8 @@ ASHES$P2.isDate = TRUE
 ASHES$P2.NApct_lim = 20
 ASHES$P2.NAyear_lim = 10
 
-ASHES$P3.funct = list(tVCN10mean=mean)
+ASHES$P3.funct = list(tVCN10median=median)
 ASHES$P3.funct_args = list("tVCN10", na.rm=TRUE)
 ASHES$P3.timeStep = "none"
 ASHES$P3.NApct_lim = 20
 ASHES$P3.NAyear_lim = 10
-ASHES$P3.rmNApct = FALSE

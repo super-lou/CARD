@@ -42,4 +42,3 @@ ASHES$P5.funct_args = list("dt", na.rm=TRUE)
 ASHES$P5.timeStep = "none"
 ASHES$P5.NApct_lim = 20
 ASHES$P5.NAyear_lim = 10
-ASHES$P5.rmNApct = FALSE

@@ -23,5 +23,3 @@ ASHES$P3.funct_args = list(list("VCN10", level=0.1),
 ASHES$P3.timeStep = "none"
 ASHES$P3.NApct_lim = 20
 ASHES$P3.NAyear_lim = 10
-ASHES$P3.rmNApct = FALSE
- 

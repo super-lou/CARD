@@ -18,4 +18,3 @@ ASHES$P2.funct_args = list("BiasA", "TA", thresh=0.05)
 ASHES$P2.timeStep = "none"
 ASHES$P2.NApct_lim = 20
 ASHES$P2.NAyear_lim = 10
-ASHES$P2.rmNApct = FALSE
