@@ -31,6 +31,10 @@ minus = function (a, b) {
     return (a - b)
 }
 
+divided = function (a, b) {
+    return (a / b)
+}
+
 ## 1. MIN MAX ________________________________________________________                   
 minNA = function (X, div=1, na.rm=TRUE) {
     if (all(is.na(X))) {

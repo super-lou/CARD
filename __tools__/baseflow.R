@@ -107,10 +107,10 @@ get_BFI = function (Q, BF, na.rm=TRUE) {
 #' @param n Window size for the rolling mean function
 #' @return
 #' @export
-get_BFM = function (BFmean) {
-    BFmean_max = max(BFmean, na.rm=TRUE)
-    BFmean_min = min(BFmean, na.rm=TRUE)
-    BFM = (BFmean_max - BFmean_min) / BFmean_max
+get_BFM = function (BFA) {
+    BFA_max = max(BFA, na.rm=TRUE)
+    BFA_min = min(BFA, na.rm=TRUE)
+    BFM = (BFA_max - BFA_min) / BFA_max
     return (BFM)
 }
 

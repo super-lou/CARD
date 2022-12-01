@@ -30,16 +30,16 @@
 #' @description Function to apply RAT to simulated and observed
 #' streamflows. Missing values in observed data must be NA.
 #' @param Dates Date vector with a date format (at daily time step)
-#' @param Qobs Observed streamflows vector [mm/d]
-#' @param Qsim Simulated streamflows vector [mm/d]
-#' @param Pobs Observed precipitation vector [mm/d]
-#' @param Tobs Observed temperature vector [mm/d]
-#' @param Eobs Observed potential evapotranspiration vector [mm/d]
+#' @param Q_obs Observed streamflows vector [mm/d]
+#' @param Q_sim Simulated streamflows vector [mm/d]
+#' @param P_obs Observed precipitation vector [mm/d]
+#' @param T_obs Observed temperature vector [mm/d]
+#' @param E_obs Observed potential evapotranspiration vector [mm/d]
 #' @param Thresh Value of the significance threshold to use for the
 #' correlation test
 #' @return RAT
 #' @export
-compute_RAT = function (Dates, Qobs, Qsim, Pobs, Tobs, Eobs,
+compute_RAT = function (Dates, Q_obs, Q_sim, P_obs, T_obs, E_obs,
                         Thresh=0.05) {
     # --- Step 1: aggregate data on hydrological years
     # Grep first day of hydrological years indexes in the date vector
@@ -51,33 +51,33 @@ compute_RAT = function (Dates, Qobs, Qsim, Pobs, Tobs, Eobs,
         Indd_hydYear[seq(Indd[k], Indd[k+1]-1)] = k
     }
     # Initialise the vectors of yearly data
-    Qobs_year = rep(NaN, length(Indd[-1]))
-    Qsim_year = rep(NaN, length(Indd[-1]))
-    Pobs_year = rep(NaN, length(Indd[-1]))
-    Tobs_year = rep(NaN, length(Indd[-1]))
-    Eobs_year = rep(NaN, length(Indd[-1]))
+    Q_obs_year = rep(NaN, length(Indd[-1]))
+    Q_sim_year = rep(NaN, length(Indd[-1]))
+    P_obs_year = rep(NaN, length(Indd[-1]))
+    T_obs_year = rep(NaN, length(Indd[-1]))
+    E_obs_year = rep(NaN, length(Indd[-1]))
     # Aggregate the vectors of entry
     for (k in seq_along(Indd[-1])) {
-        Qobs_year[k] = sum(Qobs[Indd_hydYear == k])
-        Qsim_year[k] = sum(Qsim[Indd_hydYear == k])
-        Pobs_year[k] = sum(Pobs[Indd_hydYear == k])
-        Tobs_year[k] = sum(Tobs[Indd_hydYear == k])
-        Eobs_year[k] = sum(Eobs[Indd_hydYear == k])
+        Q_obs_year[k] = sum(Q_obs[Indd_hydYear == k])
+        Q_sim_year[k] = sum(Q_sim[Indd_hydYear == k])
+        P_obs_year[k] = sum(P_obs[Indd_hydYear == k])
+        T_obs_year[k] = sum(T_obs[Indd_hydYear == k])
+        E_obs_year[k] = sum(E_obs[Indd_hydYear == k])
     }
     # --- Step 2: calculate the yearly bias of the model
-    Bias_year = Qsim_year/Qobs_year - 1
+    Bias_year = Q_sim_year/Q_obs_year - 1
     # --- Step 3: check corrleation between climatic varible and bias
     # Calculate pvalues of Spearman correlation tests
     Cor_P  = cor.test(x=Bias_year[!is.na(Bias_year)],
-                      y=Pobs_year[!is.na(Bias_year)],
+                      y=P_obs_year[!is.na(Bias_year)],
                       method="spearman", continuity=FALSE,
                       alternative="two.sided")$p.value
     Cor_T  = cor.test(x=Bias_year[!is.na(Bias_year)],
-                      y=Tobs_year[!is.na(Bias_year)],
+                      y=T_obs_year[!is.na(Bias_year)],
                       method="spearman", continuity=FALSE,
                       alternative="two.sided")$p.value
     Cor_PE = cor.test(x=Bias_year[!is.na(Bias_year)],
-                      y=(Pobs_year/Eobs_year)[!is.na(Bias_year)],
+                      y=(P_obs_year/E_obs_year)[!is.na(Bias_year)],
                       method="spearman", continuity=FALSE,
                       alternative="two.sided")$p.value
     # Computa RAT result

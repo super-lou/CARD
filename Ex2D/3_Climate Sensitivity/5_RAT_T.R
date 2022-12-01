@@ -6,7 +6,7 @@ ASHES$P.samplePeriod = '09-01'
     
 ASHES$P1.funct = list(BiasA=compute_Bias,
                       TA=mean)
-ASHES$P1.funct_args = list(list("Qobs", "Qsim"),
+ASHES$P1.funct_args = list(list("Q_obs", "Q_sim"),
                            list("T", na.rm=TRUE))
 ASHES$P1.timeStep = "year"
 ASHES$P1.samplePeriod = '09-01'

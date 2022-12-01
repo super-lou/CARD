@@ -56,13 +56,13 @@ compute_fAp = function (Q, lowLim) {
 #' @title fdc_slope
 #' @description Compute the mid-segment flow duration curve slope
 #' @param Q Streamflow vector
-#' @param probs A length 2 numeric vector containing the exceedance
+#' @param p A length 2 numeric vector containing the exceedance
 #' probability that define the of the mid-segment
 #' @return Mid-segment low duration curve slope
 #' @export
-fdc_slope = function(Q, probs=c(0.33, 0.66)) {
-    Qp = compute_Qp(Q, probs=probs)
-    res = - (log10(Qp[1L]) - log10(Qp[2L])) / diff(probs)
+fdc_slope = function(Q, p=c(0.33, 0.66)) {
+    Qp = compute_Qp(Q, p=p)
+    res = - (log10(Qp[1L]) - log10(Qp[2L])) / diff(p)
     return (res)
 }
 
@@ -95,7 +95,7 @@ fdc_values = function (Q, n=1000, sort=FALSE, na.rm=TRUE) {
             warning("'n' is larger than the number of values in 'Q'!")
         }
         pfdc = seq(0, 1, length.out=n)
-        Qfdc = compute_Qp(Q, probs=pfdc)
+        Qfdc = compute_Qp(Q, p=pfdc)
     }
     return(data.frame(p=pfdc, Q=Qfdc))
 }
