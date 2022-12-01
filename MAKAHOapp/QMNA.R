@@ -15,5 +15,4 @@ ASHES$P2.funct_args = list("Q", na.rm=TRUE)
 ASHES$P2.timeStep = "year"
 ASHES$P2.samplePeriod = c('05-01', '11-30')
 ASHES$P2.NApct_lim = 3
-ASHES$P2.NAyear_lim = 10
 ASHES$P2.rmNApct = FALSE

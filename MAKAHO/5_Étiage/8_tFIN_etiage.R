@@ -33,5 +33,4 @@ ASHES$P4.timeStep = "year"
 ASHES$P4.samplePeriod = c('05-01', '11-30')
 ASHES$P4.isDate = TRUE
 ASHES$P4.NApct_lim = 3
-ASHES$P4.NAyear_lim = 10
 ASHES$P4.rmNApct = FALSE

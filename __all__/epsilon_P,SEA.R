@@ -4,23 +4,23 @@ ASHES$P.glose = "Élasticités saisonnières du débit aux précipitations"
 ASHES$P.event = "model"
 ASHES$P.samplePeriod = '09-01'
     
-ASHES$P1.funct = list(QA_obs=mean,
-                      QA_sim=mean,
-                      PA=mean)
+ASHES$P1.funct = list(QA_SEA_obs=mean,
+                      QA_SEA_sim=mean,
+                      PA_SEA=mean)
 ASHES$P1.funct_args = list(list("Q_obs", na.rm=TRUE),
                            list("Q_sim", na.rm=TRUE),
                            list("P", na.rm=TRUE))
-ASHES$P1.timeStep = "year"
-ASHES$P1.samplePeriod = '09-01'
+ASHES$P1.timeStep = "year-season"
 ASHES$P1.NApct_lim = 20
 ASHES$P1.NAyear_lim = 10
+ASHES$P1.Seasons = c("DJF", "MAM", "JJA", "SON")
+ASHES$P1.onlyDate4Season = TRUE
 
-ASHES$P2.funct = list("epsilon_P,obs"=compute_elasticity,
-                      "epsilon_P,sim"=compute_elasticity)
-ASHES$P2.funct_args = list(list(Q="QA_obs", X="PA"),
-                           list(Q="QA_sim", X="PA"))
+ASHES$P2.funct = list("epsilon_P,SEA,obs"=compute_elasticity,
+                      "epsilon_P,SEA,sim"=compute_elasticity)
+ASHES$P2.funct_args = list(list(Q="QA_SEA_obs", X="PA_SEA"),
+                           list(Q="QA_SEA_sim", X="PA_SEA"))
 ASHES$P2.timeStep = "season"
 ASHES$P2.NApct_lim = 20
-ASHES$P2.NAyear_lim = 10
 ASHES$P2.Seasons = c("DJF", "MAM", "JJA", "SON")
 ASHES$P2.compress = TRUE

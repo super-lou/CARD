@@ -18,4 +18,3 @@ ASHES$P2.funct_args = list(list("Q_obs", "BF_obs"),
                            list("Q_sim", "BF_sim"))
 ASHES$P2.timeStep = "none"
 ASHES$P2.NApct_lim = 20
-ASHES$P2.NAyear_lim = 10

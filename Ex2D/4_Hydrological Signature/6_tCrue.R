@@ -19,7 +19,6 @@ ASHES$P2.funct_args = list(list("Q_obs", "BF_obs"),
                            list("Q_sim", "BF_sim"))
 ASHES$P2.timeStep = "none"
 ASHES$P2.NApct_lim = 20
-ASHES$P2.NAyear_lim = 10
 ASHES$P2.keep = TRUE
 
 ASHES$P3.funct = list(lowLim_obs=maxNA,
@@ -29,7 +28,6 @@ ASHES$P3.funct_args = list(list("Q_obs", div=2, na.rm=TRUE),
 ASHES$P3.timeStep = "year"
 ASHES$P3.samplePeriod = '09-01'
 ASHES$P3.NApct_lim = 20
-ASHES$P3.NAyear_lim = 10
 ASHES$P3.keep = TRUE
 
 ASHES$P4.funct = list(tCrue_obs=apply_threshold,
@@ -47,7 +45,6 @@ ASHES$P4.funct_args = list(list("dQ_obs",
 ASHES$P4.timeStep = "year"
 ASHES$P4.samplePeriod = '09-01'
 ASHES$P4.NApct_lim = 20
-ASHES$P4.NAyear_lim = 10
 
 ASHES$P5.funct = list("median{tCrue_obs}"=median,
                       "median{tCrue_sim}"=median)
@@ -55,4 +52,3 @@ ASHES$P5.funct_args = list(list("tCrue_obs", na.rm=TRUE),
                            list("tCrue_sim", na.rm=TRUE))
 ASHES$P5.timeStep = "none"
 ASHES$P5.NApct_lim = 20
-ASHES$P5.NAyear_lim = 10

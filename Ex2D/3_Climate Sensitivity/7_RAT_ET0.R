@@ -17,4 +17,3 @@ ASHES$P2.funct = list(RAT_ET0=compute_RAT_X)
 ASHES$P2.funct_args = list("BiasA", "ET0A", thresh=0.05)
 ASHES$P2.timeStep = "none"
 ASHES$P2.NApct_lim = 20
-ASHES$P2.NAyear_lim = 10

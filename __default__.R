@@ -12,6 +12,7 @@ ASHES$P1.isDate = FALSE
 ASHES$P1.NApct_lim = NULL
 ASHES$P1.NAyear_lim = NULL
 ASHES$P1.Seasons = c("DJF", "MAM", "JJA", "SON")
+ASHES$P1.onlyDate4Season = FALSE
 ASHES$P1.nameEx = "X"
 ASHES$P1.keep = FALSE
 ASHES$P1.compress = FALSE

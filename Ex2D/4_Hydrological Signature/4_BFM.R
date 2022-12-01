@@ -18,8 +18,6 @@ ASHES$P2.funct_args = list(list("BF_obs", na.rm=TRUE),
                            list("BF_sim", na.rm=TRUE))
 ASHES$P2.timeStep = "yearday"
 ASHES$P2.NApct_lim = 20
-ASHES$P2.NAyear_lim = 10
-ASHES$P2.keep = TRUE
 
 ASHES$P3.funct = list(BFM_obs=get_BFM,
                       BFM_sim=get_BFM)
@@ -27,4 +25,3 @@ ASHES$P3.funct_args = list(list("BFA_obs"),
                            list("BFA_sim"))
 ASHES$P3.timeStep = "none"
 ASHES$P3.NApct_lim = 20
-ASHES$P3.NAyear_lim = 10

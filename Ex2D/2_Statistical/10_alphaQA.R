@@ -23,4 +23,3 @@ ASHES$P2.funct_args = list(list("QA_obs", level=0.1),
                            list("QA_sim", level=0.1))
 ASHES$P2.timeStep = "none"
 ASHES$P2.NApct_lim = 20
-ASHES$P2.NAyear_lim = 10

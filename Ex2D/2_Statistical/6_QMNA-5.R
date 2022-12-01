@@ -19,7 +19,6 @@ ASHES$P2.funct_args = list(list("QM_obs", na.rm=TRUE),
 ASHES$P2.timeStep = "year"
 ASHES$P2.samplePeriod = c('05-01', '11-30')
 ASHES$P2.NApct_lim = 20
-ASHES$P2.NAyear_lim = 10
 
 ASHES$P3.funct = list("QMNA-5_obs"=get_Xn,
                       "QMNA-5_sim"=get_Xn)
@@ -31,4 +30,3 @@ ASHES$P3.funct_args = list(list("QMNA_obs",
                                 waterType="low"))
 ASHES$P3.timeStep = "none"
 ASHES$P3.NApct_lim = 20
-ASHES$P3.NAyear_lim = 10

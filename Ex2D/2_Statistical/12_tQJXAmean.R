@@ -20,4 +20,3 @@ ASHES$P2.funct_args = list(list("tQJXA_obs", na.rm=TRUE),
                            list("tQJXA_sim", na.rm=TRUE))
 ASHES$P2.timeStep = "none"
 ASHES$P2.NApct_lim = 20
-ASHES$P2.NAyear_lim = 10
