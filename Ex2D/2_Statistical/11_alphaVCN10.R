@@ -21,9 +21,9 @@ ASHES$P2.NApct_lim = 20
 ASHES$P2.NAyear_lim = 10
 
 ASHES$P3.funct = list(alphaVCN10_obs=get_MKalpha,
-                      HalphaVCN10_obs=get_MKH,
+                      HYPalphaVCN10_obs=get_MKH,
                       alphaVCN10_sim=get_MKalpha,
-                      HalphaVCN10_sim=get_MKH)
+                      HYPalphaVCN10_sim=get_MKH)
 ASHES$P3.funct_args = list(list("VCN10_obs", level=0.1),
                            list("VCN10_obs", level=0.1),
                            list("VCN10_sim", level=0.1),

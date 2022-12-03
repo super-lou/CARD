@@ -14,9 +14,9 @@ ASHES$P1.NApct_lim = 20
 ASHES$P1.NAyear_lim = 10
 
 ASHES$P2.funct = list(alphaQA_obs=get_MKalpha,
-                      HalphaQA_obs=get_MKH,
+                      HYPalphaQA_obs=get_MKH,
                       alphaQA_sim=get_MKalpha,
-                      HalphaQA_sim=get_MKH)
+                      HYPalphaQA_sim=get_MKH)
 ASHES$P2.funct_args = list(list("QA_obs", level=0.1),
                            list("QA_obs", level=0.1),
                            list("QA_sim", level=0.1),
