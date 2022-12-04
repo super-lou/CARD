@@ -20,4 +20,4 @@ MAKAHOapp:
 
 ## 3. ________________________________________________________________
 Ex2D:
-	./manage_variables.R -l Ex2D [ Performance [ KGE KGEsqrt NSE NSEsqrt NSElog NSEi Bias BiasSEA ] Statistical [ Q10_all Q50_all Q90_all mean{QA} QJXA-10 QMNA-5 VCN10-5 VCN30-2 alphaQJXA alphaQA alphaVCN10 median{tQJXA} median{tVCN10} ] Climate_Sensitivity [ epsilon_P epsilon_P,SEA epsilon_T epsilon_T,SEA RAT_T RAT_P RAT_ET0 ] Hydrological_Signature [ Rc alphaCDC BFI BFM median{dtRec} median{dtCrue} ] ] -w
+	./manage_variables.R -l Ex2D [ Performance [ KGE KGEsqrt NSE NSEsqrt NSElog NSEi Bias BiasSEA ] Statistical [ Q10_all Q50_all Q90_all mean{QA} QJXA-10 QMNA-5 VCN10-5 VCN30-2 alphaQJXA alphaQA alphaVCN10 median{tQJXA} median{tVCN10} ] Climate_Sensitivity [ epsilon_P epsilon_P,SEA epsilon_T epsilon_T,SEA RAT_T RAT_P RAT_ET0 ] Hydrological_Signature [ Rc alphaCDC BFI BFM median{dtCrue} ] ] -w

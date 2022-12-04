@@ -91,6 +91,7 @@ rollmean_center = function (X, k) {
     isNA[unlist(Map(':', idNAstart[toNA], idNAend[toNA]))] = TRUE
 
     IdNA = which(isNA)
+    
     res = rle(isNA)
     lenNA = res$lengths
     valNA = res$values
@@ -103,7 +104,7 @@ rollmean_center = function (X, k) {
     if (length(IdNA) > 1) {
         start = 1 + dNAstart
         end = length(IdNA) - dNAend
-        if (start < end) {
+        if (start <= end) {
             IdNA = IdNA[start:end]
         } else {
             IdNA = NULL
