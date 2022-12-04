@@ -1,4 +1,4 @@
-ASHES$P.var = "median{tCrue}"
+ASHES$P.var = "median{dtCrue}"
 ASHES$P.unit = "jour"
 ASHES$P.glose = "Médiane de l’ensemble des nombres de jour où la différence entre le débit journalier et le débit de base est supérieur à la moitié du maximum annuel"
 ASHES$P.event = "Crue"
@@ -30,8 +30,8 @@ ASHES$P3.samplePeriod = '09-01'
 ASHES$P3.NApct_lim = 20
 ASHES$P3.keep = TRUE
 
-ASHES$P4.funct = list(tCrue_obs=apply_threshold,
-                      tCrue_sim=apply_threshold)
+ASHES$P4.funct = list(dtCrue_obs=apply_threshold,
+                      dtCrue_sim=apply_threshold)
 ASHES$P4.funct_args = list(list("dQ_obs",
                                 lim="lowLim_obs",
                                 where="above",
@@ -46,9 +46,9 @@ ASHES$P4.timeStep = "year"
 ASHES$P4.samplePeriod = '09-01'
 ASHES$P4.NApct_lim = 20
 
-ASHES$P5.funct = list("median{tCrue_obs}"=median,
-                      "median{tCrue_sim}"=median)
-ASHES$P5.funct_args = list(list("tCrue_obs", na.rm=TRUE),
-                           list("tCrue_sim", na.rm=TRUE))
+ASHES$P5.funct = list("median{dtCrue}_obs"=median,
+                      "median{dtCrue}_sim}"=median)
+ASHES$P5.funct_args = list(list("dtCrue_obs", na.rm=TRUE),
+                           list("dtCrue_sim", na.rm=TRUE))
 ASHES$P5.timeStep = "none"
 ASHES$P5.NApct_lim = 20

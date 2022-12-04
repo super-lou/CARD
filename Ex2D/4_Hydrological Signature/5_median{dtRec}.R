@@ -1,4 +1,4 @@
-ASHES$P.var = "tRec"
+ASHES$P.var = "median{dtRec}"
 ASHES$P.unit = "jour"
 ASHES$P.glose = "Médiane des temps de récession obtenus grâce à un fit exponentielle pour chaque événement de récession"
 ASHES$P.event = "Crue"

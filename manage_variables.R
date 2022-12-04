@@ -48,8 +48,8 @@ source_dir = "__all__"
 
 OUT = unlist(args$l)
 nOUT = length(OUT)
-test1 = "[[]|[(]|[{]|[]]|[)]|[}]"
-test2 = "[[]|[(]|[{]"
+test1 = "[[]|[(]|[]]|[)]"
+test2 = "[[]|[(]"
 for (i in 1:nOUT) {
     if (i < nOUT & !grepl(test1, OUT[i]) & !grepl(test2, OUT[(i+1)])) {
         OUT[i] = paste0(OUT[i], ".(NA)")
@@ -62,8 +62,8 @@ OUT = unlist(sapply(OUT, strsplit, split="[.]"),
             use.names=FALSE)
 
 OUT = paste0(OUT, collapse="','")
-OUT = gsub("[]]|[}]", ")", OUT)
-OUT = gsub("[[]|[{]|[(]", "=list(", OUT)
+OUT = gsub("[]]", ")", OUT)
+OUT = gsub("[[]|[(]", "=list(", OUT)
 OUT = gsub("[,]['][=]", "=", OUT)
 OUT = gsub("[(]['][,]", "(", OUT)
 OUT = gsub("[,]['][)]", ")", OUT)

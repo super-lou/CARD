@@ -1,4 +1,4 @@
-ASHES$P.var = "t_etiage"
+ASHES$P.var = "dt_etiage"
 ASHES$P.unit = "jour"
 ASHES$P.glose = "Durée de l'étiage (durée de la plus longue période continue de la moyenne sur 10 jours sous le maximum des VCN10)"
 ASHES$P.event = "Étiage"

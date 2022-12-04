@@ -15,8 +15,8 @@ ASHES$P1.samplePeriod = '09-01'
 ASHES$P1.NApct_lim = 20
 ASHES$P1.NAyear_lim = 10
 
-ASHES$P2.funct = list("epsilon_T,obs"=compute_elasticity,
-                      "epsilon_T,sim"=compute_elasticity)
+ASHES$P2.funct = list("epsilon_{T}_obs"=compute_elasticity,
+                      "epsilon_{T}_sim"=compute_elasticity)
 ASHES$P2.funct_args = list(list(Q="QA_obs", X="TA"),
                            list(Q="QA_sim", X="TA"))
 ASHES$P2.timeStep = "none"

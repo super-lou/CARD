@@ -1,4 +1,4 @@
-ASHES$P.var = "t_BF"
+ASHES$P.var = "dt_BF"
 ASHES$P.unit = "jour"
 ASHES$P.glose = "Durée des écoulements lents (durée entre 10% et 90% de l’intégrale sous la courbe du débit de base)"
 ASHES$P.event = "Crue Nivale"

@@ -16,8 +16,8 @@ ASHES$P1.NAyear_lim = 10
 ASHES$P1.Seasons = c("DJF", "MAM", "JJA", "SON")
 ASHES$P1.onlyDate4Season = TRUE
 
-ASHES$P2.funct = list("epsilon_P,SEA,obs"=compute_elasticity,
-                      "epsilon_P,SEA,sim"=compute_elasticity)
+ASHES$P2.funct = list("epsilon_{P,SEA}_obs"=compute_elasticity,
+                      "epsilon_{P,SEA}_sim"=compute_elasticity)
 ASHES$P2.funct_args = list(list(Q="QA_SEA_obs", X="PA_SEA"),
                            list(Q="QA_SEA_sim", X="PA_SEA"))
 ASHES$P2.timeStep = "season"
