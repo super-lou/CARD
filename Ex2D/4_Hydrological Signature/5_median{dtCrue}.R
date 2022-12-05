@@ -47,7 +47,7 @@ ASHES$P4.samplePeriod = '09-01'
 ASHES$P4.NApct_lim = 20
 
 ASHES$P5.funct = list("median{dtCrue}_obs"=median,
-                      "median{dtCrue}_sim}"=median)
+                      "median{dtCrue}_sim"=median)
 ASHES$P5.funct_args = list(list("dtCrue_obs", na.rm=TRUE),
                            list("dtCrue_sim", na.rm=TRUE))
 ASHES$P5.timeStep = "none"
