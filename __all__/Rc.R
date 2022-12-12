@@ -5,8 +5,8 @@ ASHES$P.event = "model"
 
 ASHES$P1.funct = list(Rc_obs=compute_Rc,
                       Rc_sim=compute_Rc)
-ASHES$P1.funct_args = list(list("Q_obs", "P"),
-                           list("Q_sim", "P"))
+ASHES$P1.funct_args = list(list("Q_obs", "Pl"),
+                           list("Q_sim", "Pl"))
 ASHES$P1.timeStep = "none"
 ASHES$P1.NApct_lim = 20
 ASHES$P1.NAyear_lim = 10

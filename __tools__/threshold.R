@@ -28,7 +28,7 @@
 #   |_|  |_||_||_|  \___|/__/|_||_|\___/|_|\__,_| ____________________
 ## 1. THRESHOLD __________________________________________________________  
 apply_threshold = function (X, lim, where="under", what="X",
-                            select_longest=TRUE) {
+                            select="all") {
 
     lim = lim[1]
 
@@ -40,7 +40,14 @@ apply_threshold = function (X, lim, where="under", what="X",
         stop ("Choose 'under' or 'above'")
     }
 
-    if (select_longest) {
+    if (is.numeric(select)) {
+        select = select[1]
+        if (is.na(select)) {
+            return (NA)
+        }
+    }
+        
+    if (is.numeric(select) | select == "longest" | select == "shortest") {
         dID = diff(ID)
         dID = c(10, dID)
         
@@ -48,6 +55,7 @@ apply_threshold = function (X, lim, where="under", what="X",
         Njump = length(IDjump)
         
         Periods = vector(mode='list', length=Njump)
+        XPeriods = vector(mode='list', length=Njump)
         Nperiod = c()
         
         for (i in 1:Njump) {
@@ -62,20 +70,32 @@ apply_threshold = function (X, lim, where="under", what="X",
             period = ID[idStart:idEnd]
             Periods[[i]] = period
             Nperiod = c(Nperiod, length(period))
+
+            if (is.numeric(select)) {
+                if (select %in% X[period]) {
+                    period_select = period
+                }
+            }
         }
-        period_max = Periods[[which.max(Nperiod)]]
+
+        if (select == "longest") {
+            period_select = Periods[[which.max(Nperiod)]]
+
+        } else if (select == "shortest") {
+            period_select = Periods[[which.min(Nperiod)]]
+        }
 
         if (what == "X") {
-            res = X[period_max]
+            res = X[period_select]
         } else if (what == "length") {
-            res = period_max[length(period_max)] - period_max[1] + 1
+            res = period_select[length(period_select)] - period_select[1] + 1
         } else if (what == "last") {
-            res = period_max[length(period_max)]
+            res = period_select[length(period_select)]
         } else if (what == "first") {
-            res = period_max[1]
+            res = period_select[1]
         }
         
-    } else {
+    } else if (select == "all") {
         if (what == "X") {
             res = X[ID]            
         } else if (what == "length") {

@@ -1,4 +1,4 @@
-ASHES$P.var = "BiasSEA"
+ASHES$P.var = "Bias_SEA"
 ASHES$P.unit = ""
 ASHES$P.glose = "Différence relative adimensionnée entre les données saisonnières simulées et observées"
 ASHES$P.event = "model"

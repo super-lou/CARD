@@ -9,7 +9,7 @@ ASHES$P1.funct = list(QA_obs=mean,
                       PA=mean)
 ASHES$P1.funct_args = list(list("Q_obs", na.rm=TRUE),
                            list("Q_sim", na.rm=TRUE),
-                           list("P", na.rm=TRUE))
+                           list("Pl", na.rm=TRUE))
 ASHES$P1.timeStep = "year"
 ASHES$P1.samplePeriod = '09-01'
 ASHES$P1.NApct_lim = 20

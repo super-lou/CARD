@@ -27,11 +27,19 @@
 # | _ \/ _` |(_-<| |/ _|
 # |___/\__,_|/__/|_|\__| _____________________________________________
 ## 0. BASIC __________________________________________________________
-minus = function (a, b) {
+minus = function (a, b, first=FALSE) {
+    if (first) {
+        a = a[1]
+        b = b[1]
+    }
     return (a - b)
 }
 
-divided = function (a, b) {
+divided = function (a, b, first=FALSE) {
+    if (first) {
+        a = a[1]
+        b = b[1]
+    }
     return (a / b)
 }
 

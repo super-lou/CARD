@@ -1,4 +1,4 @@
-ASHES$P.var = "NSE"
+ASHES$P.var = "NSE_sqrt"
 ASHES$P.unit = ""
 ASHES$P.glose = "Coeffcient d'efficacité de Nash-Sutcliffe de la racine carrée des données"
 ASHES$P.event = "model"
