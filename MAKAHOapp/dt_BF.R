@@ -1,7 +1,7 @@
 ASHES$P.var = "dt_BF"
 ASHES$P.unit = "jour"
 ASHES$P.glose = "Durée des écoulements lents (durée entre 10% et 90% de l’intégrale sous la courbe du débit de base)"
-ASHES$P.event = "Crue Nivale"
+ASHES$P.topic = "Crue Nivale"
 ASHES$P.samplePeriod = '09-01'
 
 ASHES$P1.funct = list(X=compute_tSnowmelt)

@@ -1,7 +1,7 @@
 ASHES$P.var = "QJXA-10"
 ASHES$P.unit = "m^{3}.s^{-1}"
 ASHES$P.glose = "Maximums annuels des débits journaliers de période de retour 10 ans"
-ASHES$P.event = "Crue"
+ASHES$P.topic = c("Crue", "Liés à une statistique")
 ASHES$P.samplePeriod = '09-01'
     
 ASHES$P1.funct = list(QJXA_obs=maxNA,

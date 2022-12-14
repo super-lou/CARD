@@ -1,7 +1,7 @@
 ASHES$P.var = "dt_etiage"
 ASHES$P.unit = "jour"
 ASHES$P.glose = "Durée de l'étiage (durée de la plus longue période continue de la moyenne sur 10 jours sous le maximum des VCN10)"
-ASHES$P.event = "Étiage"
+ASHES$P.topic = "Étiage"
 ASHES$P.samplePeriod = c('05-01', '11-30')
 
 ASHES$P1.funct = list(Q=rollmean_center)

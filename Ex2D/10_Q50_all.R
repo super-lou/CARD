@@ -1,7 +1,7 @@
 ASHES$P.var = "Q50"
 ASHES$P.unit = "m^{3}.s^{-1}"
 ASHES$P.glose = "Débit seuil avec une probabilité de dépassement de 50% (centile 50%)"
-ASHES$P.event = "Moyennes Eaux"
+ASHES$P.topic = c("Moyennes Eaux", "Liés à une statistique")
 
 ASHES$P1.funct = list(Q50_obs=compute_Qp,
                       Q50_sim=compute_Qp)

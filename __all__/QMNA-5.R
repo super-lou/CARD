@@ -1,7 +1,7 @@
 ASHES$P.var = "QMNA-5"
 ASHES$P.unit = "m^{3}.s^{-1}"
 ASHES$P.glose = "Minimum annuel des débits mensuels de période de retour 5 ans"
-ASHES$P.event = "Étiage"
+ASHES$P.topic = c("Étiage", "Liés à une statistique")
 ASHES$P.samplePeriod = c('05-01', '11-30')
     
 ASHES$P1.funct = list(QM_obs=mean,

@@ -1,7 +1,7 @@
 ASHES$P.var = "mean{QA}"
 ASHES$P.unit = "m^{3}.s^{-1}"
 ASHES$P.glose = "Moyenne inter-annuelle des moyennes intra-annuelles des débits journaliers"
-ASHES$P.event = "Moyennes Eaux"
+ASHES$P.topic = c("Moyennes Eaux", "Liés à une statistique")
 ASHES$P.samplePeriod = '09-01'
     
 ASHES$P1.funct = list(QA_obs=mean,

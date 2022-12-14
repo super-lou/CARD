@@ -1,7 +1,7 @@
 ASHES$P.var = "VCN30-2"
 ASHES$P.unit = "m^{3}.s^{-1}"
 ASHES$P.glose = "Minimum annuel de la moyenne sur 30 jours du débit journalier de période de retour 2 ans"
-ASHES$P.event = "Étiage"
+ASHES$P.topic = c("Étiage", "Liés à une statistique")
 ASHES$P.samplePeriod = c('05-01', '11-30')
     
 ASHES$P1.funct = list(VC30_obs=rollmean_center,

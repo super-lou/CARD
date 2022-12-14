@@ -1,7 +1,7 @@
 ASHES$P.var = "BFM"
 ASHES$P.unit = ""
-ASHES$P.glose = "Base flow magnitude"
-ASHES$P.event = "model"
+ASHES$P.glose = "Baseflow magnitude"
+ASHES$P.topic = c("Baseflow", "Signature hydrologique")
 
 ASHES$P1.funct = list(BF_obs=BFS,
                       BF_sim=BFS)

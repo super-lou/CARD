@@ -1,7 +1,7 @@
 ASHES$P.var = "tFIN_BF"
 ASHES$P.unit = "jour de l'année"
 ASHES$P.glose = "Fin des écoulements lents (date lorsque 90% de l’intégrale sous la courbe du débit de base est atteinte)"
-ASHES$P.event = "Crue Nivale"
+ASHES$P.topic = "Crue Nivale"
 ASHES$P.samplePeriod = '09-01'
     
 ASHES$P1.funct = list(X=compute_tVolSnowmelt)

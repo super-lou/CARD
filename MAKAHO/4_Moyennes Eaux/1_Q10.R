@@ -1,7 +1,7 @@
 ASHES$P.var = "Q10"
 ASHES$P.unit = "m^{3}.s^{-1}"
 ASHES$P.glose = "Débit seuil avec une probabilité de dépassement de 10% (centile 90%)"
-ASHES$P.event = "Moyennes Eaux"
+ASHES$P.topic = "Moyennes Eaux"
 ASHES$P.samplePeriod = '09-01'
     
 ASHES$P1.funct = list(X=compute_Qp)

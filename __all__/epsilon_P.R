@@ -1,7 +1,7 @@
 ASHES$P.var = "epsilon_P"
 ASHES$P.unit = ""
 ASHES$P.glose = "Élasticité annuelle du débit aux précipitations"
-ASHES$P.event = "model"
+ASHES$P.topic = "Sensibilité au climat"
 ASHES$P.samplePeriod = '09-01'
     
 ASHES$P1.funct = list(QA_obs=mean,

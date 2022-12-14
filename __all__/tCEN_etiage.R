@@ -1,7 +1,7 @@
 ASHES$P.var = "tCEN_etiage"
 ASHES$P.unit = "jour de l'année"
 ASHES$P.glose = "Centre d'étiage (jour de l'année du VCN10)"
-ASHES$P.event = "Étiage"
+ASHES$P.topic = "Étiage"
 ASHES$P.samplePeriod = c('05-01', '11-30')
     
 ASHES$P1.funct = list(Q=rollmean_center)

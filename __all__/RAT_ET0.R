@@ -1,7 +1,7 @@
 ASHES$P.var = "RAT_ET0"
 ASHES$P.unit = "bool"
 ASHES$P.glose = "Robustness Assessment Test pour l'évapotranspiration de référence"
-ASHES$P.event = "model"
+ASHES$P.topic = "Sensibilité au climat"
 ASHES$P.samplePeriod = '09-01'
 
 ASHES$P1.funct = list(BiasA=compute_Bias,

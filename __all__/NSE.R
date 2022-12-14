@@ -1,7 +1,7 @@
 ASHES$P.var = "NSE"
 ASHES$P.unit = ""
 ASHES$P.glose = "Coeffcient d'efficacité de Nash-Sutcliffe"
-ASHES$P.event = "model"
+ASHES$P.topic = "Performance"
 
 ASHES$P1.funct = list(NSE=compute_NSE)
 ASHES$P1.funct_args = list("Q_obs", "Q_sim")

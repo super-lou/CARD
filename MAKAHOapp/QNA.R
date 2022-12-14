@@ -1,7 +1,7 @@
 ASHES$P.var = "QNA"
 ASHES$P.unit = "m^{3}.s^{-1}"
 ASHES$P.glose = "Minimum annuel du débit journalier"
-ASHES$P.event = "Étiage"
+ASHES$P.topic = "Étiage"
 ASHES$P.samplePeriod = '01-01'
     
 ASHES$P1.funct = list(X=minNA)
