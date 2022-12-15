@@ -1,7 +1,7 @@
 ASHES$P.var = "median{tVCN10}"
 ASHES$P.unit = "jour de l'année"
 ASHES$P.glose = "Mediane des dates des minimums annuels de la moyenne sur 10 jours du débit journalier"
-ASHES$P.topic = c("Étiage", "Liés à une statistique")
+ASHES$P.topic = c("Liés à une statistique", "Étiage")
 ASHES$P.samplePeriod = c('05-01', '11-30')
     
 ASHES$P1.funct = list(VC10_obs=rollmean_center,

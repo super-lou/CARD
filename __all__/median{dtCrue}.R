@@ -1,7 +1,7 @@
 ASHES$P.var = "median{dtCrue}"
 ASHES$P.unit = "jour"
 ASHES$P.glose = "Médiane de l’ensemble des nombres de jour où la différence entre le débit journalier et le débit de base est supérieur à la moitié du maximum annuel"
-ASHES$P.topic = c("Crue", "Signature hydrologique")
+ASHES$P.topic = c("Signature hydrologique", "Crue")
 ASHES$P.samplePeriod = '09-01'
     
 ASHES$P1.funct = list(BF_obs=BFS,

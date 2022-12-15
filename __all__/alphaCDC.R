@@ -1,7 +1,7 @@
 ASHES$P.var = "alphaCDC"
 ASHES$P.unit = ""
 ASHES$P.glose = "Pente du segment entre les quantiles des débits journaliers à 33 % et 66 % de la courbe des débits topicés"
-ASHES$P.topic = c("Moyennes Eaux", "Signature hydrologique")
+ASHES$P.topic = c("Signature hydrologique", "Moyennes Eaux")
 
 ASHES$P1.funct = list(alphaCDC_obs=fdc_slope,
                       alphaCDC_sim=fdc_slope)

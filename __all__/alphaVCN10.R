@@ -1,7 +1,7 @@
 ASHES$P.var = "alphaVCN10"
 ASHES$P.unit = "m^{3}.s^{-1}.an^{-1}"
 ASHES$P.glose = "Pente de Sen et résultat du test de Mann-Kendall pour les minimums annuel de la moyenne sur 10 jours du débit journalier"
-ASHES$P.topic = c("Étiage", "Liés à une statistique")
+ASHES$P.topic = c("Liés à une statistique", "Étiage")
 ASHES$P.samplePeriod = c('05-01', '11-30')
     
 ASHES$P1.funct = list(VC10_obs=rollmean_center,

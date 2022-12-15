@@ -25,7 +25,7 @@
 # | _ \ ___  __  ___  ___ ___(_) ___  _ _  
 # |   // -_)/ _|/ -_)(_-<(_-<| |/ _ \| ' \ 
 # |_|_\\___|\__|\___|/__//__/|_|\___/|_||_| __________________________
-inflect = function(x, threshold=1){
+inflect = function(x, threshold=1) {
     up = sapply(1:threshold, function (n) c(x[-(seq(n))], rep(NA, n)))
     down =  sapply(-1:-threshold, function (n) c(rep(NA, abs(n)), x[-seq(length(x), length(x) - abs(n) + 1)]))
     a = cbind(x, up, down)
@@ -34,18 +34,12 @@ inflect = function(x, threshold=1){
 }
 
 compute_dtRec = function (Q) {
-
     # 'V2114010_HYDRO_QJM.txt'
     # cut gap for data = data[10000:11000,]
-
     X = 1:length(Q)
     OK = !is.na(Q) & Q >= 0
     X = X[OK]
     Q = Q[OK]
-    print(max(Q))
-    print(sum(!is.finite(Q)))
-    # print(Q)
-    print("")
 
     ss = smooth.spline(X,
                        Q,
@@ -88,6 +82,12 @@ compute_dtRec = function (Q) {
     names(peak) = NULL
     names(valley) = NULL
 
+    pSsY = 0.75
+    ssYlim = quantile(ssY, pSsY)
+    OK = !(ssY[peak] < ssYlim & ssY[valley] < ssYlim)
+    peak = peak[OK]
+    valley = valley[OK]
+
     cut = function (peak, valley, X) {
         return (X[peak:valley])
     }
@@ -110,7 +110,8 @@ compute_dtRec = function (Q) {
     Beta = sapply(Coef, '[[', "beta")
     Tau = -1/Alpha
 
-    OK = Tau > 0 & Tau < quantile(Tau, 0.9)
+    pTau = 0.9
+    OK = Tau > 0 & Tau < quantile(Tau, pTau)
     peak = peak[OK]
     valley = valley[OK]
     ABS = ABS[OK]

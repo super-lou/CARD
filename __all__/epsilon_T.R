@@ -1,4 +1,4 @@
-ASHES$P.var = "epsilon_T"
+ASHES$P.var = "epsilon_{T}"
 ASHES$P.unit = ""
 ASHES$P.glose = "Élasticité annuelle du débit aux températures"
 ASHES$P.topic = "Sensibilité au climat"

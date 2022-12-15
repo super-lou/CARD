@@ -1,7 +1,7 @@
 ASHES$P.var = "median{dtRec}"
 ASHES$P.unit = "jour"
 ASHES$P.glose = "Médiane des temps de récession"
-ASHES$P.topic = c("Crue", "Signature hydrologique")
+ASHES$P.topic = c("Signature hydrologique", "Crue")
 
 ASHES$P1.funct = list("median{dtRec}_obs"=compute_dtRec,
                       "median{dtRec}_sim"=compute_dtRec)

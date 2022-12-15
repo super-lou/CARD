@@ -120,7 +120,8 @@ for (i in 1:n) {
     IN = c(IN, path[len])
     DIR = c(DIR, do.call(file.path, as.list(path[-len])))
     if (!args$blank) {
-        path[len] = paste0(id, "_", path[len])
+        idC = formatC(id, width=3, flag="0")
+        path[len] = paste0(idC, "_", path[len])
     }
     id = id + 1
     OUT[i] = do.call(file.path, as.list(path))
