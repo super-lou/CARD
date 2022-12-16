@@ -1,7 +1,7 @@
 ASHES$P.var = "Q90"
 ASHES$P.unit = "m^{3}.s^{-1}"
 ASHES$P.glose = "Débit seuil avec une probabilité de dépassement de 90% (centile 10%)"
-ASHES$P.topic = c("Liés à une statistique", "Étiage")
+ASHES$P.topic = c("Étiage", "Liés à une statistique")
 
 ASHES$P1.funct = list(Q90_obs=compute_Qp,
                       Q90_sim=compute_Qp)

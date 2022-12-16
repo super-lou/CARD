@@ -20,4 +20,4 @@ MAKAHOapp:
 
 ## 3. ________________________________________________________________
 Ex2D:
-	./manage_variables.R -l Ex2D [ KGE KGEsqrt NSE NSEsqrt NSElog NSEinv Bias Bias_SEA Q10_all Q50_all Q90_all mean{QA} QJXA-10 QMNA-5 VCN10-5 VCN30-2 alphaQJXA alphaQA alphaVCN10 median{tQJXA} median{tVCN10} epsilon_P epsilon_P,SEA epsilon_T epsilon_T,SEA RAT_T RAT_P RAT_ET0 Rc alphaCDC BFI BFM median{dtCrue} ] -w
+	./manage_variables.R -l Ex2D [ KGE KGEsqrt NSE NSEsqrt NSElog NSEinv Bias Bias_SEA Rc epsilon_P epsilon_P,SEA epsilon_T epsilon_T,SEA RAT_T RAT_P RAT_ET0 Q10_all QJXA-10 alphaQJXA median{tQJXA} median{dtCrue} median{dtRec} Q50_all mean{QA} alphaQA alphaCDC Q90_all QMNA-5 VCN30-2 VCN10-5 alphaVCN10 median{tVCN10} BFI BFM ] -w

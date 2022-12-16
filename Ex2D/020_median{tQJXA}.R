@@ -1,7 +1,7 @@
 ASHES$P.var = "median{tQJXA}"
 ASHES$P.unit = "jour de l'année"
 ASHES$P.glose = "Mediane des dates maximums annuels des débits journaliers"
-ASHES$P.topic = c("Liés à une statistique", "Crue")
+ASHES$P.topic = c("Crue", "Liés à une statistique")
 ASHES$P.samplePeriod = '09-01'
 
 ASHES$P1.funct = list(tQJXA_obs=which.maxNA,

@@ -1,7 +1,7 @@
 ASHES$P.var = "RAT_T"
 ASHES$P.unit = "bool"
 ASHES$P.glose = "Robustness Assessment Test pour la température"
-ASHES$P.topic = "Sensibilité au climat"
+ASHES$P.topic = c("Climat", "Sensibilité au climat")
 ASHES$P.samplePeriod = '09-01'
     
 ASHES$P1.funct = list(BiasA=compute_Bias,

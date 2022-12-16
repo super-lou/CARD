@@ -1,7 +1,7 @@
 ASHES$P.var = "alphaQJXA"
 ASHES$P.unit = "m^{3}.s^{-1}.an^{-1}"
 ASHES$P.glose = "Pente de Sen et résultat du test de Mann-Kendall pour les maximums annuels des débits journaliers"
-ASHES$P.topic = c("Liés à une statistique", "Crue")
+ASHES$P.topic = c("Crue", "Liés à une statistique")
 ASHES$P.samplePeriod = '09-01'
     
 ASHES$P1.funct = list(QJXA_obs=maxNA,

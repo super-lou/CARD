@@ -37,16 +37,17 @@ compute_dtRec = function (Q) {
     # 'V2114010_HYDRO_QJM.txt'
     # cut gap for data = data[10000:11000,]
     X = 1:length(Q)
-    OK = !is.na(Q) & Q >= 0
+    OK = !is.na(Q) & Q > 0
     X = X[OK]
     Q = Q[OK]
-
+    
     ss = smooth.spline(X,
                        Q,
                        df=10,
                        spar=0.5,
                        nknots=length(X)/1.5,
                        w=1/sqrt(Q/max(Q)))
+
     ssX = as.Date(ss$x, origin=as.Date("1970-01-01"))
     ssY = ss$y
 

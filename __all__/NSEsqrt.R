@@ -1,7 +1,7 @@
 ASHES$P.var = "NSEsqrt"
 ASHES$P.unit = ""
 ASHES$P.glose = "Coeffcient d'efficacité de Nash-Sutcliffe de la racine carrée des données"
-ASHES$P.topic = "Performance"
+ASHES$P.topic = c("Performance", "NSE")
 
 ASHES$P1.funct = list(NSEsqrt=compute_NSEsqrt)
 ASHES$P1.funct_args = list("Q_obs", "Q_sim")
