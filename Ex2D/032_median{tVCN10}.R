@@ -23,7 +23,7 @@ ASHES$P2.NAyear_lim = 10
 
 ASHES$P3.funct = list("median{tVCN10}_obs"=circular_median,
                       "median{tVCN10}_sim"=circular_median)
-ASHES$P3.funct_args = list(list("tVCN10_obs", period=365.25, na.rm=TRUE),
-                           list("tVCN10_sim", period=365.25, na.rm=TRUE))
+ASHES$P3.funct_args = list(list("tVCN10_obs", periodicity=365.25, na.rm=TRUE),
+                           list("tVCN10_sim", periodicity=365.25, na.rm=TRUE))
 ASHES$P3.timeStep = "none"
 ASHES$P3.NApct_lim = 20

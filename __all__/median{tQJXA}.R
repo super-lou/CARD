@@ -16,7 +16,7 @@ ASHES$P1.NAyear_lim = 10
 
 ASHES$P2.funct = list("median{tQJXA}_obs"=circular_median,
                       "median{tQJXA}_sim"=circular_median)
-ASHES$P2.funct_args = list(list("tQJXA_obs", period=365.25, na.rm=TRUE),
-                           list("tQJXA_sim", period=365.25, na.rm=TRUE))
+ASHES$P2.funct_args = list(list("tQJXA_obs", periodicity=365.25, na.rm=TRUE),
+                           list("tQJXA_sim", periodicity=365.25, na.rm=TRUE))
 ASHES$P2.timeStep = "none"
 ASHES$P2.NApct_lim = 20

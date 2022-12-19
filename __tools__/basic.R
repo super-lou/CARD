@@ -150,8 +150,8 @@ rollmean_center = function (X, k) {
 
 
 ## 4. CIRCULAR STAT __________________________________________________
-circularTWEAK = function (X, Y, period) {
-    XY2add = abs(X - Y) > (period/2)
+circularTWEAK = function (X, Y, periodicity) {
+    XY2add = abs(X - Y) > (periodicity/2)
     XYmin = pmin(X, Y, na.rm=TRUE)
     XisMin = X == XYmin
     YisMin = Y == XYmin
@@ -160,37 +160,44 @@ circularTWEAK = function (X, Y, period) {
     XisMin[is.na(XisMin)] = FALSE
     YisMin[is.na(YisMin)] = FALSE
     
-    X[XY2add & XisMin] = X[XY2add & XisMin] + period
-    Y[XY2add & YisMin] = Y[XY2add & YisMin] + period
+    X[XY2add & XisMin] = X[XY2add & XisMin] + periodicity
+    Y[XY2add & YisMin] = Y[XY2add & YisMin] + periodicity
 
     res = list(X=X, Y=Y)
     return (res)
 }
 
-circular_minus = function (X, Y, period) {
-    res = circularTWEAK(X, Y, period)
+circular_minus = function (X, Y, periodicity) {
+    res = circularTWEAK(X, Y, periodicity)
     X = res$X
     Y = res$Y
     return (X - Y)
 }
     
-circular_divided = function (X, Y, period) {
-    res = circularTWEAK(X, Y, period)
+circular_divided = function (X, Y, periodicity) {
+    res = circularTWEAK(X, Y, periodicity)
     X = res$X
     Y = res$Y
     return (X / Y)
 }
 
-circular_median = function (X, period, na.rm=TRUE) {    
-    scalingFactor = 2 * pi / period;
+circular_median = function (X, periodicity, na.rm=TRUE) {    
+    scalingFactor = 2 * pi / periodicity;
     radians = X * scalingFactor
     sines = sin(radians)
     cosines = cos(radians)
     median = atan2(median(sines, na.rm=na.rm), median(cosines, na.rm=na.rm)) / scalingFactor
-    if (median >= 0) {
-        res = median
+
+    print(median)
+
+    if (is.na(median)) {
+        res = NA
     } else {
-        res = median + period
+        if (median >= 0) {
+            res = median
+        } else {
+            res = median + periodicity
+        }
     }
     return (res)
 }

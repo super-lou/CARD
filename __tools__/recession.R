@@ -38,6 +38,11 @@ compute_dtRec = function (Q) {
     # cut gap for data = data[10000:11000,]
     X = 1:length(Q)
     OK = !is.na(Q) & Q > 0
+
+    if (all(!OK)) {
+        return (NA)
+    }
+    
     X = X[OK]
     Q = Q[OK]
     
