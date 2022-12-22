@@ -73,6 +73,12 @@ BFS = function (Q, d=5, w=0.9) {
     return (BF)
 }
 
+dBFS = function (Q, d=5, w=0.9) {
+    BF = BFS(Q, d=d, w=w)
+    dBF = Q - BF
+    return (dBF)
+}
+
 
 ## 2. BASEFLOW INDEX _________________________________________________
 #' @title baseflow_index

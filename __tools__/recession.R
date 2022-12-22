@@ -101,7 +101,11 @@ compute_dtRec = function (Q) {
     add = function (X, n) {
         return (c(X, rep(NULL, n-length(X))))
     }
-
+    
+    if (length(peak) == 0 | length(valley) == 0 | is.null(ssX) | is.null(logb(ssY))) {
+        return (NA)
+    }
+    
     ABS = mapply(cut, peak, valley, list(X=ssX))
     ORD = mapply(cut, peak, valley, list(X=logb(ssY)))
 
@@ -131,3 +135,10 @@ compute_dtRec = function (Q) {
     return (medianTau)
 }
 
+
+# compute_dtRec_yday = function (Qyday) {
+    
+    
+    
+    
+# }
