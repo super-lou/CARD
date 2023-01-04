@@ -1,21 +1,21 @@
-ASHES$P.var = "mean{QA}"
-ASHES$P.unit = "m^{3}.s^{-1}"
-ASHES$P.glose = "Moyenne inter-annuelle des moyennes intra-annuelles des débits journaliers"
-ASHES$P.topic = c("Moyennes Eaux", "Liés à une statistique")
-ASHES$P.samplePeriod = '09-01'
+CARD$P.var = "mean{QA}"
+CARD$P.unit = "m^{3}.s^{-1}"
+CARD$P.glose = "Moyenne inter-annuelle des moyennes intra-annuelles des débits journaliers"
+CARD$P.topic = c("Moyennes Eaux", "Liés à une statistique")
+CARD$P.samplePeriod = '09-01'
     
-ASHES$P1.funct = list(QA_obs=mean,
+CARD$P1.funct = list(QA_obs=mean,
                       QA_sim=mean)
-ASHES$P1.funct_args = list(list("Q_obs", na.rm=TRUE),
+CARD$P1.funct_args = list(list("Q_obs", na.rm=TRUE),
                            list("Q_sim", na.rm=TRUE))
-ASHES$P1.timeStep = "year"
-ASHES$P1.samplePeriod = '09-01'
-ASHES$P1.NApct_lim = 20
-ASHES$P1.NAyear_lim = 10
+CARD$P1.timeStep = "year"
+CARD$P1.samplePeriod = '09-01'
+CARD$P1.NApct_lim = 20
+CARD$P1.NAyear_lim = 10
 
-ASHES$P2.funct = list("mean{QA}_obs"=mean,
+CARD$P2.funct = list("mean{QA}_obs"=mean,
                       "mean{QA}_sim"=mean)
-ASHES$P2.funct_args = list(list("QA_obs", na.rm=TRUE),
+CARD$P2.funct_args = list(list("QA_obs", na.rm=TRUE),
                            list("QA_sim", na.rm=TRUE))
-ASHES$P2.timeStep = "none"
-ASHES$P2.NApct_lim = 20
+CARD$P2.timeStep = "none"
+CARD$P2.NApct_lim = 20

@@ -1,39 +1,39 @@
-ASHES$P.var = "median{dtCrue}"
-ASHES$P.unit = "jour"
-ASHES$P.glose = "Médiane de l’ensemble des nombres de jour où la différence entre le débit journalier et le débit de base est supérieur à la moitié du maximum annuel"
-ASHES$P.topic = c("Crue", "Signature hydrologique")
-ASHES$P.samplePeriod = '09-01'
+CARD$P.var = "median{dtCrue}"
+CARD$P.unit = "jour"
+CARD$P.glose = "Médiane de l’ensemble des nombres de jour où la différence entre le débit journalier et le débit de base est supérieur à la moitié du maximum annuel"
+CARD$P.topic = c("Crue", "Signature hydrologique")
+CARD$P.samplePeriod = '09-01'
     
-ASHES$P1.funct = list(dQ_obs=dBFS,
+CARD$P1.funct = list(dQ_obs=dBFS,
                       dQ_sim=dBFS)
-ASHES$P1.funct_args = list(list("Q_obs"),
+CARD$P1.funct_args = list(list("Q_obs"),
                            list("Q_sim"))
-ASHES$P1.timeStep = "none"
-ASHES$P1.NApct_lim = 20
-ASHES$P1.NAyear_lim = 10
-ASHES$P1.keep = TRUE
+CARD$P1.timeStep = "none"
+CARD$P1.NApct_lim = 20
+CARD$P1.NAyear_lim = 10
+CARD$P1.keep = TRUE
 
-ASHES$P2.funct = list(dQXA_obs=maxNA,
+CARD$P2.funct = list(dQXA_obs=maxNA,
                       dQXA_sim=maxNA)
-ASHES$P2.funct_args = list(list("dQ_obs", na.rm=TRUE),
+CARD$P2.funct_args = list(list("dQ_obs", na.rm=TRUE),
                            list("dQ_sim", na.rm=TRUE))
-ASHES$P2.timeStep = "year"
-ASHES$P2.samplePeriod = '09-01'
-ASHES$P2.NApct_lim = 20
-ASHES$P2.keep = TRUE
+CARD$P2.timeStep = "year"
+CARD$P2.samplePeriod = '09-01'
+CARD$P2.NApct_lim = 20
+CARD$P2.keep = TRUE
 
-ASHES$P3.funct = list(lowLim_obs=divided,
+CARD$P3.funct = list(lowLim_obs=divided,
                       lowLim_sim=divided)
-ASHES$P3.funct_args = list(list("dQXA_obs", 2, first=TRUE),
+CARD$P3.funct_args = list(list("dQXA_obs", 2, first=TRUE),
                            list("dQXA_sim", 2, first=TRUE))
-ASHES$P3.timeStep = "year"
-ASHES$P3.samplePeriod = '09-01'
-ASHES$P3.NApct_lim = 20
-ASHES$P3.keep = TRUE
+CARD$P3.timeStep = "year"
+CARD$P3.samplePeriod = '09-01'
+CARD$P3.NApct_lim = 20
+CARD$P3.keep = TRUE
 
-ASHES$P4.funct = list(dtCrue_obs=apply_threshold,
+CARD$P4.funct = list(dtCrue_obs=apply_threshold,
                       dtCrue_sim=apply_threshold)
-ASHES$P4.funct_args = list(list("dQ_obs",
+CARD$P4.funct_args = list(list("dQ_obs",
                                 lim="lowLim_obs",
                                 where="above",
                                 what="length",
@@ -43,13 +43,13 @@ ASHES$P4.funct_args = list(list("dQ_obs",
                                 where="above",
                                 what="length",
                                 select="dQXA_sim"))
-ASHES$P4.timeStep = "year"
-ASHES$P4.samplePeriod = '09-01'
-ASHES$P4.NApct_lim = 20
+CARD$P4.timeStep = "year"
+CARD$P4.samplePeriod = '09-01'
+CARD$P4.NApct_lim = 20
 
-ASHES$P5.funct = list("median{dtCrue}_obs"=median,
+CARD$P5.funct = list("median{dtCrue}_obs"=median,
                       "median{dtCrue}_sim"=median)
-ASHES$P5.funct_args = list(list("dtCrue_obs", na.rm=TRUE),
+CARD$P5.funct_args = list(list("dtCrue_obs", na.rm=TRUE),
                            list("dtCrue_sim", na.rm=TRUE))
-ASHES$P5.timeStep = "none"
-ASHES$P5.NApct_lim = 20
+CARD$P5.timeStep = "none"
+CARD$P5.NApct_lim = 20
