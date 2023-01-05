@@ -22,6 +22,7 @@ remotes::install_github('super-lou/CARD')
 
 ## Documentation
 
+*prochainly*
 
 ## FAQ
 
