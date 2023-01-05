@@ -1,7 +1,7 @@
 CARD$P.var = "var"
 CARD$P.unit = "unit"
 CARD$P.glose = "glose"
-CARD$P.event = "event"
+CARD$P.topic = "event"
 CARD$P.samplePeriod = NULL
 
 CARD$P1.funct = NULL
@@ -13,7 +13,7 @@ CARD$P1.NApct_lim = NULL
 CARD$P1.NAyear_lim = NULL
 CARD$P1.Seasons = c("DJF", "MAM", "JJA", "SON")
 CARD$P1.onlyDate4Season = FALSE
-CARD$P1.nameEx = "X"
+CARD$P1.nameEX = "X"
 CARD$P1.keep = FALSE
 CARD$P1.compress = FALSE
 CARD$P1.rmNApct = TRUE

@@ -79,7 +79,27 @@ which.maxNA = function (X) {
 ## 3. ROLLING AVERAGE ________________________________________________
 #' @title Rolling average
 #' @export
-rollmean_center = function (X, k) {
+rollmean_center = function (X, k, isCyclical=FALSE) {
+    if (isCyclical) {
+        n = length(X)
+        X = c(X[(n-k+1):n],
+              X,
+              X[1:(k+1)])
+    }    
+    X = RcppRoll::roll_mean(X, n=k, fill=NA,
+                            align="center",
+                            na.rm=FALSE)
+    if (isCyclical) {
+        n = length(X)
+        X = X[(k+1):(n-(k+1))]
+    }
+    return (X)
+}
+
+
+#' @title Rolling average old
+#' @export
+rollmean_center_old = function (X, k) {
 
     N = length(X)
     nNAdown = floor((k-1)/2)
