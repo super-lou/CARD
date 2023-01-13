@@ -1,7 +1,7 @@
 CARD$P.var = "median{tQJXA}"
 CARD$P.unit = "jour de l'année"
 CARD$P.glose = "Mediane des dates maximums annuels des débits journaliers"
-CARD$P.topic = c("Crue", "Liés à une statistique")
+CARD$P.topic = c("Hautes Eaux", "Liés à une statistique")
 CARD$P.samplePeriod = '09-01'
 
 CARD$P1.funct = list(tQJXA_obs=which.maxNA,

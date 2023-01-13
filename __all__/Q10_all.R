@@ -1,7 +1,7 @@
 CARD$P.var = "Q10"
 CARD$P.unit = "m^{3}.s^{-1}"
 CARD$P.glose = "Débit seuil avec une probabilité de dépassement de 10% (centile 90%)"
-CARD$P.topic = c("Crue", "Liés à une statistique")
+CARD$P.topic = c("Hautes Eaux", "Liés à une statistique")
 
 CARD$P1.funct = list(Q10_obs=compute_Qp,
                       Q10_sim=compute_Qp)

@@ -1,7 +1,7 @@
-CARD$P.var = "alphaQJXA"
+CARD$P.var = c("alphaQJXA", "HYPalphaQJXA")
 CARD$P.unit = "m^{3}.s^{-1}.an^{-1}"
 CARD$P.glose = "Pente de Sen et résultat du test de Mann-Kendall pour les maximums annuels des débits journaliers"
-CARD$P.topic = c("Crue", "Liés à une statistique")
+CARD$P.topic = c("Hautes Eaux", "Liés à une statistique")
 CARD$P.samplePeriod = '09-01'
     
 CARD$P1.funct = list(QJXA_obs=maxNA,

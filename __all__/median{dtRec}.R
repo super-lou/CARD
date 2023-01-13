@@ -1,7 +1,7 @@
 CARD$P.var = "median{dtRec}"
 CARD$P.unit = "jour"
 CARD$P.glose = "Médiane des temps de récession"
-CARD$P.topic = c("Crue", "Signature hydrologique")
+CARD$P.topic = c("Écoulements Lents", "Signature hydrologique")
 
 CARD$P1.funct = list("median{dtRec}_obs"=compute_dtRec,
                       "median{dtRec}_sim"=compute_dtRec)

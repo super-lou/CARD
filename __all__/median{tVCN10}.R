@@ -1,7 +1,7 @@
 CARD$P.var = "median{tVCN10}"
 CARD$P.unit = "jour de l'année"
 CARD$P.glose = "Mediane des dates des minimums annuels de la moyenne sur 10 jours du débit journalier"
-CARD$P.topic = c("Étiage", "Liés à une statistique")
+CARD$P.topic = c("Basses Eaux", "Liés à une statistique")
 CARD$P.samplePeriod = c('05-01', '11-30')
     
 CARD$P1.funct = list(VC10_obs=rollmean_center,
@@ -9,7 +9,7 @@ CARD$P1.funct = list(VC10_obs=rollmean_center,
 CARD$P1.funct_args = list(list("Q_obs", k=10),
                            list("Q_sim", k=10))
 CARD$P1.timeStep = "none"
-CARD$P1.keep = TRUE
+CARD$P1.keep = "all"
 
 CARD$P2.funct = list(tVCN10_obs=which.minNA,
                       tVCN10_sim=which.minNA)

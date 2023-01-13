@@ -1,7 +1,7 @@
 CARD$P.var = "RAT_T"
 CARD$P.unit = "bool"
 CARD$P.glose = "Robustness Assessment Test pour la température"
-CARD$P.topic = c("Climat", "Sensibilité au climat")
+CARD$P.topic = c("Climat", "Sensibilité à la variabilité climatique")
 CARD$P.samplePeriod = '09-01'
     
 CARD$P1.funct = list(BiasA=compute_Bias,

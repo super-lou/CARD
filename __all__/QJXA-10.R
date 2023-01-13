@@ -1,7 +1,7 @@
 CARD$P.var = "QJXA-10"
 CARD$P.unit = "m^{3}.s^{-1}"
 CARD$P.glose = "Maximums annuels des débits journaliers de période de retour 10 ans"
-CARD$P.topic = c("Crue", "Liés à une statistique")
+CARD$P.topic = c("Hautes Eaux", "Liés à une statistique")
 CARD$P.samplePeriod = '09-01'
     
 CARD$P1.funct = list(QJXA_obs=maxNA,
