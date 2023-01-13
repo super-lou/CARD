@@ -16,4 +16,3 @@ CARD$P2.samplePeriod = c('05-01', '11-30')
 CARD$P2.isDate = TRUE
 CARD$P2.NApct_lim = 3
 CARD$P2.NAyear_lim = 10
-
