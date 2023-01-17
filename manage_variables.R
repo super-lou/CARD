@@ -39,7 +39,8 @@ parser$add_argument("-v", "--verbose", action="store_true", default=FALSE,
 
 args = parser$parse_args()
 
-# args$l = "MAKAHO [ Resume [ QJXA QA VCN10 ] Crue [ QJXA tQJXA fA10 fA05 fA01 ] Crue_Nivale [ t_BF v_BF tDEB_BF tCEN_BF tFIN_BF ] Moyennes_Eaux [ Q10 Q25 Q50 Q75 Q90 QA ] Étiage [ QNA QMNA VCN10 t_etiage vDEF_etiage tDEB_etiage tCEN_etiage tFIN_etiage ] ]"
+# print(args$l)
+# args$l = c("A", "[", "a", "[", "aa", "[", "aaa", "bbb", "]", "bb", "[", "ccc", "ddd", "]", "]", "]")
 
 # Display the current parameters selected with argparse.
 # parameters: 
@@ -135,16 +136,19 @@ for (i in 1:n) {
             }
 
             if (!args$blank) {
-                path[(j+1)] = paste0(SUB[nsd], "_", obj)
+                path[(j+1)] = paste0(SUB[j], "_", obj)
             }
         }
     }
+
     IN = c(IN, path[len])
     DIR = c(DIR, do.call(file.path, as.list(path[-len])))
+    
     if (!args$blank) {
         idC = formatC(id, width=3, flag="0")
         path[len] = paste0(idC, "_", path[len])
     }
+    
     id = id + 1
     OUT[i] = do.call(file.path, as.list(path))
 }
@@ -166,4 +170,4 @@ for (i in 1:n) {
 if (args$verbose) {
     write("done", stdout())
 }
-warnings()
+# warnings()

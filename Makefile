@@ -20,4 +20,4 @@ MAKAHOapp:
 
 ## 3. ________________________________________________________________
 Ex2D:
-	./manage_variables.R -l Ex2D [ all [ KGE KGEsqrt NSE NSEsqrt NSElog NSEinv Bias Bias_SEA Rc epsilon_P epsilon_P,SEA epsilon_T epsilon_T,SEA RAT_T RAT_P RAT_ET0 Q10_all QJXA-10 alphaQJXA median{tQJXA} median{dtCrue} Q50_all mean{QA} alphaQA alphaCDC Q90_all QMNA-5 VCN30-2 VCN10-5 alphaVCN10 median{tVCN10} median{dtRec} BFI BFM ] diagnostic [ KGEsqrt Bias epsilon_T,SEA epsilon_P,SEA RAT_T Q10_all median{tQJXA} mean{QA} alphaQA alphaCDC Q90_all median{tVCN10} ] plot [ QM ] ] -w
+	./manage_variables.R -l Ex2D [ indicator [ all [ KGE KGEsqrt NSE NSEsqrt NSElog NSEinv Bias Bias_SEA Rc epsilon_P epsilon_P,SEA epsilon_T epsilon_T,SEA RAT_T RAT_P RAT_ET0 Q10_all QJXA-10 alphaQJXA median{tQJXA} median{dtCrue} Q50_all mean{QA} alphaQA alphaCDC Q90_all QMNA-5 VCN30-2 VCN10-5 alphaVCN10 median{tVCN10} median{dtRec} BFI BFM ] selection [ KGEsqrt Bias epsilon_T,SEA epsilon_P,SEA RAT_T Q10_all median{tQJXA} mean{QA} alphaQA alphaCDC Q90_all median{tVCN10} ] ] serie [ QJC10 FDC ] ] -w
