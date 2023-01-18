@@ -5,8 +5,8 @@ CARD$P.topic = "Moyennes Eaux"
     
 CARD$P1.funct = list(FDC_obs=compute_FDC,
                      FDC_sim=compute_FDC)
-CARD$P1.funct_args = list(list("Q_obs", n=100),
-                          list("Q_sim", n=100))
+CARD$P1.funct_args = list(list("Q_obs", n=1000),
+                          list("Q_sim", n=1000))
 CARD$P1.timeStep = "none"
 CARD$P1.NApct_lim = NULL
 CARD$P1.NAyear_lim = 10

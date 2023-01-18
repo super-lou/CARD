@@ -1,7 +1,7 @@
 CARD$P.var = "epsilon_{P,SEA}"
 CARD$P.unit = ""
 CARD$P.glose = "Élasticités saisonnières du débit aux précipitations"
-CARD$P.topic = c("Climat", "Sensibilité à la variabilité climatique")
+CARD$P.topic = "Sensibilité à la variabilité climatique"
 CARD$P.samplePeriod = '09-01'
     
 CARD$P1.funct = list(QA_SEA_obs=mean,
