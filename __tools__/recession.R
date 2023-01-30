@@ -87,7 +87,7 @@ compute_dtRec = function (Q) {
     names(valley) = NULL
 
     pSsY = 0.75
-    ssYlim = quantile(ssY, pSsY)
+    ssYlim = quantile(ssY, pSsY, na.rm=TRUE)
     OK = !(ssY[peak] < ssYlim & ssY[valley] < ssYlim)
     peak = peak[OK]
     valley = valley[OK]
@@ -119,7 +119,7 @@ compute_dtRec = function (Q) {
     Tau = -1/Alpha
 
     pTau = 0.9
-    OK = Tau > 0 & Tau < quantile(Tau, pTau)
+    OK = Tau > 0 & Tau < quantile(Tau, pTau, na.rm=TRUE)
     peak = peak[OK]
     valley = valley[OK]
     ABS = ABS[OK]
@@ -128,7 +128,7 @@ compute_dtRec = function (Q) {
     Beta = Beta[OK]
     Tau = Tau[OK]
 
-    medianTau = median(Tau)
+    medianTau = median(Tau, na.rm=TRUE)
     
     return (medianTau)
 }

@@ -4,7 +4,7 @@ CARD$P.glose = "Robustness Assessment Test pour l'évapotranspiration de référ
 CARD$P.topic = "Sensibilité à la variabilité climatique"
 CARD$P.samplePeriod = '09-01'
 
-CARD$P1.funct = list(BiasA=compute_Bias,
+CARD$P1.funct = list(BiaisA=compute_Biais,
                       ET0A=mean)
 CARD$P1.funct_args = list(list("Q_obs", "Q_sim"),
                            list("ET0", na.rm=TRUE))
@@ -14,6 +14,6 @@ CARD$P1.NApct_lim = 20
 CARD$P1.NAyear_lim = 10
 
 CARD$P2.funct = list(RAT_ET0=compute_RAT_X)
-CARD$P2.funct_args = list("BiasA", "ET0A", thresh=0.05)
+CARD$P2.funct_args = list("BiaisA", "ET0A", thresh=0.05)
 CARD$P2.timeStep = "none"
 CARD$P2.NApct_lim = 20

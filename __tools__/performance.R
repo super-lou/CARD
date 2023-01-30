@@ -26,7 +26,7 @@
 # |  _// -_)| '_||  _|/ _ \| '_|| '  \ / _` || ' \ / _|/ -_)
 # |_|  \___||_|  |_|  \___/|_|  |_|_|_|\__,_||_||_|\__|\___| _________
 ## 1. BIAS ___________________________________________________________
-#' @title Bias
+#' @title Biais
 #' @description Computes the bias (unitless) between simulated and
 #' observed data
 #' @param obs Observed streamflow vector
@@ -34,7 +34,7 @@
 #' @param na.rm Should missing values be omited ?
 #' @param sim_minus_obs: should it be sim - obs ? (or the other way
 #' around)
-compute_Bias = function(obs, sim, na.rm=TRUE, sim_minus_obs=TRUE) {
+compute_Biais = function(obs, sim, na.rm=TRUE, sim_minus_obs=TRUE) {
     if (length(obs) != length(sim)) {
         stop("obs and sim must have the same length")
     }
@@ -44,9 +44,9 @@ compute_Bias = function(obs, sim, na.rm=TRUE, sim_minus_obs=TRUE) {
         sim = sim[!isna]
     }
     if (sim_minus_obs) {
-        Bias = sum(sim - obs) / sum(obs)
+        Biais = sum(sim - obs) / sum(obs)
     } else {
-        Bias = sum(obs - sim) / sum(obs)
+        Biais = sum(obs - sim) / sum(obs)
     }
 }
 
@@ -150,18 +150,18 @@ compute_NSEi = function (obs, sim, na.rm=TRUE) {
     return (NSEi)
 }
 
-#' @title NSEsqrt
+#' @title NSEracine
 #' @description Computes the Nash-Sutcliffe efficiency coefficient on
 #' @param obs Observed streamflow vector
 #' @param sim Simulated streamflow vector
 #' @param na.rm Should missing values be omited ?
-#' @return NSEsqrt according to parametrization
+#' @return NSEracine according to parametrization
 #' @export
-compute_NSEsqrt = function (obs, sim, na.rm=TRUE) {
+compute_NSEracine = function (obs, sim, na.rm=TRUE) {
     obs = sqrt(obs)
     sim = sqrt(sim)
-    NSEsqrt = compute_NSE(obs=obs, sim=sim, na.rm=na.rm)
-    return (NSEsqrt)
+    NSEracine = compute_NSE(obs=obs, sim=sim, na.rm=na.rm)
+    return (NSEracine)
 }
 
 
@@ -211,16 +211,16 @@ compute_KGE_short = function (R, AG, BETA) {
     1 - sqrt((R-1)^2 + (AG-1)^2 + (BETA-1)^2)
 }
 
-#' @title KGEsqrt
+#' @title KGEracine
 #' @description Computes the
 #' @param obs Observed streamflow vector
 #' @param sim Simulated streamflow vector
 #' @param na.rm Should missing values be omited ?
-#' @return KGEsqrt according to parametrization
+#' @return KGEracine according to parametrization
 #' @export
-compute_KGEsqrt = function (obs, sim, na.rm=TRUE) {
+compute_KGEracine = function (obs, sim, na.rm=TRUE) {
     obs = sqrt(obs)
     sim = sqrt(sim)
-    KGEsqrt = compute_KGE(obs=obs, sim=sim, na.rm=na.rm)
-    return (KGEsqrt)
+    KGEracine = compute_KGE(obs=obs, sim=sim, na.rm=na.rm)
+    return (KGEracine)
 }
