@@ -27,6 +27,9 @@ suppressPackageStartupMessages(library(argparse))
 
 parser = ArgumentParser()
 
+parser$add_argument('-d', '--directory', nargs='+', type="character",
+                    default="",
+                    help="Directory in __all__ in which the variable will be search.")
 parser$add_argument('-l', '--layout', nargs='+', type="character",
                     default="",
                     help="Layout of the chosen variables.")
@@ -67,7 +70,7 @@ if (all(args$l == "")) {
     stop ()
 }
 
-source_dir = "__all__"
+source_dir = file.path("__all__", args$d)
 
 OUT = unlist(args$l)
 nOUT = length(OUT)
@@ -164,7 +167,9 @@ for (i in 1:n) {
 }
 
 for (i in 1:n) {
-    file.copy(file.path(source_dir, IN[i]), OUT[i])
+    files = list.files(source_dir, recursive=TRUE)
+    names(files) = basename(files)
+    file.copy(file.path(source_dir, files[IN[i]]), OUT[i])
 }
 
 if (args$verbose) {
