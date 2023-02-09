@@ -6,8 +6,6 @@ CARD$P.topic = "Moyennes Eaux"
 CARD$P1.funct = list(QJ=mean)
 CARD$P1.funct_args = list("Q_obs", na.rm=TRUE)
 CARD$P1.timeStep = "yearday"
-CARD$P1.NApct_lim = 20
-CARD$P1.NAyear_lim = 10
 CARD$P1.keep = "all"
 
 CARD$P2.funct = list(QJC10=rollmean_center)

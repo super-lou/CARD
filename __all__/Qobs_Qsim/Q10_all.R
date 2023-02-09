@@ -8,5 +8,3 @@ CARD$P1.funct = list(Q10_obs=compute_Qp,
 CARD$P1.funct_args = list(list("Q_obs", p=0.1),
                            list("Q_sim", p=0.1))
 CARD$P1.timeStep = "none"
-CARD$P1.NApct_lim = 20
-CARD$P1.NAyear_lim = 10

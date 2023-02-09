@@ -80,7 +80,7 @@ fdc_slope = function(Q, p=c(0.33, 0.66)) {
 #' be TRUE if the quantile function is used !)
 #' @return
 #' @export
-compute_FDC = function (Q, n=1000, sort=FALSE, na.rm=TRUE) {
+compute_FDC = function (Q, n=1000, sort=FALSE, isNormLaw=FALSE, na.rm=TRUE) {
     if (na.rm) {
         Q = Q[!is.na(Q)]
     }
@@ -92,7 +92,11 @@ compute_FDC = function (Q, n=1000, sort=FALSE, na.rm=TRUE) {
         if (n > length(Q)) {
             warning("'n' is larger than the number of values in 'Q'!")
         }
-        pfdc = seq(0, 1, length.out=n)
+        if (isNormLaw) {
+            pfdc = pnorm(seq(-3, 3, length.out=n))
+        } else {
+            pfdc = seq(0, 1, length.out=n)
+        }
         Qfdc = compute_Qp(Q, p=pfdc)
     }
     res = dplyr::tibble(p=pfdc, Q=Qfdc)

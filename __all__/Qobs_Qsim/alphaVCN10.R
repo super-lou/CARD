@@ -17,8 +17,6 @@ CARD$P2.funct_args = list(list("VC10_obs", na.rm=TRUE),
                            list("VC10_sim", na.rm=TRUE))
 CARD$P2.timeStep = "year"
 CARD$P2.samplePeriod = c('05-01', '11-30')
-CARD$P2.NApct_lim = 20
-CARD$P2.NAyear_lim = 10
 
 CARD$P3.funct = list(alphaVCN10_obs=get_MKalpha,
                       HYPalphaVCN10_obs=get_MKH,
@@ -29,4 +27,3 @@ CARD$P3.funct_args = list(list("VCN10_obs", level=0.1),
                            list("VCN10_sim", level=0.1),
                            list("VCN10_sim", level=0.1))
 CARD$P3.timeStep = "none"
-CARD$P3.NApct_lim = 20

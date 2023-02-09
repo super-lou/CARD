@@ -10,5 +10,3 @@ CARD$P1.funct_args = list(list("Q_obs", na.rm=TRUE),
                           list("Q_sim", na.rm=TRUE))
 CARD$P1.timeStep = "year"
 CARD$P1.samplePeriod = '09-01'
-CARD$P1.NApct_lim = 20
-CARD$P1.NAyear_lim = 10

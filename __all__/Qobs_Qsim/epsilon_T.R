@@ -12,12 +12,9 @@ CARD$P1.funct_args = list(list("Q_obs", na.rm=TRUE),
                            list("T", na.rm=TRUE))
 CARD$P1.timeStep = "year"
 CARD$P1.samplePeriod = '09-01'
-CARD$P1.NApct_lim = 20
-CARD$P1.NAyear_lim = 10
 
 CARD$P2.funct = list("epsilon_{T}_obs"=compute_elasticity,
                       "epsilon_{T}_sim"=compute_elasticity)
 CARD$P2.funct_args = list(list(Q="QA_obs", X="TA"),
                            list(Q="QA_sim", X="TA"))
 CARD$P2.timeStep = "none"
-CARD$P2.NApct_lim = 20

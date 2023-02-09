@@ -17,8 +17,6 @@ CARD$P2.funct_args = list(list("VC30_obs", na.rm=TRUE),
                            list("VC30_sim", na.rm=TRUE))
 CARD$P2.timeStep = "year"
 CARD$P2.samplePeriod = c('05-01', '11-30')
-CARD$P2.NApct_lim = 20
-CARD$P2.NAyear_lim = 10
 
 CARD$P3.funct = list("VCN30-2_obs"=get_Xn,
                       "VCN30-2_sim"=get_Xn)
@@ -29,4 +27,3 @@ CARD$P3.funct_args = list(list("VCN30_obs",
                                 returnPeriod=2,
                                 waterType="low"))
 CARD$P3.timeStep = "none"
-CARD$P3.NApct_lim = 20
