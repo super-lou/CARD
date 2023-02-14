@@ -3,9 +3,9 @@ CARD$P.unit = "bool"
 CARD$P.glose = "Robustness Assessment Test pour la température"
 CARD$P.topic = "Sensibilité à la variabilité climatique"
 CARD$P.samplePeriod = '09-01'
-    
+
 CARD$P1.funct = list(BiaisA=compute_Biais,
-                      TA=mean)
+                     TA=mean)
 CARD$P1.funct_args = list(list("Q_obs", "Q_sim"),
                            list("T", na.rm=TRUE))
 CARD$P1.timeStep = "year"
