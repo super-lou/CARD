@@ -216,3 +216,66 @@ circular_median = function (X, periodicity, na.rm=TRUE) {
     }
     return (res)
 }
+
+
+## 5. REGIME HYDRO ___________________________________________________
+find_regimeHydro = function (QM, returnList=TRUE) {
+    xref = matrix(
+        c(0.099, 0.100, 0.101, 0.099, 0.088, 0.078, 0.072,
+          0.064, 0.064, 0.069, 0.076, 0.089,
+          0.133, 0.126, 0.111, 0.110, 0.081, 0.056, 0.038,
+          0.027, 0.042, 0.063, 0.098, 0.117,
+          0.128, 0.142, 0.122, 0.128, 0.105, 0.065, 0.035,
+          0.024, 0.031, 0.044, 0.074, 0.101,
+          0.157, 0.130, 0.119, 0.094, 0.062, 0.042, 0.028,
+          0.021, 0.035, 0.062, 0.099, 0.150,
+          0.204, 0.163, 0.118, 0.102, 0.060, 0.030, 0.018,
+          0.012, 0.023, 0.041, 0.087, 0.143,
+          0.156, 0.154, 0.117, 0.119, 0.086, 0.044, 0.025,
+          0.015, 0.025, 0.044, 0.089, 0.127,
+          0.139, 0.092, 0.082, 0.099, 0.087, 0.039, 0.015,
+          0.012, 0.036, 0.108, 0.159, 0.131,
+          0.112, 0.098, 0.101, 0.125, 0.122, 0.072, 0.036,
+          0.024, 0.039, 0.067, 0.102, 0.102,
+          0.058, 0.050, 0.100, 0.142, 0.158, 0.092, 0.067,
+          0.050, 0.042, 0.058, 0.083, 0.100,
+          0.050, 0.050, 0.058, 0.083, 0.150, 0.167, 0.117,
+          0.083, 0.058, 0.058, 0.067, 0.058,
+          0.033, 0.025, 0.033, 0.075, 0.167, 0.217, 0.142,
+          0.092, 0.067, 0.058, 0.050, 0.042,
+          0.017, 0.008, 0.017, 0.042, 0.108, 0.183, 0.200,
+          0.175, 0.117, 0.067, 0.042, 0.025),
+        ncol=12, byrow=TRUE)
+    colnames(xref) = seq(1, 12, 1)
+    row.names(xref) = c('GROUP1', 'GROUP2', 'GROUP3', 'GROUP4',
+                        'GROUP5', 'GROUP6', 'GROUP7', 'GROUP8',
+                        'GROUP9', 'GROUP10', 'GROUP11', 'GROUP12')
+
+    id = 0
+    typology = ""
+    distance = rep(0, length(xref[,1]))
+    distancemin = 0
+    for (j in 1:length(xref[,1])) {
+        distance[j] = sum((QM / mean(QM, na.rm=TRUE) - xref[j, ])^2)
+    }
+    id = which.min(distance)
+    distancemin = distance[which.min(distance)]
+    
+    if (id < 7) {
+        typology = "Pluvial"
+
+    } else if (id >= 7 & id < 10) {
+        typology = "Transition"
+        
+    } else if (id >= 10) {
+        typology = "Nival Glaciaire"
+    } 
+
+    if (returnList) {
+        regimeHydro = list(id=id,
+                           typology=typology)
+    } else {
+        regimeHydro = paste0(typology,"_",id)
+    }
+    return (regimeHydro)
+}

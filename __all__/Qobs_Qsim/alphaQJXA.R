@@ -2,14 +2,14 @@ CARD$P.var = c("alphaQJXA", "HYPalphaQJXA")
 CARD$P.unit = "m^{3}.s^{-1}.an^{-1}"
 CARD$P.glose = "Pente de Sen et résultat du test de Mann-Kendall pour les maximums annuels des débits journaliers"
 CARD$P.topic = c("Hautes Eaux", "Liés à une statistique")
-CARD$P.samplePeriod = '09-01'
+CARD$P.samplePeriod = "Mois du minimum des débits mensuels"
     
 CARD$P1.funct = list(QJXA_obs=maxNA,
                       QJXA_sim=maxNA)
 CARD$P1.funct_args = list(list("Q_obs", na.rm=TRUE),
                            list("Q_sim", na.rm=TRUE))
 CARD$P1.timeStep = "year"
-CARD$P1.samplePeriod = '09-01'
+CARD$P1.samplePeriod = list(min, list("Q_obs", na.rm=TRUE))
 
 CARD$P2.funct = list(alphaQJXA_obs=get_MKalpha,
                       HYPalphaQJXA_obs=get_MKH,

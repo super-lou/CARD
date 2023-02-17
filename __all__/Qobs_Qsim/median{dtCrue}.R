@@ -2,7 +2,7 @@ CARD$P.var = "median{dtCrue}"
 CARD$P.unit = "jour"
 CARD$P.glose = "Médiane de l’ensemble des nombres de jour où la différence entre le débit journalier et le débit de base est supérieur à la moitié du maximum annuel"
 CARD$P.topic = c("Hautes Eaux", "Signature hydrologique")
-CARD$P.samplePeriod = '09-01'
+CARD$P.samplePeriod = "Mois du minimum des débits mensuels"
     
 CARD$P1.funct = list(dQ_obs=dBFS,
                       dQ_sim=dBFS)
@@ -16,7 +16,7 @@ CARD$P2.funct = list(dQXA_obs=maxNA,
 CARD$P2.funct_args = list(list("dQ_obs", na.rm=TRUE),
                            list("dQ_sim", na.rm=TRUE))
 CARD$P2.timeStep = "year"
-CARD$P2.samplePeriod = '09-01'
+CARD$P2.samplePeriod = list(min, list("Q_obs", na.rm=TRUE))
 CARD$P2.keep = "all"
 
 CARD$P3.funct = list(lowLim_obs=divided,
@@ -24,7 +24,7 @@ CARD$P3.funct = list(lowLim_obs=divided,
 CARD$P3.funct_args = list(list("dQXA_obs", 2, first=TRUE),
                            list("dQXA_sim", 2, first=TRUE))
 CARD$P3.timeStep = "year"
-CARD$P3.samplePeriod = '09-01'
+CARD$P3.samplePeriod = list(min, list("Q_obs", na.rm=TRUE))
 CARD$P3.keep = "all"
 
 CARD$P4.funct = list(dtCrue_obs=apply_threshold,
@@ -40,7 +40,7 @@ CARD$P4.funct_args = list(list("dQ_obs",
                                 what="length",
                                 select="dQXA_sim"))
 CARD$P4.timeStep = "year"
-CARD$P4.samplePeriod = '09-01'
+CARD$P4.samplePeriod = list(min, list("Q_obs", na.rm=TRUE))
 
 CARD$P5.funct = list("median{dtCrue}_obs"=median,
                       "median{dtCrue}_sim"=median)

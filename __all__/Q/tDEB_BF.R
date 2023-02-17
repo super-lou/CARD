@@ -4,7 +4,7 @@ CARD$P.glose = "Début des écoulements lents (date à laquelle 10% de l’inté
 CARD$P.topic = "Écoulements Lents"
 CARD$P.samplePeriod = '09-01'
     
-CARD$P1.funct = list(X=compute_tVolSnowmelt)
+CARD$P1.funct = list(tDEB_BF=compute_tVolSnowmelt)
 CARD$P1.funct_args = list("Q", p=0.1)
 CARD$P1.timeStep = "year"
 CARD$P1.samplePeriod = '09-01'
