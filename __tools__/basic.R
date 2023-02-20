@@ -278,4 +278,4 @@ circular_median = function (X, periodicity, na.rm=TRUE) {
 #         regimeHydro = paste0(typology,"_",id)
 #     }
 #     return (regimeHydro)
-}
+# }
