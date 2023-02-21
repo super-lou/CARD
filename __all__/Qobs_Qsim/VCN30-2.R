@@ -2,7 +2,7 @@ CARD$P.var = "VCN30-2"
 CARD$P.unit = "m^{3}.s^{-1}"
 CARD$P.glose = "Minimum annuel de la moyenne sur 30 jours du débit journalier de période de retour 2 ans"
 CARD$P.topic = c("Basses Eaux", "Liés à une statistique")
-CARD$P.samplePeriod = c('05-01', '11-30')
+CARD$P.samplePeriod = "Mois du maximum des débits mensuels"
     
 CARD$P1.funct = list(VC30_obs=rollmean_center,
                       VC30_sim=rollmean_center)
@@ -16,7 +16,7 @@ CARD$P2.funct = list(VCN30_obs=minNA,
 CARD$P2.funct_args = list(list("VC30_obs", na.rm=TRUE),
                            list("VC30_sim", na.rm=TRUE))
 CARD$P2.timeStep = "year"
-CARD$P2.samplePeriod = c('05-01', '11-30')
+CARD$P2.samplePeriod = list(max, list("Q_obs", na.rm=TRUE))
 
 CARD$P3.funct = list("VCN30-2_obs"=get_Xn,
                       "VCN30-2_sim"=get_Xn)
