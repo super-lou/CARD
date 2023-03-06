@@ -27,11 +27,13 @@
 apply_threshold = function (X, lim, where="under", what="X",
                             select="all") {
 
-    lim = lim[1]
 
-    if (is.na(lim)) {
+    if (all(is.na(lim))) {
         return (NA)
     }
+    
+    limRLE = rle(lim[!is.na(lim)])
+    lim = limRLE$values[which.max(limRLE$lengths)]
 
     if (where == "under") {
         ID = which(X <= lim)
@@ -42,12 +44,13 @@ apply_threshold = function (X, lim, where="under", what="X",
     }
 
     if (is.numeric(select)) {
-        select = select[1]
+        selectRLE = rle(select[!is.na(select)])
+        select = selectRLE$values[which.max(selectRLE$lengths)]
         if (is.na(select)) {
             return (NA)
         }
     }
-        
+
     if (is.numeric(select) | select == "longest" | select == "shortest") {
         dID = diff(ID)
         dID = c(10, dID)
@@ -75,10 +78,15 @@ apply_threshold = function (X, lim, where="under", what="X",
             if (is.numeric(select)) {
                 if (select %in% X[period]) {
                     period_select = period
+                    break
                 }
             }
         }
 
+        if (!exists("period_select")) {
+            return (NA)
+        }
+        
         if (select == "longest") {
             period_select = Periods[[which.max(Nperiod)]]
 
@@ -89,7 +97,8 @@ apply_threshold = function (X, lim, where="under", what="X",
         if (what == "X") {
             res = X[period_select]
         } else if (what == "length") {
-            res = period_select[length(period_select)] - period_select[1] + 1
+            res = period_select[length(period_select)] -
+                period_select[1] + 1
         } else if (what == "last") {
             res = period_select[length(period_select)]
         } else if (what == "first") {

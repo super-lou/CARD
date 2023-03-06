@@ -26,21 +26,25 @@
 ## 0. BASIC __________________________________________________________
 minus = function (a, b, first=FALSE) {
     if (first) {
-        a = a[1]
-        b = b[1]
+        aRLE = rle(a[!is.na(a)])
+        a = aRLE$values[which.max(aRLE$lengths)]
+        bRLE = rle(b[!is.na(b)])
+        b = bRLE$values[which.max(bRLE$lengths)]
     }
     return (a - b)
 }
 
 divided = function (a, b, first=FALSE) {
     if (first) {
-        a = a[1]
-        b = b[1]
+        aRLE = rle(a[!is.na(a)])
+        a = aRLE$values[which.max(aRLE$lengths)]
+        bRLE = rle(b[!is.na(b)])
+        b = bRLE$values[which.max(bRLE$lengths)]
     }
     return (a / b)
 }
 
-## 1. MIN MAX ________________________________________________________                   
+## 1. MIN MAX ________________________________________________________
 minNA = function (X, div=1, na.rm=TRUE) {
     if (all(is.na(X))) {
         return (NA)

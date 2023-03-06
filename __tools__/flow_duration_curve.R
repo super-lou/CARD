@@ -43,7 +43,8 @@ compute_Qp = function (Q, p) {
 ## 2. USE ____________________________________________________________
 ### 2.1. Frequency ___________________________________________________
 compute_fAp = function (Q, lowLim) {
-    lowLim = lowLim[!is.na(lowLim)][1]
+    lowLimRLE = rle(lowLim[!is.na(lowLim)])
+    lowLim = lowLimRLE$values[which.max(lowLimRLE$lengths)]
     n = sum(as.numeric(Q[!is.na(Q)] > lowLim))
     N = length(Q)
     fA = n/N # jour par an
