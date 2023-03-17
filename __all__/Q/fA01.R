@@ -16,4 +16,3 @@ CARD$P2.funct_args = list("Q", lowLim="lowLim")
 CARD$P2.timeStep = "year"
 CARD$P2.samplePeriod = list(min, list("Q", na.rm=TRUE))
 CARD$P2.NApct_lim = 3
-

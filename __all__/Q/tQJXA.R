@@ -11,4 +11,3 @@ CARD$P1.samplePeriod = list(min, list("Q", na.rm=TRUE))
 CARD$P1.isDate = TRUE
 CARD$P1.NApct_lim = 3
 CARD$P1.NAyear_lim = 10
-

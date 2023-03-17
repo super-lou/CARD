@@ -30,4 +30,3 @@ CARD$P4.funct_args = list("VC10",
 CARD$P4.timeStep = "year"
 CARD$P4.samplePeriod = c('05-01', '11-30')
 CARD$P4.NApct_lim = 3
-

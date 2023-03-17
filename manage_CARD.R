@@ -43,7 +43,7 @@ parser$add_argument("-v", "--verbose", action="store_true", default=FALSE,
 args = parser$parse_args()
 
 # print(args$l)
-# args$l = c("A", "[", "a", "[", "aa", "[", "aaa", "bbb", "]", "bb", "[", "ccc", "ddd", "]", "]", "]")
+# args$l = c("A", "[", "a", "[", "aa", "[", "aaa", "bbb", "]", "bb", "[", "ccc", "ddd", "]", "]", "b", "[", "aa", "[", "aaa", "]", "]", "]")
 
 # Display the current parameters selected with argparse.
 # parameters: 
@@ -124,8 +124,15 @@ for (i in 1:n) {
         for (j in 1:nsd) {
             
             if (!(path[(j+1)] %in% save)) {
+
                 if (length(SUB) >= nsd) {
-                    SUB[nsd] = SUB[nsd] + 1
+                    if (any(path %in% save)) {
+                        SUB[sum(path %in% save)] =
+                            SUB[sum(path %in% save)] + 1
+                        SUB[(sum(path %in% save)+1):length(SUB)] = 1
+                    } else {
+                        SUB[nsd] = SUB[nsd] + 1
+                    }
                 } else {
                     SUB = c(SUB, 1)
                 }
@@ -139,11 +146,14 @@ for (i in 1:n) {
             }
 
             if (!args$blank) {
-                path[(j+1)] = paste0(SUB[j], "_", obj)
+                path[(j+1)] = paste0(formatC(SUB[j],
+                                             width=3,
+                                             flag="0"),
+                                     "_", obj)
             }
         }
     }
-
+    
     IN = c(IN, path[len])
     DIR = c(DIR, do.call(file.path, as.list(path[-len])))
     

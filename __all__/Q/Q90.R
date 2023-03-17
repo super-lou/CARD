@@ -10,4 +10,3 @@ CARD$P1.timeStep = "year"
 CARD$P1.samplePeriod = list(max, list("Q", na.rm=TRUE))
 CARD$P1.NApct_lim = 3
 CARD$P1.NAyear_lim = 10
-
