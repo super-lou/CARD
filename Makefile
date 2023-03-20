@@ -1,6 +1,6 @@
 
-all: AEAG MAKAHO MAKAHOapp Ex2D
-.PHONY: AEAG MAKAHO MAKAHOapp Ex2D
+all: AEAG MAKAHO MAKAHOapp Explore2_diag Explore2_proj
+.PHONY: AEAG MAKAHO MAKAHOapp Explore2_diag Explore2_proj
 
 ## 1. ________________________________________________________________
 AEAG:
@@ -18,5 +18,8 @@ MAKAHOapp:
 
 
 ## 3. ________________________________________________________________
-Ex2D:
-	./manage_CARD.R -d Qobs_Qsim -l Ex2D [ diag [ indicator [ all [ KGE KGEracine NSE NSEracine NSElog NSEinv Biais Biais_SEA STD Rc epsilon_P epsilon_P,SEA epsilon_T epsilon_T,SEA RAT_T RAT_P RAT_ET0 Q10_all QJXA-10 alphaQJXA median{tQJXA} median{dtCrue} Q50_all mean{QA} alphaCDC alphaQA Q90_all QMNA-5 VCN30-2 VCN10-5 alphaVCN10 median{tVCN10} median{dtRec} BFI BFM ] selection [ KGEracine Biais epsilon_T,SEA epsilon_P,SEA RAT_T RAT_P Q10_all median{tQJXA} alphaCDC alphaQA Q90_all median{tVCN10} ] ] serie [ QM PA QA median{QJ} median{QJ}C5 FDC ] ] proj [ serie [ QA QJXA VCN10 QMyear ] ] ] -w
+Explore2_diag:
+	./manage_CARD.R -d Q_obsQ_sim -l Explore2_diag [ indicator [ all [ KGE KGEracine NSE NSEracine NSElog NSEinv Biais Biais_SEA STD Rc epsilon_P epsilon_P,SEA epsilon_T epsilon_T,SEA RAT_T RAT_P RAT_ET0 Q10_all QJXA-10 alphaQJXA median{tQJXA} median{dtCrue} Q50_all mean{QA} alphaCDC alphaQA Q90_all QMNA-5 VCN30-2 VCN10-5 alphaVCN10 median{tVCN10} median{dtRec} BFI BFM ] selection [ KGEracine Biais epsilon_T,SEA epsilon_P,SEA RAT_T RAT_P Q10_all median{tQJXA} alphaCDC alphaQA Q90_all median{tVCN10} ] ] serie [ QM PA QA median{QJ} median{QJ}C5 FDC ] ] -w
+
+Explore2_proj:
+	./manage_CARD.R -d Q -l Explore2_proj [ serie [ QA QJXA VCN10 QMyear ] ] -w
