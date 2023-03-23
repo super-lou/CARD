@@ -1,0 +1,12 @@
+CARD$P.var = "QA25"
+CARD$P.unit = "m^{3}.s^{-1}"
+CARD$P.glose = "Débit seuil annuel avec une probabilité de dépassement de 25% (centile 75%)"
+CARD$P.topic = "Moyennes Eaux"
+CARD$P.samplePeriod = "Mois du minimum des débits mensuels"
+    
+CARD$P1.funct = list(QA25=compute_Qp)
+CARD$P1.funct_args = list("Q", p=0.25)
+CARD$P1.timeStep = "year"
+CARD$P1.samplePeriod = list(min, list("Q", na.rm=TRUE))
+CARD$P1.NApct_lim = 3
+CARD$P1.NAyear_lim = 10
