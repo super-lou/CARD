@@ -2,7 +2,7 @@ CARD$P.var = c("alphaVCN10", "HYPalphaVCN10")
 CARD$P.unit = "m^{3}.s^{-1}.an^{-1}"
 CARD$P.glose = "Pente de Sen et résultat du test de Mann-Kendall pour les minimums annuel de la moyenne sur 10 jours du débit journalier"
 CARD$P.topic = c("Basses Eaux", "Liés à une statistique")
-CARD$P.samplePeriod = "Mois du maximum des débits mensuels"
+CARD$P.samplePeriod = c("05-01", "11-30")
     
 CARD$P1.funct = list(VC10_obs=rollmean_center,
                       VC10_sim=rollmean_center)
@@ -17,7 +17,7 @@ CARD$P2.funct = list(VCN10_obs=minNA,
 CARD$P2.funct_args = list(list("VC10_obs", na.rm=TRUE),
                            list("VC10_sim", na.rm=TRUE))
 CARD$P2.timeStep = "year"
-CARD$P2.samplePeriod = list(max, list("Q_obs", na.rm=TRUE))
+CARD$P2.samplePeriod = c("05-01", "11-30")
 CARD$P2.NApct_lim = 3
 
 CARD$P3.funct = list(alphaVCN10_obs=get_MKalpha,

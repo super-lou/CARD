@@ -2,7 +2,7 @@ CARD$P.var = "QMNA-5"
 CARD$P.unit = "m^{3}.s^{-1}"
 CARD$P.glose = "Minimum annuel des débits mensuels de période de retour 5 ans"
 CARD$P.topic = c("Basses Eaux", "Liés à une statistique")
-CARD$P.samplePeriod = "Mois du maximum des débits mensuels"
+CARD$P.samplePeriod = c("05-01", "11-30")
     
 CARD$P1.funct = list(QMA=mean)
 CARD$P1.funct_args = list("Q", na.rm=TRUE)
@@ -13,7 +13,7 @@ CARD$P1.NAyear_lim = 10
 CARD$P2.funct = list(QMNA=minNA)
 CARD$P2.funct_args = list("QMA", na.rm=TRUE)
 CARD$P2.timeStep = "year"
-CARD$P2.samplePeriod = list(max, list("QMA", na.rm=TRUE))
+CARD$P2.samplePeriod = c("05-01", "11-30")
 CARD$P2.NApct_lim = 3
 
 CARD$P3.funct = list("QMNA-5"=get_Xn)
