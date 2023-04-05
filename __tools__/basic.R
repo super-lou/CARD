@@ -134,7 +134,7 @@ circular_divided = function (X, Y, periodicity) {
 }
 
 circular_median = function (X, periodicity, na.rm=TRUE) {    
-    scalingFactor = 2 * pi / periodicity;
+    scalingFactor = 2 * pi / periodicity
     radians = X * scalingFactor
     sines = sin(radians)
     cosines = cos(radians)
