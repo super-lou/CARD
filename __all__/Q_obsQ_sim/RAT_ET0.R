@@ -2,14 +2,14 @@ CARD$P.var = "RAT_ET0"
 CARD$P.unit = "bool"
 CARD$P.glose = "Robustness Assessment Test pour l'évapotranspiration de référence"
 CARD$P.topic = "Sensibilité à la variabilité climatique"
-CARD$P.samplePeriod = "Mois du minimum des débits mensuels"
+CARD$P.samplePeriod = "09-01"
 
 CARD$P1.funct = list(BiaisA=compute_Biais,
-                      ET0A=mean)
+                     ET0A=mean)
 CARD$P1.funct_args = list(list("Q_obs", "Q_sim"),
-                           list("ET0", na.rm=TRUE))
+                          list("ET0", na.rm=TRUE))
 CARD$P1.timeStep = "year"
-CARD$P1.samplePeriod = list(min, list("Q_obs", na.rm=TRUE))
+CARD$P1.samplePeriod = "09-01"
 CARD$P1.NApct_lim = 3
 CARD$P1.NAyear_lim = 10
 
