@@ -23,6 +23,46 @@
 # | _ ) __ _  ___ ___  / _|| | ___ __ __ __
 # | _ \/ _` |(_-</ -_)|  _|| |/ _ \\ V  V /
 # |___/\__,_|/__/\___||_|  |_|\___/ \_/\_/ ___________________________
+approxExtrap = function(x, y, xout, method='linear', n=50, rule=2,
+                        f=0, ties='ordered', na.rm=FALSE) {	
+    ## Linear interpolation using approx, with linear extrapolation
+    ## beyond the data
+    if (is.list(x)) {
+        y = x[[2]]
+        x = x[[1]]
+    }
+    ## remove duplicates and order so can do linear extrapolation
+    if (na.rm) {
+        d = ! is.na(x + y)
+        x = x[d]
+        y = y[d]
+    }
+    x = as.numeric(x)  # handles dates etc.
+    y = as.numeric(y)
+    d = ! duplicated(x)
+    x = x[d]
+    y = y[d]
+    d = order(x)
+    x = x[d]
+    y = y[d]    
+    w = approx(x, y, xout=xout, method=method, n=n,
+               rule=2, f=f, ties=ties)$y    
+    r = range(x)
+    d = xout < r[1]
+    if (any(is.na(d))) {
+        stop('NAs not allowed in xout')
+    }
+    if (any(d)) {
+        w[d] = (y[2]-y[1])/(x[2]-x[1])*(xout[d]-x[1])+y[1]
+    }    
+    d = xout > r[2]
+    n = length(y)
+    if (any(d)) {
+        w[d] = (y[n]-y[n-1])/(x[n]-x[n-1])*(xout[d]-x[n-1])+y[n-1]
+    }
+    return (list(x=xout, y=w))
+}
+
 ## 1. BASEFLOW SEPARATION ____________________________________________
 BFS = function (Q, d=5, w=0.9) {
 
@@ -56,7 +96,7 @@ BFS = function (Q, d=5, w=0.9) {
     nbNAid = length(idPivots[!is.na(idPivots)])
     nbNA = length(Pivots[!is.na(Pivots)])
     if (nbNAid >= 2 & nbNA >= 2) {
-        BF = Hmisc::approxExtrap(idPivots, Pivots, xout=1:N,
+        BF = approxExtrap(idPivots, Pivots, xout=1:N,
                           method="linear", na.rm=TRUE)$y  
         BF[is.na(Q)] = NA
         BF[BF < 0] = 0
