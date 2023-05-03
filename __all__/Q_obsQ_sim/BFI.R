@@ -9,7 +9,7 @@ CARD$P1.funct_args = list(list("Q_obs"),
                            list("Q_sim"))
 CARD$P1.timeStep = "none"
 CARD$P1.keep = "all"
-!CARD$P1.NAyear_lim = 10
+CARD$P1.NAyear_lim = 10
 
 CARD$P2.funct = list(BFI_obs=get_BFI,
                       BFI_sim=get_BFI)
