@@ -49,6 +49,6 @@ args = parser$parse_args()
 # args$l = c("A", "[", "a", "[", "aa", "[", "aaa", "bbb", "]", "bb", "[", "ccc", "ddd", "]", "]", "b", "[", "aa", "[", "aaa", "]", "]", "]")
 
 
-source("/home/louis/Documents/bouleau/INRAE/project/EXstat_project/EXstat/R/CARD_management.R")
-CARD_management(args=args)
+# source("/home/louis/Documents/bouleau/INRAE/project/EXstat_project/EXstat/R/CARD_management.R")
+EXstat::CARD_management(args=args)
 # warnings()
