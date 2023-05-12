@@ -52,5 +52,9 @@ args = parser$parse_args()
 
 
 # source("/home/louis/Documents/bouleau/INRAE/project/EXstat_project/EXstat/R/CARD_management.R")
-EXstat::CARD_management(args=args)
+if (exists("CARD_management")) {
+    CARD_management(args=args)
+} else {
+    EXstat::CARD_management(args=args)
+}
 # warnings()
