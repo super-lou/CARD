@@ -40,6 +40,8 @@ parser$add_argument("-w", "--white", action="store_true", default=TRUE,
                     help="Underscores in directory names are replace by white spaces")
 parser$add_argument("-b", "--blank", action="store_true", default=FALSE,
                     help="Remove id before variable names")
+parser$add_argument("-o", "--overwrite", action="store_true", default=TRUE,
+                    help="Overwrites CARD dir")
 parser$add_argument("-v", "--verbose", action="store_true", default=FALSE,
                     help="Print information")
 
