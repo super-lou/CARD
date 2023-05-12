@@ -30,6 +30,9 @@ parser = ArgumentParser()
 parser$add_argument('-C', '--CARD', type="character",
                     default=".",
                     help="CARD directory.")
+parser$add_argument('-d', '--directory', type="character",
+                    default="",
+                    help="CARD analyse writing directory.")
 parser$add_argument('-t', '--type', type="integer",
                     default=1,
                     help="1 for analyse of one variable with CARD contained in the __all__/1/ directory or 2 for analyse of two variables with CARD contained in the __all__/2/ directory.")
@@ -52,9 +55,9 @@ args = parser$parse_args()
 
 
 # source("/home/louis/Documents/bouleau/INRAE/project/EXstat_project/EXstat/R/CARD_management.R")
-if (exists("CARD_management")) {
+# if (exists("CARD_management")) {
     CARD_management(args=args)
-} else {
-    EXstat::CARD_management(args=args)
-}
+# } else {
+    # EXstat::CARD_management(args=args)
+# }
 # warnings()
