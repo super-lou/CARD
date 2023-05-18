@@ -5,7 +5,7 @@ CARD$P.topic = "Hautes Eaux"
 CARD$P.samplePeriod = "01-01"
     
 CARD$P1.funct = list(QA05=compute_Qp)
-CARD$P1.funct_args = list("Q", p=0.1)
+CARD$P1.funct_args = list("Q", p=0.05)
 CARD$P1.timeStep = "year"
 CARD$P1.samplePeriod = "01-01"
 CARD$P1.NApct_lim = 3
