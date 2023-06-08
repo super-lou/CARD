@@ -1,6 +1,6 @@
 CARD$P.var = "tDEB_etiage"
 CARD$P.unit = "jour de l'année"
-CARD$P.glose = "Début d'étiage (jour de l'année de la première moyenne sur 10 jours sous le maximum des VCN10)"
+CARD$P.glose = "Date de la première moyenne sur 10 jours sous le maximum des minimums annuels de la moyenne sur 10 jours du débit journalier (début d'étiage)"
 CARD$P.topic = "Basses Eaux"
 CARD$P.samplePeriod = c("05-01", "11-30")
     

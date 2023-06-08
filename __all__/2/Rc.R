@@ -1,6 +1,6 @@
 CARD$P.var = "Rc"
 CARD$P.unit = "m^{3}.s^{-1}.mm^{-1}"
-CARD$P.glose = "Le rapport entre la somme des débits et la somme des précipitations"
+CARD$P.glose = "Rapport entre la somme des débits et la somme des précipitations (coefficient de ruissellement)"
 CARD$P.topic = c("Sensibilité à la variabilité climatique", "Signature hydrologique")
 
 CARD$P1.funct = list(Rc_obs=compute_Rc,

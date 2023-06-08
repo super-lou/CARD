@@ -82,16 +82,16 @@ apply_threshold = function (X, lim, where="under", what="X",
                 }
             }
         }
-
-        if (!exists("period_select")) {
-            return (NA)
-        }
         
         if (select == "longest") {
             period_select = Periods[[which.max(Nperiod)]]
 
         } else if (select == "shortest") {
             period_select = Periods[[which.min(Nperiod)]]
+        }
+
+        if (!exists("period_select")) {
+            return (NA)
         }
 
         if (what == "X") {

@@ -1,6 +1,6 @@
 CARD$P.var = "tCEN_etiage"
 CARD$P.unit = "jour de l'année"
-CARD$P.glose = "Centre d'étiage (jour de l'année du VCN10)"
+CARD$P.glose = "Date du minimum annuel de la moyenne sur 10 jours du débit journalier (centre d'étiage)"
 CARD$P.topic = "Basses Eaux"
 CARD$P.samplePeriod = "Mois du maximum des débits mensuels"
 
