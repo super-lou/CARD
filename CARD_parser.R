@@ -33,9 +33,6 @@ parser$add_argument('-C', '--CARD', type="character",
 parser$add_argument('-t', '--tmp', type="character",
                     default="",
                     help="CARD analyse temporary writing directory.")
-parser$add_argument('-n', '--n', type="integer",
-                    default=1,
-                    help="1 for analyse of one variable with CARD contained in the __all__/1/ directory or 2 for analyse of two variables with CARD contained in the __all__/2/ directory.")
 parser$add_argument('-l', '--layout', nargs='+', type="character",
                     default="EX [ QA ]",
                     help="Layout of the chosen variables.")
