@@ -7,7 +7,7 @@ CARD$P.samplePeriod = "09-01"
 CARD$P1.funct = list(BiaisA=compute_Biais,
                      ET0A=mean)
 CARD$P1.funct_args = list(list("Q_obs", "Q_sim"),
-                          list("ET0", na.rm=TRUE))
+                          list("ET0_obs", na.rm=TRUE))
 CARD$P1.timeStep = "year"
 CARD$P1.samplePeriod = "09-01"
 CARD$P1.NApct_lim = 3

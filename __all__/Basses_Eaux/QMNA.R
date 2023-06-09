@@ -13,5 +13,5 @@ CARD$P1.NAyear_lim = 10
 CARD$P2.funct = list(QMNA=minNA)
 CARD$P2.funct_args = list("QMA", na.rm=TRUE)
 CARD$P2.timeStep = "year"
-CARD$P2.samplePeriod = list(max, list("Q", na.rm=TRUE))
+CARD$P2.samplePeriod = list(max, list("QMA", na.rm=TRUE))
 CARD$P2.NApct_lim = 3

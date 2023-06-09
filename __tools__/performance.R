@@ -224,3 +224,12 @@ compute_KGEracine = function (obs, sim, na.rm=TRUE) {
     KGEracine = compute_KGE(obs=obs, sim=sim, na.rm=na.rm)
     return (KGEracine)
 }
+
+
+compute_STD = function(obs, sim, na.rm=TRUE) {
+    if (length(obs) != length(sim)) {
+        stop("obs and sim must have the same length")
+    }
+    STD = sd(sim, na.rm=na.rm)/sd(obs, na.rm=na.rm)
+    return (STD)
+}
