@@ -1,4 +1,4 @@
-CARD$P.var = "centreBE"
+CARD$P.var = "tVCN10"
 CARD$P.unit = "jour de l'année"
 CARD$P.glose = "Centre des basses eaux, date du minimum annuel de la moyenne sur 10 jours du débit journalier"
 CARD$P.topic = "Basses Eaux"
@@ -9,7 +9,7 @@ CARD$P1.funct_args = list("Q", k=10)
 CARD$P1.timeStep = "none"
 CARD$P1.keep = "all"
 
-CARD$P2.funct = list(centreBE=which.minNA)
+CARD$P2.funct = list(tVCN10=which.minNA)
 CARD$P2.funct_args = list("VC10")
 CARD$P2.timeStep = "year"
 CARD$P2.samplePeriod = list(max, list("Q", na.rm=TRUE))

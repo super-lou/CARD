@@ -1,4 +1,4 @@
-CARD$P.var = "med{tVCN10}"
+CARD$P.var = "med{centreBE}"
 CARD$P.unit = "jour de l'année"
 CARD$P.glose = "Mediane des centres des basses eaux, dates des minimums annuels de la moyenne sur 10 jours du débit journalier"
 CARD$P.topic = c("Basses Eaux", "Liés à une statistique")
@@ -17,6 +17,6 @@ CARD$P2.samplePeriod = list(max, list("Q", na.rm=TRUE))
 CARD$P2.isDate = TRUE
 CARD$P2.NApct_lim = 3
 
-CARD$P3.funct = list("med{tVCN10}"=circular_median)
-CARD$P3.funct_args = list("tVCN10", periodicity=365.25, na.rm=TRUE)
+CARD$P3.funct = list("med{centreBE}"=circular_median)
+CARD$P3.funct_args = list("centreBE", periodicity=365.25, na.rm=TRUE)
 CARD$P3.timeStep = "none"
