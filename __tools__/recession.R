@@ -128,9 +128,9 @@ compute_dtRec = function (Q) {
     Beta = Beta[OK]
     Tau = Tau[OK]
 
-    medianTau = median(Tau, na.rm=TRUE)
+    # medianTau = median(Tau, na.rm=TRUE)
     
-    return (medianTau)
+    return (Tau)
 }
 
 
