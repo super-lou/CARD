@@ -104,12 +104,39 @@ compute_FDC = function (Q, n=1000, sort=FALSE, isNormLaw=FALSE, na.rm=TRUE) {
     return(res)
 }
 
-get_FDC_p = function (Q, n=1000, sort=FALSE, na.rm=TRUE) {
-    FDC_p = fdc_values(Q, n=n, sort=sort, na.rm=na.rm)$p
-    return (FDC_p)
+
+compute_FDC_p = function (n=1000, sort=FALSE, isNormLaw=FALSE, na.rm=TRUE) {
+    if (sort) {
+        pfdc = 1-1:n/n
+    } else {
+        if (isNormLaw) {
+            pfdc = pnorm(seq(-3, 3, length.out=n))
+        } else {
+            pfdc = seq(0, 1, length.out=n)
+        }
+    }
+    return (pfdc)
 }
 
-get_FDC_Q = function (Q, n=1000, sort=FALSE, na.rm=TRUE) {
-    FDC_Q = fdc_values(Q, n=n, sort=sort, na.rm=na.rm)$Q
-    return (FDC_Q)
+
+compute_FDC_Q = function (Q, n=1000, sort=FALSE, isNormLaw=FALSE, na.rm=TRUE) {
+    if (na.rm) {
+        Q = Q[!is.na(Q)]
+    }
+    if (sort) {
+        m = length(Q)
+        pfdc = 1-1:m/m
+        Qfdc = sort(Q, na.last=ifelse(na.rm, NA, FALSE))
+    } else {
+        if (n > length(Q)) {
+            warning("'n' is larger than the number of values in 'Q'!")
+        }
+        if (isNormLaw) {
+            pfdc = pnorm(seq(-3, 3, length.out=n))
+        } else {
+            pfdc = seq(0, 1, length.out=n)
+        }
+        Qfdc = compute_Qp(Q, p=pfdc)
+    }
+    return (Qfdc)
 }
