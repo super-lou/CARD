@@ -2,7 +2,7 @@ CARD$P.var = "QMNA"
 CARD$P.unit = "m^{3}.s^{-1}"
 CARD$P.glose = "Minimum annuel des débits mensuels"
 CARD$P.topic = "Basses Eaux"
-CARD$P.samplePeriod = "Mois du maximum des débits mensuels"
+CARD$P.samplePeriod = c("05-01", "11-30")
 
 CARD$P1.funct = list(QMA=mean)
 CARD$P1.funct_args = list("Q", na.rm=TRUE)
