@@ -11,7 +11,7 @@ CARD$P.glose = c("Début des basses eaux, date de la première moyenne sur 10 jo
                  "Durée des basses eaux, durée de la plus longue période continue de la moyenne sur 10 jours sous le maximum des VCN10",
                  "Volume de déficite des basses eaux, intégrale de la courbe de la moyenne sur 10 jours sous le maximum des VCN10")
 CARD$P.topic = "Basses Eaux"
-CARD$P.samplePeriod = c("05-01", "11-30")
+CARD$P.samplePeriod = "Mois du maximum des débits mensuels"
 
 CARD$P1.funct = list(VC10=rollmean_center)
 CARD$P1.funct_args = list("Q", k=10)
@@ -21,7 +21,7 @@ CARD$P1.keep = "all"
 CARD$P2.funct = list(VCN10=minNA)
 CARD$P2.funct_args = list("VC10", na.rm=TRUE)
 CARD$P2.timeStep = "year"
-CARD$P2.samplePeriod = c("05-01", "11-30")
+CARD$P2.samplePeriod = list(max, list("Q", na.rm=TRUE))
 CARD$P2.NApct_lim = 3
 CARD$P2.NAyear_lim = 10
 CARD$P2.keep = "all"
@@ -54,7 +54,7 @@ CARD$P4.funct_args = list(list("VC10",
                                select="longest",
                                upLim="upLim"))
 CARD$P4.timeStep = "year"
-CARD$P4.samplePeriod = c("05-01", "11-30")
+CARD$P4.samplePeriod = list(max, list("Q", na.rm=TRUE))
 CARD$P4.isDate = c(TRUE,
                    TRUE,
                    FALSE,
