@@ -14,4 +14,4 @@ CARD$P2.funct = list("medQJC5"=rollmean_center)
 CARD$P2.funct_args = list("medQJ", k=5, isCyclical=TRUE)
 CARD$P2.timeStep = "none"
 CARD$P2.period = NULL
-CARD$P2.keep = c("Yearday", "medQJC5")
+CARD$P2.keep = "all"
