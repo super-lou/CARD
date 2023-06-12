@@ -18,3 +18,4 @@ CARD$P1.timeStep = "year"
 CARD$P1.samplePeriod = "09-01"
 CARD$P1.NApct_lim = 3
 CARD$P1.NAyear_lim = 10
+CARD$P1.compress = TRUE
