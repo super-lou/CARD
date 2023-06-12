@@ -130,9 +130,14 @@ compute_hsaLog = function (x, method="inf.na") {
 #' @return NSElog according to parametrization
 #' @export
 compute_NSElog = function (obs, sim, na.rm=TRUE, log_method="inf.na") {
-    obs = compute_hsaLog(obs, method=log_method)
-    sim = compute_hsaLog(sim, method=log_method)
-    NSElog = compute_NSE(obs=obs, sim=sim, na.rm=na.rm)
+    if (sum(obs != 0, na.rm=TRUE) > 0 &
+        sum(sim != 0, na.rm=TRUE) > 0) {
+        obs = compute_hsaLog(obs, method=log_method)
+        sim = compute_hsaLog(sim, method=log_method)
+        NSElog = compute_NSE(obs=obs, sim=sim, na.rm=na.rm)
+    } else {
+        NSElog = 0
+    }
     return (NSElog)
 }
 
@@ -144,9 +149,14 @@ compute_NSElog = function (obs, sim, na.rm=TRUE, log_method="inf.na") {
 #' @return NSEi according to parametrization
 #' @export
 compute_NSEi = function (obs, sim, na.rm=TRUE) {
-    obs = 1/obs
-    sim = 1/sim
-    NSEi = compute_NSE(obs=obs, sim=sim, na.rm=na.rm)
+    if (sum(obs != 0, na.rm=TRUE) > 0 &
+        sum(sim != 0, na.rm=TRUE) > 0) {
+        obs = 1/obs
+        sim = 1/sim
+        NSEi = compute_NSE(obs=obs, sim=sim, na.rm=na.rm)
+    } else {
+        NSEi = NA 
+    }
     return (NSEi)
 }
 
