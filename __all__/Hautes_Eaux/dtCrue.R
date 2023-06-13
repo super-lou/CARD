@@ -15,14 +15,12 @@ CARD$P2.funct_args = list("dQ", na.rm=TRUE)
 CARD$P2.timeStep = "year"
 CARD$P2.samplePeriod = list(min, list("Q", na.rm=TRUE))
 CARD$P2.keep = "all"
-CARD$P2.NApct_lim = 3
 
 CARD$P3.funct = list(lowLim=divided)
 CARD$P3.funct_args = list("dQXA", 2, first=TRUE)
 CARD$P3.timeStep = "year"
 CARD$P3.samplePeriod = list(min, list("Q", na.rm=TRUE))
 CARD$P3.keep = "all"
-CARD$P3.NApct_lim = 3
 
 CARD$P4.funct = list(dtCrue=apply_threshold)
 CARD$P4.funct_args = list("dQ",
