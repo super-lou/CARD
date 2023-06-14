@@ -25,23 +25,31 @@
 # |___/\__,_|/__/|_|\__| _____________________________________________
 ## 0. BASIC __________________________________________________________
 minus = function (a, b, first=FALSE) {
-    if (first) {
-        aRLE = rle(a[!is.na(a)])
-        a = aRLE$values[which.max(aRLE$lengths)]
-        bRLE = rle(b[!is.na(b)])
-        b = bRLE$values[which.max(bRLE$lengths)]
+    if (all(is.na(a)) | all(is.na(b))) {
+        return (NA)
+    } else {
+        if (first) {
+            aRLE = rle(a[!is.na(a)])
+            a = aRLE$values[which.max(aRLE$lengths)]
+            bRLE = rle(b[!is.na(b)])
+            b = bRLE$values[which.max(bRLE$lengths)]
+        }
+        return (a - b)
     }
-    return (a - b)
 }
 
 divided = function (a, b, first=FALSE) {
-    if (first) {
-        aRLE = rle(a[!is.na(a)])
-        a = aRLE$values[which.max(aRLE$lengths)]
-        bRLE = rle(b[!is.na(b)])
-        b = bRLE$values[which.max(bRLE$lengths)]
+    if (all(is.na(a)) | all(is.na(b))) {
+        return (NA)
+    } else {
+        if (first) {
+            aRLE = rle(a[!is.na(a)])
+            a = aRLE$values[which.max(aRLE$lengths)]
+            bRLE = rle(b[!is.na(b)])
+            b = bRLE$values[which.max(bRLE$lengths)]
+        }
+        return (a / b)
     }
-    return (a / b)
 }
 
 deltaX = function (X, Date, past, futur) {

@@ -76,15 +76,20 @@ compute_dtRec = function (Q) {
     peak = all[names(all) == "p"]
     valley = all[names(all) == "v"]
 
+    names(peak) = NULL
+    names(valley) = NULL
+    
+    if (length(valley) == 0 |
+        length(peak) == 0) {
+        return (NA)
+    }
+        
     if (valley[1] < peak[1]) {
         valley = valley[-1]
     }
     if (valley[length(valley)] < peak[length(peak)]) {
         peak = peak[-length(peak)]
     }
-
-    names(peak) = NULL
-    names(valley) = NULL
 
     pSsY = 0.75
     ssYlim = quantile(ssY, pSsY, na.rm=TRUE)
