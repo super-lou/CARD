@@ -83,10 +83,16 @@ compute_dtRec = function (Q) {
         length(peak) == 0) {
         return (NA)
     }
-        
+
     if (valley[1] < peak[1]) {
         valley = valley[-1]
     }
+
+    if (length(valley) == 0 |
+        length(peak) == 0) {
+        return (NA)
+    }
+    
     if (valley[length(valley)] < peak[length(peak)]) {
         peak = peak[-length(peak)]
     }
