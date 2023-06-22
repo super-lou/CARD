@@ -234,3 +234,11 @@ compute_KGEracine = function (obs, sim, na.rm=TRUE) {
     KGEracine = compute_KGE(obs=obs, sim=sim, na.rm=na.rm)
     return (KGEracine)
 }
+
+
+#' @title STD
+#' @export
+compute_STD = function (obs, sim, na.rm=TRUE) {
+    STD = sd(sim, na.rm=na.rm) / sd(obs, na.rm=na.rm)
+    return (STD)
+}
