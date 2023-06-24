@@ -1,15 +1,11 @@
 CARD$P.var = "PA"
-CARD$P.unit = "mm.jour^{-1}"
-CARD$P.glose = "Précipitation annuelle"
-CARD$P.topic = "Précipitation"
+CARD$P.unit = "mm"
+CARD$P.glose = "Cumul des précipitations annuelles"
+CARD$P.topic = c("Climat", "Précipitation")
 CARD$P.samplePeriod = "09-01"
 
-CARD$P1.funct = list(PA=mean,
-                     PAl=mean,
-                     PAs=mean)
-CARD$P1.funct_args = list(list("P", na.rm=TRUE),
-                          list("Pl", na.rm=TRUE),
-                          list("Ps", na.rm=TRUE))
+CARD$P1.funct = list(PA=sum)
+CARD$P1.funct_args = list("P", na.rm=TRUE)
 CARD$P1.timeStep = "year"
 CARD$P1.samplePeriod = "09-01"
 CARD$P1.NApct_lim = 3
