@@ -1,5 +1,6 @@
 CARD$P.var = "var"
 CARD$P.unit = "unit"
+CARD$P.is_date = FALSE
 CARD$P.normalize = TRUE
 CARD$P.reverse_palette = FALSE
 CARD$P.glose = "glose"
