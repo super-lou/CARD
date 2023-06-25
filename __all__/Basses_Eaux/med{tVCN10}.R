@@ -1,5 +1,6 @@
 CARD$P.var = "med{tVCN10}"
 CARD$P.unit = "jour de l'année"
+CARD$P.is_date = TRUE
 CARD$P.normalize = FALSE
 CARD$P.reverse_palette = TRUE
 CARD$P.glose = "Mediane des centres des basses eaux, dates des minimums annuels de la moyenne sur 10 jours du débit journalier"

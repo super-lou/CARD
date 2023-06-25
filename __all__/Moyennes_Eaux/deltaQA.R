@@ -1,5 +1,6 @@
 CARD$P.var = c("deltaQA_{2040-2069}", "deltaQA_{2070-2099}")
 CARD$P.unit = "m^{3}.s^{-1}.an^{-1}"
+CARD$P.is_date = FALSE
 CARD$P.normalize = FALSE
 CARD$P.reverse_palette = FALSE
 CARD$P.glose = "Différence relative des moyennes annuelles des débits journaliers entre une période futur et une période passée de référence."

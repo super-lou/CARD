@@ -1,5 +1,6 @@
 CARD$P.var = c("QA_DJF", "QA_MAM", "QA_JJA", "QA_SON")
 CARD$P.unit = "m^{3}.s^{-1}"
+CARD$P.is_date = FALSE
 CARD$P.normalize = TRUE
 CARD$P.reverse_palette = FALSE
 CARD$P.glose = c("Débit hivernal annuel", "Débit printanier annuel",

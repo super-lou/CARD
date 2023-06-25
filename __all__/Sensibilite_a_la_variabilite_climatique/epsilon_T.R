@@ -1,5 +1,6 @@
 CARD$P.var = "epsilon_T"
 CARD$P.unit = "sans unité"
+CARD$P.is_date = FALSE
 CARD$P.normalize = TRUE
 CARD$P.reverse_palette = FALSE
 CARD$P.glose = "Élasticité annuelle du débit aux températures"

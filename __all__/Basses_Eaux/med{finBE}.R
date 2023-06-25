@@ -1,5 +1,6 @@
 CARD$P.var = "med{finBE}"
 CARD$P.unit = "jour de l'année"
+CARD$P.is_date = TRUE
 CARD$P.normalize = FALSE
 CARD$P.reverse_palette = TRUE
 CARD$P.glose = "Médiane de la fin des basses eaux, date de la dernière moyenne sur 10 jours sous le maximum des minimums annuels de la moyenne sur 10 jours du débit journalier"

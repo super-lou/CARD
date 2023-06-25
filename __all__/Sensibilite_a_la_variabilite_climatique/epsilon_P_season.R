@@ -1,6 +1,7 @@
 CARD$P.var = c("epsilon_P_DJF", "epsilon_P_MAM",
                "epsilon_P_JJA", "epsilon_P_SON")
 CARD$P.unit = "sans unité"
+CARD$P.is_date = FALSE
 CARD$P.normalize = TRUE
 CARD$P.reverse_palette = FALSE
 CARD$P.glose = c("Élasticité hivernale du débit aux précipitations",

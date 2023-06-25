@@ -1,5 +1,6 @@
 CARD$P.var = "med{vBF}"
 CARD$P.unit = "hm^{3}"
+CARD$P.is_date = FALSE
 CARD$P.normalize = TRUE
 CARD$P.reverse_palette = TRUE
 CARD$P.glose = "Médiane du volume des écoulements lents, intégrale sous la courbe du débit de base"

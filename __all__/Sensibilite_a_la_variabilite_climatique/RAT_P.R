@@ -1,5 +1,6 @@
 CARD$P.var = "RAT_P"
 CARD$P.unit = "bool"
+CARD$P.is_date = FALSE
 CARD$P.normalize = FALSE
 CARD$P.reverse_palette = FALSE
 CARD$P.glose = "Test de robustesse à une variation de précipitations liquides"

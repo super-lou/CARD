@@ -1,5 +1,6 @@
 CARD$P.var = "QNA"
 CARD$P.unit = "m^{3}.s^{-1}"
+CARD$P.is_date = FALSE
 CARD$P.normalize = FALSE
 CARD$P.reverse_palette = FALSE
 CARD$P.glose = "Minimum annuel du débit journalier"

@@ -1,5 +1,6 @@
 CARD$P.var = "fQA05"
 CARD$P.unit = "jour.an^{-1}"
+CARD$P.is_date = FALSE
 CARD$P.normalize = TRUE
 CARD$P.reverse_palette = TRUE
 CARD$P.glose = "Fréquence annuelle de dépassement (Q > Q05)"

@@ -1,5 +1,6 @@
 CARD$P.var = "dtRec"
 CARD$P.unit = "jour"
+CARD$P.is_date = FALSE
 CARD$P.normalize = TRUE
 CARD$P.reverse_palette = TRUE
 CARD$P.glose = "Temps de récession"

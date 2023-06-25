@@ -1,5 +1,6 @@
 CARD$P.var = "VCN30-2"
 CARD$P.unit = "m^{3}.s^{-1}"
+CARD$P.is_date = FALSE
 CARD$P.normalize = TRUE
 CARD$P.reverse_palette = FALSE
 CARD$P.glose = "Minimum annuel de la moyenne sur 30 jours du débit journalier de période de retour 2 ans"

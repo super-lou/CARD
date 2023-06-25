@@ -1,5 +1,6 @@
 CARD$P.var = "vBE"
 CARD$P.unit = "hm^{3}"
+CARD$P.is_date = FALSE
 CARD$P.normalize = TRUE
 CARD$P.reverse_palette = TRUE
 CARD$P.glose = "Volume de déficite des basses eaux, intégrale de la courbe de la moyenne sur 10 jours sous le maximum des VCN10"

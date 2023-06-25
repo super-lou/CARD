@@ -1,5 +1,6 @@
 CARD$P.var = "NSE"
 CARD$P.unit = "sans unité"
+CARD$P.is_date = FALSE
 CARD$P.normalize = FALSE
 CARD$P.reverse_palette = FALSE
 CARD$P.glose = "Coeffcient d'efficacité de Nash-Sutcliffe"

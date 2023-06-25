@@ -6,6 +6,10 @@ CARD$P.unit = c("jour de l'année",
                 "jour de l'année",
                 "jour",
                 "hm^{3}")
+CARD$P.is_date = c(TRUE,
+                   TRUE,
+                   FALSE,
+                   FALSE)
 CARD$P.normalize = c(FALSE,
                      FALSE,
                      TRUE,

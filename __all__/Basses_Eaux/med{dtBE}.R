@@ -1,5 +1,6 @@
 CARD$P.var = "med{dtBE}"
 CARD$P.unit = "jour"
+CARD$P.is_date = FALSE
 CARD$P.normalize = TRUE
 CARD$P.reverse_palette = TRUE
 CARD$P.glose = "Médiane de la durée des basses eaux, durée de la plus longue période continue de la moyenne sur 10 jours sous le maximum des VCN10"

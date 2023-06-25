@@ -1,5 +1,6 @@
 CARD$P.var = "finBF"
 CARD$P.unit = "jour de l'année"
+CARD$P.is_date = TRUE
 CARD$P.normalize = FALSE
 CARD$P.reverse_palette = TRUE
 CARD$P.glose = "Fin des écoulements lents, date à laquelle 90% de l’intégrale sous la courbe du débit de base est atteinte"
