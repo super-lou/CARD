@@ -1,5 +1,7 @@
 CARD$P.var = "tQJXA"
 CARD$P.unit = "jour de l'année"
+CARD$P.normalize = FALSE
+CARD$P.reverse_palette = TRUE
 CARD$P.glose = "Date du maximum annuel du débit journalier"
 CARD$P.topic = "Hautes Eaux"
 CARD$P.samplePeriod = "Mois du minimum des débits mensuels"

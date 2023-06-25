@@ -1,5 +1,7 @@
 CARD$P.var = paste0("QA_", gsub("[.]", "", gsub("û", "u", gsub("é", "e", format(seq.Date(as.Date("1970-01-01"), as.Date("1970-12-01"), "month"), "%b")))))
 CARD$P.unit = "m^{3}.s^{-1}"
+CARD$P.normalize = TRUE
+CARD$P.reverse_palette = FALSE
 CARD$P.glose = paste0("Moyenne des débits journaliers de chaque ", format(seq.Date(as.Date("1970-01-01"), as.Date("1970-12-01"), "month"), "%B"))
 CARD$P.topic = "Moyennes Eaux"
     

@@ -1,5 +1,7 @@
 CARD$P.var = "epsilon_P"
 CARD$P.unit = "sans unité"
+CARD$P.normalize = TRUE
+CARD$P.reverse_palette = FALSE
 CARD$P.glose = "Élasticité annuelle du débit aux précipitations"
 CARD$P.topic = "Sensibilité à la variabilité climatique"
 CARD$P.samplePeriod = "Mois du minimum des débits mensuels"

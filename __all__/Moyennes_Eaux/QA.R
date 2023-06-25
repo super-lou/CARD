@@ -1,5 +1,7 @@
 CARD$P.var = "QA"
 CARD$P.unit = "m^{3}.s^{-1}"
+CARD$P.normalize = TRUE
+CARD$P.reverse_palette = FALSE
 CARD$P.glose = "Moyenne annuelle du débit journalier"
 CARD$P.topic = "Moyennes Eaux"
 CARD$P.samplePeriod = "09-01"

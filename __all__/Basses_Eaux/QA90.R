@@ -1,5 +1,7 @@
 CARD$P.var = "QA90"
 CARD$P.unit = "m^{3}.s^{-1}"
+CARD$P.normalize = TRUE
+CARD$P.reverse_palette = FALSE
 CARD$P.glose = "Débit seuil annuel avec une probabilité de dépassement de 90% (centile 10%)"
 CARD$P.topic = "Basses Eaux"
 CARD$P.samplePeriod = "01-01"

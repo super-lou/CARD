@@ -1,5 +1,7 @@
 CARD$P.var = "medQJC5"
 CARD$P.unit = "m^{3}.s^{-1}"
+CARD$P.normalize = TRUE
+CARD$P.reverse_palette = FALSE
 CARD$P.glose = "Débit median inter-annuel lissé sur 5 jours"
 CARD$P.topic = "Moyennes Eaux"
     

@@ -1,5 +1,8 @@
 CARD$P.var = c("alphaQJXA", "HYPalphaQJXA")
 CARD$P.unit = "m^{3}.s^{-1}.an^{-1}"
+CARD$P.normalize = c(TRUE,
+                     FALSE)
+CARD$P.reverse_palette = FALSE
 CARD$P.glose = "Pente de Sen et résultat du test de Mann-Kendall pour les maximums annuels des débits journaliers"
 CARD$P.topic = c("Hautes Eaux", "Liés à une statistique")
 CARD$P.samplePeriod = "Mois du minimum des débits mensuels"

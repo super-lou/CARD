@@ -1,5 +1,7 @@
 CARD$P.var = "QJC10"
 CARD$P.unit = "m^{3}.s^{-1}"
+CARD$P.normalize = TRUE
+CARD$P.reverse_palette = FALSE
 CARD$P.glose = "Débit moyen mensuel moyenné sur 10 jours"
 CARD$P.topic = "Moyennes Eaux"
     

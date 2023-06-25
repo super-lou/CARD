@@ -1,5 +1,7 @@
 CARD$P.var = "NSEinv"
 CARD$P.unit = "sans unité"
+CARD$P.normalize = FALSE
+CARD$P.reverse_palette = FALSE
 CARD$P.glose = "Coeffcient d'efficacité de Nash-Sutcliffe de l'inverse des données"
 CARD$P.topic = c("Performance", "NSE")
 

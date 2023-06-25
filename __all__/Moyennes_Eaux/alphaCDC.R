@@ -1,5 +1,7 @@
 CARD$P.var = "alphaCDC"
 CARD$P.unit = "sans unité"
+CARD$P.normalize = TRUE
+CARD$P.reverse_palette = FALSE
 CARD$P.glose = "Pente du segment entre les quantiles des débits journaliers à 33 % et 66 % de la courbe des débits classés"
 CARD$P.topic = c("Moyennes Eaux", "Signature hydrologique")
 

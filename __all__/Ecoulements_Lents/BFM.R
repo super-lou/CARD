@@ -1,5 +1,7 @@
 CARD$P.var = "BFM"
 CARD$P.unit = "sans unité"
+CARD$P.normalize = TRUE
+CARD$P.reverse_palette = FALSE
 CARD$P.glose = "Baseflow magnitude"
 CARD$P.topic = c("Écoulements Lents", "Signature hydrologique")
 

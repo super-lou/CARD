@@ -6,6 +6,14 @@ CARD$P.unit = c("jour de l'année",
                 "jour de l'année",
                 "jour",
                 "hm^{3}")
+CARD$P.normalize = c(FALSE,
+                     FALSE,
+                     TRUE,
+                     TRUE)
+CARD$P.reverse_palette = c(FALSE,
+                           TRUE,
+                           TRUE,
+                           TRUE)
 CARD$P.glose = c("Début des basses eaux, date de la première moyenne sur 10 jours sous le maximum des minimums annuels de la moyenne sur 10 jours du débit journalier",
                  "Fin des basses eaux, date de la dernière moyenne sur 10 jours sous le maximum des minimums annuels de la moyenne sur 10 jours du débit journalier",
                  "Durée des basses eaux, durée de la plus longue période continue de la moyenne sur 10 jours sous le maximum des VCN10",

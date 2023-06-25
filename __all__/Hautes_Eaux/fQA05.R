@@ -1,5 +1,7 @@
 CARD$P.var = "fQA05"
 CARD$P.unit = "jour.an^{-1}"
+CARD$P.normalize = TRUE
+CARD$P.reverse_palette = TRUE
 CARD$P.glose = "Fréquence annuelle de dépassement (Q > Q05)"
 CARD$P.topic = "Hautes Eaux"
 CARD$P.samplePeriod = "Mois du minimum des débits mensuels"

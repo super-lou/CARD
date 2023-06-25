@@ -1,5 +1,7 @@
 CARD$P.var = "dtCrue"
 CARD$P.unit = "jour"
+CARD$P.normalize = TRUE
+CARD$P.reverse_palette = TRUE
 CARD$P.glose = "Nombres de jour où la différence entre le débit journalier et le débit de base est supérieur à la moitié du maximum annuel"
 CARD$P.topic = c("Hautes Eaux", "Signature hydrologique")
 CARD$P.samplePeriod = "Mois du minimum des débits mensuels"

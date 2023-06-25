@@ -1,5 +1,7 @@
 CARD$P.var = "moyQA"
 CARD$P.unit = "m^{3}.s^{-1}"
+CARD$P.normalize = TRUE
+CARD$P.reverse_palette = FALSE
 CARD$P.glose = "Moyenne inter-annuelle des moyennes intra-annuelles des débits journaliers"
 CARD$P.topic = c("Moyennes Eaux", "Liés à une statistique")
 CARD$P.samplePeriod = "09-01"

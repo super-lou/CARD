@@ -1,6 +1,8 @@
 CARD$P.var = c("epsilon_T_DJF", "epsilon_T_MAM",
                "epsilon_T_JJA", "epsilon_T_SON")
 CARD$P.unit = "sans unité"
+CARD$P.normalize = TRUE
+CARD$P.reverse_palette = FALSE
 CARD$P.glose = c("Élasticité hivernale du débit aux températures",
                  "Élasticité printanière du débit aux températures",
                  "Élasticité estivale du débit aux températures",

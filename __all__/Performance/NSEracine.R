@@ -1,5 +1,7 @@
 CARD$P.var = "NSEracine"
 CARD$P.unit = "sans unité"
+CARD$P.normalize = FALSE
+CARD$P.reverse_palette = FALSE
 CARD$P.glose = "Coeffcient d'efficacité de Nash-Sutcliffe de la racine carrée des données"
 CARD$P.topic = c("Performance", "NSE")
 

@@ -1,5 +1,7 @@
 CARD$P.var = "dtRec"
 CARD$P.unit = "jour"
+CARD$P.normalize = TRUE
+CARD$P.reverse_palette = TRUE
 CARD$P.glose = "Temps de récession"
 CARD$P.topic = c("Écoulements Lents", "Signature hydrologique")
 

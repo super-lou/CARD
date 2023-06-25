@@ -1,5 +1,7 @@
 CARD$P.var = "var"
 CARD$P.unit = "unit"
+CARD$P.normalize = TRUE
+CARD$P.reverse_palette = FALSE
 CARD$P.glose = "glose"
 CARD$P.topic = "event"
 CARD$P.samplePeriod = NULL

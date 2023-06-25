@@ -1,5 +1,7 @@
 CARD$P.var = "dtBF"
 CARD$P.unit = "jour"
+CARD$P.normalize = TRUE
+CARD$P.reverse_palette = TRUE
 CARD$P.glose = "Durée des écoulements lents, durée entre le début et la fin des écoulements lents"
 CARD$P.topic = "Écoulements Lents"
 CARD$P.samplePeriod = '09-01'

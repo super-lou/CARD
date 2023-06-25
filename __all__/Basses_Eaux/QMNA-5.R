@@ -1,5 +1,7 @@
 CARD$P.var = "QMNA-5"
 CARD$P.unit = "m^{3}.s^{-1}"
+CARD$P.normalize = TRUE
+CARD$P.reverse_palette = FALSE
 CARD$P.glose = "Minimum annuel des débits mensuels de période de retour 5 ans"
 CARD$P.topic = c("Basses Eaux", "Liés à une statistique")
 CARD$P.samplePeriod = "Mois du maximum des débits mensuels"
