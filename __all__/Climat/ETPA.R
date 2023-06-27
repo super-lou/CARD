@@ -1,7 +1,7 @@
 CARD$P.var = "ETPA"
 CARD$P.unit = "mm"
 CARD$P.is_date = FALSE
-CARD$P.normalize = TRUE
+CARD$P.normalize = FALSE
 CARD$P.reverse_palette = FALSE
 CARD$P.glose = "Cumul des évapotranspirations annuelles"
 CARD$P.topic = c("Climat", "Évapotranspiration")

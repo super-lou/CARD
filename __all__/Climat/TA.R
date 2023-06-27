@@ -1,7 +1,7 @@
 CARD$P.var = "TA"
-CARD$P.unit = "mm.jour^{-1}"
+CARD$P.unit = "°C"
 CARD$P.is_date = FALSE
-CARD$P.normalize = TRUE
+CARD$P.normalize = FALSE
 CARD$P.reverse_palette = FALSE
 CARD$P.glose = "Température moyenne annuelle"
 CARD$P.topic = c("Climat", "Température")
