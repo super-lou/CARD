@@ -39,3 +39,12 @@ get_MKH = function (X, level=0.1) {
                                 DoDetrending=TRUE)$H
     return (H)    
 }
+
+## 1.2. Test result __________________________________________________
+get_MKp = function (X, level=0.1) {
+    p = GeneralMannKendall_WRAP(X, level=level,
+                                timeDep_option='AR1',
+                                DoDetrending=TRUE)$p
+    return (p)    
+}
+
