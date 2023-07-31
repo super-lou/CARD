@@ -51,10 +51,17 @@ args = parser$parse_args()
 # args$l = c("A", "[", "a", "[", "aa", "[", "aaa", "bbb", "]", "bb", "[", "ccc", "ddd", "]", "]", "b", "[", "aa", "[", "aaa", "]", "]", "]")
 
 
-# source("/home/louis/Documents/bouleau/INRAE/project/EXstat_project/EXstat/R/CARD_management.R")
-# if (exists("CARD_management")) {
-    CARD_management(args=args)
-# } else {
-    # EXstat::CARD_management(args=args)
-# }
+
+dev_file = "/home/louis/Documents/bouleau/INRAE/project/EXstat_project/EXstat/R/CARD_management.R"
+
+if (file.exists(dev_file)) {
+    source(dev_file)
+    if (exists("CARD_management")) {
+        CARD_management(args=args)
+    } else {
+        EXstat::CARD_management(args=args) 
+    }
+} else {
+    EXstat::CARD_management(args=args)
+}
 # warnings()
