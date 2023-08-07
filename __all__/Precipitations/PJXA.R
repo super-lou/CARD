@@ -1,15 +1,15 @@
-CARD$P.var = "PA"
+CARD$P.var = "PJXA"
 CARD$P.unit = "mm"
 CARD$P.is_date = FALSE
 CARD$P.normalize = FALSE
 CARD$P.reverse_palette = FALSE
-CARD$P.glose = "Cumul des précipitations totales annuelles"
+CARD$P.glose = "Maximum annuel des précipitations journalières"
 CARD$P.topic = c("Précipitations", "Climat")
-CARD$P.samplePeriod = "09-01"
-
-CARD$P1.funct = list(PA=sum)
+CARD$P.samplePeriod = "Mois du minimum des précipitations mensuelles"
+    
+CARD$P1.funct = list(PJXA=maxNA)
 CARD$P1.funct_args = list("P", na.rm=TRUE)
 CARD$P1.timeStep = "year"
-CARD$P1.samplePeriod = "09-01"
+CARD$P1.samplePeriod = list(min, list("P", na.rm=TRUE))
 CARD$P1.NApct_lim = 3
 CARD$P1.NAyear_lim = 10

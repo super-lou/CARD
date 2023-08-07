@@ -1,7 +1,7 @@
 CARD$P.var = "PAl_r"
 CARD$P.unit = ""
 CARD$P.is_date = FALSE
-CARD$P.normalize = TRUE
+CARD$P.normalize = FALSE
 CARD$P.reverse_palette = FALSE
 CARD$P.glose = "Ratio des précipitations annuelles liquides sur les précipitations annuelles totales"
 CARD$P.topic = c("Précipitations", "Climat")

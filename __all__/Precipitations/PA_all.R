@@ -1,7 +1,7 @@
 CARD$P.var = "PA"
 CARD$P.unit = "mm"
 CARD$P.is_date = FALSE
-CARD$P.normalize = TRUE
+CARD$P.normalize = FALSE
 CARD$P.reverse_palette = FALSE
 CARD$P.glose = "Précipitation annuelle"
 CARD$P.topic = c("Climat", "Précipitation")

@@ -14,7 +14,7 @@ MAKAHO:
 
 ### 2.2. _____________________________________________________________
 MAKAHOapp:
-	./CARD_parser.R -l MAKAHOapp [ Hautes_Eaux [ QJXA tQJXA QA05 QA10 fA10 fA05 fA01 VCX3 dtCrue ] Moyennes_Eaux [ QA QA25 QA50 QA75 QA_month QA_season ] Basses_Eaux [ QMNA VCN3 VCN10 VCN30 QA90 QA95 QNA debutBE tVCN10 finBE dtBE vBE ] Ecoulements_Lents [ debutBF centreBF finBF dtBF vBF ] Precipitations [ PA PAl PAl_r PAs PAs_r PCX30 PMXA PCN30 PMNA ] ] -w
+	./CARD_parser.R -l MAKAHOapp [ Hautes_Eaux [ QJXA tQJXA QA05 QA10 fA10 fA05 fA01 VCX3 dtCrue ] Moyennes_Eaux [ QA QA25 QA50 QA75 QA_season QA_month ] Basses_Eaux [ QMNA VCN3 VCN10 VCN30 QA90 QA95 QNA debutBE tVCN10 finBE dtBE vBE ] Ecoulements_Lents [ debutBF centreBF finBF dtBF vBF ] Precipitations [ PA PA_season PA_month PAl PAl_season PAl_month PAl_r PAs PAs_season PAs_month PAs_r PJXA dtPA20 dtP20_season dtP20_month dtPA01 dtP01_season dtP01_month dtPCAsec dtPCsec_season dtPCsec_month dtPAsec dtPsec_season dtPsec_month ] ] -w
 
 
 ## 3. ________________________________________________________________
