@@ -7,7 +7,7 @@ CARD$P.glose = c("Nombre de jours de forte pluie en hiver (nombre de jours où l
                  "Nombre de jours de forte pluie au printemps (nombre de jours où les précipitations dépassent 20 mm)",
                  "Nombre de jours de forte pluie en été (nombre de jours où les précipitations dépassent 20 mm)",
                  "Nombre de jours de forte pluie en automne (nombre de jours où les précipitations dépassent 20 mm)")
-CARD$P.topic = c("Précipitations", "Climat")
+CARD$P.topic = c("Précipitations", "Forte")
 
 CARD$P1.funct = list(dtP20=apply_threshold)
 CARD$P1.funct_args = list("P", lim=20,

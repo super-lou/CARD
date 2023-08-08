@@ -4,7 +4,7 @@ CARD$P.is_date = FALSE
 CARD$P.normalize = FALSE
 CARD$P.reverse_palette = FALSE
 CARD$P.glose = "Coeffcient d'efficacité de Nash-Sutcliffe"
-CARD$P.topic = c("Performance", "NSE")
+CARD$P.topic = c("Débit", "Performance", "NSE")
 
 CARD$P1.funct = list(NSE=compute_NSE)
 CARD$P1.funct_args = list("Q_obs", "Q_sim")

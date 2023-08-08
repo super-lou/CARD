@@ -4,7 +4,7 @@ CARD$P.is_date = FALSE
 CARD$P.normalize = TRUE
 CARD$P.reverse_palette = FALSE
 CARD$P.glose = paste0("Moyenne des débits journaliers de chaque ", format(seq.Date(as.Date("1970-01-01"), as.Date("1970-12-01"), "month"), "%B"))
-CARD$P.topic = "Moyennes Eaux"
+CARD$P.topic = c("Débit", "Moyennes Eaux")
     
 CARD$P1.funct = list(QA=mean)
 CARD$P1.funct_args = list("Q", na.rm=TRUE)

@@ -4,7 +4,7 @@ CARD$P.is_date = FALSE
 CARD$P.normalize = FALSE
 CARD$P.reverse_palette = FALSE
 CARD$P.glose = "Nombre de jours de forte pluie dans l'année (nombre de jours où les précipitations dépassent 20 mm)"
-CARD$P.topic = c("Précipitations", "Climat")
+CARD$P.topic = c("Précipitations", "Forte")
 CARD$P.samplePeriod = "09-01"
 
 CARD$P1.funct = list(dtPA20=apply_threshold)

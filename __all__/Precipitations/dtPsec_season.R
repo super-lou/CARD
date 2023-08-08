@@ -7,7 +7,7 @@ CARD$P.glose = c("Nombre de jours sans pluie en hiver",
                  "Nombre de jours sans pluie au printemps",
                  "Nombre de jours sans pluie en été",
                  "Nombre de jours sans pluie en automne")
-CARD$P.topic = c("Précipitations", "Climat")
+CARD$P.topic = c("Précipitations", "Période sèche")
 
 CARD$P1.funct = list(dtPsec=apply_threshold)
 CARD$P1.funct_args = list("P", lim=0,

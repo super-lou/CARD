@@ -7,7 +7,7 @@ CARD$P.glose = c("Nombre maximal de jours consécutifs sans pluie en hiver",
                  "Nombre maximal de jours consécutifs sans pluie au printemps",
                  "Nombre maximal de jours consécutifs sans pluie en été",
                  "Nombre maximal de jours consécutifs sans pluie en automne")
-CARD$P.topic = c("Précipitations", "Climat")
+CARD$P.topic = c("Précipitations", "Période sèche")
 
 CARD$P1.funct = list(dtPCsec=apply_threshold)
 CARD$P1.funct_args = list("P", lim=0,

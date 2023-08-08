@@ -4,7 +4,7 @@ CARD$P.is_date = FALSE
 CARD$P.normalize = FALSE
 CARD$P.reverse_palette = FALSE
 CARD$P.glose = "Maximum annuel des précipitations journalières"
-CARD$P.topic = c("Précipitations", "Climat")
+CARD$P.topic = c("Précipitations", "Forte")
 CARD$P.samplePeriod = "Mois du minimum des précipitations mensuelles"
     
 CARD$P1.funct = list(PJXA=maxNA)

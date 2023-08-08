@@ -6,7 +6,7 @@ CARD$P.reverse_palette = FALSE
 CARD$P.glose = paste0("Nombre de jours pluvieux de chaque ",
                       format(seq.Date(as.Date("1970-01-01"), as.Date("1970-12-01"), "month"), "%B"),
                       " (nombre de jours où les précipitations dépassent 1 mm)")
-CARD$P.topic = c("Précipitations", "Climat")
+CARD$P.topic = c("Précipitations", "Faible")
     
 CARD$P1.funct = list(dtP01=apply_threshold)
 CARD$P1.funct_args = list("P", lim=1,

@@ -4,7 +4,7 @@ CARD$P.is_date = FALSE
 CARD$P.normalize = FALSE
 CARD$P.reverse_palette = FALSE
 CARD$P.glose = "Test de robustesse à une variation d'évapotranspiration de référence"
-CARD$P.topic = "Sensibilité à la variabilité climatique"
+CARD$P.topic = c("Évapotranspiration/Débit", "Sensibilité à la variabilité climatique")
 CARD$P.samplePeriod = "09-01"
 
 CARD$P1.funct = list(BiaisA=compute_Biais,

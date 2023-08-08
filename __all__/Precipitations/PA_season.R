@@ -5,7 +5,7 @@ CARD$P.normalize = FALSE
 CARD$P.reverse_palette = FALSE
 CARD$P.glose = c("Précipitations hivernales annuelles", "Précipitations printanières annuelles",
                  "Précipitations estivales annuelles", "Précipitations automnales annuelles")
-CARD$P.topic = c("Précipitations", "Climat")
+CARD$P.topic = c("Précipitations", "Modérée")
 
 CARD$P1.funct = list(PA=mean)
 CARD$P1.funct_args = list("P", na.rm=TRUE)

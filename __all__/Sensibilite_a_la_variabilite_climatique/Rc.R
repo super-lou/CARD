@@ -4,7 +4,7 @@ CARD$P.is_date = FALSE
 CARD$P.normalize = TRUE
 CARD$P.reverse_palette = FALSE
 CARD$P.glose = "Coefficient de ruissellement, rapport entre la somme des débits et la somme des précipitations liquides"
-CARD$P.topic = c("Sensibilité à la variabilité climatique", "Signature hydrologique")
+CARD$P.topic = c("Précipitations/Débit", "Sensibilité à la variabilité climatique", "Signature hydrologique")
 
 CARD$P1.funct = list(Rc=compute_Rc)
 CARD$P1.funct_args = list("Q", "Pl")

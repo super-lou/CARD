@@ -4,7 +4,7 @@ CARD$P.is_date = FALSE
 CARD$P.normalize = TRUE
 CARD$P.reverse_palette = FALSE
 CARD$P.glose = "Courbe des débits classés"
-CARD$P.topic = "Moyennes Eaux"
+CARD$P.topic = c("Débit", "Moyennes Eaux")
 
 CARD$P1.funct = list(CDC_p=compute_FDC_p,
                      CDC_Q=compute_FDC_Q)

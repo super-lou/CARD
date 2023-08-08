@@ -22,7 +22,7 @@ CARD$P.glose = c("Début des basses eaux, date de la première moyenne sur 10 jo
                  "Fin des basses eaux, date de la dernière moyenne sur 10 jours sous le maximum des minimums annuels de la moyenne sur 10 jours du débit journalier",
                  "Durée des basses eaux, durée de la plus longue période continue de la moyenne sur 10 jours sous le maximum des VCN10",
                  "Volume de déficite des basses eaux, intégrale de la courbe de la moyenne sur 10 jours sous le maximum des VCN10")
-CARD$P.topic = "Basses Eaux"
+CARD$P.topic = c("Débit", "Basses Eaux")
 CARD$P.samplePeriod = "Mois du maximum des débits mensuels"
 
 CARD$P1.funct = list(VC10=rollmean_center)

@@ -4,7 +4,7 @@ CARD$P.is_date = FALSE
 CARD$P.normalize = FALSE
 CARD$P.reverse_palette = FALSE
 CARD$P.glose = paste0("Moyenne des précipitations solides journalières de chaque ", format(seq.Date(as.Date("1970-01-01"), as.Date("1970-12-01"), "month"), "%B"))
-CARD$P.topic = c("Précipitations", "Climat")
+CARD$P.topic = c("Précipitations", "Modérée")
     
 CARD$P1.funct = list(PAs=mean)
 CARD$P1.funct_args = list("Ps", na.rm=TRUE)

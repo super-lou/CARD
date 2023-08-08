@@ -4,7 +4,7 @@ CARD$P.is_date = FALSE
 CARD$P.normalize = TRUE
 CARD$P.reverse_palette = TRUE
 CARD$P.glose = "Fréquence annuelle de dépassement (Q > Q01)"
-CARD$P.topic = "Hautes Eaux"
+CARD$P.topic = c("Débit", "Hautes Eaux")
 CARD$P.samplePeriod = "Mois du minimum des débits mensuels"
     
 CARD$P1.funct = list(lowLim=compute_Qp)

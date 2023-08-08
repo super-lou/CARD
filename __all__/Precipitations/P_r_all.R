@@ -4,7 +4,7 @@ CARD$P.is_date = FALSE
 CARD$P.normalize = FALSE
 CARD$P.reverse_palette = FALSE
 CARD$P.glose = "Ratio des précipitation"
-CARD$P.topic = c("Climat", "Précipitation")
+CARD$P.topic = c("Précipitations", "Modérée")
 CARD$P.samplePeriod = "09-01"
 
 CARD$P1.funct = list(PA=sum,

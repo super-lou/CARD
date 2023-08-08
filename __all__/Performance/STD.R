@@ -4,7 +4,7 @@ CARD$P.is_date = FALSE
 CARD$P.normalize = TRUE
 CARD$P.reverse_palette = TRUE
 CARD$P.glose = "Écart-type des débits journaliers"
-CARD$P.topic = c("Performance")
+CARD$P.topic = c("Débit", "Performance")
 
 CARD$P1.funct = list(STD=compute_STD)
 CARD$P1.funct_args = list("Q_obs", "Q_sim", na.rm=TRUE)

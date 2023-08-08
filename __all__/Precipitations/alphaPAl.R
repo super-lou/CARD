@@ -4,7 +4,7 @@ CARD$P.is_date = FALSE
 CARD$P.normalize = FALSE
 CARD$P.reverse_palette = FALSE
 CARD$P.glose = "Pente de Sen du cumul des précipitations annuelles liquides"
-CARD$P.topic = c("Climat", "Précipitation")
+CARD$P.topic = c("Précipitation", "Modérée")
 CARD$P.samplePeriod = "Mois du maximum des débits mensuels"
 
 CARD$P1.funct = list(PAl=sum)

@@ -4,7 +4,7 @@ CARD$P.is_date = FALSE
 CARD$P.normalize = TRUE
 CARD$P.reverse_palette = TRUE
 CARD$P.glose = "Débit seuil avec une probabilité de dépassement de 10% (centile 90%)"
-CARD$P.topic = c("Hautes Eaux", "Liés à une statistique")
+CARD$P.topic = c("Débit", "Hautes Eaux", "Liés à une statistique")
 
 CARD$P1.funct = list(Q10=compute_Qp)
 CARD$P1.funct_args = list("Q", p=0.1)

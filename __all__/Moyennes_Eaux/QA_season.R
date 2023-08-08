@@ -5,7 +5,7 @@ CARD$P.normalize = TRUE
 CARD$P.reverse_palette = FALSE
 CARD$P.glose = c("Débit hivernal annuel", "Débit printanier annuel",
                  "Débit estival annuel", "Débit automnal annuel")
-CARD$P.topic = c("Moyennes Eaux", "Liés à une statistique")
+CARD$P.topic = c("Débit", "Moyennes Eaux", "Liés à une statistique")
 
 CARD$P1.funct = list(QA=mean)
 CARD$P1.funct_args = list("Q", na.rm=TRUE)

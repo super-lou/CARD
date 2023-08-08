@@ -4,7 +4,7 @@ CARD$P.is_date = FALSE
 CARD$P.normalize = FALSE
 CARD$P.reverse_palette = TRUE
 CARD$P.glose = "Différence relative entre les débits journaliers simulés et observés"
-CARD$P.topic = c("Performance", "Biais")
+CARD$P.topic = c("Débit", "Performance", "Biais")
 
 CARD$P1.funct = list(Biais=compute_Biais)
 CARD$P1.funct_args = list("Q_obs", "Q_sim")

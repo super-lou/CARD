@@ -4,7 +4,7 @@ CARD$P.is_date = FALSE
 CARD$P.normalize = FALSE
 CARD$P.reverse_palette = FALSE
 CARD$P.glose = "Minimum annuel du débit journalier"
-CARD$P.topic = "Basses Eaux"
+CARD$P.topic = c("Débit", "Basses Eaux")
 CARD$P.samplePeriod = "Mois du maximum des débits mensuels"
     
 CARD$P1.funct = list(QNA=minNA)

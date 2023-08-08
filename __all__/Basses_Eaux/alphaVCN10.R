@@ -5,7 +5,7 @@ CARD$P.normalize = c(TRUE,
                      FALSE)
 CARD$P.reverse_palette = FALSE
 CARD$P.glose = "Pente de Sen et résultat du test de Mann-Kendall pour les minimums annuel de la moyenne sur 10 jours du débit journalier"
-CARD$P.topic = c("Basses Eaux", "Liés à une statistique")
+CARD$P.topic = c("Débit", "Basses Eaux", "Liés à une statistique")
 CARD$P.samplePeriod = "Mois du maximum des débits mensuels"
     
 CARD$P1.funct = list(VC10=rollmean_center)

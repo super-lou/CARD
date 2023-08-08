@@ -8,7 +8,7 @@ CARD$P.glose = c("Élasticité hivernale du débit aux températures",
                  "Élasticité printanière du débit aux températures",
                  "Élasticité estivale du débit aux températures",
                  "Élasticité automnale du débit aux températures")
-CARD$P.topic = "Sensibilité à la variabilité climatique"
+CARD$P.topic = c("Température/Débit", "Sensibilité à la variabilité climatique")
     
 CARD$P1.funct = list(QA=mean,
                      TA=mean)

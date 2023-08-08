@@ -4,7 +4,7 @@ CARD$P.is_date = FALSE
 CARD$P.normalize = TRUE
 CARD$P.reverse_palette = TRUE
 CARD$P.glose = "Médiane des temps de récession"
-CARD$P.topic = c("Écoulements Lents", "Signature hydrologique")
+CARD$P.topic = c("Débit", "Écoulements Lents", "Signature hydrologique")
 
 CARD$P1.funct = list("dtRec"=compute_dtRec)
 CARD$P1.funct_args = list(Q="Q")

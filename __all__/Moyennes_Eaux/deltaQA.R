@@ -4,7 +4,7 @@ CARD$P.is_date = FALSE
 CARD$P.normalize = FALSE
 CARD$P.reverse_palette = FALSE
 CARD$P.glose = "Différence relative des moyennes annuelles des débits journaliers entre une période futur et une période passée de référence."
-CARD$P.topic = c("Moyennes Eaux", "Projection")
+CARD$P.topic = c("Débit", "Moyennes Eaux", "Projection")
 CARD$P.samplePeriod = "09-01"
 
 CARD$P2.funct = list("deltaQA_{2040-2069}"=deltaX,

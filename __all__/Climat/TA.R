@@ -4,7 +4,7 @@ CARD$P.is_date = FALSE
 CARD$P.normalize = FALSE
 CARD$P.reverse_palette = FALSE
 CARD$P.glose = "Température moyenne annuelle"
-CARD$P.topic = c("Climat", "Température")
+CARD$P.topic = c("Température", "Moyenne")
 CARD$P.samplePeriod = "09-01"
 
 CARD$P1.funct = list(TA=mean)

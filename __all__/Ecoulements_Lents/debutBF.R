@@ -4,7 +4,7 @@ CARD$P.is_date = TRUE
 CARD$P.normalize = FALSE
 CARD$P.reverse_palette = FALSE
 CARD$P.glose = "Début des écoulements lents, date à laquelle 10% de l’intégrale sous la courbe du débit de base est atteinte"
-CARD$P.topic = "Écoulements Lents"
+CARD$P.topic = c("Débit", "Écoulements Lents")
 CARD$P.samplePeriod = '09-01'
     
 CARD$P1.funct = list(debutBF=compute_tVolSnowmelt)

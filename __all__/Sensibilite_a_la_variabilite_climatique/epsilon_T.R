@@ -4,7 +4,7 @@ CARD$P.is_date = FALSE
 CARD$P.normalize = TRUE
 CARD$P.reverse_palette = FALSE
 CARD$P.glose = "Élasticité annuelle du débit aux températures"
-CARD$P.topic = "Sensibilité à la variabilité climatique"
+CARD$P.topic = c("Température/Débit", "Sensibilité à la variabilité climatique")
 CARD$P.samplePeriod = "Mois du minimum des débits mensuels"
     
 CARD$P1.funct = list(QA=mean,

@@ -4,7 +4,7 @@ CARD$P.is_date = TRUE
 CARD$P.normalize = FALSE
 CARD$P.reverse_palette = TRUE
 CARD$P.glose = "Mediane des dates maximums annuels des débits journaliers"
-CARD$P.topic = c("Hautes Eaux", "Liés à une statistique")
+CARD$P.topic = c("Débit", "Hautes Eaux", "Liés à une statistique")
 CARD$P.samplePeriod = "Mois du minimum des débits mensuels"
 
 CARD$P1.funct = list(tQJXA=which.maxNA)

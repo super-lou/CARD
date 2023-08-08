@@ -4,7 +4,7 @@ CARD$P.is_date = FALSE
 CARD$P.normalize = TRUE
 CARD$P.reverse_palette = FALSE
 CARD$P.glose = "Minimum annuel de la moyenne sur 10 jours du débit journalier"
-CARD$P.topic = "Basses Eaux"
+CARD$P.topic = c("Débit", "Basses Eaux")
 CARD$P.samplePeriod = "Mois du maximum des débits mensuels"
      
 CARD$P1.funct = list(VC10=rollmean_center)

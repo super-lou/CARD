@@ -7,7 +7,7 @@ CARD$P.glose = c("Différence relative entre les débits journaliers hivernaux s
                  "Différence relative entre les débits journaliers printaniers simulés et observés",
                  "Différence relative entre les débits journaliers estivaux simulés et observés",
                  "Différence relative entre les débits journaliers automnaux simulés et observés")
-CARD$P.topic = c("Performance", "Biais")
+CARD$P.topic = c("Débit", "Performance", "Biais")
 
 CARD$P1.funct = list(Biais=compute_Biais)
 CARD$P1.funct_args = list("Q_obs", "Q_sim")

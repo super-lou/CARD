@@ -4,7 +4,7 @@ CARD$P.is_date = FALSE
 CARD$P.normalize = FALSE
 CARD$P.reverse_palette = FALSE
 CARD$P.glose = "Nombre maximal de jours consécutifs sans pluie dans l'année"
-CARD$P.topic = c("Précipitations", "Climat")
+CARD$P.topic = c("Précipitations", "Période sèche")
 CARD$P.samplePeriod = "09-01"
 
 CARD$P1.funct = list(dtPCAsec=apply_threshold)

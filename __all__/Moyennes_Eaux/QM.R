@@ -4,7 +4,7 @@ CARD$P.is_date = FALSE
 CARD$P.normalize = TRUE
 CARD$P.reverse_palette = FALSE
 CARD$P.glose = "Débit moyen mensuel"
-CARD$P.topic = "Moyennes Eaux"
+CARD$P.topic = c("Débit", "Moyennes Eaux")
     
 CARD$P1.funct = list(QM=mean)
 CARD$P1.funct_args = list("Q", na.rm=TRUE)
