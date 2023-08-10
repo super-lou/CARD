@@ -24,7 +24,7 @@
 #   | |  | ' \ | '_|/ -_)(_-<| ' \ / _ \| |/ _` |
 #   |_|  |_||_||_|  \___|/__/|_||_|\___/|_|\__,_| ____________________
 ## 1. THRESHOLD __________________________________________________________  
-apply_threshold = function (X, lim, where="under", what="X",
+apply_threshold = function (X, lim, where="<=", what="X",
                             select="all") {
 
 
@@ -35,10 +35,12 @@ apply_threshold = function (X, lim, where="under", what="X",
     limRLE = rle(lim[!is.na(lim)])
     lim = limRLE$values[which.max(limRLE$lengths)]
 
-    if (where == "under") {
-        ID = which(X <= lim)
-    } else if (where == "above") {
-        ID = which(X >= lim)
+    if (where %in% c("<", "<=", "==", ">=", ">")) {
+        ID = which(get(where)(X, lim))
+    # if (where == "under") {
+        # ID = which(X <= lim)
+    # } else if (where == "above") {
+        # ID = which(X >= lim)
     } else {
         stop ("Choose 'under' or 'above'")
     }

@@ -1,16 +1,16 @@
-CARD$P.var = paste0("dtP20_", gsub("[.]", "", gsub("û", "u", gsub("é", "e", format(seq.Date(as.Date("1970-01-01"), as.Date("1970-12-01"), "month"), "%b")))))
+CARD$P.var = paste0("dtR20mm_", gsub("[.]", "", gsub("û", "u", gsub("é", "e", format(seq.Date(as.Date("1970-01-01"), as.Date("1970-12-01"), "month"), "%b")))))
 CARD$P.unit = "jour"
 CARD$P.is_date = FALSE
 CARD$P.normalize = FALSE
 CARD$P.reverse_palette = FALSE
 CARD$P.glose = paste0("Nombre de jours de forte pluie de chaque ",
                       format(seq.Date(as.Date("1970-01-01"), as.Date("1970-12-01"), "month"), "%B"),
-                      " (nombre de jours où les précipitations dépassent 20 mm)")
+                      " (nombre de jours avec au moins 20 mm de précipitations)")
 CARD$P.topic = c("Précipitations", "Forte")
     
-CARD$P1.funct = list(dtP20=apply_threshold)
+CARD$P1.funct = list(dtR20mm=apply_threshold)
 CARD$P1.funct_args = list("P", lim=20,
-                          where="above",
+                          where=">=",
                           what="length",
                           select="all")
 CARD$P1.timeStep = "year-month"

@@ -1,14 +1,14 @@
-CARD$P.var = "PAl"
+CARD$P.var = "RA"
 CARD$P.unit = "mm"
 CARD$P.is_date = FALSE
 CARD$P.normalize = FALSE
 CARD$P.reverse_palette = FALSE
-CARD$P.glose = "Cumul des précipitations liquides annuelles"
+CARD$P.glose = "Cumul des précipitations totales annuelles"
 CARD$P.topic = c("Précipitations", "Modérée")
 CARD$P.samplePeriod = "09-01"
 
-CARD$P1.funct = list(PAl=sum)
-CARD$P1.funct_args = list("Pl", na.rm=TRUE)
+CARD$P1.funct = list(RA=sum)
+CARD$P1.funct_args = list("P", na.rm=TRUE)
 CARD$P1.timeStep = "year"
 CARD$P1.samplePeriod = "09-01"
 CARD$P1.NApct_lim = 3

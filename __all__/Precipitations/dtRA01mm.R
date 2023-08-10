@@ -1,15 +1,15 @@
-CARD$P.var = "dtPAsec"
+CARD$P.var = "dtRA01mm"
 CARD$P.unit = "jour"
 CARD$P.is_date = FALSE
 CARD$P.normalize = FALSE
 CARD$P.reverse_palette = FALSE
-CARD$P.glose = "Nombre de jours sans pluie dans l'année"
-CARD$P.topic = c("Précipitations", "Période sèche")
+CARD$P.glose = "Nombre de jours pluvieux dans l'année (nombre de jours avec au moins 1 mm de précipitations)"
+CARD$P.topic = c("Précipitations", "Faible")
 CARD$P.samplePeriod = "09-01"
 
-CARD$P1.funct = list(dtPAsec=apply_threshold)
-CARD$P1.funct_args = list("P", lim=0,
-                          where="under",
+CARD$P1.funct = list(dtRA01mm=apply_threshold)
+CARD$P1.funct_args = list("P", lim=1,
+                          where=">=",
                           what="length",
                           select="all")
 CARD$P1.timeStep = "year"

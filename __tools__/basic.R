@@ -117,6 +117,25 @@ rollmean_center = function (X, k, isCyclical=FALSE) {
     return (X)
 }
 
+#' @title Rolling sum
+#' @export
+rollsum_center = function (X, k, isCyclical=FALSE) {
+    if (isCyclical) {
+        n = length(X)
+        X = c(X[(n-k+1):n],
+              X,
+              X[1:(k+1)])
+    }    
+    X = RcppRoll::roll_sum(X, n=k, fill=NA,
+                           align="center",
+                           na.rm=FALSE)
+    if (isCyclical) {
+        n = length(X)
+        X = X[(k+1):(n-(k+1))]
+    }
+    return (X)
+}
+
 
 ## 4. CIRCULAR STAT __________________________________________________
 circularTWEAK = function (X, Y, periodicity) {

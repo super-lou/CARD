@@ -1,15 +1,15 @@
-CARD$P.var = "dtPCAsec"
+CARD$P.var = "dtCWDA"
 CARD$P.unit = "jour"
 CARD$P.is_date = FALSE
 CARD$P.normalize = FALSE
 CARD$P.reverse_palette = FALSE
-CARD$P.glose = "Nombre maximal de jours consécutifs sans pluie dans l'année"
-CARD$P.topic = c("Précipitations", "Période sèche")
+CARD$P.glose = "Nombre maximal de jours consécutifs dans l'année avec au moins 1 mm de précipitation"
+CARD$P.topic = c("Précipitations", "Faibles")
 CARD$P.samplePeriod = "09-01"
 
-CARD$P1.funct = list(dtPCAsec=apply_threshold)
-CARD$P1.funct_args = list("P", lim=0,
-                          where="under",
+CARD$P1.funct = list(dtCWDA=apply_threshold)
+CARD$P1.funct_args = list("P", lim=1,
+                          where=">=",
                           what="length",
                           select="longest")
 CARD$P1.timeStep = "year"

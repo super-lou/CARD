@@ -1,4 +1,4 @@
-CARD$P.var = c("PA_DJF", "PA_MAM", "PA_JJA", "PA_SON")
+CARD$P.var = c("RA_DJF", "RA_MAM", "RA_JJA", "RA_SON")
 CARD$P.unit = "mm"
 CARD$P.is_date = FALSE
 CARD$P.normalize = FALSE
@@ -7,7 +7,7 @@ CARD$P.glose = c("Précipitations hivernales annuelles", "Précipitations printa
                  "Précipitations estivales annuelles", "Précipitations automnales annuelles")
 CARD$P.topic = c("Précipitations", "Modérée")
 
-CARD$P1.funct = list(PA=mean)
+CARD$P1.funct = list(RA=mean)
 CARD$P1.funct_args = list("P", na.rm=TRUE)
 CARD$P1.timeStep = "year-season"
 CARD$P1.Seasons = c("DJF", "MAM", "JJA", "SON")
