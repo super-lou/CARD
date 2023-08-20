@@ -125,7 +125,7 @@ apply_threshold = function (X, lim, where="<=", what="X",
 compute_VolDef = function (X, upLim, select_longest=TRUE) {
     Xdef = apply_threshold(X,
                            lim=upLim,
-                           where="under",
+                           where="<=",
                            what="X",
                            select="longest")
     Vol = sum(Xdef, na.rm=TRUE)*24*3600 / 10^6 # m^3.s-1 * jour / 10^6 -> hm^3
