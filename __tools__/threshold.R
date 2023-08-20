@@ -35,6 +35,10 @@ apply_threshold = function (X, lim, where="<=", what="X",
     limRLE = rle(lim[!is.na(lim)])
     lim = limRLE$values[which.max(limRLE$lengths)]
 
+
+
+    print(where)
+    
     if (where %in% c("<", "<=", "==", ">=", ">")) {
         ID = which(get(where)(X, lim))
     # if (where == "under") {
