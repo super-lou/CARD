@@ -3,14 +3,14 @@ CARD$P.unit = "bool"
 CARD$P.is_date = FALSE
 CARD$P.normalize = FALSE
 CARD$P.reverse_palette = FALSE
-CARD$P.glose = "Test de robustesse à une variation de précipitations liquides"
+CARD$P.glose = "Test de robustesse à une variation de précipitations"
 CARD$P.topic = c("Précipitations/Débit", "Sensibilité à la variabilité climatique")
 CARD$P.samplePeriod = "09-01"
 
 CARD$P1.funct = list(BiaisA=compute_Biais,
                      PA=mean)
 CARD$P1.funct_args = list(list("Q_obs", "Q_sim"),
-                          list("Pl_obs", na.rm=TRUE))
+                          list("P_obs", na.rm=TRUE))
 CARD$P1.timeStep = "year"
 CARD$P1.samplePeriod = "09-01"
 CARD$P1.NApct_lim = 3

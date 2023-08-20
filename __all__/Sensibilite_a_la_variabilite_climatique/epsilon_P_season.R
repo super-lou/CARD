@@ -13,7 +13,7 @@ CARD$P.topic = c("Précipitations/Débit", "Sensibilité à la variabilité clim
 CARD$P1.funct = list(QA=mean,
                      PA=mean)
 CARD$P1.funct_args = list(list("Q", na.rm=TRUE),
-                          list("Pl", na.rm=TRUE))
+                          list("P", na.rm=TRUE))
 CARD$P1.timeStep = "year-season"
 CARD$P1.Seasons = c("DJF", "MAM", "JJA", "SON")
 CARD$P1.onlyDate4Season = TRUE
