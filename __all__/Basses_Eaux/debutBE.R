@@ -28,7 +28,7 @@ CARD$P3.keep = "all"
 CARD$P4.funct = list(debutBE=apply_threshold)
 CARD$P4.funct_args = list("VC10",
                           lim="upLim",
-                          where="under",
+                          where="<=",
                           what="first",
                           select="longest")
 CARD$P4.timeStep = "year"

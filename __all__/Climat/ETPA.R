@@ -1,4 +1,4 @@
-!!CARD$P.var = "ETPA"
+CARD$P.var = "ETPA"
 CARD$P.unit = "mm"
 CARD$P.is_date = FALSE
 CARD$P.normalize = FALSE

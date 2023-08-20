@@ -28,7 +28,7 @@ CARD$P3.keep = "all"
 CARD$P4.funct = list(dtCrue=apply_threshold)
 CARD$P4.funct_args = list("dQ",
                           lim="lowLim",
-                          where="above",
+                          where=">=",
                           what="length",
                           select="dQXA")
 CARD$P4.timeStep = "year"
