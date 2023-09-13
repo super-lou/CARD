@@ -2,7 +2,7 @@ CARD$P.var = c("dtR01mm_DJF", "dtR01mm_MAM", "dtR01mm_JJA", "dtR01mm_SON")
 CARD$P.unit = "jour"
 CARD$P.is_date = FALSE
 CARD$P.normalize = FALSE
-CARD$P.reverse_palette = FALSE
+CARD$P.palette = "#543005 #8C510A #BF812D #DFC27D #F6E8C3 #C7EAE5 #80CDC1 #35978F #01665E #003C30"
 CARD$P.glose = c("Nombre de jours pluvieux en hiver (nombre de jours avec au moins 1 mm de précipitations)",
                  "Nombre de jours pluvieux au printemps (nombre de jours avec au moins 1 mm de précipitations)",
                  "Nombre de jours pluvieux en été (nombre de jours avec au moins 1 mm de précipitations)",

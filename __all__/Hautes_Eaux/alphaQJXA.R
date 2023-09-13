@@ -3,7 +3,7 @@ CARD$P.unit = "m^{3}.s^{-1}.an^{-1}"
 CARD$P.is_date = FALSE
 CARD$P.normalize = c(TRUE,
                      FALSE)
-CARD$P.reverse_palette = FALSE
+CARD$P.palette = NULL
 CARD$P.glose = "Pente de Sen et résultat du test de Mann-Kendall pour les maximums annuels des débits journaliers"
 CARD$P.topic = c("Débit", "Hautes Eaux", "Liés à une statistique")
 CARD$P.samplePeriod = "Mois du minimum des débits mensuels"

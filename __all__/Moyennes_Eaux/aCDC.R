@@ -2,7 +2,7 @@ CARD$P.var = "aCDC"
 CARD$P.unit = "sans unité"
 CARD$P.is_date = FALSE
 CARD$P.normalize = TRUE
-CARD$P.reverse_palette = FALSE
+CARD$P.palette = NULL
 CARD$P.glose = "Pente du segment entre les quantiles des débits journaliers à 33 % et 66 % de la courbe des débits classés"
 CARD$P.topic = c("Débit", "Moyennes Eaux", "Signature hydrologique")
 

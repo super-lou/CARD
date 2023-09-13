@@ -2,7 +2,7 @@ CARD$P.var = "QM"
 CARD$P.unit = "m^{3}.s^{-1}"
 CARD$P.is_date = FALSE
 CARD$P.normalize = TRUE
-CARD$P.reverse_palette = FALSE
+CARD$P.palette = NULL
 CARD$P.glose = "Débit moyen mensuel"
 CARD$P.topic = c("Débit", "Moyennes Eaux")
     

@@ -2,7 +2,7 @@ CARD$P.var = "KGE"
 CARD$P.unit = "sans unité"
 CARD$P.is_date = FALSE
 CARD$P.normalize = FALSE
-CARD$P.reverse_palette = FALSE
+CARD$P.palette = NULL
 CARD$P.glose = "Coeffcient d'efficacité de Kling-Gupta"
 CARD$P.topic = c("Débit", "Performance", "KGE")
 

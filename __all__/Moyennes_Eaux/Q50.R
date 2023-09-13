@@ -2,7 +2,7 @@ CARD$P.var = "Q50"
 CARD$P.unit = "m^{3}.s^{-1}"
 CARD$P.is_date = FALSE
 CARD$P.normalize = TRUE
-CARD$P.reverse_palette = FALSE
+CARD$P.palette = NULL
 CARD$P.glose = "Débit seuil avec une probabilité de dépassement de 50% (centile 50%)"
 CARD$P.topic = c("Débit", "Moyennes Eaux", "Liés à une statistique")
 

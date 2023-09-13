@@ -2,7 +2,7 @@ CARD$P.var = "med{dtRec}"
 CARD$P.unit = "jour"
 CARD$P.is_date = FALSE
 CARD$P.normalize = TRUE
-CARD$P.reverse_palette = TRUE
+CARD$P.palette = NULL
 CARD$P.glose = "Médiane des temps de récession"
 CARD$P.topic = c("Débit", "Écoulements Lents", "Signature hydrologique")
 

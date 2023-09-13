@@ -2,7 +2,7 @@ CARD$P.var = "STD"
 CARD$P.unit = "m^{3}.s^{-1}"
 CARD$P.is_date = FALSE
 CARD$P.normalize = TRUE
-CARD$P.reverse_palette = TRUE
+CARD$P.palette = NULL
 CARD$P.glose = "Écart-type des débits journaliers"
 CARD$P.topic = c("Débit", "Performance")
 

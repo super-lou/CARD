@@ -2,7 +2,7 @@ CARD$P.var = "BFI"
 CARD$P.unit = "sans unité"
 CARD$P.is_date = FALSE
 CARD$P.normalize = TRUE
-CARD$P.reverse_palette = FALSE
+CARD$P.palette = NULL
 CARD$P.glose = "Baseflow index"
 CARD$P.topic = c("Débit", "Écoulements Lents", "Signature hydrologique")
 

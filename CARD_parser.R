@@ -29,13 +29,13 @@ parser = ArgumentParser()
 
 parser$add_argument('-C', '--CARD', type="character",
                     default=".",
-                    help="The CARD directory path (need to ends by "CARD").")
+                    help="The CARD directory path (need to ends by 'CARD').")
 parser$add_argument('-t', '--tmp', type="character",
                     default="",
-                    help="The temporary directory path. If not provided, it will default to the value of `CARD`.")
+                    help="The temporary directory path. If not provided, it will default to the value of 'CARD'.")
 parser$add_argument('-l', '--layout', nargs='+', type="character",
                     default="EX [ QA ]",
-                    help="A character vector specifying the layout of files to be managed. The default layout is c("EX", "[", "QA", "]").")
+                    help="A character vector specifying the layout of files to be managed. The default layout is c('EX', '[', 'QA', ']').")
 parser$add_argument("-w", "--underscore_to_white", action="store_true", default=TRUE,
                     help="Logical. If TRUE, underscores in file names will be replaced with spaces. Default is TRUE.")
 parser$add_argument("-i", "--add_id", action="store_true", default=TRUE,

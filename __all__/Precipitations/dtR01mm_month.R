@@ -2,7 +2,7 @@ CARD$P.var = paste0("dtR01mm_", gsub("[.]", "", gsub("û", "u", gsub("é", "e", 
 CARD$P.unit = "jour"
 CARD$P.is_date = FALSE
 CARD$P.normalize = FALSE
-CARD$P.reverse_palette = FALSE
+CARD$P.palette = "#543005 #8C510A #BF812D #DFC27D #F6E8C3 #C7EAE5 #80CDC1 #35978F #01665E #003C30"
 CARD$P.glose = paste0("Nombre de jours pluvieux de chaque ",
                       format(seq.Date(as.Date("1970-01-01"), as.Date("1970-12-01"), "month"), "%B"),
                       " (nombre de jours avec au moins 1 mm de précipitations)")

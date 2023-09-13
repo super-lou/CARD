@@ -2,7 +2,7 @@ CARD$P.var = c("Biais_DJF", "Biais_MAM", "Biais_JJA", "Biais_SON")
 CARD$P.unit = "sans unité"
 CARD$P.is_date = FALSE
 CARD$P.normalize = FALSE
-CARD$P.reverse_palette = TRUE
+CARD$P.palette = NULL
 CARD$P.glose = c("Différence relative entre les débits journaliers hivernaux simulés et observés",
                  "Différence relative entre les débits journaliers printaniers simulés et observés",
                  "Différence relative entre les débits journaliers estivaux simulés et observés",

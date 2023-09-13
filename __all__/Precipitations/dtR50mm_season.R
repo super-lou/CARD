@@ -2,7 +2,7 @@ CARD$P.var = c("dtR50mm_DJF", "dtR50mm_MAM", "dtR50mm_JJA", "dtR50mm_SON")
 CARD$P.unit = "jour"
 CARD$P.is_date = FALSE
 CARD$P.normalize = FALSE
-CARD$P.reverse_palette = FALSE
+CARD$P.palette = "#543005 #8C510A #BF812D #DFC27D #F6E8C3 #C7EAE5 #80CDC1 #35978F #01665E #003C30"
 CARD$P.glose = c("Nombre de jours de pluie extrème en hiver (nombre de jours avec au moins 50 mm de précipitations)",
                  "Nombre de jours de pluie extrème au printemps (nombre de jours avec au moins 50 mm de précipitations)",
                  "Nombre de jours de pluie extrème en été (nombre de jours avec au moins 50 mm de précipitations)",

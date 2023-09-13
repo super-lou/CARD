@@ -2,7 +2,7 @@ CARD$P.var = "Biais"
 CARD$P.unit = "sans unité"
 CARD$P.is_date = FALSE
 CARD$P.normalize = FALSE
-CARD$P.reverse_palette = TRUE
+CARD$P.palette = NULL
 CARD$P.glose = "Différence relative entre les débits journaliers simulés et observés"
 CARD$P.topic = c("Débit", "Performance", "Biais")
 

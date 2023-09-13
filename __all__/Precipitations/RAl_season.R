@@ -2,7 +2,7 @@ CARD$P.var = c("RAl_DJF", "RAl_MAM", "RAl_JJA", "RAl_SON")
 CARD$P.unit = "mm"
 CARD$P.is_date = FALSE
 CARD$P.normalize = FALSE
-CARD$P.reverse_palette = FALSE
+CARD$P.palette = "#543005 #8C510A #BF812D #DFC27D #F6E8C3 #C7EAE5 #80CDC1 #35978F #01665E #003C30"
 CARD$P.glose = c("Précipitations liquides hivernales annuelles", "Précipitations liquides printanières annuelles",
                  "Précipitations liquides estivales annuelles", "Précipitations liquides automnales annuelles")
 CARD$P.topic = c("Précipitations", "Modérée")

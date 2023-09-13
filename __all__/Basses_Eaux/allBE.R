@@ -14,10 +14,10 @@ CARD$P.normalize = c(FALSE,
                      FALSE,
                      TRUE,
                      TRUE)
-CARD$P.reverse_palette = c(FALSE,
-                           TRUE,
-                           TRUE,
-                           TRUE)
+CARD$P.palette = c("#893687 #BC66A5 #E596C3 #EAC5DD #EFE2E9 #F5E4E2 #F2D7B5 #E9BD6F #DC8C48 #CD5629",
+                   "#893687 #BC66A5 #E596C3 #EAC5DD #EFE2E9 #F5E4E2 #F2D7B5 #E9BD6F #DC8C48 #CD5629",
+                   "#003C30 #01665E #35978F #80CDC1 #C7EAE5 #F6E8C3 #DFC27D #BF812D #8C510A #543005",
+                   "#003C30 #01665E #35978F #80CDC1 #C7EAE5 #F6E8C3 #DFC27D #BF812D #8C510A #543005")
 CARD$P.glose = c("Début des basses eaux, date de la première moyenne sur 10 jours sous le maximum des minimums annuels de la moyenne sur 10 jours du débit journalier",
                  "Fin des basses eaux, date de la dernière moyenne sur 10 jours sous le maximum des minimums annuels de la moyenne sur 10 jours du débit journalier",
                  "Durée des basses eaux, durée de la plus longue période continue de la moyenne sur 10 jours sous le maximum des VCN10",
