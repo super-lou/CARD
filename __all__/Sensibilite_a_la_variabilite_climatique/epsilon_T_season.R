@@ -16,7 +16,6 @@ CARD$P1.funct_args = list(list("Q", na.rm=TRUE),
                           list("T", na.rm=TRUE))
 CARD$P1.timeStep = "year-season"
 CARD$P1.Seasons = c("DJF", "MAM", "JJA", "SON")
-CARD$P1.onlyDate4Season = TRUE
 CARD$P1.NApct_lim = 3
 CARD$P1.NAyear_lim = 10
 
