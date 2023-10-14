@@ -8,7 +8,7 @@ CARD$P.glose = c("Précipitations solides hivernales annuelles", "Précipitation
 CARD$P.topic = c("Précipitations", "Modérée")
 
 CARD$P1.funct = list(RAs=sum)
-CARD$P1.funct_args = list("Ps", na.rm=TRUE)
+CARD$P1.funct_args = list("Rs", na.rm=TRUE)
 CARD$P1.timeStep = "year-season"
 CARD$P1.Seasons = c("DJF", "MAM", "JJA", "SON")
 CARD$P1.NApct_lim = 3

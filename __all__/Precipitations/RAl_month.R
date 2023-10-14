@@ -8,7 +8,7 @@ CARD$P.glose = paste0("Cumul des précipitations liquides journalières de chaqu
 CARD$P.topic = c("Précipitations", "Modérée")
     
 CARD$P1.funct = list(RAl=sum)
-CARD$P1.funct_args = list("Pl", na.rm=TRUE)
+CARD$P1.funct_args = list("Rl", na.rm=TRUE)
 CARD$P1.timeStep = "year-month"
 CARD$P1.NApct_lim = 3
 CARD$P1.NAyear_lim = 10
