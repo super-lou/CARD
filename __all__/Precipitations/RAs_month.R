@@ -6,7 +6,7 @@ CARD$P.reverse_palette = FALSE
 CARD$P.glose = paste0("Cumul des précipitations solides journalières de chaque ", format(seq.Date(as.Date("1970-01-01"), as.Date("1970-12-01"), "month"), "%B"))
 CARD$P.topic = c("Précipitations", "Modérée")
     
-CARD$P1.funct = list(RAs=sum)
+CARD$P1.funct = list(RAs=sumNA)
 CARD$P1.funct_args = list("Rs", na.rm=TRUE)
 CARD$P1.timeStep = "year-month"
 CARD$P1.NApct_lim = 3

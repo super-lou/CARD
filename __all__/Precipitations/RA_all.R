@@ -7,9 +7,9 @@ CARD$P.glose = "Précipitation annuelle"
 CARD$P.topic = c("Précipitations", "Modérée")
 CARD$P.samplePeriod = "09-01"
 
-CARD$P1.funct = list(RA=sum,
-                     RAl=sum,
-                     RAs=sum)
+CARD$P1.funct = list(RA=sumNA,
+                     RAl=sumNA,
+                     RAs=sumNA)
 CARD$P1.funct_args = list(list("R", na.rm=TRUE),
                           list("Rl", na.rm=TRUE),
                           list("Rs", na.rm=TRUE))

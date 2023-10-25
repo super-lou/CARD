@@ -6,7 +6,7 @@ CARD$P.palette = "#543005 #8C510A #BF812D #DFC27D #F6E8C3 #C7EAE5 #80CDC1 #35978
 CARD$P.glose = paste0("Cumul des précipitations journalières de chaque ", format(seq.Date(as.Date("1970-01-01"), as.Date("1970-12-01"), "month"), "%B"))
 CARD$P.topic = c("Précipitations", "Modérée")
     
-CARD$P1.funct = list(RA=sum)
+CARD$P1.funct = list(RA=sumNA)
 CARD$P1.funct_args = list("R", na.rm=TRUE)
 CARD$P1.timeStep = "year-month"
 CARD$P1.NApct_lim = 3
