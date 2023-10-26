@@ -16,6 +16,6 @@ CARD$P1.samplePeriod = "09-01"
 CARD$P1.NApct_lim = 3
 CARD$P1.NAyear_lim = 10
 
-CARD$P2.funct = list(RAT_P=compute_RAT_X)
+CARD$P2.funct = list(RAT_R=compute_RAT_X)
 CARD$P2.funct_args = list("BiaisA", "RA", thresh=0.05)
 CARD$P2.timeStep = "none"
