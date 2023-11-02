@@ -14,7 +14,7 @@ CARD$P1.keep = "all"
 CARD$P1.NAyear_lim = 10
 
 CARD$P2.funct = list(tVCX3=which.maxNA)
-CARD$P2.funct_args = list("VC3", na.rm=TRUE)
+CARD$P2.funct_args = list("VC3")
 CARD$P2.timeStep = "year"
 CARD$P2.samplePeriod = list(min, list("Q", na.rm=TRUE))
 CARD$P2.isDate = TRUE
