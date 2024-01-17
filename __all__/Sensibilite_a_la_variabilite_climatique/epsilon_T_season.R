@@ -1,8 +1,8 @@
-CARD$P.var = c("epsilon_T_DJF", "epsilon_T_MAM",
+CARD$P.variable = c("epsilon_T_DJF", "epsilon_T_MAM",
                "epsilon_T_JJA", "epsilon_T_SON")
 CARD$P.unit = "sans unité"
 CARD$P.is_date = FALSE
-CARD$P.normalize = TRUE
+CARD$P.is_normalize = TRUE
 CARD$P.palette = NULL
 CARD$P.glose = c("Élasticité hivernale du débit aux températures",
                  "Élasticité printanière du débit aux températures",
@@ -14,7 +14,7 @@ CARD$P1.funct = list(QA=mean,
                      TA=mean)
 CARD$P1.funct_args = list(list("Q", na.rm=TRUE),
                           list("T", na.rm=TRUE))
-CARD$P1.timeStep = "year-season"
+CARD$P1.time_step = "year-season"
 CARD$P1.Seasons = c("DJF", "MAM", "JJA", "SON")
 CARD$P1.NApct_lim = 3
 CARD$P1.NAyear_lim = 10
@@ -28,4 +28,4 @@ CARD$P2.funct_args = list(list(Q="QA_DJF", X="TA_DJF"),
                           list(Q="QA_MAM", X="TA_MAM"),
                           list(Q="QA_JJA", X="TA_JJA"),
                           list(Q="QA_SON", X="TA_SON"))
-CARD$P2.timeStep = "none"
+CARD$P2.time_step = "none"

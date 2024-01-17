@@ -1,7 +1,7 @@
-CARD$P.var = paste0("dtR50mm_", gsub("[.]", "", gsub("û", "u", gsub("é", "e", format(seq.Date(as.Date("1970-01-01"), as.Date("1970-12-01"), "month"), "%b")))))
+CARD$P.variable = paste0("dtR50mm_", gsub("[.]", "", gsub("û", "u", gsub("é", "e", format(seq.Date(as.Date("1970-01-01"), as.Date("1970-12-01"), "month"), "%b")))))
 CARD$P.unit = "jour"
 CARD$P.is_date = FALSE
-CARD$P.normalize = FALSE
+CARD$P.is_normalize = FALSE
 CARD$P.palette = "#543005 #8C510A #BF812D #DFC27D #F6E8C3 #C7EAE5 #80CDC1 #35978F #01665E #003C30"
 CARD$P.glose = paste0("Nombre de jours de pluie extrème de chaque ",
                       format(seq.Date(as.Date("1970-01-01"), as.Date("1970-12-01"), "month"), "%B"),
@@ -13,7 +13,7 @@ CARD$P1.funct_args = list("R", lim=50,
                           where=">=",
                           what="length",
                           select="all")
-CARD$P1.timeStep = "year-month"
+CARD$P1.time_step = "year-month"
 CARD$P1.NApct_lim = 3
 CARD$P1.NAyear_lim = 10
 CARD$P1.compress = TRUE

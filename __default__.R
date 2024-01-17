@@ -1,17 +1,17 @@
-CARD$P.var = "var"
+CARD$P.variable = "variable"
 CARD$P.unit = "unit"
 CARD$P.is_date = FALSE
-CARD$P.normalize = TRUE
+CARD$P.is_normalize = TRUE
 CARD$P.palette = NULL
 CARD$P.glose = "glose"
 CARD$P.topic = "event"
-CARD$P.samplePeriod = NULL
+CARD$P.sampling_period = NULL
 
 CARD$P1.funct = NULL
 CARD$P1.funct_args = NULL
-CARD$P1.timeStep = "year"
-CARD$P1.samplePeriod = NULL
-CARD$P1.isDate = FALSE
+CARD$P1.time_step = "year"
+CARD$P1.sampling_period = NULL
+CARD$P1.is_date = FALSE
 CARD$P1.NApct_lim = NULL
 CARD$P1.NAyear_lim = NULL
 CARD$P1.Seasons = c("DJF", "MAM", "JJA", "SON")
