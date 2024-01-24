@@ -1,18 +1,59 @@
-CARD$P.variable = "dtRA20mm"
-CARD$P.unit = "jour"
+#   ___                _ 
+#  / __| __ _  _ _  __| |
+# | (__ / _` || '_|/ _` |
+#  \___|\__,_||_|  \__,_|
+# Copyright 2022-2024 Louis Héraut (louis.heraut@inrae.fr)*1
+#
+# *1   INRAE, France
+#
+# This file is part of CARD R library.
+#
+# CARD R library is free software: you can redistribute it and/or
+# modify it under the terms of the GNU General Public License as
+# published by the Free Software Foundation, either version 3 of the
+# License, or (at your option) any later version.
+#
+# CARD R library is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with CARD R library.
+# If not, see <https://www.gnu.org/licenses/>.
+
+
+## INFO ______________________________________________________________
+### English __________________________________________________________
+CARD$P.variable_en = "dtRA20mm"
+CARD$P.unit_en = "day"
+CARD$P.name_en = "Number of heavy rain days in the year"
+CARD$P.description_en = "Number of days with at least 20 mm of precipitation"
+CARD$P.method_en = ""
+CARD$P.sampling_period_en = "09-01"
+CARD$P.topic_en = "Precipitation, Heavy, Duration"
+
+### French ___________________________________________________________
+CARD$P.variable_fr = "dtRA20mm"
+CARD$P.unit_fr = "jour"
+CARD$P.name_fr = "Nombre de jours de forte pluie dans l'année"
+CARD$P.description_fr = "Nombre de jours avec au moins 20 mm de précipitations"
+CARD$P.method_fr = ""
+CARD$P.sampling_period_fr = "01-09"
+CARD$P.topic_fr = "Précipitations, Forte, Durée"
+
+### Global ___________________________________________________________
 CARD$P.is_date = FALSE
 CARD$P.is_normalize = FALSE
 CARD$P.palette = "#543005 #8C510A #BF812D #DFC27D #F6E8C3 #C7EAE5 #80CDC1 #35978F #01665E #003C30"
-CARD$P.glose = "Nombre de jours de forte pluie dans l'année (nombre de jours avec au moins 20 mm de précipitations)"
-CARD$P.topic = c("Précipitations", "Forte")
-CARD$P.sampling_period = "09-01"
 
+
+## PROCESS ___________________________________________________________
+### P1 _______________________________________________________________
 CARD$P1.funct = list(dtRA20mm=apply_threshold)
-CARD$P1.funct_args = list("R", lim=20,
-                          where=">=",
-                          what="length",
-                          select="all")
+CARD$P1.funct_args = list("R", lim=20, where=">=", what="length", select="all")
 CARD$P1.time_step = "year"
 CARD$P1.sampling_period = "09-01"
 CARD$P1.NApct_lim = 3
 CARD$P1.NAyear_lim = 10
+
