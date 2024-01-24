@@ -102,7 +102,7 @@ CARD$P.topic_fr = c("Débit, Basses Eaux, Saisonnalité",
 
 ### Global ___________________________________________________________
 CARD$P.is_date = c(TRUE, TRUE, FALSE, FALSE)
-CARD$P.is_normalize = c(FALSE, FALSE, FALSE, TRUE)
+CARD$P.to_normalize = c(FALSE, FALSE, FALSE, TRUE)
 CARD$P.palette = NULL
 
 

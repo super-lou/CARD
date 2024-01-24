@@ -28,8 +28,8 @@
 CARD$P.variable_en = "fQA10"
 CARD$P.unit_en = "day.year^{-1}"
 CARD$P.name_en = "Annual frequency of exceeding Q10"
-CARD$P.description_en = "Annual frequency of exceeding Q > Q10, where Q10 is the flow exceeded 10% of the time, extracted from the ranked flow curve"
-CARD$P.method_en = "1. no temporal aggregation - the quantile at the 10% exceedance probability is taken as the threshold
+CARD$P.description_en = "Annual frequency of exceeding Q > Q10, where Q10 is the flow exceeded 10 % of the time, extracted from the ranked flow curve"
+CARD$P.method_en = "1. no temporal aggregation - the quantile at the 10 % exceedance probability is taken as the threshold
 2. annual aggregation [Month of minimum monthly flows] - ratio of the number of days with flow exceeding the threshold to the number of days in the year"
 CARD$P.sampling_period_en = "Month of minimum monthly flows"
 CARD$P.topic_en = "Flow, High Flows, Frequency"
@@ -46,7 +46,7 @@ CARD$P.topic_fr = "Débit, Hautes Eaux, Fréquence"
 
 ### Global ___________________________________________________________
 CARD$P.is_date = FALSE
-CARD$P.is_normalize = TRUE
+CARD$P.to_normalize = TRUE
 CARD$P.palette = "#543005 #8C510A #BF812D #DFC27D #F6E8C3 #C7EAE5 #80CDC1 #35978F #01665E #003C30"
 
 

@@ -42,7 +42,7 @@ CARD$P.topic_fr = "Débit, Débit de Base, Durée"
 
 ### Global ___________________________________________________________
 CARD$P.is_date = FALSE
-CARD$P.is_normalize = TRUE
+CARD$P.to_normalize = TRUE
 CARD$P.palette = NULL
 
 

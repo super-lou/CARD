@@ -43,7 +43,7 @@ CARD$P.topic_fr = "Débit, Performance"
 ### Global ___________________________________________________________
 CARD$P.source = "GUPTA, H. V. et al. (2009). « Decomposition of the mean squared error and NSE performance criteria : Implications for improving hydrological modelling ». In : Journal of Hydrology 377, p. 80-91."
 CARD$P.is_date = FALSE
-CARD$P.is_normalize = FALSE
+CARD$P.to_normalize = FALSE
 CARD$P.palette = NULL
 
 

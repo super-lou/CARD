@@ -28,6 +28,7 @@
 CARD$P.variable_en = "QA"
 CARD$P.unit_en = "m^{3}.s^{-1}"
 CARD$P.name_en = "Annual mean daily discharge"
+CARD$P.description_en = ""
 CARD$P.method_en = "1. annual aggregation [09-01, 08-31] - mean"
 CARD$P.sampling_period_en = "09-01"
 CARD$P.topic_en = "Flow, Mean Flows, Intensity"
@@ -36,13 +37,14 @@ CARD$P.topic_en = "Flow, Mean Flows, Intensity"
 CARD$P.variable_fr = "QA"
 CARD$P.unit_fr = "m^{3}.s^{-1}"
 CARD$P.name_fr = "Moyenne annuelle du débit journalier"
+CARD$P.description_fr = ""
 CARD$P.method_fr = "1. agrégation annuelle [01-09, 31-08] - moyenne"
 CARD$P.sampling_period_fr = "01-09"
 CARD$P.topic_fr = "Débit, Moyennes Eaux, Intensité"
 
 ### Global ___________________________________________________________
 CARD$P.is_date = FALSE
-CARD$P.is_normalize = TRUE
+CARD$P.to_normalize = TRUE
 CARD$P.palette = "#543005 #8C510A #BF812D #DFC27D #F6E8C3 #C7EAE5 #80CDC1 #35978F #01665E #003C30"
 
 

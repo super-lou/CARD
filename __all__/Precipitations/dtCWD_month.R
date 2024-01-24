@@ -44,7 +44,7 @@ CARD$P.description_en = c("Maximum number of consecutive days with at least 1 mm
                           "Maximum number of consecutive days with at least 1 mm of precipitation for each November",
                           "Maximum number of consecutive days with at least 1 mm of precipitation for each December")
 CARD$P.method_en = ""
-CARD$P.topic_en = "Precipitation, Dry period, Duration"
+CARD$P.topic_en = "Precipitations, Dry period, Duration"
 
 ### French ___________________________________________________________
 CARD$P.variable_fr = c("dtCWD_janv", "dtCWD_fevr", "dtCWD_mars",
@@ -81,7 +81,7 @@ CARD$P.topic_fr = "Précipitations, Période sèche, Durée"
 
 ### Global ___________________________________________________________
 CARD$P.is_date = FALSE
-CARD$P.is_normalize = FALSE
+CARD$P.to_normalize = FALSE
 CARD$P.palette = "#543005 #8C510A #BF812D #DFC27D #F6E8C3 #C7EAE5 #80CDC1 #35978F #01665E #003C30"
 
 

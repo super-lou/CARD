@@ -30,7 +30,7 @@ CARD$P.unit_en = "m^{3}.s^{-1}"
 CARD$P.name_en = "Summer minimum of 3-day mean daily discharge"
 CARD$P.description_en = ""
 CARD$P.method_en = "1. no temporal aggregation - 3-day centered moving average
-2. annual aggregation [01-05, 11-30] - minimum"
+2. annual aggregation [05-01, 11-30] - minimum"
 CARD$P.sampling_period_en = c("01-05", "11-30")
 CARD$P.topic_en = "Flow, Low Flows, Intensity"
 
@@ -46,7 +46,7 @@ CARD$P.topic_fr = "Débit, Basses Eaux, Intensité"
 
 ### Global ___________________________________________________________
 CARD$P.is_date = FALSE
-CARD$P.is_normalize = TRUE
+CARD$P.to_normalize = TRUE
 CARD$P.palette = "#543005 #8C510A #BF812D #DFC27D #F6E8C3 #C7EAE5 #80CDC1 #35978F #01665E #003C30"
 
 

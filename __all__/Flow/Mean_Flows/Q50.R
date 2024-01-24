@@ -28,9 +28,9 @@
 CARD$P.variable_en = "Q50"
 CARD$P.unit_en = "m^{3}.s^{-1}"
 CARD$P.name_en = "Flow median"
-CARD$P.description_en = "Flow with an exceedance probability of 50%"
-CARD$P.method_en = "1. no temporal aggregation - quantile at the exceedance probability of 50%"
-CARD$P.topic_en = "Flow, Average Flows, Intensity"
+CARD$P.description_en = "Flow with an exceedance probability of 50 %"
+CARD$P.method_en = "1. no temporal aggregation - quantile at the exceedance probability of 50 %"
+CARD$P.topic_en = "Flow, Mean Flows, Intensity"
 
 ### French ___________________________________________________________
 CARD$P.variable_fr = "Q50"
@@ -42,7 +42,7 @@ CARD$P.topic_fr = "Débit, Moyennes Eaux, Intensité"
 
 ### Global ___________________________________________________________
 CARD$P.is_date = FALSE
-CARD$P.is_normalize = TRUE
+CARD$P.to_normalize = TRUE
 CARD$P.palette = NULL
 
 

@@ -29,7 +29,7 @@ CARD$P.variable_en = c("alphaQA", "HYPalphaQA")
 CARD$P.unit_en = "m^{3}.s^{-1}.year^{-1}"
 CARD$P.name_en = "Slope of Sen and Mann-Kendall Test result calculated on the series of annual mean daily flows"
 CARD$P.description_en = "1. annual aggregation [09-01, 08-31] - mean
-2. no temporal aggregation - Sen's slope of the series where the Mann-Kendall test is significant at a 10% risk level"
+2. no temporal aggregation - Sen's slope of the series where the Mann-Kendall test is significant at a 10 % risk level"
 CARD$P.method_en = ""
 CARD$P.sampling_period_en = "09-01"
 CARD$P.topic_en = "Flow, Mean Flows, Intensity"
@@ -49,7 +49,7 @@ CARD$P.source = "KENDALL, M. G. (1975). « Rank Correlation Methods ». Griffin,
 MANN, H. (1945). « Nonparametric tests against trend ». Econometrica, 13(3):245–259.
 SEN, P. K. (1968). « Estimates of the regression coefficient based on Kendall’s tau ». In : Journal of the American Statistical Association 63, p. 1379-1389. DOI : doi:10.2307/2285891."
 CARD$P.is_date = FALSE
-CARD$P.is_normalize = c(TRUE, FALSE)
+CARD$P.to_normalize = c(TRUE, FALSE)
 CARD$P.palette = NULL
 
 

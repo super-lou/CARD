@@ -43,7 +43,7 @@ CARD$P.topic_fr = "Débit, Performance"
 ### Global ___________________________________________________________
 CARD$P.source = "NASH, J. E. et J. V. SUTCLIFFE (1970). « River flow forecasting through conceptual models part I — A discussion of principles ». In : Journal of Hydrology 10.3, p. 282-290. DOI : 10.1016/0022-1694(70)90255-6."
 CARD$P.is_date = FALSE
-CARD$P.is_normalize = FALSE
+CARD$P.to_normalize = FALSE
 CARD$P.palette = NULL
 
 

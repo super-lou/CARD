@@ -28,8 +28,8 @@
 CARD$P.variable_en = "Q90"
 CARD$P.unit_en = "m^{3}.s^{-1}"
 CARD$P.name_en = "Flow exceeded 9 years out of 10"
-CARD$P.description_en = "Flow with an exceedance probability of 90% (10th percentile)"
-CARD$P.method_en = "1. no temporal aggregation - quantile at the exceedance probability of 90%"
+CARD$P.description_en = "Flow with an exceedance probability of 90 % (10th percentile)"
+CARD$P.method_en = "1. no temporal aggregation - quantile at the exceedance probability of 90 %"
 CARD$P.topic_en = "Flow, Low Flows, Intensity"
 
 ### French ___________________________________________________________
@@ -42,7 +42,7 @@ CARD$P.topic_fr = "Débit, Basses Eaux, Intensité"
 
 ### Global ___________________________________________________________
 CARD$P.is_date = FALSE
-CARD$P.is_normalize = TRUE
+CARD$P.to_normalize = TRUE
 CARD$P.palette = NULL
 
 

@@ -32,7 +32,7 @@ CARD$P.description_en = ""
 CARD$P.method_en = "1. annual aggregation [Month of minimum monthly flows] - mean flow and mean total precipitation
 2. no temporal aggregation - calculation of elasticity ε"
 CARD$P.sampling_period_en = "Month of minimum monthly flows"
-CARD$P.topic_en = "Flow / Precipitation, Sensitivity to Climate Variability"
+CARD$P.topic_en = "Flow / Precipitations, Sensitivity to Climate Variability"
 
 ### French ___________________________________________________________
 CARD$P.variable_fr = "epsilon_R"
@@ -47,7 +47,7 @@ CARD$P.topic_fr = "Débit / Précipitations, Sensibilité à la variabilité cli
 ### Global ___________________________________________________________
 CARD$P.source = "SANKARASUBRAMANIAN, A., R. M. VOGEL et J. F. LIMBRUNNER (1991). « Climate elasticity of streamflow in the United States ». In : Water Resour. Res. 37, p. 1771-1781."
 CARD$P.is_date = FALSE
-CARD$P.is_normalize = TRUE
+CARD$P.to_normalize = TRUE
 CARD$P.palette = NULL
 
 

@@ -30,7 +30,7 @@ CARD$P.unit_en = "m^{3}.s^{-1}.mm^{-1}"
 CARD$P.name_en = "Runoff coefficient"
 CARD$P.description_en = "The ratio between the sum of flows and the sum of precipitations"
 CARD$P.method_en = ""
-CARD$P.topic_en = "Flow / Precipitation, Sensitivity to climate variability"
+CARD$P.topic_en = "Flow / Precipitations, Sensitivity to climate variability"
 
 ### French ___________________________________________________________
 CARD$P.variable_fr = "Rc"
@@ -42,7 +42,7 @@ CARD$P.topic_fr = "Débit / Précipitations, Sensibilité à la variabilité cli
 
 ### Global ___________________________________________________________
 CARD$P.is_date = FALSE
-CARD$P.is_normalize = TRUE
+CARD$P.to_normalize = TRUE
 CARD$P.palette = NULL
 
 

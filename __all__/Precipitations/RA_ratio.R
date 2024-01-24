@@ -31,7 +31,7 @@ CARD$P.name_en = "Precipitation ratio"
 CARD$P.description_en = ""
 CARD$P.method_en = ""
 CARD$P.sampling_period_en = "09-01"
-CARD$P.topic_en = "Precipitation, Moderate, Ratio"
+CARD$P.topic_en = "Precipitations, Moderate, Ratio"
 
 ### French ___________________________________________________________
 CARD$P.variable_fr = "RA_ratio"
@@ -44,7 +44,7 @@ CARD$P.topic_fr = "Précipitations, Modérée, Ratio"
 
 ### Global ___________________________________________________________
 CARD$P.is_date = FALSE
-CARD$P.is_normalize = FALSE
+CARD$P.to_normalize = FALSE
 CARD$P.palette = NULL
 
 

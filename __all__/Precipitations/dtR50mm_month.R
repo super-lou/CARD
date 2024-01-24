@@ -55,7 +55,7 @@ CARD$P.description_en = c("Number of days with at least 50 mm of precipitation f
                           "Number of days with at least 50 mm of precipitation for each November",
                           "Number of days with at least 50 mm of precipitation for each December")
 CARD$P.method_en = ""
-CARD$P.topic_en = "Precipitation, Heavy, Duration"
+CARD$P.topic_en = "Precipitations, Heavy, Duration"
 
 ### French ___________________________________________________________
 CARD$P.variable_fr = c("dtR50mm_janv", "dtR50mm_fevr", "dtR50mm_mars",
@@ -92,7 +92,7 @@ CARD$P.topic_fr = "Précipitations, Forte, Durée"
 
 ### Global ___________________________________________________________
 CARD$P.is_date = FALSE
-CARD$P.is_normalize = FALSE
+CARD$P.to_normalize = FALSE
 CARD$P.palette = "#543005 #8C510A #BF812D #DFC27D #F6E8C3 #C7EAE5 #80CDC1 #35978F #01665E #003C30"
 
 

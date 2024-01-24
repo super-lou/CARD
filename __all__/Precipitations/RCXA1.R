@@ -31,7 +31,7 @@ CARD$P.name_en = "Annual maximum of daily precipitation"
 CARD$P.description_en = ""
 CARD$P.method_en = ""
 CARD$P.sampling_period_en = "Month of minimum monthly precipitation"
-CARD$P.topic_en = "Precipitation, Heavy, Intensity"
+CARD$P.topic_en = "Precipitations, Heavy, Intensity"
 
 ### French ___________________________________________________________
 CARD$P.variable_fr = "RCXA1"
@@ -44,7 +44,7 @@ CARD$P.topic_fr = "Précipitations, Forte, Intensité"
 
 ### Global ___________________________________________________________
 CARD$P.is_date = FALSE
-CARD$P.is_normalize = FALSE
+CARD$P.to_normalize = FALSE
 CARD$P.palette = "#543005 #8C510A #BF812D #DFC27D #F6E8C3 #C7EAE5 #80CDC1 #35978F #01665E #003C30"
 
 

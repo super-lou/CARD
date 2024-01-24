@@ -29,7 +29,7 @@ CARD$P.variable_en = "dtBF"
 CARD$P.unit_en = "day"
 CARD$P.name_en = "Duration of low flows"
 CARD$P.description_en = "Duration between the start and end of low flows"
-CARD$P.method_en = "1. annual aggregation [09-01, 08-31] - number of days between the dates when the baseflow sum corresponds to 10% and 90% of the total sum"
+CARD$P.method_en = "1. annual aggregation [09-01, 08-31] - number of days between the dates when the baseflow sum corresponds to 10 % and 90 % of the total sum"
 CARD$P.sampling_period_en = '09-01'
 CARD$P.topic_en = "Flow, Baseflow, Duration"
 
@@ -45,7 +45,7 @@ CARD$P.topic_fr = "Débit, Débit de Base, Durée"
 ### Global ___________________________________________________________
 CARD$P.source = "TALLAKSEN, L. et H. VAN LANEN, éd. (2004). Hydrological drought. Processes and estimation methods for streamflow and groundwater. English. Developments in water science 48. Netherlands : Elsevier. ISBN : 9780444516886."
 CARD$P.is_date = FALSE
-CARD$P.is_normalize = TRUE
+CARD$P.to_normalize = TRUE
 CARD$P.palette = "#003C30 #01665E #35978F #80CDC1 #C7EAE5 #F6E8C3 #DFC27D #BF812D #8C510A #543005"
 
 

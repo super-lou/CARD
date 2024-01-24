@@ -31,7 +31,7 @@ CARD$P.name_en = "Ratio of annual liquid precipitation to total annual precipita
 CARD$P.description_en = ""
 CARD$P.method_en = ""
 CARD$P.sampling_period_en = "09-01"
-CARD$P.topic_en = "Precipitation, Moderate, Ratio"
+CARD$P.topic_en = "Precipitations, Moderate, Ratio"
 
 ### French ___________________________________________________________
 CARD$P.variable_fr = "RAl_ratio"
@@ -44,7 +44,7 @@ CARD$P.topic_fr = "Précipitations, Modérée, Ratio"
 
 ### Global ___________________________________________________________
 CARD$P.is_date = FALSE
-CARD$P.is_normalize = FALSE
+CARD$P.to_normalize = FALSE
 CARD$P.palette = "#543005 #8C510A #BF812D #DFC27D #F6E8C3 #C7EAE5 #80CDC1 #35978F #01665E #003C30"
 
 

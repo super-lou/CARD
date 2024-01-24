@@ -30,7 +30,7 @@ CARD$P.unit_en = "bool"
 CARD$P.name_en = "Robustness test to air temperature variation"
 CARD$P.description_en = ""
 CARD$P.method_en = "1. annual aggregation [09-01, 08-31] - Qref − Qsim and mean temperatures
-2. no temporal aggregation - RAT with a 10% risk"
+2. no temporal aggregation - RAT with a 10 % risk"
 CARD$P.topic_en = "Flow / Temperature, Sensitivity to Climate Variability"
 CARD$P.sampling_period_en = "09-01"
 
@@ -47,7 +47,7 @@ CARD$P.sampling_period_fr = "01-09"
 ### Global ___________________________________________________________
 CARD$P.source = "NICOLLE, P. et al. (2021). « Technical note : RAT – a robustness assessment test for calibrated and uncalibrated hydrological models ». In : Hydrol. Earth Syst. Sci. 25, p. 5013-5027. DOI : 10.5194/hess-25-5013-2021."
 CARD$P.is_date = FALSE
-CARD$P.is_normalize = FALSE
+CARD$P.to_normalize = FALSE
 CARD$P.palette = NULL
 
 

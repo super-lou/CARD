@@ -30,7 +30,7 @@ CARD$P.unit_en = "m^{3}.s^{-1}"
 CARD$P.name_en = "Flow duration curve"
 CARD$P.description_en = ""
 CARD$P.method_en = "1. no temporal aggregation - flow duration curves with 1000 points spaced according to a centered reduced normal distribution."
-CARD$P.topic_en = "Flow, Average Flow, Intensity"
+CARD$P.topic_en = "Flow, Mean Flows Intensity"
 
 ### French ___________________________________________________________
 CARD$P.variable_fr = "CDC"
@@ -42,7 +42,7 @@ CARD$P.topic_fr = "Débit, Moyennes Eaux, Intensité"
 
 ### Global ___________________________________________________________
 CARD$P.is_date = FALSE
-CARD$P.is_normalize = TRUE
+CARD$P.to_normalize = TRUE
 CARD$P.palette = NULL
 
 

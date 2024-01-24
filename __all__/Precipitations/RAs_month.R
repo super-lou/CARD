@@ -43,7 +43,7 @@ CARD$P.name_en = c("Cumulative daily solid precipitation for each January",
                    "Cumulative daily solid precipitation for each December")
 CARD$P.description_en = ""
 CARD$P.method_en = ""
-CARD$P.topic_en = "Precipitation, Moderate, Intensity"
+CARD$P.topic_en = "Precipitations, Moderate, Intensity"
 
 ### French ___________________________________________________________
 CARD$P.variable_fr = c("RAs_janv", "RAs_fevr", "RAs_mars",

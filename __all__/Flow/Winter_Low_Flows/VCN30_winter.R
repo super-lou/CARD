@@ -25,7 +25,7 @@
 
 ## INFO ______________________________________________________________
 ### English __________________________________________________________
-CARD$P.variable_en = "VCN30_hivernal"
+CARD$P.variable_en = "VCN30_winter"
 CARD$P.unit_en = "m^{3}.s^{-1}"
 CARD$P.name_en = "Winter minimum of 30-day mean daily discharge"
 CARD$P.description_en = ""
@@ -35,7 +35,7 @@ CARD$P.sampling_period_en = c("11-01", "04-30")
 CARD$P.topic_en = "Flow, Low Flows, Intensity"
 
 ### French ___________________________________________________________
-CARD$P.variable_fr = "VCN30_winter"
+CARD$P.variable_fr = "VCN30_hivernal"
 CARD$P.unit_fr = "m^{3}.s^{-1}"
 CARD$P.name_fr = "Minimum hivernal de la moyenne sur 30 jours du débit journalier"
 CARD$P.description_fr = ""
@@ -46,7 +46,7 @@ CARD$P.topic_fr = "Débit, Basses Eaux, Intensité"
 
 ### Global ___________________________________________________________
 CARD$P.is_date = FALSE
-CARD$P.is_normalize = TRUE
+CARD$P.to_normalize = TRUE
 CARD$P.palette = "#543005 #8C510A #BF812D #DFC27D #F6E8C3 #C7EAE5 #80CDC1 #35978F #01665E #003C30"
 
 

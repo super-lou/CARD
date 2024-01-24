@@ -33,7 +33,7 @@ CARD$P.name_en = c("Winter precipitation correction coefficient",
                    "Autumn precipitation correction coefficient")
 CARD$P.description_en = ""
 CARD$P.method_en = ""
-CARD$P.topic_en = "Precipitation, Moderate, Parameterization"
+CARD$P.topic_en = "Precipitations, Moderate, Parameterization"
 
 ### French ___________________________________________________________
 CARD$P.variable_fr = c("CR_DJF", "CR_MAM", "CR_JJA", "CR_SON")
@@ -48,7 +48,7 @@ CARD$P.topic_fr = "Précipitations, Modérée, Paramétristation"
 
 ### Global ___________________________________________________________
 CARD$P.is_date = FALSE
-CARD$P.is_normalize = FALSE
+CARD$P.to_normalize = FALSE
 CARD$P.palette = "#543005 #8C510A #BF812D #DFC27D #F6E8C3 #C7EAE5 #80CDC1 #35978F #01665E #003C30"
 
 

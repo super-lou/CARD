@@ -37,7 +37,7 @@ CARD$P.description_en = c("Number of days with at least 50 mm of precipitation (
                           "Number of days with at least 50 mm of precipitation (months of June, July, and August)",
                           "Number of days with at least 50 mm of precipitation (months of September, October, and November)")
 CARD$P.method_en = ""
-CARD$P.topic_en = "Precipitation, Heavy, Duration"
+CARD$P.topic_en = "Precipitations, Heavy, Duration"
 
 ### French ___________________________________________________________
 CARD$P.variable_fr = c("dtR50mm_DJF", "dtR50mm_MAM",
@@ -56,7 +56,7 @@ CARD$P.topic_fr = "Précipitations, Forte, Durée"
 
 ### Global ___________________________________________________________
 CARD$P.is_date = FALSE
-CARD$P.is_normalize = FALSE
+CARD$P.to_normalize = FALSE
 CARD$P.palette = "#543005 #8C510A #BF812D #DFC27D #F6E8C3 #C7EAE5 #80CDC1 #35978F #01665E #003C30"
 
 

@@ -38,7 +38,7 @@ CARD$P.description_en = c("Months of December, January, and February",
 CARD$P.method_en = c("1. seasonal annual aggregation [12-01, 28(29)-02] - mean",
                      "1. seasonal annual aggregation [03-01, 31-05] - mean",
                      "1. seasonal annual aggregation [06-01, 31-08] - mean",
-                     "1. seasonal annual aggregation [09-01, 30-11] - mean")
+                     "1. seasonal annual aggregation [09-01, 11-30] - mean")
 CARD$P.topic_en = "Flow, Mean Flows, Intensity"
 
 ### French ___________________________________________________________
@@ -60,7 +60,7 @@ CARD$P.topic_fr = "Débit, Moyennes Eaux, Intensité"
 
 ### Global ___________________________________________________________
 CARD$P.is_date = FALSE
-CARD$P.is_normalize = TRUE
+CARD$P.to_normalize = TRUE
 CARD$P.palette = "#543005 #8C510A #BF812D #DFC27D #F6E8C3 #C7EAE5 #80CDC1 #35978F #01665E #003C30"
 
 
