@@ -21,7 +21,7 @@ git clone https://github.com/super-lou/CARD.git
 
 
 ## Documentation
-### __all__
+### \_\_all\_\_
 In this directory, you can find all the different CARDs available, stored by topic. All CARDs have the same structure, as exemplified by the annual average daily flow `QA` in `__all__/Flow/Mean_Flows`:
 
 ``` r
@@ -87,12 +87,12 @@ CARD$P1.NAyear_lim = 10
 
 CARDS are separated into 2 main parts: `INFO` and `PROCESS`.
 
-#### INFO
+##### INFO
 In this part, you can find all the necessary info about the variable represented by this CARD. There are English and French versions for parameters such as the unit, the name, and the description. Global info are general info that do not need translation.
 
 This information is not merely informational; it serves as metadata for [EXstat](https://github.com/super-lou/EXstat).
 
-#### PROCESS
+##### PROCESS
 In the PROCESS part, you will find steps needed to extract the desired variable. The parameters listed here are parameters that you can use in [EXstat](https://github.com/super-lou/EXstat)'s `process_extraction` function. Here, there is only one step because we only need to calculate a yearly mean and no other type of aggregation. However, for example, we can add another step like:
 
 ``` r
@@ -104,7 +104,7 @@ CARD$P2.time_step = "none"
 
 And that will now be the modulus of the flow, which is the average of the annual average daily flow, labeled as `meanQA`.
 
-### __tools__
+### \_\_tools\_\_
 In this directory, you can find all the different functions needed for the aggregation process in CARDs. They are ordered by type of application, but it may take some time to search and understand what is available or not. This is where you can modify or add your own function.
 
 
