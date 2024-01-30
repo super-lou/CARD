@@ -25,20 +25,20 @@
 
 ## INFO ______________________________________________________________
 ### English __________________________________________________________
-CARD$P.variable_en = "QA95"
+CARD$P.variable_en = "QA99"
 CARD$P.unit_en = "m^{3}.s^{-1}"
-CARD$P.name_en = "Annual flow exceeded 19 years out of 20"
-CARD$P.description_en = "Annual flow with a exceedance probability of 95 % (5th percentile)"
-CARD$P.method_en = "1. annual aggregation [01-01, 12-31] - quantile at the exceedance probability of 95 %"
+CARD$P.name_en = "Annual flow exceeded 99 years out of 100"
+CARD$P.description_en = "Annual flow with a exceedance probability of 99 % (1th percentile)"
+CARD$P.method_en = "1. annual aggregation [01-01, 12-31] - quantile at the exceedance probability of 99 %"
 CARD$P.sampling_period_en = "01-01"
 CARD$P.topic_en = "Flow, Low Flows, Intensity"
 
 ### French ___________________________________________________________
-CARD$P.variable_fr = "QA95"
+CARD$P.variable_fr = "QA99"
 CARD$P.unit_fr = "m^{3}.s^{-1}"
-CARD$P.name_fr = "Débit annuel dépassée 19 années sur 20"
-CARD$P.description_fr = "Débit annuel avec une probabilité de dépassement de 95 % (centile 5 %)"
-CARD$P.method_fr = "1. agrégation annuelle [01-01, 31-12] - quantile à la probabilité au dépassement de 95 %"
+CARD$P.name_fr = "Débit annuel dépassée 99 années sur 100"
+CARD$P.description_fr = "Débit annuel avec une probabilité de dépassement de 99 % (centile 1 %)"
+CARD$P.method_fr = "1. agrégation annuelle [01-01, 31-12] - quantile à la probabilité au dépassement de 99 %"
 CARD$P.sampling_period_fr = "01-01"
 CARD$P.topic_fr = "Débit, Basses Eaux, Intensité"
 
@@ -50,8 +50,8 @@ CARD$P.palette = "#543005 #8C510A #BF812D #DFC27D #F6E8C3 #C7EAE5 #80CDC1 #35978
 
 ## PROCESS ___________________________________________________________
 ### P1 _______________________________________________________________
-CARD$P1.funct = list(QA95=compute_Qp)
-CARD$P1.funct_args = list("Q", p=0.95)
+CARD$P1.funct = list(QA99=compute_Qp)
+CARD$P1.funct_args = list("Q", p=0.99)
 CARD$P1.time_step = "year"
 CARD$P1.sampling_period = "01-01"
 CARD$P1.NApct_lim = 3
