@@ -50,7 +50,7 @@ CARD$P.palette = NULL
 ### P1 _______________________________________________________________
 CARD$P1.funct = list("medQJ_H3"=median)
 CARD$P1.funct_args = list("Q", na.rm=TRUE)
-CARD$P1.period = c("2070-09-01", "2100-08-31")
+CARD$P1.period = c("2070-01-01", "2099-12-31")
 CARD$P1.time_step = "yearday"
 CARD$P1.NApct_lim = 3
 CARD$P1.NAyear_lim = 10

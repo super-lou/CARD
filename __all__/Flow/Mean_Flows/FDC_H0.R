@@ -51,7 +51,7 @@ CARD$P.palette = NULL
 CARD$P1.funct = list(FDC_H0_p=compute_FDC_p, FDC_H0_Q=compute_FDC_Q)
 CARD$P1.funct_args = list(list(n=1000, isNormLaw=TRUE),
                           list("Q", n=1000, isNormLaw=TRUE))
-CARD$P1.period = c("1975-09-01", "2005-08-31")
+CARD$P1.period = c("1976-01-01", "2005-08-31")
 CARD$P1.time_step = "none"
 CARD$P1.NAyear_lim = 10
 
