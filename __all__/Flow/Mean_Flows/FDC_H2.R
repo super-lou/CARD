@@ -25,25 +25,22 @@
 
 ## INFO ______________________________________________________________
 ### English __________________________________________________________
-CARD$P.variable_en = "variable"
-CARD$P.unit_en = "unit"
-CARD$P.name_en = "name"
-CARD$P.description_en = "description"
-CARD$P.method_en = "1. 'time step' aggregation [month-day, month-day] - function"
-CARD$P.sampling_period_en = NULL
-CARD$P.topic_en = NULL
+CARD$P.variable_en = "FDC_H2"
+CARD$P.unit_en = "m^{3}.s^{-1}"
+CARD$P.name_en = "Flow duration curve of middle horizon"
+CARD$P.description_en = ""
+CARD$P.method_en = "1. no temporal aggregation - flow duration curves with 1000 points spaced according to a centered reduced normal distribution."
+CARD$P.topic_en = "Flow, Mean Flows Intensity"
 
 ### French ___________________________________________________________
-CARD$P.variable_fr = "variable"
-CARD$P.unit_fr = "unité"
-CARD$P.name_fr = "nom"
-CARD$P.description_fr = "description"
-CARD$P.method_fr = "1. agrégation 'pas de temps' [jour-mois, jour-mois] - fonction"
-CARD$P.sampling_period_fr = NULL
-CARD$P.topic_fr = NULL
+CARD$P.variable_fr = "CDC_H2"
+CARD$P.unit_fr = "m^{3}.s^{-1}"
+CARD$P.name_fr = "Courbe des débits classés de l'horizon moyen"
+CARD$P.description_fr = ""
+CARD$P.method_fr = "1. aucune agrégation temporelle - courbes des débits classés avec 1000 points espacés selon une loi normale centrée réduite"
+CARD$P.topic_fr = "Débit, Moyennes Eaux, Intensité"
 
 ### Global ___________________________________________________________
-CARD$P.source = NULL
 CARD$P.is_date = FALSE
 CARD$P.to_normalize = TRUE
 CARD$P.palette = NULL
@@ -51,17 +48,10 @@ CARD$P.palette = NULL
 
 ## PROCESS ___________________________________________________________
 ### P1 _______________________________________________________________
-CARD$P1.funct = NULL
-CARD$P1.funct_args = NULL
-CARD$P1.time_step = "year"
-CARD$P1.sampling_period = NULL
-CARD$P1.period = NULL
-CARD$P1.is_date = FALSE
-CARD$P1.NApct_lim = NULL
-CARD$P1.NAyear_lim = NULL
-CARD$P1.Seasons = c("DJF", "MAM", "JJA", "SON")
-CARD$P1.nameEX = "X"
-CARD$P1.keep = NULL
-CARD$P1.compress = FALSE
-CARD$P1.expand = FALSE
-CARD$P1.rmNApct = TRUE
+CARD$P1.funct = list(FDC_H2_p=compute_FDC_p, FDC_H2_Q=compute_FDC_Q)
+CARD$P1.funct_args = list(list(n=1000, isNormLaw=TRUE),
+                          list("Q", n=1000, isNormLaw=TRUE))
+CARD$P1.period = c("2040-09-01", "2070-08-31")
+CARD$P1.time_step = "none"
+CARD$P1.NAyear_lim = 10
+
