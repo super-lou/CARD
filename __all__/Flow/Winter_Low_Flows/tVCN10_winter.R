@@ -27,8 +27,8 @@
 ### English __________________________________________________________
 CARD$P.variable_en = "tVCN10_winter"
 CARD$P.unit_en = "yearday"
-CARD$P.name_en = "Winter low flow center"
-CARD$P.description_en = "Date of the winter minimum of 10-day mean flows (months from November to April)"
+CARD$P.name_en = "Date of the winter minimum of 10-day mean flows"
+CARD$P.description_en = "Months from November to April"
 CARD$P.method_en = "1. no temporal aggregation - 10-day centered moving average
 2. annual aggregation [11-01, 04-30] - date of the minimum"
 CARD$P.sampling_period_en = c("11-01", "04-30")
@@ -37,8 +37,8 @@ CARD$P.topic_en = "Flow, Low Flows, Seasonality"
 ### French ___________________________________________________________
 CARD$P.variable_fr = "tVCN10_hivernal"
 CARD$P.unit_fr = "jour de l'année"
-CARD$P.name_fr = "Centre des basses eaux hivernales"
-CARD$P.description_fr = "Date du minimum hivernal des débits moyens sur 10 jours (mois de novembre à avril)"
+CARD$P.name_fr = "Date du minimum hivernal des débits moyens sur 10 jours"
+CARD$P.description_fr = "Mois de novembre à avril"
 CARD$P.method_fr = "1. aucune agrégation temporelle - moyenne mobile centrée sur 10 jours
 2. agrégation annuelle [01-11, 30-04] - date du minimum"
 CARD$P.sampling_period_fr = c("01-11", "30-04")

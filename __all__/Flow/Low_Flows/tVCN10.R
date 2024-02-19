@@ -27,8 +27,8 @@
 ### English __________________________________________________________
 CARD$P.variable_en = "tVCN10"
 CARD$P.unit_en = "yearday"
-CARD$P.name_en = "Low flow center"
-CARD$P.description_en = "Date of the annual minimum of 10-day mean flows"
+CARD$P.name_en = "Date of the annual minimum of 10-day mean flows"
+CARD$P.description_en = ""
 CARD$P.method_en = "1. no temporal aggregation - 10-day centered moving average
 2. annual aggregation [Month of maximum monthly flows] - date of the minimum"
 CARD$P.sampling_period_en = "Month of maximum monthly flows"
@@ -37,8 +37,8 @@ CARD$P.topic_en = "Flow, Low Flows, Seasonality"
 ### French ___________________________________________________________
 CARD$P.variable_fr = "tVCN10"
 CARD$P.unit_fr = "jour de l'année"
-CARD$P.name_fr = "Centre des basses eaux"
-CARD$P.description_fr = "Date du minimum annuel des débits moyens sur 10 jours"
+CARD$P.name_fr = "Date du minimum annuel des débits moyens sur 10 jours"
+CARD$P.description_fr = ""
 CARD$P.method_fr = "1. aucune agrégation temporelle - moyenne mobile centrée sur 10 jours
 2. agrégation annuelle [Mois du maximum des débits mensuels] - date du minimum"
 CARD$P.sampling_period_fr = "Mois du maximum des débits mensuels"
