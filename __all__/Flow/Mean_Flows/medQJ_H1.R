@@ -52,6 +52,6 @@ CARD$P1.funct = list("medQJ_H1"=median)
 CARD$P1.funct_args = list("Q", na.rm=TRUE)
 CARD$P1.period = c("2021-01-01", "2050-12-31")
 CARD$P1.time_step = "yearday"
-CARD$P1.NApct_lim = 3
-CARD$P1.NAyear_lim = 10
+CARD$P1.NApct_lim = NULL
+CARD$P1.NAyear_lim = NULL
 
