@@ -47,7 +47,7 @@ CARD$P.topic_fr = "Débit / Évapotranspiration, Sensibilité à la variabilité
 ### Global ___________________________________________________________
 CARD$P.source = "NICOLLE, P. et al. (2021). « Technical note : RAT – a robustness assessment test for calibrated and uncalibrated hydrological models ». In : Hydrol. Earth Syst. Sci. 25, p. 5013-5027. DOI : 10.5194/hess-25-5013-2021."
 CARD$P.is_date = FALSE
-CARD$P.to_normalize = FALSE
+CARD$P.to_normalise = FALSE
 CARD$P.palette = NULL
 
 

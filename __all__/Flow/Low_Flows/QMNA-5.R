@@ -48,7 +48,7 @@ CARD$P.sampling_period_fr = "Mois du maximum des débits mensuels"
 
 ### Global ___________________________________________________________
 CARD$P.is_date = FALSE
-CARD$P.to_normalize = TRUE
+CARD$P.to_normalise = TRUE
 CARD$P.palette = NULL
 
 

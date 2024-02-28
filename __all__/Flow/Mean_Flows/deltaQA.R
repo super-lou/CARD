@@ -44,7 +44,7 @@ CARD$P.topic_fr = "Débit, Moyennes Eaux, Différence relative"
 
 ### Global ___________________________________________________________
 CARD$P.is_date = FALSE
-CARD$P.to_normalize = FALSE
+CARD$P.to_normalise = FALSE
 CARD$P.palette = NULL
 
 

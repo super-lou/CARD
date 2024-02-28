@@ -49,7 +49,7 @@ CARD$P.source = "KENDALL, M. G. (1975). « Rank Correlation Methods ». Griffin,
 MANN, H. (1945). « Nonparametric tests against trend ». Econometrica, 13(3):245–259.
 SEN, P. K. (1968). « Estimates of the regression coefficient based on Kendall’s tau ». In : Journal of the American Statistical Association 63, p. 1379-1389. DOI : doi:10.2307/2285891."
 CARD$P.is_date = FALSE
-CARD$P.to_normalize = c(TRUE, FALSE)
+CARD$P.to_normalise = c(TRUE, FALSE)
 CARD$P.palette = NULL
 
 

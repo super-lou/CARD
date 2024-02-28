@@ -44,7 +44,7 @@ CARD$P.topic_fr = "Débit, Hautes Eaux, Saisonnalité"
 
 ### Global ___________________________________________________________
 CARD$P.is_date = TRUE
-CARD$P.to_normalize = FALSE
+CARD$P.to_normalise = FALSE
 CARD$P.palette = "#893687 #BC66A5 #E596C3 #EAC5DD #EFE2E9 #F5E4E2 #F2D7B5 #E9BD6F #DC8C48 #CD5629"
 
 

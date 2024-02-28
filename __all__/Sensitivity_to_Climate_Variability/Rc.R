@@ -42,7 +42,7 @@ CARD$P.topic_fr = "Débit / Précipitations, Sensibilité à la variabilité cli
 
 ### Global ___________________________________________________________
 CARD$P.is_date = FALSE
-CARD$P.to_normalize = TRUE
+CARD$P.to_normalise = TRUE
 CARD$P.palette = NULL
 
 

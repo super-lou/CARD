@@ -53,7 +53,7 @@ CARD$P.topic_fr = "Débit, Basses Eaux, Saisonnalité"
 
 ### Global ___________________________________________________________
 CARD$P.is_date = TRUE
-CARD$P.to_normalize = FALSE
+CARD$P.to_normalise = FALSE
 CARD$P.palette = NULL
 
 
