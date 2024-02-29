@@ -29,7 +29,7 @@ CARD$P.variable_en = "endBF"
 CARD$P.unit_en = "yearday"
 CARD$P.name_en = "End of Base Flow"
 CARD$P.description_en = "Date when 90 % of the annual cumulative base flow is reached"
-CARD$P.method_en = "1. annual aggregation [09-01, 08-31] - date when the sum of base flow Qb corresponds to 90 % of the total sum"
+CARD$P.method_en = "1. annual aggregation [09-01, 08-31] - date when the sum of base flow (Wallingford) Qb corresponds to 90 % of the total sum"
 CARD$P.sampling_period_en = '09-01'
 CARD$P.topic_en = "Flow, Base Flow, Seasonality"
 
@@ -38,7 +38,7 @@ CARD$P.variable_fr = "finQB"
 CARD$P.unit_fr = "jour de l'année"
 CARD$P.name_fr = "Fin des écoulements lents"
 CARD$P.description_fr = "Date à laquelle 90 % du cumul annuel du débit de base sont atteints"
-CARD$P.method_fr = "1. agrégation annuelle [01-09, 31-08] - date à laquelle la somme du débit de base Qb correspond à 90 % de la somme totale"
+CARD$P.method_fr = "1. agrégation annuelle [01-09, 31-08] - date à laquelle la somme du débit de base (Wallingford) Qb correspond à 90 % de la somme totale"
 CARD$P.sampling_period_fr = '01-09'
 CARD$P.topic_fr = "Débit, Débit de Base, Saisonnalité"
 
@@ -52,7 +52,7 @@ CARD$P.palette = "#893687 #BC66A5 #E596C3 #EAC5DD #EFE2E9 #F5E4E2 #F2D7B5 #E9BD6
 ## PROCESS ___________________________________________________________
 ### P1 _______________________________________________________________
 CARD$P1.funct = list(endBF=compute_tVolSnowmelt)
-CARD$P1.funct_args = list("Q", p=0.9)
+CARD$P1.funct_args = list("Q", p=0.9, method="Wal")
 CARD$P1.time_step = "year"
 CARD$P1.sampling_period = '09-01'
 CARD$P1.is_date = TRUE

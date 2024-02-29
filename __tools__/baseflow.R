@@ -64,54 +64,62 @@ approxExtrap = function(x, y, xout, method='linear', n=50, rule=2,
 }
 
 ## 1. BASEFLOW SEPARATION ____________________________________________
-BFS = function (Q, d=5, w=0.9) {
+# Wal : Gustard, A., A. Bullock, et J. M. Dixon. Low Flow Estimation in the United Kingdom. Report / Institute of Hydrology 108. Wallingford: Institute of Hydrology, 1992.
+# LH : Lyne & Hollick
+BFS = function (Q, d=5, w=0.9, a=0.925, passes=3, method='Wal') {
 
-    N = length(Q)
-    if (all(is.na(Q))) {
-        return (NA)
-    }
-    Slices = split(Q, ceiling(seq_along(Q)/d))    
-    idMinSlices = unlist(lapply(Slices, which.minNA),
-                         use.names=FALSE)
-    
-    idShift = c(0, cumsum(unlist(lapply(Slices, length),
-                                 use.names=FALSE)))
-    idShift = idShift[-length(idShift)]
-    idMin = idMinSlices + idShift
-    Qmin_k = Q[idMin]
-
-    if (length(Qmin_k) == 1) {
-        BF = rep(NA, N)
-        return (BF)
-    }
-
-    n = length(Qmin_k)
-    Qmin_kp1 = c(Qmin_k[2:n], NA)
-    Qmin_km1 = c(NA, Qmin_k[1:(n-1)])
-    test = w * Qmin_k < pmin(Qmin_km1, Qmin_kp1)
-    test[is.na(test)] = FALSE
-    idPivots = idMin[which(test)]
-    Pivots = Qmin_k[test]
-
-    nbNAid = length(idPivots[!is.na(idPivots)])
-    nbNA = length(Pivots[!is.na(Pivots)])
-    if (nbNAid >= 2 & nbNA >= 2) {
-        BF = approxExtrap(idPivots, Pivots, xout=1:N,
-                          method="linear", na.rm=TRUE)$y  
-        BF[is.na(Q)] = NA
-        BF[BF < 0] = 0
-        test = BF > Q
-        test[is.na(test)] = FALSE
-        BF[test] = Q[test]
+    if (method == "Wal") {
+        N = length(Q)
+        if (all(is.na(Q))) {
+            return (NA)
+        }
+        Slices = split(Q, ceiling(seq_along(Q)/d))    
+        idMinSlices = unlist(lapply(Slices, which.minNA),
+                             use.names=FALSE)
         
-    } else {
-        BF = rep(NA, N)
-    }    
+        idShift = c(0, cumsum(unlist(lapply(Slices, length),
+                                     use.names=FALSE)))
+        idShift = idShift[-length(idShift)]
+        idMin = idMinSlices + idShift
+        Qmin_k = Q[idMin]
+
+        if (length(Qmin_k) == 1) {
+            BF = rep(NA, N)
+            return (BF)
+        }
+
+        n = length(Qmin_k)
+        Qmin_kp1 = c(Qmin_k[2:n], NA)
+        Qmin_km1 = c(NA, Qmin_k[1:(n-1)])
+        test = w * Qmin_k < pmin(Qmin_km1, Qmin_kp1)
+        test[is.na(test)] = FALSE
+        idPivots = idMin[which(test)]
+        Pivots = Qmin_k[test]
+
+        nbNAid = length(idPivots[!is.na(idPivots)])
+        nbNA = length(Pivots[!is.na(Pivots)])
+        if (nbNAid >= 2 & nbNA >= 2) {
+            BF = approxExtrap(idPivots, Pivots, xout=1:N,
+                              method="linear", na.rm=TRUE)$y  
+            BF[is.na(Q)] = NA
+            BF[BF < 0] = 0
+            test = BF > Q
+            test[is.na(test)] = FALSE
+            BF[test] = Q[test]
+            
+        } else {
+            BF = rep(NA, N)
+        }
+        
+    } else if (method == "LH") {
+        BF = adc::bf_sep_lh(Q, a=a, n=passes, reflect=30)
+    }
+    
     return (BF)
 }
 
-dBFS = function (Q, d=5, w=0.9) {
-    BF = BFS(Q, d=d, w=w)
+dBFS = function (Q, d=5, w=0.9, a=0.925, passes=3, method='Wal') {
+    BF = BFS(Q, d=d, w=w, a=a, passes=passes, method=method)
     dBF = Q - BF
     return (dBF)
 }
@@ -130,7 +138,9 @@ dBFS = function (Q, d=5, w=0.9) {
 #' @return
 #' @export
 get_BFI = function (Q, BF, na.rm=TRUE) {
-    if (length(Q) != length(BF)) warning("'Q' and 'BF' don't have the same length!")
+    if (length(Q) != length(BF)) {
+        warning("'Q' and 'BF' don't have the same length!")
+    }
     res = sum(BF, na.rm=na.rm) / sum(Q, na.rm=na.rm)
     return (res)
 } 
@@ -160,15 +170,17 @@ get_BFM = function (BFA) {
 
 ## 4. USE ____________________________________________________________
 ### 4.1. Volumic _____________________________________________________
-compute_VolSnowmelt = function (X) {
-    BF = BFS(X)
+compute_VolSnowmelt = function (X, d=5, w=0.9, a=0.925, passes=3,
+                                method='Wal') {
+    BF = BFS(X, d=d, w=w, a=a, passes=passes, method=method)
     VolSnowmelt = sum(BF, na.rm=TRUE)*24*3600 / 10^6 # m^3.s-1 * jour / 10^6 -> hm^3
     return (VolSnowmelt)
 }
 
 ### 4.2. Temporal_____________________________________________________
-compute_tVolSnowmelt = function (X, p) {
-    BF = BFS(X)
+compute_tVolSnowmelt = function (X, p, d=5, w=0.9, a=0.925, passes=3,
+                                 method='Wal') {
+    BF = BFS(X, d=d, w=w, a=a, passes=passes, method=method)
     VolSnowmelt = cumsum(BF)
     pVolSnowmelt = VolSnowmelt / maxNA(VolSnowmelt, na.rm=TRUE)
     idp = which.minNA(abs(pVolSnowmelt - p))
@@ -176,8 +188,9 @@ compute_tVolSnowmelt = function (X, p) {
 }
 
 ### 4.3. Duration ____________________________________________________
-compute_tSnowmelt = function (X, p1, p2) {
-    BF = BFS(X)
+compute_tSnowmelt = function (X, p1, p2, d=5, w=0.9, a=0.925,
+                              passes=3, method='Wal') {
+    BF = BFS(X, d=d, w=w, a=a, passes=passes, method=method)
     VolSnowmelt = cumsum(BF)
     pVolSnowmelt = VolSnowmelt / maxNA(VolSnowmelt, na.rm=TRUE)
     idp1 = which.minNA(abs(pVolSnowmelt - p1))

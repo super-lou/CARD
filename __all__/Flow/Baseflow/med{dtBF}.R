@@ -29,7 +29,7 @@ CARD$P.variable_en = "med{dtBF}"
 CARD$P.unit_en = "day"
 CARD$P.name_en = "Median duration of baseflow"
 CARD$P.description_en = "Median of the durations between the start and end of baseflow"
-CARD$P.method_en = "1. annual aggregation [09-01, 08-31] - number of days between the dates at which the baseflow sum corresponds to 10 % and 90 % of the total baseflow sum
+CARD$P.method_en = "1. annual aggregation [09-01, 08-31] - number of days between the dates at which the baseflow (Wallingford) sum corresponds to 10 % and 90 % of the total baseflow sum
 2. no temporal aggregation - median"
 CARD$P.sampling_period_en = '09-01'
 CARD$P.topic_en = "Flow, Baseflow, Duration"
@@ -39,7 +39,7 @@ CARD$P.variable_fr = "med{dtQB}"
 CARD$P.unit_fr = "jour"
 CARD$P.name_fr = "Médiane de la durée des écoulements lents"
 CARD$P.description_fr = "Médiane des durées entre le début et la fin des écoulements lents"
-CARD$P.method_fr = "1. agrégation annuelle [01-09, 31-08] - nombre de jours entre les dates auxquelles la somme du débit de base correspond à 10 % et 90 % de la somme totale du débit de base
+CARD$P.method_fr = "1. agrégation annuelle [01-09, 31-08] - nombre de jours entre les dates auxquelles la somme du débit de base (Wallingford) correspond à 10 % et 90 % de la somme totale du débit de base
 2. aucune agrégation temporelle - médiane"
 CARD$P.sampling_period_fr = '01-09'
 CARD$P.topic_fr = "Débit, Débit de Base, Durée"
@@ -54,7 +54,7 @@ CARD$P.palette = NULL
 ## PROCESS ___________________________________________________________
 ### P1 _______________________________________________________________
 CARD$P1.funct = list(dtBF=compute_tSnowmelt)
-CARD$P1.funct_args = list("Q", p1=0.1, p2=0.9)
+CARD$P1.funct_args = list("Q", p1=0.1, p2=0.9, method="Wal")
 CARD$P1.time_step = "year"
 CARD$P1.sampling_period = '09-01'
 CARD$P1.NApct_lim = 3

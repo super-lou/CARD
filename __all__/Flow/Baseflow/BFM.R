@@ -29,7 +29,7 @@ CARD$P.variable_en = "BFM"
 CARD$P.unit_en = "without unit"
 CARD$P.name_en = "Baseflow magnitude"
 CARD$P.description_en = ""
-CARD$P.method_en = "1. no temporal aggregation - extraction of the base flow
+CARD$P.method_en = "1. no temporal aggregation - extraction of the base flow (Wallingford)
 2. aggregation by day of the year - average of the base flow BFA
 3. no temporal aggregation - calculation of the base flow magnitude BFM"
 CARD$P.topic_en = "Flow, Base Flow, Intensity"
@@ -39,7 +39,7 @@ CARD$P.variable_fr = "BFM"
 CARD$P.unit_fr = "sans unité"
 CARD$P.name_fr = "Magnitude du débit de base"
 CARD$P.description_fr = ""
-CARD$P.method_fr = "1. aucune agrégation temporelle - extraction du débit de base
+CARD$P.method_fr = "1. aucune agrégation temporelle - extraction du débit de base (Wallingford)
 2. agrégation par jour de l’année - moyenne du débit de base BFA
 3. aucune agrégation temporelle - calcul du BFM"
 CARD$P.topic_fr = "Débit, Débit de Base, Intensité"
@@ -54,7 +54,7 @@ CARD$P.palette = NULL
 ## PROCESS ___________________________________________________________
 ### P1 _______________________________________________________________
 CARD$P1.funct = list(BF=BFS)
-CARD$P1.funct_args = list("Q")
+CARD$P1.funct_args = list("Q", method="Wal")
 CARD$P1.time_step = "none"
 CARD$P1.keep = "all"
 CARD$P1.NAyear_lim = 10
