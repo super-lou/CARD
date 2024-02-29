@@ -112,7 +112,7 @@ BFS = function (Q, d=5, w=0.9, a=0.925, passes=3, method='Wal') {
         }
         
     } else if (method == "LH") {
-        BF = adc::bf_sep_lh(Q, a=a, n=passes, reflect=30)
+        # BF = 
     }
     
     return (BF)
