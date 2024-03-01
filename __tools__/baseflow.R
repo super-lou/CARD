@@ -151,15 +151,17 @@ dBFS = function (Q, d=5, w=0.9, a=0.925, passes=3, method='Wal') {
 }
 
 
-verif_LH = function () {
+verif_LH = function (na.omit=FALSE) {
     library(plotly)
     Q = ASHE::create_data_HYDRO(
                   "/home/louis/Documents/bouleau/INRAE/data/hydrologie",
                   "AEAG_selection", "O0362510_HYDRO_QJM.txt", "Qm3s")$Q
     Q[c(32921, 32922, 32926)] = NA
 
-    Q = Q[!is.na(Q)]
-
+    if (na.omit) {
+        Q = Q[!is.na(Q)]
+    }
+    
     a = 0.925
     passes = 3
 
