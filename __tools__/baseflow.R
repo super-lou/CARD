@@ -112,7 +112,33 @@ BFS = function (Q, d=5, w=0.9, a=0.925, passes=3, method='Wal') {
         }
         
     } else if (method == "LH") {
-        # BF = 
+        
+        BF_LH_hide = function (SFim1, i, Q) {
+            if (!is.na(Q[i]) & !is.na(Q[i-1])) {
+                SFi = a*SFim1 + (1+a)/2 * (Q[i]-Q[i-1])
+            } else {
+                SFi = 0
+            }
+            return (SFi)
+        }
+        
+        n = length(Q)
+        Qtmp = Q
+        
+        for (p in 1:passes) {
+            if (p %% 2 == 0) {
+                Qtmp = rev(Qtmp)
+            }
+            SF = purrr::accumulate(2:n,
+                                   .f=BF_LH_hide,
+                                   Q=Qtmp, .init=0)
+            SF[SF < 0] = 0
+            Qtmp = Qtmp - SF
+            if (p %% 2 == 0) {
+                Qtmp = rev(Qtmp)
+            }
+        }
+        BF = Qtmp
     }
     
     return (BF)
@@ -122,6 +148,53 @@ dBFS = function (Q, d=5, w=0.9, a=0.925, passes=3, method='Wal') {
     BF = BFS(Q, d=d, w=w, a=a, passes=passes, method=method)
     dBF = Q - BF
     return (dBF)
+}
+
+
+verif_LH = function () {
+    library(plotly)
+    Q = ASHE::create_data_HYDRO(
+                  "/home/louis/Documents/bouleau/INRAE/data/hydrologie",
+                  "AEAG_selection", "O0362510_HYDRO_QJM.txt", "Qm3s")$Q
+    Q[c(32921, 32922, 32926)] = NA
+
+    Q = Q[!is.na(Q)]
+
+    a = 0.925
+    passes = 3
+
+    X = 1:length(Q)
+    BFme = BFS(Q, a=a, passes=passes, method='LH')
+    BFgrwat = grwat::gr_baseflow(Q, a=a, passes=passes, padding=0)
+    BFadc = adc::bf_sep_lh(Q, a=a, n=passes, reflect=0) 
+
+    plot = plot_ly()
+    plot =  add_lines(plot,
+                      x=X,
+                      y=Q,
+                      name="Q",
+                      line=list(color='blue'))
+    plot = add_lines(plot,
+                     x=X,
+                     y=BFgrwat,
+                     name="BF_LH_grwat",
+                     line=list(color='black'))
+    plot = add_lines(plot,
+                     x=X,
+                     y=BFadc,
+                     name="BF_LH_adc",
+                     line=list(color='green'))
+    plot = add_lines(plot,
+                     x=X,
+                     y=BFme,
+                     name="BR_LH_louis",
+                     line=list(color='red'))
+    plot = layout(plot,
+                  xaxis=list(title="step"),
+                  yaxis=list(title="m3s-1"))
+
+    filename = paste0("BF_LH", ".html")
+    htmlwidgets::saveWidget(plot, file=filename)
 }
 
 
