@@ -27,7 +27,7 @@
 ### English __________________________________________________________
 CARD$P.variable_en = "BFI_Wal_H1"
 CARD$P.unit_en = "without unit"
-CARD$P.name_en = "Baseflow index of near horizon"
+CARD$P.name_en = "Baseflow index of near horizon (Wallingford)"
 CARD$P.description_en = "Ratio between mean inter-annual base flow and mean inter-annual flow"
 CARD$P.method_en = "1. no temporal aggregation - extraction of the base flow (Wallingford)
 2. no temporal aggregation - calculation of the Base Flow Index (BFI)"
@@ -36,7 +36,7 @@ CARD$P.topic_en = "Flow, Base Flow, Intensity"
 ### French ___________________________________________________________
 CARD$P.variable_fr = "BFI_Wal_H1"
 CARD$P.unit_fr = "sans unité"
-CARD$P.name_fr = "Indice de débit de base de l'horizon proche"
+CARD$P.name_fr = "Indice de débit de base de l'horizon proche (Wallingford)"
 CARD$P.description_fr = "Rapport entre débit de base moyen inter-annuel et débit moyen inter-annuel"
 CARD$P.method_fr = "1. aucune agrégation temporelle - extraction du débit de base (Wallingford)
 2. aucune agrégation temporelle - calcul du BFI"
