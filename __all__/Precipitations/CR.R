@@ -45,7 +45,7 @@ CARD$P.topic_fr = "Précipitations, Modérée, Paramétristation"
 ### Global ___________________________________________________________
 CARD$P.is_date = FALSE
 CARD$P.to_normalise = FALSE
-CARD$P.palette = "#543005 #8C510A #BF812D #DFC27D #F6E8C3 #C7EAE5 #80CDC1 #35978F #01665E #003C30"
+CARD$P.palette = "#452C1A #7F4A23 #B3762A #D4B86A #EFE0B0 #BCE6DB #7ACEB9 #449C93 #2A6863 #193830"
 
 
 ## PROCESS ___________________________________________________________
