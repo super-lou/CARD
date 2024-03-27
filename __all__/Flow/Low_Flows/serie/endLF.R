@@ -25,33 +25,33 @@
 
 ## INFO ______________________________________________________________
 ### English __________________________________________________________
-CARD$P.variable_en = "nVCN10-5_H3"
-CARD$P.unit_en = "without unit"
-CARD$P.name_en = "Number of years in the distant horizon where VCN10 is superior to VCN10-5 from the historical period"
-CARD$P.description_en = ""
+CARD$P.variable_en = "endLF"
+CARD$P.unit_en = "yearday"
+CARD$P.name_en = "End of low flows"
+CARD$P.description_en = "Date of the last 10-day mean flow value below the threshold set at the maximum of VCN10"
 CARD$P.method_en = "1. no temporal aggregation - 10-day centered moving average
-2. annual aggregation [Month of maximum monthly flows] - minimum (VCN10)
-3. no temporal aggregation - calculation of the 5-year return period flow with the log-normal distribution from the historical period (VCN10-5_H0)
-4. no temporal aggregation - counting the number of VCN10 in the distant horizon above VCN10-5_H0"
-CARD$P.sampling_period_en = "Month of minimum monthly flows"
-CARD$P.topic_en = "Flow, Low Flows, Intensity"
+2. annual aggregation [Month of maximum monthly flows] - minimum
+3. no temporal aggregation - the maximum of the previous series is taken as the threshold
+4. annual aggregation [Month of maximum monthly flows] - date of the last day of the longest period below the previous threshold"
+CARD$P.sampling_period_en = "Month of maximum monthly flows"
+CARD$P.topic_en = "Flow, Low Flows, Seasonality"
 
 ### French ___________________________________________________________
-CARD$P.variable_fr = "nVCN10-5_H3"
-CARD$P.unit_fr = "sans unité"
-CARD$P.name_fr = "Nombre d'années de l'horizon lointain où le VCN10 est supérieur au VCN10-5 de la période historique"
-CARD$P.description_fr = ""
+CARD$P.variable_fr = "finBE"
+CARD$P.unit_fr = "jour de l'année"
+CARD$P.name_fr = "Fin des basses eaux"
+CARD$P.description_fr = "Date de la dernière valeur de débits moyens sur 10 jours sous le seuil fixé au maximum des VCN10"
 CARD$P.method_fr = "1. aucune agrégation temporelle - moyenne mobile centrée sur 10 jours
-2. agrégation annuelle [Mois du maximum des débits mensuels] - minimum (VCN10)
-3. aucune agrégation temporelle - calcul du débit de période de retour 5 ans avec la loi log-normal sur la période historique (VCN10-5_H0)
-4. aucune agrégation temporelle - décompte du nombre de VCN10 de l'horizon lointain au dessus du VCN10-5_H0"
-CARD$P.sampling_period_fr = "Mois du minimum des débits mensuels"
-CARD$P.topic_fr = "Débit, Basses Eaux, Intensité"
+2. agrégation annuelle [Mois du maximum des débits mensuels] - minimum
+3. aucune agrégation temporelle - le maximum de la précédente série est pris comme seuil
+4. agrégation annuelle [Mois du maximum des débits mensuels] - date du dernier jour de la plus longue période sous le précédent seuil"
+CARD$P.sampling_period_fr = "Mois du maximum des débits mensuels"
+CARD$P.topic_fr = "Débit, Basses Eaux, Saisonnalité"
 
 ### Global ___________________________________________________________
-CARD$P.is_date = FALSE
-CARD$P.to_normalise = TRUE
-CARD$P.palette = NULL
+CARD$P.is_date = TRUE
+CARD$P.to_normalise = FALSE
+CARD$P.palette = "#893687 #BC66A5 #E596C3 #EAC5DD #EFE2E9 #F5E4E2 #F2D7B5 #E9BD6F #DC8C48 #CD5629"
 
 
 ## PROCESS ___________________________________________________________
@@ -60,7 +60,6 @@ CARD$P1.funct = list(VC10=rollmean_center)
 CARD$P1.funct_args = list("Q", k=10)
 CARD$P1.time_step = "none"
 CARD$P1.keep = "all"
-CARD$P1.NAyear_lim = 10
 
 ### P2 _______________________________________________________________
 CARD$P2.funct = list(VCN10=minNA)
@@ -68,18 +67,20 @@ CARD$P2.funct_args = list("VC10", na.rm=TRUE)
 CARD$P2.time_step = "year"
 CARD$P2.sampling_period = list(max, list("Q", na.rm=TRUE))
 CARD$P2.NApct_lim = 3
+CARD$P2.NAyear_lim = 10
+CARD$P2.keep = "all"
 
 ### P3 _______________________________________________________________
-CARD$P3.funct = list("VCN10-5_H0"=get_Xn)
-CARD$P3.funct_args = list("VCN10", returnPeriod=5, waterType="low",
-                          Date="date",
-                          period=c("1976-01-01", "2005-08-31"))
+CARD$P3.funct = list(upLim=maxNA)
+CARD$P3.funct_args = list("VCN10", na.rm=TRUE)
 CARD$P3.time_step = "none"
 CARD$P3.keep = "all"
 
 ### P4 _______________________________________________________________
-CARD$P4.funct = list("nVCN10-5_H3"=apply_threshold)
-CARD$P4.funct_args = list("VCN10", lim="VCN10-5_H0", where="<=",
-                          what="length", select="all")
-CARD$P4.period = c("2070-01-01", "2099-12-31")
-CARD$P4.time_step = "none"
+CARD$P4.funct = list(endLF=apply_threshold)
+CARD$P4.funct_args = list("VC10", lim="upLim", where="<=", what="last", select="longest")
+CARD$P4.time_step = "year"
+CARD$P4.sampling_period = list(max, list("Q", na.rm=TRUE))
+CARD$P4.is_date = TRUE
+CARD$P4.NApct_lim = 3
+

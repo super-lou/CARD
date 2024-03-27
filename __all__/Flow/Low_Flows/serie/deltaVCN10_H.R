@@ -25,33 +25,29 @@
 
 ## INFO ______________________________________________________________
 ### English __________________________________________________________
-CARD$P.variable_en = "nVCN10-5_H1"
-CARD$P.unit_en = "without unit"
-CARD$P.name_en = "Number of years in the near horizon where VCN10 is superior to VCN10-5 from the historical period"
+CARD$P.variable_en = "VCN10"
+CARD$P.unit_en = "m^{3}.s^{-1}"
+CARD$P.name_en = "Annual minimum of 10-day mean daily discharge"
 CARD$P.description_en = ""
 CARD$P.method_en = "1. no temporal aggregation - 10-day centered moving average
-2. annual aggregation [Month of maximum monthly flows] - minimum (VCN10)
-3. no temporal aggregation - calculation of the 5-year return period flow with the log-normal distribution from the historical period (VCN10-5_H0)
-4. no temporal aggregation - counting the number of VCN10 in the near horizon above VCN10-5_H0"
-CARD$P.sampling_period_en = "Month of minimum monthly flows"
+2. annual aggregation [Month of maximum monthly flows] - minimum"
+CARD$P.sampling_period_en = "Month of maximum monthly flows"
 CARD$P.topic_en = "Flow, Low Flows, Intensity"
 
 ### French ___________________________________________________________
-CARD$P.variable_fr = "nVCN10-5_H1"
-CARD$P.unit_fr = "sans unité"
-CARD$P.name_fr = "Nombre d'années de l'horizon proche où le VCN10 est supérieur au VCN10-5 de la période historique"
+CARD$P.variable_fr = "VCN10"
+CARD$P.unit_fr = "m^{3}.s^{-1}"
+CARD$P.name_fr = "Minimum annuel de la moyenne sur 10 jours du débit journalier"
 CARD$P.description_fr = ""
 CARD$P.method_fr = "1. aucune agrégation temporelle - moyenne mobile centrée sur 10 jours
-2. agrégation annuelle [Mois du maximum des débits mensuels] - minimum (VCN10)
-3. aucune agrégation temporelle - calcul du débit de période de retour 5 ans avec la loi log-normal sur la période historique (VCN10-5_H0)
-4. aucune agrégation temporelle - décompte du nombre de VCN10 de l'horizon proche au dessus du VCN10-5_H0"
-CARD$P.sampling_period_fr = "Mois du minimum des débits mensuels"
+2. agrégation annuelle [Mois du maximum des débits mensuels] - minimum"
+CARD$P.sampling_period_fr = "Mois du maximum des débits mensuels"
 CARD$P.topic_fr = "Débit, Basses Eaux, Intensité"
 
 ### Global ___________________________________________________________
 CARD$P.is_date = FALSE
 CARD$P.to_normalise = TRUE
-CARD$P.palette = NULL
+CARD$P.palette = "#452C1A #7F4A23 #B3762A #D4B86A #EFE0B0 #BCE6DB #7ACEB9 #449C93 #2A6863 #193830"
 
 
 ## PROCESS ___________________________________________________________
@@ -69,17 +65,3 @@ CARD$P2.time_step = "year"
 CARD$P2.sampling_period = list(max, list("Q", na.rm=TRUE))
 CARD$P2.NApct_lim = 3
 
-### P3 _______________________________________________________________
-CARD$P3.funct = list("VCN10-5_H0"=get_Xn)
-CARD$P3.funct_args = list("VCN10", returnPeriod=5, waterType="low",
-                          Date="date",
-                          period=c("1976-01-01", "2005-08-31"))
-CARD$P3.time_step = "none"
-CARD$P3.keep = "all"
-
-### P4 _______________________________________________________________
-CARD$P4.funct = list("nVCN10-5_H1"=apply_threshold)
-CARD$P4.funct_args = list("VCN10", lim="VCN10-5_H0", where="<=",
-                          what="length", select="all")
-CARD$P4.period = c("2021-01-01", "2050-12-31")
-CARD$P4.time_step = "none"
