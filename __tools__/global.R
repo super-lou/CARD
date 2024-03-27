@@ -52,13 +52,38 @@ divided = function (a, b, first=FALSE) {
     }
 }
 
-deltaX = function (X, Date, past, futur) {
+get_deltaX = function (X, Date, past, futur, to_normalise,
+                       returnPeriod=NULL, waterType='low',
+                       Q_for_BFI=NULL) {
+    
     past = as.Date(past)
     futur = as.Date(futur)
-    mean_past = mean(X[past[1] <= Date & Date <= past[2]], na.rm=TRUE)
-    mean_futur = mean(X[futur[1] <= Date & Date <= futur[2]], na.rm=TRUE)
-    delta = (mean_futur - mean_past) / mean_past
-    return (delta)
+    Xpast = X[past[1] <= Date & Date <= past[2]]
+    Xfutur = X[futur[1] <= Date & Date <= futur[2]]
+    
+    if (!is.null(returnPeriod)) {
+        agg_Xpast = get_Xn(Xpast,
+                           returnPeriod=returnPeriod,
+                           waterType=waterType)
+        agg_Xfutur = get_Xn(Xfutur,
+                            returnPeriod=returnPeriod,
+                            waterType=waterType)
+        
+    } else if (!is.null(Q_for_BFI)) {
+        agg_Xpast = get_BFI(Q=Q_for_BFI, BF=Xpast, na.rm=TRUE)
+        agg_Xfutur = get_BFI(Q=Q_for_BFI, BF=Xfutur, na.rm=TRUE)
+        
+    } else {
+        agg_Xpast = mean(Xpast, na.rm=TRUE)
+        agg_Xfutur = mean(Xfutur, na.rm=TRUE)
+    }
+
+    if (to_normalise) {
+        deltaX = (agg_Xfutur - agg_Xpast) / agg_Xpast * 100
+    } else {
+        deltaX = agg_Xfutur - agg_Xpast
+    }
+    return (deltaX)
 }
 
 ## 1. MIN MAX ________________________________________________________
