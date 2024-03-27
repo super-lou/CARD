@@ -38,7 +38,7 @@ CARD$P.variable_en = paste0("deltaQNA_", Horizon)
 CARD$P.unit_en = "without unit"
 CARD$P.name_en = paste0("Average change of annual minimum of daily discharge between the ", Horizon_en, " horizon and historical period")
 CARD$P.description_en = ""
-CARD$P.method_en = paste0(""
+CARD$P.method_en = ""
 CARD$P.sampling_period_en = "Month of maximum monthly flows"
 CARD$P.topic_en = "Flow, Low Water, Intensity"
 
@@ -47,7 +47,7 @@ CARD$P.variable_fr = paste0("deltaQNA_", Horizon)
 CARD$P.unit_fr = "sans unité"
 CARD$P.name_fr = paste0("Changement moyen du minimum annuel du débit journalier entre l'horizon ", Horizon_fr, " et la période historique")
 CARD$P.description_fr = ""
-CARD$P.method_fr = paste0(""
+CARD$P.method_fr = ""
 CARD$P.sampling_period_fr = "Mois du maximum des débits mensuels"
 CARD$P.topic_fr = "Débit, Basses Eaux, Intensité"
 

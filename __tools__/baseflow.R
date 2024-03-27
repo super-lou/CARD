@@ -140,7 +140,6 @@ BFS = function (Q, d=5, w=0.9, a=0.925, passes=3, method='Wal') {
         }
         BF = Qtmp
     }
-    
     return (BF)
 }
 

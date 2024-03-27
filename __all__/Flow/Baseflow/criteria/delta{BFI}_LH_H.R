@@ -36,7 +36,7 @@ H3 = c("2070-01-01", "2099-12-31")
 ### English __________________________________________________________
 CARD$P.variable_en = paste0("delta{BFI}_LH_", Horizon)
 CARD$P.unit_en = "without unit"
-CARD$P.name_en = paste0("Change of baseflow index between the ", Horizon_en, " horizon and historical period (Lyne and Hollick)"
+CARD$P.name_en = paste0("Change of baseflow index between the ", Horizon_en, " horizon and historical period (Lyne and Hollick)")
 CARD$P.description_en = paste0("Ratio between mean inter-annual base flow and mean inter-annual flow")
 CARD$P.method_en = paste0("1. no temporal aggregation - extraction of the base flow (Lyne and Hollick)
 2. no temporal aggregation - calculation of the BFI change between the historical period and the ", Horizon_en, " horizon")

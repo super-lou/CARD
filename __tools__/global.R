@@ -57,9 +57,12 @@ get_deltaX = function (X, Date, past, futur, to_normalise,
                        Q_for_BFI=NULL) {
     
     past = as.Date(past)
+    OKpast = past[1] <= Date & Date <= past[2]
+    Xpast = X[OKpast]
+
     futur = as.Date(futur)
-    Xpast = X[past[1] <= Date & Date <= past[2]]
-    Xfutur = X[futur[1] <= Date & Date <= futur[2]]
+    OKfutur = futur[1] <= Date & Date <= futur[2]
+    Xfutur = X[OKfutur]
     
     if (!is.null(returnPeriod)) {
         agg_Xpast = get_Xn(Xpast,
@@ -70,8 +73,10 @@ get_deltaX = function (X, Date, past, futur, to_normalise,
                             waterType=waterType)
         
     } else if (!is.null(Q_for_BFI)) {
-        agg_Xpast = get_BFI(Q=Q_for_BFI, BF=Xpast, na.rm=TRUE)
-        agg_Xfutur = get_BFI(Q=Q_for_BFI, BF=Xfutur, na.rm=TRUE)
+        Qpast = Q_for_BFI[OKpast]
+        Qfutur = Q_for_BFI[OKfutur]
+        agg_Xpast = get_BFI(Q=Qpast, BF=Xpast, na.rm=TRUE)
+        agg_Xfutur = get_BFI(Q=Qfutur, BF=Xfutur, na.rm=TRUE)
         
     } else {
         agg_Xpast = mean(Xpast, na.rm=TRUE)

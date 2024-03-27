@@ -37,10 +37,10 @@ H3 = c("2070-01-01", "2099-12-31")
 CARD$P.variable_en = paste0("delta{fQ01A}_", Horizon)
 CARD$P.unit_en = "without unit"
 CARD$P.name_en = paste0("Average change of the annual frequency of exceeding Q01 between the ", Horizon_en, " horizon and historical period")
-CARD$P.description_en = paste0("Annual frequency of exceeding Q > Q01, where Q01 is the flow exceeded 1 % of the time, extracted from the ranked flow curve"
+CARD$P.description_en = paste0("Annual frequency of exceeding Q > Q01, where Q01 is the flow exceeded 1 % of the time, extracted from the ranked flow curve")
 CARD$P.method_en = paste0("1. no temporal aggregation - the quantile at the 1 % exceedance probability is taken as the threshold
 2. annual aggregation [Month of minimum monthly flows] - ratio of the number of days with flow exceeding the threshold to the number of days in the year
-3. no temporal aggregation - calculation of the average change between the historical period and the ", Horizon_en, " horizon"
+3. no temporal aggregation - calculation of the average change between the historical period and the ", Horizon_en, " horizon")
 CARD$P.sampling_period_en = "Month of minimum monthly flows"
 CARD$P.topic_en = "Flow, High Flows, Frequency"
 

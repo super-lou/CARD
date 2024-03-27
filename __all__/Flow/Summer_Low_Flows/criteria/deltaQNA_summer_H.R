@@ -38,7 +38,7 @@ CARD$P.variable_en = paste0("deltaQNA_summer_", Horizon)
 CARD$P.unit_en = "without unit"
 CARD$P.name_en = paste0("Average change of summer minimum of daily discharge between the ", Horizon_en, " horizon and historical period")
 CARD$P.description_en = ""
-CARD$P.method_en = paste0(""
+CARD$P.method_en = ""
 CARD$P.sampling_period_en = c("05-01", "11-30")
 CARD$P.topic_en = "Flow, Low Water, Intensity"
 
@@ -47,7 +47,7 @@ CARD$P.variable_fr = paste0("deltaQNA_estival_", Horizon)
 CARD$P.unit_fr = "sans unité"
 CARD$P.name_fr = paste0("Changement moyen du minimum estival du débit journalier entre l'horizon ", Horizon_fr, " et la période historique")
 CARD$P.description_fr = ""
-CARD$P.method_fr = paste0(""
+CARD$P.method_fr = ""
 CARD$P.sampling_period_fr = c("01-05", "30-11")
 CARD$P.topic_fr = "Débit, Basses Eaux, Intensité"
 
@@ -66,11 +66,11 @@ CARD$P1.sampling_period = c("05-01", "11-30")
 CARD$P1.NApct_lim = 3
 CARD$P1.NAyear_lim = 10
 
-### P3 _______________________________________________________________
-CARD$P3.funct = list("deltaQNA_summer_H1"=get_deltaX,
+### P2 _______________________________________________________________
+CARD$P2.funct = list("deltaQNA_summer_H1"=get_deltaX,
                      "deltaQNA_summer_H2"=get_deltaX,
                      "deltaQNA_summer_H3"=get_deltaX)
-CARD$P3.funct_args = list(list("QNA_summer", "date",
+CARD$P2.funct_args = list(list("QNA_summer", "date",
                                past=H0, futur=H1,
                                to_normalise=CARD$P.to_normalise),
                           list("QNA_summer", "date",
@@ -79,4 +79,4 @@ CARD$P3.funct_args = list(list("QNA_summer", "date",
                           list("QNA_summer", "date",
                                past=H0, futur=H3,
                                to_normalise=CARD$P.to_normalise))
-CARD$P3.time_step = "none"
+CARD$P2.time_step = "none"
