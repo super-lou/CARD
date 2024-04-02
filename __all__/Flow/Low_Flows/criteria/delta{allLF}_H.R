@@ -35,7 +35,7 @@ H3 = c("2070-01-01", "2099-12-31")
 ## INFO ______________________________________________________________
 ### English __________________________________________________________
 CARD$P.variable_en = paste0("delta",
-                            rep(c("startLF", "centerLF", "endLF", "dtLF", "vLF"),
+                            rep(c("{startLF}", "{centerLF}", "{endLF}", "{dtLF}", "{vLF}"),
                                 each=3), "_", Horizon)
 CARD$P.unit_en = rep(c("yearday", "yearday", "yearday", "day", "without unit"),
                      each=3)
@@ -84,7 +84,7 @@ CARD$P.topic_en = rep(c("Flow, Low Flows, Seasonality",
 
 ### French ___________________________________________________________
 CARD$P.variable_fr = paste0("delta",
-                            rep(c("debutBE", "centreBE", "finBE", "dtBE", "vBE"),
+                            rep(c("{debutBE}", "{centreBE}", "{finBE}", "{dtBE}", "{vBE}"),
                                 each=3), "_", Horizon)
 CARD$P.unit_fr = rep(c("jour de l'année", "jour de l'année",
                        "jour de l'année", "jour", "sans unité"), each=3)
