@@ -35,7 +35,7 @@ H3 = c("2070-01-01", "2099-12-31")
 ## INFO ______________________________________________________________
 ### English __________________________________________________________
 CARD$P.variable_en = paste0("delta{startLF}_", Horizon)
-CARD$P.unit_en = "yearday"
+CARD$P.unit_en = "day"
 CARD$P.name_en = paste0("Average change of the start of low flows between the ", Horizon_en, " horizon and historical period")
 CARD$P.description_en = "Date of the first 10-day mean flow value below the threshold set at the maximum of VCN10"
 CARD$P.method_en = paste0("1. no temporal aggregation - 10-day centered moving average
@@ -48,7 +48,7 @@ CARD$P.topic_en = "Flow, Low Flows, Seasonality"
 
 ### French ___________________________________________________________
 CARD$P.variable_fr = paste0("delta{debutBE}_", Horizon)
-CARD$P.unit_fr = "jour de l'année"
+CARD$P.unit_fr = "jour"
 CARD$P.name_fr = paste0("Changement moyen du début des basses eaux entre l'horizon ", Horizon_fr, " et la période historique")
 CARD$P.description_fr = "Date de la première valeur de débits moyens sur 10 jours sous le seuil fixé au maximum des VCN10"
 CARD$P.method_fr = paste0("1. aucune agrégation temporelle - moyenne mobile centrée sur 10 jours
@@ -62,7 +62,7 @@ CARD$P.topic_fr = "Débit, Basses Eaux, Saisonnalité"
 ### Global ___________________________________________________________
 CARD$P.is_date = TRUE
 CARD$P.to_normalise = FALSE
-CARD$P.palette = "#893687 #BC66A5 #E596C3 #EAC5DD #EFE2E9 #F5E4E2 #F2D7B5 #E9BD6F #DC8C48 #CD5629"
+CARD$P.palette = "#5B245A #983C96 #C367C1 #DBA4DA #F3E0F3 #F8E3DC #EAAC95 #DC754E #B14A23 #6A2D15"
 
 
 ## PROCESS ___________________________________________________________

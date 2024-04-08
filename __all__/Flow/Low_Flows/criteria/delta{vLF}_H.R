@@ -35,7 +35,7 @@ H3 = c("2070-01-01", "2099-12-31")
 ## INFO ______________________________________________________________
 ### English __________________________________________________________
 CARD$P.variable_en = paste0("delta{vLF}_", Horizon)
-CARD$P.unit_en = "without unit"
+CARD$P.unit_en = "%"
 CARD$P.name_en = paste0("Average change of low flow deficit volume between the ", Horizon_en, " horizon and historical period")
 CARD$P.description_en = "Sum of the differences between the 10-day average and the maximum of the VCN10, over the longest sequence below this threshold"
 CARD$P.method_en = paste0(paste0("1. no temporal aggregation - 10-day centered moving average
@@ -48,7 +48,7 @@ CARD$P.topic_en = "Flow, Low Flows, Intensity"
 
 ### French ___________________________________________________________
 CARD$P.variable_fr = paste0("delta{vBE}_", Horizon)
-CARD$P.unit_fr = "sans unité"
+CARD$P.unit_fr = "%"
 CARD$P.name_fr = paste0("Changement moyen du volume de déficite des basses eaux entre l'horizon ", Horizon_fr, " et la période historique")
 CARD$P.description_fr = "Somme des écarts entre de la moyenne sur 10 jours et le maximum des VCN10, sur la séquence la plus longue sous ce seuil"
 CARD$P.method_fr = paste0("1. aucune agrégation temporelle - moyenne mobile centrée sur 10 jours

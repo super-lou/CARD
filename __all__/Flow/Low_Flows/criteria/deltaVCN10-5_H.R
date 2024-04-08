@@ -35,7 +35,7 @@ H3 = c("2070-01-01", "2099-12-31")
 ## INFO ______________________________________________________________
 ### English __________________________________________________________
 CARD$P.variable_en = paste0("deltaVCN10-5_", Horizon)
-CARD$P.unit_en = "without unit"
+CARD$P.unit_en = "%"
 CARD$P.name_en = paste0("Change of annual minimum of 10-day mean daily discharge with a return period of 5 years between the ", Horizon_en, " horizon and historical period")
 CARD$P.description_en = ""
 CARD$P.method_en = paste0("1. no temporal aggregation - 10-day centered moving average
@@ -46,7 +46,7 @@ CARD$P.topic_en = "Flow, Low Flows, Intensity"
 
 ### French ___________________________________________________________
 CARD$P.variable_fr = paste0("deltaVCN10-5_", Horizon)
-CARD$P.unit_fr = "sans unité"
+CARD$P.unit_fr = "%"
 CARD$P.name_fr = paste0("Changement du minimum annuel de la moyenne sur 10 jours du débit journalier VCN10 de période de retour 5 ans entre l'horizon ", Horizon_fr, " et la période historique")
 CARD$P.description_fr = ""
 CARD$P.method_fr = paste0("1. aucune agrégation temporelle - moyenne mobile centrée sur 10 jours

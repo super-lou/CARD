@@ -35,7 +35,7 @@ H3 = c("2070-01-01", "2099-12-31")
 ## INFO ______________________________________________________________
 ### English __________________________________________________________
 CARD$P.variable_en = paste0("deltaQ90A_", Horizon)
-CARD$P.unit_en = "without unit"
+CARD$P.unit_en = "%"
 CARD$P.name_en = paste0("Average change of annual flow exceeded 9 years out of 10 between the ", Horizon_en, " horizon and historical period")
 CARD$P.description_en = "Annual flow with an exceedance probability of 90 % (10th percentile)"
 CARD$P.method_en = paste0("1. annual aggregation [01-01, 12-31] - quantile at the exceedance probability of 90 %
@@ -45,7 +45,7 @@ CARD$P.topic_en = "Flow, Low Flows, Intensity"
 
 ### French ___________________________________________________________
 CARD$P.variable_fr = paste0("deltaQ90A_", Horizon)
-CARD$P.unit_fr = "sans unité"
+CARD$P.unit_fr = "%"
 CARD$P.name_fr = paste0("Changement moyen du débit annuel dépassée 9 années sur 10 entre l'horizon ", Horizon_fr, " et la période historique")
 CARD$P.description_fr = "Débit annuel avec une probabilité de dépassement de 90 % (centile 10 %)"
 CARD$P.method_fr = paste0("1. agrégation annuelle [01-01, 31-12] - quantile à la probabilité au dépassement de 90 %

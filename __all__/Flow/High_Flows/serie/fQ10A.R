@@ -47,7 +47,7 @@ CARD$P.topic_fr = "Débit, Hautes Eaux, Fréquence"
 ### Global ___________________________________________________________
 CARD$P.is_date = FALSE
 CARD$P.to_normalise = TRUE
-CARD$P.palette = "#452C1A #7F4A23 #B3762A #D4B86A #EFE0B0 #BCE6DB #7ACEB9 #449C93 #2A6863 #193830"
+CARD$P.palette = "#193830 #2A6863 #449C93 #7ACEB9 #BCE6DB #FDDBC7 #F4A582 #D6604D #B2182B #67001F"
 
 
 ## PROCESS ___________________________________________________________

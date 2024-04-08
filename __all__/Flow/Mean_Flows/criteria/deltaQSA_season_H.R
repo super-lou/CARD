@@ -37,7 +37,7 @@ H3 = c("2070-01-01", "2099-12-31")
 CARD$P.variable_en = paste0("delta",
                             rep(c("QSA_DJF", "QSA_MAM", "QSA_JJA", "QSA_SON"),
                                 each=3), "_", Horizon)
-CARD$P.unit_en = "without unit"
+CARD$P.unit_en = "%"
 CARD$P.name_en = paste0("Average change of ",
                         rep(c("average daily flows for each winter",
                               "average daily flows for each spring",
@@ -61,7 +61,7 @@ CARD$P.topic_en = "Flow, Mean Flows, Intensity"
 CARD$P.variable_fr = paste0("delta",
                             rep(c("QSA_DJF", "QSA_MAM", "QSA_JJA", "QSA_SON"),
                                 each=3), "_", Horizon)
-CARD$P.unit_fr = "sans unité"
+CARD$P.unit_fr = "%"
 CARD$P.name_fr = paste0("Changement moyen de la ",
                         rep(c("moyenne des débits journaliers de chaque hiver",
                               "moyenne des débits journaliers de chaque printemps",

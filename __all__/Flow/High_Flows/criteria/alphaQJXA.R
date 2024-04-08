@@ -50,7 +50,7 @@ MANN, H. (1945). « Nonparametric tests against trend ». Econometrica, 13(3):24
 SEN, P. K. (1968). « Estimates of the regression coefficient based on Kendall’s tau ». In : Journal of the American Statistical Association 63, p. 1379-1389. DOI : doi:10.2307/2285891."
 CARD$P.is_date = FALSE
 CARD$P.to_normalise = c(TRUE, FALSE)
-CARD$P.palette = NULL
+CARD$P.palette = "#193830 #2A6863 #449C93 #7ACEB9 #BCE6DB #FDDBC7 #F4A582 #D6604D #B2182B #67001F"
 
 
 ## PROCESS ___________________________________________________________

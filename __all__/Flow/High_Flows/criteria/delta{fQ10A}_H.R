@@ -35,7 +35,7 @@ H3 = c("2070-01-01", "2099-12-31")
 ## INFO ______________________________________________________________
 ### English __________________________________________________________
 CARD$P.variable_en = paste0("delta{fQ10A}_", Horizon)
-CARD$P.unit_en = "without unit"
+CARD$P.unit_en = "day.year^{-1}"
 CARD$P.name_en = paste0("Average change of the annual frequency of exceeding Q10 between the ", Horizon_en, " horizon and historical period")
 CARD$P.description_en = paste0("Annual frequency of exceeding Q > Q10, where Q10 is the flow exceeded 10 % of the time, extracted from the ranked flow curve")
 CARD$P.method_en = paste0("1. no temporal aggregation - the quantile at the 10 % exceedance probability is taken as the threshold
@@ -46,7 +46,7 @@ CARD$P.topic_en = "Flow, High Flows, Frequency"
 
 ### French ___________________________________________________________
 CARD$P.variable_fr = paste0("delta{fQ10A}_", Horizon)
-CARD$P.unit_fr = "sans unité"
+CARD$P.unit_fr = "jour.an^{-1}"
 CARD$P.name_fr = paste0("Changement moyen de la fréquence annuelle de dépassement du Q10 entre l'horizon ", Horizon_fr, " et la période historique")
 CARD$P.description_fr = paste0("Fréquence annuelle de dépassement de Q > Q10, Q10 est le débit dépassé 10 % du temps, extrait de la courbe des débits classés")
 CARD$P.method_fr = paste0("1. aucune agrégation temporelle - le quantile à la probabilité au dépassement de 10 % est pris comme seuil
@@ -57,8 +57,8 @@ CARD$P.topic_fr = "Débit, Hautes Eaux, Fréquence"
 
 ### Global ___________________________________________________________
 CARD$P.is_date = FALSE
-CARD$P.to_normalise = TRUE
-CARD$P.palette = "#452C1A #7F4A23 #B3762A #D4B86A #EFE0B0 #BCE6DB #7ACEB9 #449C93 #2A6863 #193830"
+CARD$P.to_normalise = FALSE
+CARD$P.palette = "#193830 #2A6863 #449C93 #7ACEB9 #BCE6DB #FDDBC7 #F4A582 #D6604D #B2182B #67001F"
 
 
 ## PROCESS ___________________________________________________________

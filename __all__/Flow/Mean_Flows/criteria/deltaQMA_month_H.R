@@ -43,7 +43,7 @@ CARD$P.variable_en = paste0("delta",
                                   "QMA_jul", "QMA_aug", "QMA_sep",
                                   "QMA_oct", "QMA_nov", "QMA_dec"),
                                 each=3), "_", Horizon)
-CARD$P.unit_en = "without unit"
+CARD$P.unit_en = "%"
 CARD$P.name_en = paste0("Average change of ",
                         rep(c("average daily discharge for each January",
                               "average daily discharge for each February",
@@ -70,7 +70,7 @@ CARD$P.variable_fr = paste0("delta",
                                   "QMA_juil", "QMA_aout", "QMA_sept",
                                   "QMA_oct", "QMA_nov", "QMA_dec"),
                                 each=3), "_", Horizon)
-CARD$P.unit_fr = "sans unité"
+CARD$P.unit_fr = "%"
 CARD$P.name_fr = paste0("Changement moyen de la ",
                         rep(c("moyenne des débits journaliers de chaque janvier",
                               "moyenne des débits journaliers de chaque février",
@@ -88,7 +88,7 @@ CARD$P.name_fr = paste0("Changement moyen de la ",
                          " entre l'horizon ", Horizon_fr, " et la période historique")
 CARD$P.description_fr = ""
 CARD$P.method_fr = ""
-CARD$P.topic_fr = "Débit, moyennes Eaux, Intensité"
+CARD$P.topic_fr = "Débit, Moyennes Eaux, Intensité"
 
 ### Global ___________________________________________________________
 CARD$P.is_date = FALSE

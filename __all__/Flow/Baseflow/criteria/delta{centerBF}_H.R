@@ -35,7 +35,7 @@ H3 = c("2070-01-01", "2099-12-31")
 ## INFO ______________________________________________________________
 ### English __________________________________________________________
 CARD$P.variable_en = paste0("delta{centerBF}_", Horizon)
-CARD$P.unit_en = "yearday"
+CARD$P.unit_en = "day"
 CARD$P.name_en = paste0("Average change of the center of low flows between the ", Horizon_en, " horizon and historical period")
 CARD$P.description_en = paste0("Date when 50 % of the annual cumulative baseflow is reached")
 CARD$P.method_en = paste0("1. annual aggregation [09-01, 08-31] - date when the baseflow (Wallingford) sum corresponds to 50 % of the total sum
@@ -45,7 +45,7 @@ CARD$P.topic_en = "Flow, Baseflow, Seasonality"
 
 ### French ___________________________________________________________
 CARD$P.variable_fr = paste0("delta{centreQB}_", Horizon)
-CARD$P.unit_fr = "jour de l'année"
+CARD$P.unit_fr = "jour"
 CARD$P.name_fr = paste0("Changement moyen du centre des écoulements lents entre l'horizon ", Horizon_fr, " et la période historique")
 CARD$P.description_fr = paste0("Date à laquelle 50 % du cumul annuel du débit de base sont atteints")
 CARD$P.method_fr = paste0("1. agrégation annuelle [01-09, 31-08] - date à laquelle la somme du débit de base (Wallingford) correspond à 50 % de la somme totale
@@ -57,7 +57,7 @@ CARD$P.topic_fr = "Débit, Débit de Base, Saisonnalité"
 CARD$P.source = "TALLAKSEN, L. et H. VAN LANEN, éd. (2004). Hydrological drought. Processes and estimation methods for streamflow and groundwater. English. Developments in water science 48. Netherlands : Elsevier. ISBN : 9780444516886."
 CARD$P.is_date = TRUE
 CARD$P.to_normalise = FALSE
-CARD$P.palette = "#893687 #BC66A5 #E596C3 #EAC5DD #EFE2E9 #F5E4E2 #F2D7B5 #E9BD6F #DC8C48 #CD5629"
+CARD$P.palette = "#5B245A #983C96 #C367C1 #DBA4DA #F3E0F3 #F8E3DC #EAAC95 #DC754E #B14A23 #6A2D15"
 
 
 ## PROCESS ___________________________________________________________

@@ -35,7 +35,7 @@ H3 = c("2070-01-01", "2099-12-31")
 ## INFO ______________________________________________________________
 ### English __________________________________________________________
 CARD$P.variable_en = paste0("deltaQA_", Horizon)
-CARD$P.unit_en = "without unit"
+CARD$P.unit_en = "%"
 CARD$P.name_en = paste0("Average change of annual mean daily discharge between the ", Horizon_en, " horizon and historical period")
 CARD$P.description_en = ""
 CARD$P.method_en = paste0("1. annual aggregation [09-01, 08-31] - mean
@@ -45,7 +45,7 @@ CARD$P.topic_en = "Flow, Mean Flows, Intensity"
 
 ### French ___________________________________________________________
 CARD$P.variable_fr = paste0("deltaQA_", Horizon)
-CARD$P.unit_fr = "sans unité"
+CARD$P.unit_fr = "%"
 CARD$P.name_fr = paste0("Changement moyen de la moyenne annuelle du débit journalier entre l'horizon ", Horizon_fr, " et la période historique")
 CARD$P.description_fr = ""
 CARD$P.method_fr = paste0("1. agrégation annuelle [01-09, 31-08] - moyenne

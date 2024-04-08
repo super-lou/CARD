@@ -35,7 +35,7 @@ H3 = c("2070-01-01", "2099-12-31")
 ## INFO ______________________________________________________________
 ### English __________________________________________________________
 CARD$P.variable_en = paste0("deltaQJXA-10_", Horizon)
-CARD$P.unit_en = "without unit"
+CARD$P.unit_en = "%"
 CARD$P.name_en = paste0("Change of annual maximum daily flow with a 10-year return period between the ", Horizon_en, " horizon and historical period")
 CARD$P.description_en = ""
 CARD$P.method_en = paste0("1. annual aggregation [Month of minimum monthly flows] - maximum (extraction from the QJXA series)
@@ -45,7 +45,7 @@ CARD$P.topic_en = "Flow, High Flows, Intensity"
 
 ### French ___________________________________________________________
 CARD$P.variable_fr = paste0("deltaQJXA-10_", Horizon)
-CARD$P.unit_fr = "sans unité"
+CARD$P.unit_fr = "%"
 CARD$P.name_fr = paste0("Changement du débit journalier maximal annuel de période de retour 10 ans entre l'horizon ", Horizon_fr, " et la période historique")
 CARD$P.description_fr = ""
 CARD$P.method_fr = paste0("1. agrégation annuelle [Mois du minimum des débits mensuels] - maximum (extraction de la série des QJXA)
@@ -56,7 +56,7 @@ CARD$P.topic_fr = "Débit, Hautes Eaux, Intensity"
 ### Global ___________________________________________________________
 CARD$P.is_date = FALSE
 CARD$P.to_normalise = TRUE
-CARD$P.palette = NULL
+CARD$P.palette = "#193830 #2A6863 #449C93 #7ACEB9 #BCE6DB #FDDBC7 #F4A582 #D6604D #B2182B #67001F"
 
 
 ## PROCESS ___________________________________________________________

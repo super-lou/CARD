@@ -37,7 +37,7 @@ H3 = c("2070-01-01", "2099-12-31")
 CARD$P.variable_en = paste0("delta",
                             rep(c("{startLF}", "{centerLF}", "{endLF}", "{dtLF}", "{vLF}"),
                                 each=3), "_", Horizon)
-CARD$P.unit_en = rep(c("yearday", "yearday", "yearday", "day", "without unit"),
+CARD$P.unit_en = rep(c("day", "day", "day", "day", "%"),
                      each=3)
 CARD$P.name_en = paste0("Average change of ",
                         rep(c("the start of low flows",
@@ -86,8 +86,8 @@ CARD$P.topic_en = rep(c("Flow, Low Flows, Seasonality",
 CARD$P.variable_fr = paste0("delta",
                             rep(c("{debutBE}", "{centreBE}", "{finBE}", "{dtBE}", "{vBE}"),
                                 each=3), "_", Horizon)
-CARD$P.unit_fr = rep(c("jour de l'année", "jour de l'année",
-                       "jour de l'année", "jour", "sans unité"), each=3)
+CARD$P.unit_fr = rep(c("jour", "jour",
+                       "jour", "jour", "%"), each=3)
 CARD$P.name_fr = paste0("Changement moyen ",
                         rep(c("du début des basses eaux",
                               "du centre des basses eaux",
@@ -134,9 +134,9 @@ CARD$P.topic_fr = rep(c("Débit, Basses Eaux, Saisonnalité",
 ### Global ___________________________________________________________
 CARD$P.is_date = rep(c(TRUE, TRUE, TRUE, FALSE, FALSE), each=3)
 CARD$P.to_normalise = rep(c(FALSE, FALSE, FALSE, FALSE, TRUE), each=3)
-CARD$P.palette = rep(c("#893687 #BC66A5 #E596C3 #EAC5DD #EFE2E9 #F5E4E2 #F2D7B5 #E9BD6F #DC8C48 #CD5629",
-                       "#003C30 #01665E #35978F #80CDC1 #C7EAE5 #F6E8C3 #DFC27D #BF812D #8C510A #543005",
-                       "#893687 #BC66A5 #E596C3 #EAC5DD #EFE2E9 #F5E4E2 #F2D7B5 #E9BD6F #DC8C48 #CD5629",
+CARD$P.palette = rep(c("#5B245A #983C96 #C367C1 #DBA4DA #F3E0F3 #F8E3DC #EAAC95 #DC754E #B14A23 #6A2D15",
+                       "#5B245A #983C96 #C367C1 #DBA4DA #F3E0F3 #F8E3DC #EAAC95 #DC754E #B14A23 #6A2D15",
+                       "#5B245A #983C96 #C367C1 #DBA4DA #F3E0F3 #F8E3DC #EAAC95 #DC754E #B14A23 #6A2D15",
                        "#003C30 #01665E #35978F #80CDC1 #C7EAE5 #F6E8C3 #DFC27D #BF812D #8C510A #543005",
                        "#003C30 #01665E #35978F #80CDC1 #C7EAE5 #F6E8C3 #DFC27D #BF812D #8C510A #543005"),
                      each=3)
