@@ -116,9 +116,9 @@ CARD$P.topic_fr = c("Débit, Basses Eaux, Saisonnalité",
 ### Global ___________________________________________________________
 CARD$P.is_date = c(TRUE, TRUE, TRUE, FALSE, FALSE)
 CARD$P.to_normalise = c(FALSE, FALSE, FALSE, FALSE, TRUE)
-CARD$P.palette = c("#5B245A #983C96 #C367C1 #DBA4DA #F3E0F3 #F8E3DC #EAAC95 #DC754E #B14A23 #6A2D15",
-                   "#5B245A #983C96 #C367C1 #DBA4DA #F3E0F3 #F8E3DC #EAAC95 #DC754E #B14A23 #6A2D15",
-                   "#5B245A #983C96 #C367C1 #DBA4DA #F3E0F3 #F8E3DC #EAAC95 #DC754E #B14A23 #6A2D15",
+CARD$P.palette = c("#60265e #893687 #c05fbe #dba3da #edd1ec #f6ddd3 #edbaa7 #e08765 #CD5629 #8f3c1d",
+                   "#60265e #893687 #c05fbe #dba3da #edd1ec #f6ddd3 #edbaa7 #e08765 #CD5629 #8f3c1d",
+                   "#60265e #893687 #c05fbe #dba3da #edd1ec #f6ddd3 #edbaa7 #e08765 #CD5629 #8f3c1d",
                    "#003C30 #01665E #35978F #80CDC1 #C7EAE5 #F6E8C3 #DFC27D #BF812D #8C510A #543005",
                    "#003C30 #01665E #35978F #80CDC1 #C7EAE5 #F6E8C3 #DFC27D #BF812D #8C510A #543005")
 

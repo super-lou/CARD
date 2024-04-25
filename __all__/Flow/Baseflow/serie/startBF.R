@@ -46,7 +46,7 @@ CARD$P.topic_fr = "Débit, Débit de Base, Saisonnalité"
 CARD$P.source = "TALLAKSEN, L. et H. VAN LANEN, éd. (2004). Hydrological drought. Processes and estimation methods for streamflow and groundwater. English. Developments in water science 48. Netherlands : Elsevier. ISBN : 9780444516886."
 CARD$P.is_date = TRUE
 CARD$P.to_normalise = FALSE
-CARD$P.palette = "#5B245A #983C96 #C367C1 #DBA4DA #F3E0F3 #F8E3DC #EAAC95 #DC754E #B14A23 #6A2D15"
+CARD$P.palette = "#60265e #893687 #c05fbe #dba3da #edd1ec #f6ddd3 #edbaa7 #e08765 #CD5629 #8f3c1d"
 
 
 ## PROCESS ___________________________________________________________
