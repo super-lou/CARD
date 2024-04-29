@@ -31,7 +31,7 @@ CARD$P.name_en = "Slope of Sen and Mann-Kendall Test result calculated on the se
 CARD$P.description_en = "1. annual aggregation [09-01, 08-31] - mean
 2. no temporal aggregation - Sen's slope of the series where the Mann-Kendall test is significant at a 10 % risk level"
 CARD$P.method_en = ""
-CARD$P.sampling_period_en = "09-01"
+CARD$P.sampling_period_en = "09-01, 08-31"
 CARD$P.topic_en = "Flow, Mean Flows, Intensity"
 
 ### French ___________________________________________________________
@@ -41,7 +41,7 @@ CARD$P.name_fr = "Pente de Sen et résultat du test de Mann-Kendall calculés su
 CARD$P.description_fr = "1. agrégation annuelle [01-09, 31-08] - moyenne
 2. aucune agrégation temporelle - pente de Sen de la série dont le test de Mann-Kendall est significatif à un risque de 10 %"
 CARD$P.method_fr = ""
-CARD$P.sampling_period_fr = "01-09"
+CARD$P.sampling_period_fr = "01-09, 31-08"
 CARD$P.topic_fr = "Débit, Moyennes Eaux, Intensité"
 
 ### Global ___________________________________________________________

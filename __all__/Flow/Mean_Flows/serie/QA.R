@@ -30,7 +30,7 @@ CARD$P.unit_en = "m^{3}.s^{-1}"
 CARD$P.name_en = "Annual mean daily discharge"
 CARD$P.description_en = ""
 CARD$P.method_en = "1. annual aggregation [09-01, 08-31] - mean"
-CARD$P.sampling_period_en = "09-01"
+CARD$P.sampling_period_en = "09-01, 08-31"
 CARD$P.topic_en = "Flow, Mean Flows, Intensity"
 
 ### French ___________________________________________________________
@@ -39,7 +39,7 @@ CARD$P.unit_fr = "m^{3}.s^{-1}"
 CARD$P.name_fr = "Moyenne annuelle du débit journalier"
 CARD$P.description_fr = ""
 CARD$P.method_fr = "1. agrégation annuelle [01-09, 31-08] - moyenne"
-CARD$P.sampling_period_fr = "01-09"
+CARD$P.sampling_period_fr = "01-09, 31-08"
 CARD$P.topic_fr = "Débit, Moyennes Eaux, Intensité"
 
 ### Global ___________________________________________________________

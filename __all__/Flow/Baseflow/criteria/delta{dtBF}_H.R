@@ -40,7 +40,7 @@ CARD$P.name_en = paste0("Average change of the duration of low flows between the
 CARD$P.description_en = paste0("Duration between the start and end of low flows")
 CARD$P.method_en = paste0("1. annual aggregation [09-01, 08-31] - number of days between the dates when the baseflow (Wallingford) sum corresponds to 10 % and 90 % of the total sum
 2. no temporal aggregation - calculation of the average change between the historical period and the ", Horizon_en, " horizon")
-CARD$P.sampling_period_en = '09-01'
+CARD$P.sampling_period_en = "09-01, 08-31"
 CARD$P.topic_en = "Flow, Baseflow, Duration"
 
 ### French ___________________________________________________________
@@ -50,7 +50,7 @@ CARD$P.name_fr = paste0("Changement moyen de la durée des écoulements lents en
 CARD$P.description_fr = paste0("Durée entre le début et la fin des écoulements lents")
 CARD$P.method_fr = paste0("1. agrégation annuelle [01-09, 31-08] - nombre de jours entre les dates auxquelles la somme du débit de base (Wallingford) correspond à 10 % et 90 % de la somme totale
 2. aucune agrégation temporelle - calcul du changement moyen entre la période historique et l'horizon ", Horizon_fr)
-CARD$P.sampling_period_fr = '01-09'
+CARD$P.sampling_period_fr = "01-09, 31-08"
 CARD$P.topic_fr = "Débit, Débit de Base, Durée"
 
 ### Global ___________________________________________________________

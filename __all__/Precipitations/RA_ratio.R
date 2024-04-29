@@ -30,7 +30,7 @@ CARD$P.unit_en = "without unit"
 CARD$P.name_en = "Precipitation ratio"
 CARD$P.description_en = ""
 CARD$P.method_en = ""
-CARD$P.sampling_period_en = "09-01"
+CARD$P.sampling_period_en = "09-01, 08-31"
 CARD$P.topic_en = "Precipitations, Moderate, Ratio"
 
 ### French ___________________________________________________________
@@ -39,7 +39,7 @@ CARD$P.unit_fr = "sans unité"
 CARD$P.name_fr = "Ratio des précipitation"
 CARD$P.description_fr = ""
 CARD$P.method_fr = ""
-CARD$P.sampling_period_fr = "01-09"
+CARD$P.sampling_period_fr = "01-09, 31-08"
 CARD$P.topic_fr = "Précipitations, Modérée, Ratio"
 
 ### Global ___________________________________________________________

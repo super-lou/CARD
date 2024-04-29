@@ -30,7 +30,7 @@ CARD$P.unit_en = "day"
 CARD$P.name_en = "Maximum number of consecutive dry days in the year"
 CARD$P.description_en = "Maximum number of consecutive days in the year with less than 1 mm of precipitation"
 CARD$P.method_en = ""
-CARD$P.sampling_period_en = "09-01"
+CARD$P.sampling_period_en = "09-01, 08-31"
 CARD$P.topic_en = "Precipitations, Dry Period, Duration"
 
 ### French ___________________________________________________________
@@ -39,7 +39,7 @@ CARD$P.unit_fr = "jour"
 CARD$P.name_fr = "Nombre maximal de jours secs consécutifs dans l'année"
 CARD$P.description_fr = "Nombre maximal de jours consécutifs dans l'année avec moins de 1 mm de précipitation"
 CARD$P.method_fr = ""
-CARD$P.sampling_period_fr = "01-09"
+CARD$P.sampling_period_fr = "01-09, 31-08"
 CARD$P.topic_fr = "Précipitations, Période sèche, Durée"
 
 ### Global ___________________________________________________________

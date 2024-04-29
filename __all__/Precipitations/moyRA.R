@@ -31,7 +31,7 @@ CARD$P.name_en = "Mean of annual total precipitation accumulations"
 CARD$P.description_en = ""
 CARD$P.method_en = "1. annual aggregation [09-01, 08-31] - mean
 2. no temporal aggregation - average"
-CARD$P.sampling_period_en = "09-01"
+CARD$P.sampling_period_en = "09-01, 08-31"
 CARD$P.topic_en = "Precipitations, Moderate, Intensity"
 
 ### French ___________________________________________________________
@@ -41,7 +41,7 @@ CARD$P.name_fr = "Moyenne des cumuls des précipitations totales annuelles"
 CARD$P.description_fr = ""
 CARD$P.method_fr = "1. agrégation annuelle [01-09, 31-08] - moyenne
 2. aucune agrégation temporelle - moyenne"
-CARD$P.sampling_period_fr = "01-09"
+CARD$P.sampling_period_fr = "01-09, 31-08"
 CARD$P.topic_fr = "Précipitations, Modérée, Intensité"
 
 ### Global ___________________________________________________________

@@ -31,7 +31,7 @@ CARD$P.name_en = "Median start of baseflow"
 CARD$P.description_en = "Median of the dates at which 10 % of the annual cumulative baseflow is reached"
 CARD$P.method_en = "1. annual aggregation [09-01, 08-31] - date at which the baseflow (Wallingford) sum corresponds to 10 % of the total sum
 2. no temporal aggregation - median"
-CARD$P.sampling_period_en = '09-01'
+CARD$P.sampling_period_en = "09-01, 08-31"
 CARD$P.topic_en = "Flow, Baseflow, Seasonality"
 
 ### French ___________________________________________________________
@@ -41,7 +41,7 @@ CARD$P.name_fr = "Médiane du début des écoulements lents"
 CARD$P.description_fr = "Médiane des dates à laquelle 10 % du cumul annuel du débit de base sont atteints"
 CARD$P.method_fr = "1. agrégation annuelle [01-09, 31-08] - date à laquelle la somme du débit de base (Wallingford) correspond à 10 % de la somme totale
 2. aucune agrégation temporelle - médiane"
-CARD$P.sampling_period_fr = '01-09'
+CARD$P.sampling_period_fr = "01-09, 31-08"
 CARD$P.topic_fr = "Débit, Débit de Base, Saisonnalité"
 
 ### Global ___________________________________________________________

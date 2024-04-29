@@ -31,7 +31,7 @@ CARD$P.name_en = "Median duration of baseflow"
 CARD$P.description_en = "Median of the durations between the start and end of baseflow"
 CARD$P.method_en = "1. annual aggregation [09-01, 08-31] - number of days between the dates at which the baseflow (Wallingford) sum corresponds to 10 % and 90 % of the total baseflow sum
 2. no temporal aggregation - median"
-CARD$P.sampling_period_en = '09-01'
+CARD$P.sampling_period_en = "09-01, 08-31"
 CARD$P.topic_en = "Flow, Baseflow, Duration"
 
 ### French ___________________________________________________________
@@ -41,7 +41,7 @@ CARD$P.name_fr = "Médiane de la durée des écoulements lents"
 CARD$P.description_fr = "Médiane des durées entre le début et la fin des écoulements lents"
 CARD$P.method_fr = "1. agrégation annuelle [01-09, 31-08] - nombre de jours entre les dates auxquelles la somme du débit de base (Wallingford) correspond à 10 % et 90 % de la somme totale du débit de base
 2. aucune agrégation temporelle - médiane"
-CARD$P.sampling_period_fr = '01-09'
+CARD$P.sampling_period_fr = "01-09, 31-08"
 CARD$P.topic_fr = "Débit, Débit de Base, Durée"
 
 ### Global ___________________________________________________________

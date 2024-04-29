@@ -61,7 +61,7 @@ CARD$P.method_en =
 2. annual aggregation [11-01, 04-30] - minimum (extraction from the series of VCN10)
 3. no temporal aggregation - the maximum of the previous series is taken as the threshold
 4. annual aggregation [11-01, 04-30] - sum of the volumes discharged each day of the longest period below the previous threshold")
-CARD$P.sampling_period_en = c("11-01", "04-30")
+CARD$P.sampling_period_en = "11-01, 04-30"
 CARD$P.topic_en = c("Flow, Low Flows, Seasonality",
                     "Flow, Low Flows, Seasonality",
                     "Flow, Low Flows, Seasonality",
@@ -107,7 +107,7 @@ CARD$P.method_fr =
 2. agrégation annuelle [01-11, 30-04] - minimum (extraction de la série des VCN10
 3. aucune agrégation temporelle - le maximum de la précédente série est pris comme seuil
 4. agrégation annuelle [01-11, 30-04] - somme des volumes écoulés chaque jour de la plus longue période sous le précédent seuil")
-CARD$P.sampling_period_fr = c("01-11", "30-04")
+CARD$P.sampling_period_fr = "01-11, 30-04"
 CARD$P.topic_fr = c("Débit, Basses Eaux, Saisonnalité",
                     "Débit, Basses Eaux, Saisonnalité",
                     "Débit, Basses Eaux, Saisonnalité",

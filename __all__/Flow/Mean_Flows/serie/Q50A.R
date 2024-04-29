@@ -30,7 +30,7 @@ CARD$P.unit_en = "m^{3}.s^{-1}"
 CARD$P.name_en = "Median of annual flows"
 CARD$P.description_en = "Annual flow with an exceedance probability of 50 % (50th percentile)"
 CARD$P.method_en = "1. annual aggregation [01-01, 12-31] - median"
-CARD$P.sampling_period_en = "01-01"
+CARD$P.sampling_period_en = "01-01, 12-31"
 CARD$P.topic_en = "Flow, Mean Flows, Intensity"
 
 ### French ___________________________________________________________
@@ -39,7 +39,7 @@ CARD$P.unit_fr = "m^{3}.s^{-1}"
 CARD$P.name_fr = "Médiane des débits annuels"
 CARD$P.description_fr = "Débit annuel avec une probabilité de dépassement de 50 % (centile 50 %)"
 CARD$P.method_fr = "1. agrégation annuelle [01-01, 31-12] - médiane"
-CARD$P.sampling_period_fr = "01-01"
+CARD$P.sampling_period_fr = "01-01, 31-12"
 CARD$P.topic_fr = "Débit, Moyennes Eaux, Intensité"
 
 ### Global ___________________________________________________________

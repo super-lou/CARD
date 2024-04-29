@@ -40,7 +40,7 @@ CARD$P.name_en = paste0("Average change of third quartile of annual flows betwee
 CARD$P.description_en = paste0("Annual flow with an exceedance probability of 25 % (75th percentile)")
 CARD$P.method_en = paste0("1. annual aggregation [01-01, 12-31] - quantile at the exceedance probability of 25 %
 2. no temporal aggregation - calculation of the average change between the historical period and the ", Horizon_en, " horizon")
-CARD$P.sampling_period_en = "01-01"
+CARD$P.sampling_period_en = "01-01, 12-31"
 CARD$P.topic_en = "Flow, Mean Flows, Intensity"
 
 ### French ___________________________________________________________
@@ -50,7 +50,7 @@ CARD$P.name_fr = paste0("Changement moyen du troisième quartile des débits ann
 CARD$P.description_fr = paste0("Débit annuel avec une probabilité de dépassement de 25 % (centile 75 %)")
 CARD$P.method_fr = paste0("1. agrégation annuelle [01-01, 31-12] - quantile à la probabilité de dépassement de 25 %
 2. aucune agrégation temporelle - calcul du changement moyen entre la période historique et l'horizon ", Horizon_fr)
-CARD$P.sampling_period_fr = "01-01"
+CARD$P.sampling_period_fr = "01-01, 31-12"
 CARD$P.topic_fr = "Débit, Moyennes Eaux, Intensité"
 
 ### Global ___________________________________________________________

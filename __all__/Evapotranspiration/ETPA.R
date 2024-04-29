@@ -1,4 +1,4 @@
-#   ___                _ 
+#___                _ 
 #  / __| __ _  _ _  __| |
 # | (__ / _` || '_|/ _` |
 #  \___|\__,_||_|  \__,_|
@@ -30,7 +30,7 @@ CARD$P.unit_en = "mm"
 CARD$P.name_en = "Cumulative annual evapotranspiration"
 CARD$P.description_en = ""
 CARD$P.method_en = ""
-CARD$P.sampling_period_en = "09-01"
+CARD$P.sampling_period_en = "09-01, 08-31"
 CARD$P.topic_en = "Evapotranspiration, Average, Intensity"
 
 ### French ___________________________________________________________
@@ -39,7 +39,7 @@ CARD$P.unit_fr = "mm"
 CARD$P.name_fr = "Cumul des évapotranspirations annuelles"
 CARD$P.description_fr = ""
 CARD$P.method_fr = ""
-CARD$P.sampling_period_fr = "01-09"
+CARD$P.sampling_period_fr = "01-09, 31-08"
 CARD$P.topic_fr = "Évapotranspiration, Moyenne, Intensité"
 
 ### Global ___________________________________________________________

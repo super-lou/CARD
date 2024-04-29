@@ -41,7 +41,7 @@ CARD$P.description_en = "Months from May to November"
 CARD$P.method_en = paste0("1. no temporal aggregation - 10-day centered moving average
 2. annual aggregation [05-01, 11-30] - date of the minimum
 3. no temporal aggregation - calculation of the average change between the historical period and the ", Horizon_en, " horizon")
-CARD$P.sampling_period_en = c("05-01", "11-30")
+CARD$P.sampling_period_en = "05-01, 11-30"
 CARD$P.topic_en = "Flow, Low Flows, Seasonality"
 
 ### French ___________________________________________________________
@@ -52,7 +52,7 @@ CARD$P.description_fr = "Mois de mai à novembre"
 CARD$P.method_fr = paste0("1. aucune agrégation temporelle - moyenne mobile centrée sur 10 jours
 2. agrégation annuelle [01-05, 30-11] - date du minimum
 3. aucune agrégation temporelle - calcul du changement moyen entre la période historique et l'horizon ", Horizon_fr)
-CARD$P.sampling_period_fr = c("01-05", "30-11")
+CARD$P.sampling_period_fr = "01-05, 30-11"
 CARD$P.topic_fr = "Débit, Basses Eaux, Saisonnalité"
 
 ### Global ___________________________________________________________

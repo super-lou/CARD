@@ -30,7 +30,7 @@ CARD$P.unit_en = "m^{3}.s^{-1}"
 CARD$P.name_en = "Winter minimum of daily discharge"
 CARD$P.description_en = ""
 CARD$P.method_en = ""
-CARD$P.sampling_period_en = c("11-01", "04-30")
+CARD$P.sampling_period_en = "11-01, 04-30"
 CARD$P.topic_en = "Flow, Low Water, Intensity"
 
 ### French ___________________________________________________________
@@ -39,7 +39,7 @@ CARD$P.unit_fr = "m^{3}.s^{-1}"
 CARD$P.name_fr = "Minimum hivernal du débit journalier"
 CARD$P.description_fr = ""
 CARD$P.method_fr = ""
-CARD$P.sampling_period_fr = c("01-11", "30-04")
+CARD$P.sampling_period_fr = "01-11, 30-04"
 CARD$P.topic_fr = "Débit, Basses Eaux, Intensité"
 
 ### Global ___________________________________________________________

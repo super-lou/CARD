@@ -37,6 +37,10 @@ CARD$P.description_en = c("number of days with at least 20 mm of precipitation (
                           "number of days with at least 20 mm of precipitation (months of June, July, and August)",
                           "number of days with at least 20 mm of precipitation (months of September, October, and November)")
 CARD$P.method_en = ""
+CARD$P.sampling_period_en = c("12-01, 02-28(29)",
+                              "03-01, 05-31",
+                              "06-01, 08-31",
+                              "09-01, 11-30")
 CARD$P.topic_en = "Precipitations, Heavy, Duration"
 
 ### French ___________________________________________________________
@@ -52,6 +56,10 @@ CARD$P.description_fr = c("Nombre de jours dans l'hiver avec au moins 20 mm de p
                           "Nombre de jours en été avec au moins 20 mm de précipitations (mois de juin, juillet et août)",
                           "Nombre de jours en automne avec au moins 20 mm de précipitations (mois de septembre, octobre et novembre)")
 CARD$P.method_fr = ""
+CARD$P.sampling_period_fr = c("01-12, 28(29)-02",
+                              "01-03, 31-05",
+                              "01-06, 31-08",
+                              "01-09, 30-11")
 CARD$P.topic_fr = "Précipitations, Forte, Durée"
 
 ### Global ___________________________________________________________

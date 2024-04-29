@@ -31,7 +31,7 @@ CARD$P.name_en = "Date of the summer minimum of 10-day mean flows"
 CARD$P.description_en = "Months from May to November"
 CARD$P.method_en = "1. no temporal aggregation - 10-day centered moving average
 2. annual aggregation [05-01, 11-30] - date of the minimum"
-CARD$P.sampling_period_en = c("05-01", "11-30")
+CARD$P.sampling_period_en = "05-01, 11-30"
 CARD$P.topic_en = "Flow, Low Flows, Seasonality"
 
 ### French ___________________________________________________________
@@ -41,7 +41,7 @@ CARD$P.name_fr = "Date du minimum estival des débits moyens sur 10 jours"
 CARD$P.description_fr = "Mois de mai à novembre"
 CARD$P.method_fr = "1. aucune agrégation temporelle - moyenne mobile centrée sur 10 jours
 2. agrégation annuelle [01-05, 30-11] - date du minimum"
-CARD$P.sampling_period_fr = c("01-05", "30-11")
+CARD$P.sampling_period_fr = "01-05, 30-11"
 CARD$P.topic_fr = "Débit, Basses Eaux, Saisonnalité"
 
 ### Global ___________________________________________________________

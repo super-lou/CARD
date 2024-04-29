@@ -30,7 +30,7 @@ CARD$P.unit_en = "day"
 CARD$P.name_en = "Duration of low flows"
 CARD$P.description_en = "Duration between the start and end of low flows"
 CARD$P.method_en = "1. annual aggregation [09-01, 08-31] - number of days between the dates when the baseflow (Wallingford) sum corresponds to 10 % and 90 % of the total sum"
-CARD$P.sampling_period_en = '09-01'
+CARD$P.sampling_period_en = "09-01, 08-31"
 CARD$P.topic_en = "Flow, Baseflow, Duration"
 
 ### French ___________________________________________________________
@@ -39,7 +39,7 @@ CARD$P.unit_fr = "jour"
 CARD$P.name_fr = "Durée des écoulements lents"
 CARD$P.description_fr = "Durée entre le début et la fin des écoulements lents"
 CARD$P.method_fr = "1. agrégation annuelle [01-09, 31-08] - nombre de jours entre les dates auxquelles la somme du débit de base (Wallingford) correspond à 10 % et 90 % de la somme totale"
-CARD$P.sampling_period_fr = '01-09'
+CARD$P.sampling_period_fr = "01-09, 31-08"
 CARD$P.topic_fr = "Débit, Débit de Base, Durée"
 
 ### Global ___________________________________________________________

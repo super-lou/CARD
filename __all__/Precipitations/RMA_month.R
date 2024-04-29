@@ -43,6 +43,10 @@ CARD$P.name_en = c("Cumulative daily precipitation for each January",
                    "Cumulative daily precipitation for each December")
 CARD$P.description_en = ""
 CARD$P.method_en = ""
+CARD$P.sampling_period_en = c("01-01, 01-31", "02-01, 02-28(29)", "03-01, 03-31",
+                              "04-01, 04-30", "05-01, 05-31", "06-01, 06-30",
+                              "07-01, 07-31", "08-01, 08-31", "09-01, 09-30",
+                              "10-01, 10-31", "11-01, 11-30", "12-01, 12-31")
 CARD$P.topic_en = "Precipitations, Moderate, Intensity"
 
 ### French ___________________________________________________________
@@ -64,6 +68,10 @@ CARD$P.name_fr = c("Cumul des précipitations journalières de chaque janvier",
                    "Cumul des précipitations journalières de chaque décembre")
 CARD$P.description_fr = ""
 CARD$P.method_fr = ""
+CARD$P.sampling_period_fr = c("01-01, 31-01", "01-02, 28(29)-02", "01-03, 31-03",
+                              "01-04, 30-04", "01-05, 31-05", "01-06, 30-06",
+                              "01-07, 31-07", "01-08, 31-08", "01-09, 30-09",
+                              "01-10, 31-10", "01-11, 30-11", "01-12, 31-12")
 CARD$P.topic_fr = "Précipitations, Modérée, Intensité"
 
 ### Global ___________________________________________________________

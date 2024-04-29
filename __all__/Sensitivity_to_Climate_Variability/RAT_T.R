@@ -32,7 +32,7 @@ CARD$P.description_en = ""
 CARD$P.method_en = "1. annual aggregation [09-01, 08-31] - Qref − Qsim and mean temperatures
 2. no temporal aggregation - RAT with a 10 % risk"
 CARD$P.topic_en = "Flow / Temperature, Sensitivity to Climate Variability"
-CARD$P.sampling_period_en = "09-01"
+CARD$P.sampling_period_en = "09-01, 08-31"
 
 ### French ___________________________________________________________
 CARD$P.variable_fr = "RAT_T"
@@ -42,7 +42,7 @@ CARD$P.description_fr = ""
 CARD$P.method_fr = "1. agrégation annuelle [01-09, 31-08] - Qref − Qsim et températures moyennes
 2. aucune agrégation temporelle - RAT avec un risque de 10 %"
 CARD$P.topic_fr = "Débit / Température, Sensibilité à la variabilité climatique"
-CARD$P.sampling_period_fr = "01-09"
+CARD$P.sampling_period_fr = "01-09, 31-08"
 
 ### Global ___________________________________________________________
 CARD$P.source = "NICOLLE, P. et al. (2021). « Technical note : RAT – a robustness assessment test for calibrated and uncalibrated hydrological models ». In : Hydrol. Earth Syst. Sci. 25, p. 5013-5027. DOI : 10.5194/hess-25-5013-2021."

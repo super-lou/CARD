@@ -30,7 +30,7 @@ CARD$P.unit_en = "°C"
 CARD$P.name_en = "Annual mean temperature"
 CARD$P.description_en = ""
 CARD$P.method_en = ""
-CARD$P.sampling_period_en = "09-01"
+CARD$P.sampling_period_en = "09-01, 08-31"
 CARD$P.topic_en = "Temperature, Average, Intensity"
 
 ### French ___________________________________________________________
@@ -39,7 +39,7 @@ CARD$P.unit_fr = "°C"
 CARD$P.name_fr = "Température moyenne annuelle"
 CARD$P.description_fr = ""
 CARD$P.method_fr = ""
-CARD$P.sampling_period_fr = "01-09"
+CARD$P.sampling_period_fr = "01-09, 31-08"
 CARD$P.topic_fr = "Température, Moyenne, Intensité"
 
 ### Global ___________________________________________________________

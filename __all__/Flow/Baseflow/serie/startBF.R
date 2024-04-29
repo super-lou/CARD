@@ -30,7 +30,7 @@ CARD$P.unit_en = "yearday"
 CARD$P.name_en = "Start of low flows"
 CARD$P.description_en = "Date when 10 % of the annual cumulative baseflow is reached"
 CARD$P.method_en = "1. annual aggregation [09-01, 08-31] - date when the baseflow (Wallingford) sum corresponds to 10 % of the total sum"
-CARD$P.sampling_period_en = '09-01'
+CARD$P.sampling_period_en = "09-01, 08-31"
 CARD$P.topic_en = "Flow, Baseflow, Seasonality"
 
 ### French ___________________________________________________________
@@ -39,7 +39,7 @@ CARD$P.unit_fr = "jour de l'année"
 CARD$P.name_fr = "Début des écoulements lents"
 CARD$P.description_fr = "Date à laquelle 10 % du cumul annuel du débit de base sont atteints"
 CARD$P.method_fr = "1. agrégation annuelle [01-09, 31-08] - date à laquelle la somme du débit de base (Wallingford) correspond à 10 % de la somme totale"
-CARD$P.sampling_period_fr = '01-09'
+CARD$P.sampling_period_fr = "01-09, 31-08"
 CARD$P.topic_fr = "Débit, Débit de Base, Saisonnalité"
 
 ### Global ___________________________________________________________

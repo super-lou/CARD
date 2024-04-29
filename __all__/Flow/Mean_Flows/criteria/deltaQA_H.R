@@ -40,7 +40,7 @@ CARD$P.name_en = paste0("Average change of annual mean daily discharge between t
 CARD$P.description_en = ""
 CARD$P.method_en = paste0("1. annual aggregation [09-01, 08-31] - mean
 2. no temporal aggregation - calculation of the average change between the historical period and the ", Horizon_en, " horizon")
-CARD$P.sampling_period_en = "09-01"
+CARD$P.sampling_period_en = "09-01, 08-31"
 CARD$P.topic_en = "Flow, Mean Flows, Intensity"
 
 ### French ___________________________________________________________
@@ -50,7 +50,7 @@ CARD$P.name_fr = paste0("Changement moyen de la moyenne annuelle du débit journ
 CARD$P.description_fr = ""
 CARD$P.method_fr = paste0("1. agrégation annuelle [01-09, 31-08] - moyenne
 2. aucune agrégation temporelle - calcul du changement moyen entre la période historique et l'horizon ", Horizon_fr)
-CARD$P.sampling_period_fr = "01-09"
+CARD$P.sampling_period_fr = "01-09, 31-08"
 CARD$P.topic_fr = "Débit, Moyennes Eaux, Intensité"
 
 ### Global ___________________________________________________________

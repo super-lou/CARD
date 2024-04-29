@@ -35,10 +35,14 @@ CARD$P.description_en = c("Months of December, January, and February",
                           "Months of March, April, and May",
                           "Months of June, July, and August",
                           "Months of September, October, and November")
-CARD$P.method_en = c("1. seasonal annual aggregation [12-01, 28(29)-02] - mean",
-                     "1. seasonal annual aggregation [03-01, 31-05] - mean",
-                     "1. seasonal annual aggregation [06-01, 31-08] - mean",
+CARD$P.method_en = c("1. seasonal annual aggregation [12-01, 02-28(29)] - mean",
+                     "1. seasonal annual aggregation [03-01, 05-31] - mean",
+                     "1. seasonal annual aggregation [06-01, 08-31] - mean",
                      "1. seasonal annual aggregation [09-01, 11-30] - mean")
+CARD$P.sampling_period_en = c("12-01, 02-28(29)",
+                              "03-01, 05-31",
+                              "06-01, 08-31",
+                              "09-01, 11-30")
 CARD$P.topic_en = "Flow, Mean Flows, Intensity"
 
 ### French ___________________________________________________________
@@ -56,6 +60,10 @@ CARD$P.method_fr = c("1. agrégation annuelle saisonnalisé [01-12, 28(29)-02] -
                      "1. agrégation annuelle saisonnalisé [01-03, 31-05] - moyenne",
                      "1. agrégation annuelle saisonnalisé [01-06, 31-08] - moyenne",
                      "1. agrégation annuelle saisonnalisé [01-09, 30-11] - moyenne")
+CARD$P.sampling_period_fr = c("01-12, 28(29)-02",
+                              "01-03, 31-05",
+                              "01-06, 31-08",
+                              "01-09, 30-11")
 CARD$P.topic_fr = "Débit, Moyennes Eaux, Intensité"
 
 ### Global ___________________________________________________________

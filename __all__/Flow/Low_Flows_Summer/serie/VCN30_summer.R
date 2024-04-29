@@ -31,7 +31,7 @@ CARD$P.name_en = "Summer minimum of 30-day mean daily discharge"
 CARD$P.description_en = ""
 CARD$P.method_en = "1. no temporal aggregation - 30-day centered moving average
 2. annual aggregation [05-01, 11-30] - minimum"
-CARD$P.sampling_period_en = c("05-01", "11-30")
+CARD$P.sampling_period_en = "05-01, 11-30"
 CARD$P.topic_en = "Flow, Low Flows, Intensity"
 
 ### French ___________________________________________________________
@@ -41,7 +41,7 @@ CARD$P.name_fr = "Minimum estival de la moyenne sur 30 jours du débit journalie
 CARD$P.description_fr = ""
 CARD$P.method_fr = "1. aucune agrégation temporelle - moyenne mobile centrée sur 30 jours
 2. agrégation annuelle [01-05, 30-11] - minimum"
-CARD$P.sampling_period_fr = c("01-05", "30-11")
+CARD$P.sampling_period_fr = "01-05, 30-11"
 CARD$P.topic_fr = "Débit, Basses Eaux, Intensité"
 
 ### Global ___________________________________________________________

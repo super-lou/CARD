@@ -40,7 +40,7 @@ CARD$P.name_en = paste0("Average change of the end of Base Flow between the ", H
 CARD$P.description_en = paste0("Date when 90 % of the annual cumulative base flow is reached")
 CARD$P.method_en = paste0("1. annual aggregation [09-01, 08-31] - date when the sum of base flow (Wallingford) Qb corresponds to 90 % of the total sum
 2. no temporal aggregation - calculation of the average change between the historical period and the ", Horizon_en, " horizon")
-CARD$P.sampling_period_en = '09-01'
+CARD$P.sampling_period_en = "09-01, 08-31"
 CARD$P.topic_en = "Flow, Base Flow, Seasonality"
 
 ### French ___________________________________________________________
@@ -50,7 +50,7 @@ CARD$P.name_fr = paste0("Changement moyen de la fin des écoulements lents entre
 CARD$P.description_fr = paste0("Date à laquelle 90 % du cumul annuel du débit de base sont atteints")
 CARD$P.method_fr = paste0("1. agrégation annuelle [01-09, 31-08] - date à laquelle la somme du débit de base (Wallingford) Qb correspond à 90 % de la somme totale
 2. aucune agrégation temporelle - calcul du changement moyen entre la période historique et l'horizon ", Horizon_fr)
-CARD$P.sampling_period_fr = '01-09'
+CARD$P.sampling_period_fr = "01-09, 31-08"
 CARD$P.topic_fr = "Débit, Débit de Base, Saisonnalité"
 
 ### Global ___________________________________________________________

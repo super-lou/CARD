@@ -33,6 +33,10 @@ CARD$P.name_en = c("Winter precipitation correction coefficient",
                    "Autumn precipitation correction coefficient")
 CARD$P.description_en = ""
 CARD$P.method_en = ""
+CARD$P.sampling_period_en = c("12-01, 02-28(29)",
+                              "03-01, 05-31",
+                              "06-01, 08-31",
+                              "09-01, 11-30")
 CARD$P.topic_en = "Precipitations, Moderate, Parameterization"
 
 ### French ___________________________________________________________
@@ -44,6 +48,10 @@ CARD$P.name_fr = c("Coefficient correctif des précipitations hivernales",
                    "Coefficient correctif des précipitations automnales")
 CARD$P.description_fr = ""
 CARD$P.method_fr = ""
+CARD$P.sampling_period_fr = c("01-12, 28(29)-02",
+                              "01-03, 31-05",
+                              "01-06, 31-08",
+                              "01-09, 30-11")
 CARD$P.topic_fr = "Précipitations, Modérée, Paramétristation"
 
 ### Global ___________________________________________________________

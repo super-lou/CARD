@@ -39,6 +39,10 @@ CARD$P.method_en = c("1. seasonal aggregation [01-12, 28(29)-02] - Bias calculat
                      "1. seasonal aggregation [01-03, 31-05] - Bias calculation",
                      "1. seasonal aggregation [01-06, 31-08] - Bias calculation",
                      "1. seasonal aggregation [01-09, 30-11] - Bias calculation")
+CARD$P.sampling_period_en = c("12-01, 02-28(29)",
+                              "03-01, 05-31",
+                              "06-01, 08-31",
+                              "09-01, 11-30")
 CARD$P.topic_en = "Flow, Performance"
 
 
@@ -57,6 +61,10 @@ CARD$P.method_fr = c("1. agrégation saisonnière [01-12, 28(29)-02] - calcul du
                      "1. agrégation saisonnière [01-03, 31-05] - calcul du Biais",
                      "1. agrégation saisonnière [01-06, 31-08] - calcul du Biais",
                      "1. agrégation saisonnière [01-09, 30-11] - calcul du Biais")
+CARD$P.sampling_period_fr = c("01-12, 28(29)-02",
+                              "01-03, 31-05",
+                              "01-06, 31-08",
+                              "01-09, 30-11")
 CARD$P.topic_fr = "Débit, Performance"
 
 ### Global ___________________________________________________________

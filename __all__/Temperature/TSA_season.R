@@ -36,6 +36,10 @@ CARD$P.description_en = c("Months of December, January, and February",
                           "Months of June, July, and August",
                           "Months of September, October, and November")
 CARD$P.method_en = ""
+CARD$P.sampling_period_en = c("12-01, 02-28(29)",
+                              "03-01, 05-31",
+                              "06-01, 08-31",
+                              "09-01, 11-30")
 CARD$P.topic_en = "Temperature, Mean, Intensity"
 
 ### French ___________________________________________________________
@@ -50,6 +54,10 @@ CARD$P.description_fr = c("Mois de décembre, janvier et février",
                           "Mois de juin, juillet et août",
                           "Mois de septembre, octobre et novembre")
 CARD$P.method_fr = ""
+CARD$P.sampling_period_fr = c("01-12, 28(29)-02",
+                              "01-03, 31-05",
+                              "01-06, 31-08",
+                              "01-09, 30-11")
 CARD$P.topic_fr = "Température, Moyenne, Intensité"
 
 ### Global ___________________________________________________________

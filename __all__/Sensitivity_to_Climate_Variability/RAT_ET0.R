@@ -31,7 +31,7 @@ CARD$P.name_en = "Robustness test to a variation in reference evapotranspiration
 CARD$P.description_en = ""
 CARD$P.method_en = "1. annual aggregation [09-01, 08-31] - Qref − Qsim and mean temperatures
 2. no temporal aggregation - RAT with a 10 % risk"
-CARD$P.sampling_period_en = "09-01"
+CARD$P.sampling_period_en = "09-01, 08-31"
 CARD$P.topic_en = "Flow / Evapotranspiration, Sensitivity to Climate Variability"
 
 ### French ___________________________________________________________
@@ -41,7 +41,7 @@ CARD$P.name_fr = "Test de robustesse à une variation d'évapotranspiration de r
 CARD$P.description_fr = ""
 CARD$P.method_fr = "1. agrégation annuelle [01-09, 31-08] - Qref − Qsim et températures moyennes
 2. aucune agrégation temporelle - RAT avec un risque de 10 %"
-CARD$P.sampling_period_fr = "01-09"
+CARD$P.sampling_period_fr = "01-09, 31-08"
 CARD$P.topic_fr = "Débit / Évapotranspiration, Sensibilité à la variabilité climatique"
 
 ### Global ___________________________________________________________

@@ -30,7 +30,7 @@ CARD$P.unit_en = "m^{3}.s^{-1}.year^{-1}"
 CARD$P.name_en = "Center of low flows"
 CARD$P.description_en = "Date when 50 % of the annual cumulative baseflow is reached"
 CARD$P.method_en = "1. annual aggregation [09-01, 08-31] - date when the baseflow sum corresponds to 50 % of the total sum"
-CARD$P.sampling_period_en = '09-01'
+CARD$P.sampling_period_en = "09-01, 08-31"
 CARD$P.topic_en = "Flow, Baseflow, Seasonality"
 
 ### French ___________________________________________________________

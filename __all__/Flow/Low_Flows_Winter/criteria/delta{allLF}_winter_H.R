@@ -79,7 +79,7 @@ CARD$P.method_en = paste0(rep(c("1. no temporal aggregation - 10-day centered mo
 4. annual aggregation [11-01, 04-30] - sum of volumes discharged each day in the longest period below the previous threshold"),
 each=3),
 "\n2. no temporal aggregation - calculation of the average change between the historical period and the ", Horizon_en, " horizon")
-CARD$P.sampling_period_en = c("11-01", "04-30")
+CARD$P.sampling_period_en = "11-01, 04-30"
 CARD$P.topic_en = rep(c("Flow, Low Flows, Seasonality",
                         "Flow, Low Flows, Seasonality",
                         "Flow, Low Flows, Seasonality",
@@ -132,7 +132,7 @@ CARD$P.method_fr = paste0(rep(c("1. aucune agrégation temporelle - moyenne mobi
 4. agrégation annuelle [01-11, 30-04] - somme des volumes écoulés chaque jour de la plus longue période sous le précédent seuil"),
 each=3),
 "\n2. aucune agrégation temporelle - calcul du changement moyen entre la période historique et l'horizon ", Horizon_fr)
-CARD$P.sampling_period_fr = c("01-11", "30-04")
+CARD$P.sampling_period_fr = "01-11, 30-04"
 CARD$P.topic_fr = rep(c("Débit, Basses Eaux, Saisonnalité",
                         "Débit, Basses Eaux, Saisonnalité",
                         "Débit, Basses Eaux, Saisonnalité",

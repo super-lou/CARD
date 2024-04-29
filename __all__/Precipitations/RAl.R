@@ -30,7 +30,7 @@ CARD$P.unit_en = "mm"
 CARD$P.name_en = "Cumulative annual liquid precipitation"
 CARD$P.description_en = ""
 CARD$P.method_en = "1. Annual aggregation [09-01, 08-31] - average"
-CARD$P.sampling_period_en = "09-01"
+CARD$P.sampling_period_en = "09-01, 08-31"
 CARD$P.topic_en = "Precipitations, Moderate, Intensity"
 
 ### French ___________________________________________________________
@@ -39,7 +39,7 @@ CARD$P.unit_fr = "mm"
 CARD$P.name_fr = "Cumul des précipitations liquides annuelles"
 CARD$P.description_fr = ""
 CARD$P.method_fr = "1. agrégation annuelle [01-09, 31-08] - moyenne"
-CARD$P.sampling_period_fr = "01-09"
+CARD$P.sampling_period_fr = "01-09, 31-08"
 CARD$P.topic_fr = "Précipitations, Modérée, Intensité"
 
 ### Global ___________________________________________________________

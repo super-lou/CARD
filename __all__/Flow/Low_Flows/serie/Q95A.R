@@ -30,7 +30,7 @@ CARD$P.unit_en = "m^{3}.s^{-1}"
 CARD$P.name_en = "Annual flow exceeded 19 years out of 20"
 CARD$P.description_en = "Annual flow with a exceedance probability of 95 % (5th percentile)"
 CARD$P.method_en = "1. annual aggregation [01-01, 12-31] - quantile at the exceedance probability of 95 %"
-CARD$P.sampling_period_en = "01-01"
+CARD$P.sampling_period_en = "01-01, 12-31"
 CARD$P.topic_en = "Flow, Low Flows, Intensity"
 
 ### French ___________________________________________________________
@@ -39,7 +39,7 @@ CARD$P.unit_fr = "m^{3}.s^{-1}"
 CARD$P.name_fr = "Débit annuel dépassée 19 années sur 20"
 CARD$P.description_fr = "Débit annuel avec une probabilité de dépassement de 95 % (centile 5 %)"
 CARD$P.method_fr = "1. agrégation annuelle [01-01, 31-12] - quantile à la probabilité au dépassement de 95 %"
-CARD$P.sampling_period_fr = "01-01"
+CARD$P.sampling_period_fr = "01-01, 31-12"
 CARD$P.topic_fr = "Débit, Basses Eaux, Intensité"
 
 ### Global ___________________________________________________________

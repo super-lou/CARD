@@ -37,6 +37,10 @@ CARD$P.description_en = c("Maximum number of consecutive days in winter with at 
                           "Maximum number of consecutive days in summer with at least 1 mm of precipitation (months of June, July, and August)",
                           "Maximum number of consecutive days in autumn with at least 1 mm of precipitation (months of September, October, and November)")
 CARD$P.method_en = ""
+CARD$P.sampling_period_en = c("12-01, 02-28(29)",
+                              "03-01, 05-31",
+                              "06-01, 08-31",
+                              "09-01, 11-30")
 CARD$P.topic_en = "Precipitations, Low, Duration"
 
 ### French ___________________________________________________________
@@ -52,6 +56,10 @@ CARD$P.description_fr = c("Nombre maximal de jours consécutifs dans l'hiver ave
                           "Nombre maximal de jours consécutifs en été avec au moins de 1 mm de précipitation (mois de juin, juillet et août)",
                           "Nombre maximal de jours consécutifs en automne avec au moins de 1 mm de précipitation (mois de septembre, octobre et novembre)")
 CARD$P.method_fr = ""
+CARD$P.sampling_period_fr = c("01-12, 28(29)-02",
+                              "01-03, 31-05",
+                              "01-06, 31-08",
+                              "01-09, 30-11")
 CARD$P.topic_fr = "Précipitations, Faibles, Durée"
 
 ### Global ___________________________________________________________

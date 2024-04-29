@@ -31,7 +31,7 @@ CARD$P.name_en = "Winter minimum of 3-day mean daily discharge"
 CARD$P.description_en = ""
 CARD$P.method_en = "1. no temporal aggregation - 3-day centered moving average
 2. annual aggregation [11-01, 04-30] - minimum"
-CARD$P.sampling_period_en = c("11-01", "04-30")
+CARD$P.sampling_period_en = "11-01, 04-30"
 CARD$P.topic_en = "Flow, Low Flows, Intensity"
 
 ### French ___________________________________________________________
@@ -41,7 +41,7 @@ CARD$P.name_fr = "Minimum hivernal de la moyenne sur 3 jours du débit journalie
 CARD$P.description_fr = ""
 CARD$P.method_fr = "1. aucune agrégation temporelle - moyenne mobile centrée sur 3 jours
 2. agrégation annuelle [01-11, 30-04] - minimum"
-CARD$P.sampling_period_fr = c("01-11", "30-04")
+CARD$P.sampling_period_fr = "01-11, 30-04"
 CARD$P.topic_fr = "Débit, Basses Eaux, Intensité"
 
 ### Global ___________________________________________________________

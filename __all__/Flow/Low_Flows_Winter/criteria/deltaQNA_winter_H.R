@@ -39,7 +39,7 @@ CARD$P.unit_en = "%"
 CARD$P.name_en = paste0("Average change of winter minimum of daily discharge between the ", Horizon_en, " horizon and historical period")
 CARD$P.description_en = ""
 CARD$P.method_en = ""
-CARD$P.sampling_period_en = c("11-01", "04-30")
+CARD$P.sampling_period_en = "11-01, 04-30"
 CARD$P.topic_en = "Flow, Low Water, Intensity"
 
 ### French ___________________________________________________________
@@ -48,7 +48,7 @@ CARD$P.unit_fr = "%"
 CARD$P.name_fr = paste0("Changement moyen du minimum hivernal du débit journalier entre l'horizon ", Horizon_fr, " et la période historique")
 CARD$P.description_fr = ""
 CARD$P.method_fr = ""
-CARD$P.sampling_period_fr = c("01-11", "30-04")
+CARD$P.sampling_period_fr = "01-11, 30-04"
 CARD$P.topic_fr = "Débit, Basses Eaux, Intensité"
 
 ### Global ___________________________________________________________
