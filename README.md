@@ -8,7 +8,7 @@
 
 **CARD** is a set of parameterization files for the banking and simplification of hydroclimatic temporal data aggregation with the [EXstat](https://github.com/super-lou/EXstat) package.
 
-This repository lists all the available CARDs and is intended to work in conjunction with [EXstat](https://github.com/super-lou/EXstat). For information on how to use these CARDs, please refer to the [EXstat](https://github.com/super-lou/EXstat) documentation.
+This repository lists all the available CARDs and is intended to work in conjunction with EXstat. For information on how to use these CARDs, please refer to the EXstat documentation.
 
 This project was carried out for National Research Institute for Agriculture, Food and the Environment (Institut National de Recherche pour l’Agriculture, l’Alimentation et l’Environnement, [INRAE](https://agriculture.gouv.fr/inrae-linstitut-national-de-recherche-pour-lagriculture-lalimentation-et-lenvironnement) in french).
 
