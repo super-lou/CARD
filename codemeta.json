@@ -86,7 +86,7 @@
     "datePublished": "2023-01-05",
     "description": "<a href=\"https://github.com/super-lou/CARD\" target=\"_blank\">CARD is a set of parameterization files for the banking and simplification of hydroclimatic temporal data aggregation with the <a href=\"https://github.com/super-lou/EXstat\" target=\"_blank\">EXstat</a> package.\nThis repository lists all the available CARDs and is intended to work in conjunction with <a href=\"https://github.com/super-lou/EXstat\" target=\"_blank\">EXstat</a>. For information on how to use these CARDs, please refer to the <a href=\"https://github.com/super-lou/EXstat\" target=\"_blank\">EXstat</a> documentation.\n\n<a href=\"https://github.com/super-lou/CARD\" target=\"_blank\">CARD</a> est un ensemble de fichiers de paramétrage pour la gestion et la simplification de l'agrégation des données hydroclimatiques temporelles avec le package EXstat.\nCe dépôt répertorie tous les CARDs disponibles et est conçu pour fonctionner en conjonction avec <a href=\"https://github.com/super-lou/EXstat\" target=\"_blank\">EXstat</a>. Pour savoir comment utiliser ces CARDs, veuillez consulter la documentation d'<a href=\"https://github.com/super-lou/EXstat\" target=\"_blank\">EXstat</a>.",
     "keywords": [
-        "hydrological variable",
+        "hydroclimatological variable",
         "controlled vocabulary",
         "data analysis",
         "data aggregation"
