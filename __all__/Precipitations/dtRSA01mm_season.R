@@ -60,7 +60,7 @@ CARD$P.sampling_period_fr = c("01-12, 28(29)-02",
                               "01-03, 31-05",
                               "01-06, 31-08",
                               "01-09, 30-11")
-CARD$P.topic_fr = c("Précipitations", "Faible", "Durée")
+CARD$P.topic_fr = "Précipitations, Faible, Durée"
 
 ### Global ___________________________________________________________
 CARD$P.is_date = FALSE

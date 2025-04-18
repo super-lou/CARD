@@ -1,6 +1,11 @@
 all: AEAG MAKAHO MAKAHOapp Explore2_diag Explore2_proj
 .PHONY: AEAG MAKAHO MAKAHOapp Explore2_diag Explore2_proj
 
+
+get_metaEX:
+	Rscript get_metaEX_all.R
+
+
 ## 1. ________________________________________________________________
 AEAG:
 	./CARD_parser.R -iow -l AEAG [ QA QMNA VCN10 tDEB_etiage tCEN_etiage ]

@@ -38,7 +38,7 @@ CARD$P.variable_en = paste0("delta{vLF}_", Horizon)
 CARD$P.unit_en = "%"
 CARD$P.name_en = paste0("Average change of low flow deficit volume between the ", Horizon_en, " horizon and historical period")
 CARD$P.description_en = "Sum of the differences between the 10-day average and the maximum of the VCN10, over the longest sequence below this threshold"
-CARD$P.method_en = paste0(paste0("1. no temporal aggregation - 10-day centered moving average
+CARD$P.method_en = paste0("1. no temporal aggregation - 10-day centered moving average
 2. annual aggregation [Month of maximum monthly flows] - minimum (extraction of the VCN10 series)
 3. no temporal aggregation - the maximum of the previous series is taken as the threshold
 4. annual aggregation [Month of maximum monthly flows] - sum of volumes discharged each day over the longest period below the previous threshold
