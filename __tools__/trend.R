@@ -27,7 +27,7 @@
 ## 1.1. Alpha ________________________________________________________
 get_MKalpha = function (X, level=0.1) {
     alpha = EXstat::GeneralMannKendall_WRAP(X, level=level,
-                                            timeDep_option='AR1',
+                                            time_dependency_option='AR1',
                                             DoDetrending=TRUE)$a
     return (alpha)
 }
@@ -35,7 +35,7 @@ get_MKalpha = function (X, level=0.1) {
 ## 1.2. Test result __________________________________________________
 get_MKH = function (X, level=0.1) {
     H = EXstat::GeneralMannKendall_WRAP(X, level=level,
-                                        timeDep_option='AR1',
+                                        time_dependency_option='AR1',
                                         DoDetrending=TRUE)$H
     return (H)    
 }
@@ -43,7 +43,7 @@ get_MKH = function (X, level=0.1) {
 ## 1.2. Test result __________________________________________________
 get_MKp = function (X, level=0.1) {
     p = EXstat::GeneralMannKendall_WRAP(X, level=level,
-                                        timeDep_option='AR1',
+                                        time_dependency_option='AR1',
                                         DoDetrending=TRUE)$p
     return (p)    
 }
