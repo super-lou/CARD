@@ -1,5 +1,4 @@
 .github
 ^\.github$
-.csv
 test.R
 move.R
