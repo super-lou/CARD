@@ -239,7 +239,7 @@ CARD_extraction = function (data,
     if (is.null(CARD_dir)) {
         CARD_dir = "__all__"
     } else {
-        CARD_dir = paste0("CARD-", CARD_dir)
+        CARD_dir = paste0("CARD.", CARD_dir)
     }
     
     CARD_dirpath = file.path(CARD_path, CARD_dir)   

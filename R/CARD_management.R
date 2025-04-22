@@ -142,7 +142,7 @@ CARD_management = function (CARD_name=c("QA", "QJXA"),
                             args=NULL) {
 
     CARD_path_system = system.file(package="EXstat.CARD")
-    CARD_dir = paste0("CARD-", CARD_dir)
+    CARD_dir = paste0("CARD.", CARD_dir)
     
     if (is.null(layout)) {
         layout = c(CARD_dir, "[", CARD_name, "]")
