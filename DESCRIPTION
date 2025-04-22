@@ -35,8 +35,5 @@ Imports:
     stringr,
     purrr,
     EXstat
-Depends : EXstat
-Remotes:
-    super-lou/EXstat@dev
 RoxygenNote: 7.3.2
 Roxygen: list(markdown = TRUE)
