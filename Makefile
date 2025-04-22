@@ -10,10 +10,10 @@ check:
 	R -e 'devtools::check()'
 
 install:
-	R -e 'remotes::install_github("super-lou/CARD")'
+	R -e 'remotes::install_github("super-lou/EXstat-CARD")'
 
 install-dev:
-	R -e 'remotes::install_github("super-lou/CARD@dev")'
+	R -e 'remotes::install_github("super-lou/EXstat-CARD@dev")'
 
 github_check:
 	R -e 'usethis::use_github_action_check_standard()'
