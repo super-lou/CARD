@@ -1,9 +1,13 @@
 
 
 
-res = EXstat::CARD_extraction(data=NULL,
-                              CARD_path=".",
-                              CARD_dir="__all__",
-                              extract_only_metadata=TRUE)
+devtools::load_all()
 
-ASHE::write_tibble(res$metaEX, "metaEX_all.csv")
+res = CARD_extraction(data=NULL,
+                      CARD_path="inst",
+                      CARD_dir="__all__",
+                      extract_only_metadata=TRUE)
+
+
+ASHE::write_tibble(res$metaEX, file.path("inst", "extdata",
+                                         "metaEX_all.csv"))

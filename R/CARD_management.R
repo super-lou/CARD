@@ -132,27 +132,24 @@ CARD_list_all = function () {
 #' @export
 #' @md
 CARD_management = function (CARD_name=c("QA", "QJXA"),
-                            CARD_dir="WIP",
-                            CARD_path=".",
+                            CARD_path="./WIP",
                             underscore_to_white=TRUE,
                             add_id=TRUE,
-                            overwrite=TRUE,
+                            overwrite=FALSE,
                             verbose=FALSE,
                             args=NULL) {
 
     CARD_path_system = system.file(package="EXstat.CARD")
-    CARD_dir = paste0("CARD.", CARD_dir)
-    CARD_dirpath = file.path(CARD_path, CARD_dir)
     
-    if (dir.exists(CARD_dirpath)) {
+    if (dir.exists(CARD_path)) {
         if (overwrite) {
-            unlink(CARD_dirpath, recursive=TRUE)
-            dir.create(CARD_dirpath)
+            unlink(CARD_path, recursive=TRUE)
+            dir.create(CARD_path)
         } else {
-            stop(paste0("Directory ", CARD_dirpath, " already exists, use the parameter `overwrite=TRUE` if you want to overwrite it."))
+            stop(paste0("Directory ", CARD_path, " already exists, use the parameter `overwrite=TRUE` if you want to overwrite it."))
         }
     } else {
-        dir.create(CARD_dirpath)
+        dir.create(CARD_path)
     }
     
     # if (is.null(layout)) {
@@ -191,7 +188,7 @@ CARD_management = function (CARD_name=c("QA", "QJXA"),
         card_name = CARD_name[i]
         from = Paths[names(Paths) == card_name]
         id_card_name = paste0(formatC(i, width=3, flag="0"), "_", card_name, ".R")
-        to = file.path(CARD_dirpath, id_card_name)
+        to = file.path(CARD_path, id_card_name)
         file.copy(from, to)
     }
                    

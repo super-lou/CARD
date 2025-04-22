@@ -216,7 +216,6 @@ get_last_Process = function (Process) {
 #' @md
 CARD_extraction = function (data,
                             CARD_name=c("QA", "QJXA"),
-                            CARD_dir=NULL,
                             CARD_path=NULL,
                             period_default=NULL,
                             suffix=NULL,
@@ -234,16 +233,10 @@ CARD_extraction = function (data,
     CARD_path_system = system.file(package="EXstat.CARD")
 
     if (is.null(CARD_path)) {
-        CARD_path = CARD_path_system
-    }
-    if (is.null(CARD_dir)) {
-        CARD_dir = "__all__"
-    } else {
-        CARD_dir = paste0("CARD.", CARD_dir)
+        CARD_path = file.path(CARD_path_system, "__all__")
     }
     
-    CARD_dirpath = file.path(CARD_path, CARD_dir)   
-    script_to_analyse = list.files(CARD_dirpath,
+    script_to_analyse = list.files(CARD_path,
                                    pattern=".R$",
                                    recursive=TRUE,
                                    include.dirs=FALSE,
@@ -259,7 +252,7 @@ CARD_extraction = function (data,
     script_to_analyse = script_to_analyse[!grepl("__default__.R",
                                                  script_to_analyse)]
 
-    topic_to_analyse = list.dirs(CARD_dirpath,
+    topic_to_analyse = list.dirs(CARD_path,
                                  recursive=TRUE, full.names=FALSE)
     topic_to_analyse = topic_to_analyse[topic_to_analyse != ""]
     topic_to_analyse = gsub('.*_', '', topic_to_analyse)
@@ -290,7 +283,7 @@ CARD_extraction = function (data,
             file.path(CARD_path_system, "__default__.R"))
         
         Process = sourceProcess(
-            file.path(CARD_dirpath, script),
+            file.path(CARD_path, script),
             default=Process_default)
 
         principal = Process$P
@@ -393,6 +386,7 @@ CARD_extraction = function (data,
                                   topic_fr=topic_fr,
                                   ### Global ___
                                   source=source,
+                                  preferred_hydrological_month=preferred_hydrological_month,
                                   is_date=is_date, 
                                   to_normalise=to_normalise,
                                   palette=palette,
