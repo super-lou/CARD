@@ -1,7 +1,7 @@
-Package: EXstat-CARD
+Package: EXstat_CARD
 Version: 2.0.0
 Date: 2025-04-22
-Title: EXstat-CARD
+Title: EXstat_CARD
 Description: Card of Analyse and Diagnostic in R for a user-friendly experience of data aggregation with EXstat.
 Authors@R: c(
     person(given = "Louis",
@@ -33,6 +33,7 @@ Imports:
     dplyr,
     magrittr,
     stringr,
-    purrr
+    purrr,
+    EXstat
 RoxygenNote: 7.3.2
 Roxygen: list(markdown = TRUE)
