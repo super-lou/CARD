@@ -1,4 +1,4 @@
-# Copyright 2021-2024 Louis Héraut (louis.heraut@inrae.fr)*1                     
+# Copyright 2021-2025 Louis Héraut (louis.heraut@inrae.fr)*1                     
 #           2023      Éric Sauquet (eric.sauquet@inrae.fr)*1
 #                     Jean-Philippe Vidal (jean-philippe.vidal@inrae.fr)*1
 #                     Nathan Pellerin
@@ -22,59 +22,17 @@
 # If not, see <https://www.gnu.org/licenses/>.
 
 
-# #' @title CARD_download
-# #' @description Download the CARD repository in order to use last version of CARD available.
-# #' @param overwrite [logical][base::logical] If TRUE, the current CARD version will be overwrite by the most recent one. Default, FALSE.
-# #' @seealso
-# #' - 1. [CARD_download()] for downloading last version of CARD parameterization files.
-# #' 2. [CARD_list_all()] list all available CARD.
-# #' 3. [CARD_management()] for managing CARD parameterization files.
-# #' 4. [CARD_extraction()] for extracting variables using CARD.
-# #' 5. [process_extraction()] for extracting variables.
-# #' 6. [process_trend()] for performing trend analysis on extracted variables.
-# #' @export
-# #' @md
-# CARD_download = function(overwrite=FALSE) {
-#   inst_dir = system.file(package="EXstat")
-#   CARD_path = file.path(inst_dir, "CARD")
-
-#   if (dir.exists(CARD_path)) {
-#     if (!overwrite) {
-#       message("CARD directory already exists. Use overwrite = TRUE to refresh.")
-#       return(invisible(CARD_path))
-#     } else {
-#       unlink(CARD_path, recursive=TRUE)
-#     }
-#   }
-
-#   temp_zip = tempfile(fileext = ".zip")
-#   zip_url = "https://github.com/super-lou/CARD/archive/refs/heads/main.zip"
-#   download.file(zip_url, destfile=temp_zip, mode="wb")
-
-#   temp_dir = tempdir()
-#   unzip(temp_zip, exdir=temp_dir)
-  
-#   repo_dir = file.path(temp_dir, "CARD-main")
-  
-#   dir.create(CARD_path, recursive=TRUE, showWarnings=FALSE)
-#   file.copy(from=list.files(repo_dir, full.names=TRUE),
-#             to=CARD_path,
-#             recursive=TRUE)
-
-#   message("CARD has been downloaded to: ", CARD_path)
-#   invisible(CARD_path)
-# }
-
-
 #' @title CARD_list_all
-#' @description List all the CARD parametrization files in a [tibble][tibble::tibble()].
+#' @description List all the CARD parametrization files in a [tibble][tibble::tibble()] to get all the metadata of the aggregation variables available.
 #' @seealso
-#' 1. [CARD_download()] for downloading last version of CARD parameterization files.
-#' - 2. [CARD_list_all()] list all available CARD.
-#' 3. [CARD_management()] for managing CARD parameterization files.
-#' 4. [CARD_extraction()] for extracting variables using CARD.
-#' 5. [process_extraction()] for extracting variables.
-#' 6. [process_trend()] for performing trend analysis on extracted variables.
+#' - 1. [CARD_list_all()] list all available CARD.
+#' 2. [CARD_management()] for managing CARD parameterization files.
+#' 3. [CARD_extraction()] for extracting variables using CARD.
+#' @examples
+#' # Get all the available variables
+#' metaEX_all = CARD_list_all()
+#' # And why note filter it by topic
+#' dplyr::filter(metaEX_all, grepl("Low Flow", topic_en))
 #' @export
 #' @md
 CARD_list_all = function () {
@@ -86,49 +44,21 @@ CARD_list_all = function () {
 
 
 #' @title CARD_management
-#' @description Manage your different sets of variables to extract. *For CARD developers*, this function manages the CARD directory structure by performing automatic file operations to copy and paste CARD parameterization files more efficiently.
-#' 
-#' @param CARD_name A [vector][base::c()] of [character][base::character] strings containing the names of the CARDs to extract. Default is `c("QA", "QJXA")`. Get all the available variables with [CARD_list_all()] after running [CARD_download()] once.
-#' @param CARD_dir A [character][base::character] string for the name of your analysis represented by the CARDs selected with `CARD_name`. In fact, *for CARD developers*, it is the name of a subdirectory in `CARD_path` (or `CARD_tmp`) where the CARD parameterization files are located for an analysis. Default is `"WIP"`.
-#' @param CARD_path *For CARD developers*, a [character][base::character] string representing the path to the downloaded CARD directory (it should end with `"CARD"`). In this directory, you can search for the CARDs you want in the `"__all__"` subdirectory that will be used for an analysis (see [layout] to know how to specify which CARD you want).
-#' @param CARD_tmp *For CARD developers*, a [character][base::character] string for a path to a directory where the CARD parameterization files will be copied and pasted for an analysis. Default is `NULL` if you want to use a `tmp` subdirectory in the `CARD_path` directory.
-#' @param layout *for CARD developper* A [character][base::character] string [vector][base::c()] specifying the tree structure of files that you want for your analysis. Each element of the vector represents either:
-#' * the name of an analysis directory (e.g., `"WIP"`)
-#' * the beginning and ending of an analysis directory: `"["` for the start and `"]"` for the end
-#' * the CARD name (e.g., `"QA"`)
-#' For example, if you want to create an `"WIP"` analysis directory for the CARDs named `"QA"` and `"QJXA"`, you can provide `c("WIP", "[", "QA", "QJXA", "]")`. Default is `NULL` to use `CARD_dir` and `CARD_name`.
-#' @param underscore_to_white *for CARD developper* [logical][base::logical]. If `TRUE`, underscores in directory names will be replaced with spaces. Default is `TRUE`.
-#' @param add_id *for CARD developper* [logical][base::logical]. If `TRUE`, numerical IDs will be added to the start of the copied and pasted CARD names to maintain the input order. Default is `TRUE`.
+#' @description Manage your different sets of variables to extract. For CARD advanced users, this function manages the CARD directory structure by performing automatic file operations to get the CARD parameterization files to your wanted directory in order to custom them or create yours to use them in a second step with [CARD_extraction()]. If you want to submit request for new CARD see the [GitHub repo](https://github.com/super-lou/EXstat.CARD)<https://github.com/super-lou/EXstat.CARD>.
+#' @param CARD_name A [vector][base::c()] of [character][base::character] strings to specify which variables you want to extract. See [CARD_list_all()] to get the variable names. By default, `c("QA", "QJXA")`. If `NULL`, all the variable will be extracted, so avoid this value except with `extract_only_metadata = TRUE`.
+#' @param CARD_path An optional [character][base::character] string for the path where to search for custom CARDs that have been created by the [CARD_management] function. By default, `NULL` in order to get the default CARD variable parameters.
+#' @param underscore_to_white [logical][base::logical]. If `TRUE`, underscores in directory names will be replaced with spaces. Default is `TRUE`.
+#' @param add_id [logical][base::logical]. If `TRUE`, numerical IDs will be added to the start of the copied and pasted CARD names to maintain the input order. Default is `TRUE`.
 #' @param overwrite [logical][base::logical]. If `TRUE`, existing CARD files in the analysis directory will be overwritten. Default is `TRUE`.
 #' @param verbose [logical][base::logical]. Should intermediate messages be printed during the execution of the function ? Default `FALSE`.
-#' @param args *for CARD developper* An intermediate form of arguments that is useful if the argparse package is used. If not provided, it will be automatically created using the other function arguments. Default is `NULL`.
-#'
-#' @return *for CARD developper* CARD parameterization files will be copied and pasted from `CARD_path` and organized according to the structure given by [layout] into the `CARD_tmp` directory.
-#'
+#' @return Selected CARD parameterization files will be created in the `CARD_path` directory.
 #' @seealso
-#' 1. [CARD_download()] for downloading last version of CARD parameterization files.
-#' 2. [CARD_list_all()] list all available CARD.
-#' - 3. [CARD_management()] for managing CARD parameterization files.
-#' 4. [CARD_extraction()] for extracting variables using CARD.
-#' 5. [process_extraction()] for extracting variables.
-#' 6. [process_trend()] for performing trend analysis on extracted variables.
-#' 
+#' 1. [CARD_list_all()] list all available CARD.
+#' - 2. [CARD_management()] for managing CARD parameterization files.
+#' 3. [CARD_extraction()] for extracting variables using CARD.
 #' @examples
-#' \dontrun{
-#' CARD_management(CARD_path="path/to/CARD",
-#'                 CARD_tmp="path/to/copy/CARD",
-#'                 CARD_dir="WIP",
-#'                 CARD_name=c("QA", "QJXA"),
-#'                 overwrite=TRUE,
-#'                 verbose=TRUE)
-#' # or with layout
-#' CARD_management(CARD_path="path/to/CARD",
-#'                 CARD_tmp="path/to/copy/CARD",
-#'                 layout=c("WIP", "[", "QA", "QJXA", "]"),
-#'                 overwrite=TRUE,
-#'                 verbose=TRUE)
-#' }
-#' 
+#' # Get the QA and QMNA CARD variables in your local CARD_path directory
+#' CARD_management(CARD_name=c("QA", "QMNA"), CARD_path="CARD-WIP")
 #' @export
 #' @md
 CARD_management = function (CARD_name=c("QA", "QJXA"),
@@ -136,8 +66,7 @@ CARD_management = function (CARD_name=c("QA", "QJXA"),
                             underscore_to_white=TRUE,
                             add_id=TRUE,
                             overwrite=FALSE,
-                            verbose=FALSE,
-                            args=NULL) {
+                            verbose=FALSE) {
 
     CARD_path_system = system.file(package="EXstat.CARD")
     

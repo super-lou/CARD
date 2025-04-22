@@ -1,4 +1,4 @@
-# Copyright 2021-2024 Louis Héraut (louis.heraut@inrae.fr)*1                     
+# Copyright 2021-2025 Louis Héraut (louis.heraut@inrae.fr)*1                     
 #           2023      Éric Sauquet (eric.sauquet@inrae.fr)*1
 #                     Jean-Philippe Vidal (jean-philippe.vidal@inrae.fr)*1
 #                     Nathan Pellerin
@@ -20,8 +20,6 @@
 # You should have received a copy of the GNU General Public License
 # along with EXstat R package.
 # If not, see <https://www.gnu.org/licenses/>.
-
-
 
 
 reduce_process = function (data, id, Process,
@@ -56,7 +54,7 @@ reduce_process = function (data, id, Process,
     if (is.null(sampling_period_overwrite)) {
         if (is.function(sampling_period[[1]])) {
             sampling_period = dplyr::tibble(sp=list(sampling_period[[1]]),
-                                         args=sampling_period[2])
+                                            args=sampling_period[2])
         }
     } else {
         sampling_period = sampling_period_overwrite
@@ -96,7 +94,6 @@ reduce_process = function (data, id, Process,
 }
 
 
-
 get_last_Process = function (Process) {
     nProcess = length(Process) - 1
     for (i in 1:nProcess) {
@@ -111,9 +108,14 @@ get_last_Process = function (Process) {
 }
 
 
+split_path = function (path) {
+    if (dirname(path) %in% c(".", path)) return(basename(path))
+    return(c(basename(path), split_path(dirname(path))))
+}
+
+
 #' @title CARD_extraction
 #' @description Extracts variables from time series (for example, the yearly mean of a time series) using CARD parameterization files.
-#'
 #' @param data Input data format is a [tibble][tibble::tibble()] from the tibble package. It needs to have :
 #' * Only one column of [Date][base::Date] that are regularly spaced and unique for each time serie.
 #' * If there is more than one time serie, at least one column needs to be of [character][base::character] string for names of time series in order to identify them. If more than one column of identifier is given, they will all be used in order to identify a unique time serie.
@@ -136,12 +138,9 @@ get_last_Process = function (Process) {
 #' 106 2001-01-04  1.1       91  serie 2
 #'     ...
 #' ```
-#' 
-#' @param CARD_path A [character][base::character] string representing the path to the downloaded CARD directory (it should end with `"CARD"`). In this directory, you can copy and paste (and later modify) CARDs from the `"__all__"` subdirectory that you want to use for an analysis represented by a subdirectory named `CARD_dir` (see `CARD_tmp` if you want to locate your `CARD_dir` directory elsewhere). In your CARDs, you can specify functions available in the scripts of the `"__tools__"` subdirectory.
-#' @param CARD_tmp If you want to locate the `CARD_dir` directory somewhere other than in the `CARD_path` directory, you can specify a [character][base::character] string in `CARD_tmp` for a path where the `CARD_dir` subdirectory of CARDs will be searched. Default is `"NULL"` if you want to locate the `CARD_dir` subdirectory of CARDs in `CARD_path`.
-#' @param CARD_dir A [character][base::character] string for the name of a subdirectory in `CARD_path` (or `CARD_tmp`) where the CARD parameterization files are located for an analysis. Default is `"WIP"`.
-#' @param CARD_name By default, all CARDs in the `CARD_dir` directory will be used for the analysis. However, you can specify a [vector][base::c()] of [character][base::character] strings with the names of the CARDs to be used. Default is `"NULL"` for using all the CARDs.
-#' @param period_default A [vector][base::c()] of two [dates][base::Date] (or two unambiguous [character][base::character] strings that can be coerced to [dates][base::Date]) to restrict the period of analysis. As an example, it can be `c("1950-01-01", "2020-12-31")` to select data from the 1st January of 1950 to the end of December of 2020. The default option is `period=NULL`, which considers all available data for each time serie.
+#' @param CARD_name A [vector][base::c()] of [character][base::character] strings to specify which variables you want to extract. See [CARD_list_all()] to get the variable names. By default, `c("QA", "QJXA")`. If `NULL`, all the variable will be extracted, so avoid this value except with `extract_only_metadata = TRUE` or your custom `CARD_path` directory.
+#' @param CARD_path An optional [character][base::character] string for the path where to search for custom CARDs that have been created by the [CARD_management] function. By default, `NULL` in order to get the default CARD variable parameters.
+#' @param period_default A [vector][base::c()] of two [dates][base::Date] (or two unambiguous [character][base::character] strings that can be coerced to [dates][base::Date]) to restrict the period of analysis. As an example, it can be `c("1950-01-01", "2020-12-31")` to select data from the 1st January of 1950 to the end of December of 2020. Some CARD can have a specific `period` parameter that overide this `period_default` argument. The default option is `period_default=NULL`, which considers all available data for each time serie. 
 #' @param suffix A [character][base::character] string [vector][base::c()] representing suffixes to be appended to the column names of the extracted variables. This parameter allows handling multiple extraction scenarios. For example, a cumbersome case can be to have a unique function to apply to a multiple list of column. It is possible to give `funct=list(QA_obs=mean, QA_sim=mean)` and `funct_args=list(list("Q_obs", na.rm=TRUE), list("Q_sim", na.rm=TRUE))` or simply `funct=list(QA=mean)` and `funct_args=list("Q", na.rm=TRUE)` with `suffix=c("obs", "sim")`. The two approach give the same result. Default `NULL`.
 #' @param suffix_delimiter [character][base::character] string specifies the delimiter to use between the variable name and the suffix if not `NULL`. The default is `"_"`.
 #' @param cancel_lim A [logical][base::logical] to specify whether to cancel the NA percentage limits in the CARDs. Default is `FALSE`.
@@ -156,62 +155,40 @@ get_last_Process = function (Process) {
 #' @param extract_only_metadata [logical][base::logical]. If TRUE, only metadata of CARD will be extracted. In that case, use `data=NULL`. Default FALSE.
 #' @param dev [logical][base::logical] If `TRUE`, development mode is enabled. Default is `FALSE`.
 #' @param verbose [logical][base::logical]. Should intermediate messages be printed during the execution of the function ? Default `FALSE`.
-#'
 #' @return A [list][base::list()] of two [tibbles][tibble::tibble()].
 #' - The `dataEX` [tibble][tibble::tibble()], which contains the extracted variable, or a named [list][base::list()] of [tibbles][tibble::tibble()] for each extracted variable if `expand_overwrite` is `TRUE`.
 #' - The `metaEX` [tibble][tibble::tibble()], which contains the metadata of the extraction from CARDs.
-#'
 #' @seealso
-#' 1. [CARD_download()] for downloading last version of CARD parameterization files.
-#' 2. [CARD_list_all()] list all available CARD.
-#' 3. [CARD_management()] for managing CARD parameterization files.
-#' - 4. [CARD_extraction()] for extracting variables using CARD.
-#' 5. [process_extraction()] for extracting variables.
-#' 6. [process_trend()] for performing trend analysis on extracted variables.
-#' 
+#' 1. [CARD_list_all()] list all available CARD.
+#' 2. [CARD_management()] for managing CARD parameterization files.
+#' - 3. [CARD_extraction()] for extracting variables using CARD.
 #' @examples
-#' ## Creation of random data set
-#' set.seed(99)
-#' Start = as.Date("2000-02-01")
-#' End = as.Date("2010-04-04")
+#' library(EXstat.CARD)
+#'
+#' Get all the available variables
+#' metaEX_all = CARD_list_all()
+#' metaEX_all
+#'
+#' Create mock data
+#' Start = as.Date("2001-03-02")
+#' End = as.Date("2024-11-30")
 #' Date = seq.Date(Start, End, by="day")
+#' data = dplyr::tibble(time=Date,
+#'                      Q=as.numeric(Date),
+#'                      id="serie 1")
 #' 
-#' # First time serie
-#' data_1 = dplyr::tibble(time=Date,
-#'                        X_state1=as.numeric(Date) +
-#'                            rnorm(length(Date), 1e4, 1e3),
-#'                        X_state2=seq(1, length(Date))/1e2 +
-#'                            rnorm(length(Date), 0, 1),
-#'                        id="serie 1")
-#' data_1$X_state2[round(runif(500, 1, nrow(data_1)))] = NA
+#' # Do a direct extraction
+#' res = CARD_extraction(data, CARD_name=c("QA", "QMNA"), verbose=TRUE)
+#' res
 #' 
-#' # Second time serie
-#' data_2 = dplyr::tibble(time=Date,
-#'                        X_state1=as.numeric(Date) +
-#'                            rnorm(length(Date), 1e4, 1e3),
-#'                        X_state2=seq(1, length(Date))/1e2 +
-#'                            rnorm(length(Date), 0, 1),
-#'                        id="serie 2")
-#' data_2$X_state2[round(runif(1000, 1, nrow(data_2)))] = NA
-#' 
-#' # Final data for testing
-#' data = dplyr::bind_rows(data_1, data_2)
-#' 
-#' ## Extraction with CARD
-#' # Copy and paste CARD from __all__ to the CARD_dir directory (or
-#' # use CARD_tmp with CARD_management function) and then process the
-#' # extraction
-#' \dontrun{
-#' CARD_extraction(data,
-#'                 CARD_path="path/to/CARD",
-#'                 CARD_tmp="path/to/temporary",
-#'                 CARD_dir="WIP",
-#'                 period_default=c("1950-01-01", "2020-12-31"),
-#'                 simplify=FALSE,
-#'                 cancel_lim=TRUE,
-#'                 verbose=TRUE)
-#' }
-#' 
+#' # Or find the closest CARD variable that interests you
+#' CARD_management(CARD_name=c("VCN10-5"), CARD_path="CARD-WIP")
+#' # Personalise it in the created  `"CARD-WIP"` directory (for example change the return period)
+#' # And perform a custom extraction
+#' res = CARD_extraction(data, CARD_name=NULL,
+#'                       CARD_path="CARD-WIP",
+#'                       verbose=TRUE)
+#' res$dataEX
 #' @export
 #' @md
 CARD_extraction = function (data,
@@ -267,17 +244,7 @@ CARD_extraction = function (data,
     dataEX = replicate(nScript, list(NULL))
 
     for (ss in 1:nScript) {
-
         script = script_to_analyse[ss]
-
-        # list_path = list.files(file.path(CARD_path,
-        #                                  "__tools__"),
-        #                        pattern='*.R$',
-        #                        recursive=TRUE,
-        #                        full.names=TRUE)
-        # for (path in list_path) {
-        #     source(path, encoding='UTF-8')    
-        # }
 
         Process_default = sourceProcess(
             file.path(CARD_path_system, "__default__.R"))
@@ -394,6 +361,13 @@ CARD_extraction = function (data,
     }
     rm ("data")
     gc()
+
+    if ("preferred_hydrological_month" %in% names(metaEX)) {
+        metaEX = dplyr::relocate(metaEX, preferred_hydrological_month, .after=topic_fr)
+    }
+    if ("source" %in% names(metaEX)) {
+        metaEX = dplyr::relocate(metaEX, source, .after=topic_fr)
+    }
 
     if (extract_only_metadata) {
         return (list(metaEX=metaEX))
