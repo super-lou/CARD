@@ -134,7 +134,6 @@ CARD_list_all = function () {
 CARD_management = function (CARD_name=c("QA", "QJXA"),
                             CARD_dir="WIP",
                             CARD_path=".",
-                            layout=NULL,
                             underscore_to_white=TRUE,
                             add_id=TRUE,
                             overwrite=TRUE,
@@ -143,158 +142,185 @@ CARD_management = function (CARD_name=c("QA", "QJXA"),
 
     CARD_path_system = system.file(package="EXstat.CARD")
     CARD_dir = paste0("CARD.", CARD_dir)
+    CARD_dirpath = file.path(CARD_path, CARD_dir)
     
-    if (is.null(layout)) {
-        layout = c(CARD_dir, "[", CARD_name, "]")
+    if (dir.exists(CARD_dirpath)) {
+        if (overwrite) {
+            unlink(CARD_dirpath, recursive=TRUE)
+            dir.create(CARD_dirpath)
+        } else {
+            stop(paste0("Directory ", CARD_dirpath, " already exists, use the parameter `overwrite=TRUE` if you want to overwrite it."))
+        }
+    } else {
+        dir.create(CARD_dirpath)
     }
     
-    if (is.null(args)) {
-        args = list(CARD_path_system=CARD_path_system, CARD_path=CARD_path,
-                    layout=layout,
-                    underscore_to_white=underscore_to_white,
-                    add_id=add_id, overwrite=overwrite,
-                    verbose=verbose)        
-    }
+    # if (is.null(layout)) {
+    #     layout = c(CARD_dir, "[", CARD_name, "]")
+    # }
+    
+    # if (is.null(args)) {
+        # args = list(CARD_path_system=CARD_path_system, CARD_path=CARD_path,
+                    # layout=layout,
+                    # underscore_to_white=underscore_to_white,
+                    # add_id=add_id, overwrite=overwrite,
+                    # verbose=verbose)        
+    # }
 
     # if (is.null(args$CARD_path)) {
         # args$CARD_path = file.path(args$CARD_path_system)
     # }
         
-    if (args$verbose) {
-        remind(args)
-    }
-    if (all(args$layout == "")) {
-        print("Error : --layout is void\n", stderr())
-        stop ()
-    }
+    # if (args$verbose) {
+        # remind(args)
+    # }
+    # if (all(args$layout == "")) {
+        # print("Error : --layout is void\n", stderr())
+        # stop ()
+    # }
 
-    source_dir = file.path(args$CARD_path_system, "__all__")
+    source_dir = file.path(CARD_path_system, "__all__")
+
+    Paths = list.files(source_dir, recursive=TRUE, full.names=TRUE)
+    Files = basename(Paths)
+    names(Paths) = gsub("[.].*", "", Files)
+
+    nCARD = length(CARD_name)
     
-    OUT = unlist(args$layout)
-    nOUT = length(OUT)
-    test1 = "[[]|[(]|[]]|[)]"
-    test2 = "[[]|[(]"
-    for (i in 1:nOUT) {
-        if (i < nOUT & !grepl(test1, OUT[i]) & !grepl(test2, OUT[(i+1)])) {
-            OUT[i] = paste0(OUT[i], ".(NA)")
-        }
-        if (i == nOUT & !grepl(test1, OUT[(i)])) {
-            OUT[i] = paste0(OUT[i], ".(NA)")
-        }
+    for (i in 1:nCARD) {
+        card_name = CARD_name[i]
+        from = Paths[names(Paths) == card_name]
+        id_card_name = paste0(formatC(i, width=3, flag="0"), "_", card_name, ".R")
+        to = file.path(CARD_dirpath, id_card_name)
+        file.copy(from, to)
     }
-    OUT = unlist(sapply(OUT, strsplit, split="[.]"),
-                 use.names=FALSE)
+                   
+    
+    # OUT = unlist(args$layout)
+    # nOUT = length(OUT)
+    # test1 = "[[]|[(]|[]]|[)]"
+    # test2 = "[[]|[(]"
+    # for (i in 1:nOUT) {
+    #     if (i < nOUT & !grepl(test1, OUT[i]) & !grepl(test2, OUT[(i+1)])) {
+    #         OUT[i] = paste0(OUT[i], ".(NA)")
+    #     }
+    #     if (i == nOUT & !grepl(test1, OUT[(i)])) {
+    #         OUT[i] = paste0(OUT[i], ".(NA)")
+    #     }
+    # }
+    # OUT = unlist(sapply(OUT, strsplit, split="[.]"),
+    #              use.names=FALSE)
 
-    OUT = paste0(OUT, collapse="','")
-    OUT = gsub("[]]", ")", OUT)
-    OUT = gsub("[[]|[(]", "=list(", OUT)
-    OUT = gsub("[,]['][=]", "=", OUT)
-    OUT = gsub("[(]['][,]", "(", OUT)
-    OUT = gsub("[,]['][)]", ")", OUT)
-    OUT = gsub("[)][']", ")", OUT)
-    OUT = paste0("'", OUT)
-    OUT = paste0("list(", OUT, ")")    
-    OUT = eval(parse(text=OUT))
-    OUT = unlist(OUT)
-    OUT = names(OUT)
-    OUT = gsub("[.]", "/", OUT)
-    OUT = paste0(OUT, ".R")
+    # OUT = paste0(OUT, collapse="','")
+    # OUT = gsub("[]]", ")", OUT)
+    # OUT = gsub("[[]|[(]", "=list(", OUT)
+    # OUT = gsub("[,]['][=]", "=", OUT)
+    # OUT = gsub("[(]['][,]", "(", OUT)
+    # OUT = gsub("[,]['][)]", ")", OUT)
+    # OUT = gsub("[)][']", ")", OUT)
+    # OUT = paste0("'", OUT)
+    # OUT = paste0("list(", OUT, ")")    
+    # OUT = eval(parse(text=OUT))
+    # OUT = unlist(OUT)
+    # OUT = names(OUT)
+    # OUT = gsub("[.]", "/", OUT)
+    # OUT = paste0(OUT, ".R")
 
-    n = length(OUT)
-    SUB = c()
-    save = c()
-    IN = c()
-    DIR = c()
-    for (i in 1:n) {
-        path = unlist(strsplit(OUT[i], "/"))
-        len = length(path)
-        nsd = len - 2
+    # n = length(OUT)
+    # SUB = c()
+    # save = c()
+    # IN = c()
+    # DIR = c()
+    # for (i in 1:n) {
+    #     path = unlist(strsplit(OUT[i], "/"))
+    #     len = length(path)
+    #     nsd = len - 2
 
-        if (nsd < 0) {
-            print("Error : No tmp detect\n", stderr())
-            stop ()
+    #     if (nsd < 0) {
+    #         print("Error : No tmp detect\n", stderr())
+    #         stop ()
             
-        } else if (nsd == 0) {
-            id = i
+    #     } else if (nsd == 0) {
+    #         id = i
             
-        } else if (nsd > 0) {
+    #     } else if (nsd > 0) {
 
-            for (j in 1:nsd) {
+    #         for (j in 1:nsd) {
                 
-                if (!(path[(j+1)] %in% save)) {
+    #             if (!(path[(j+1)] %in% save)) {
 
-                    if (length(SUB) >= nsd) {
-                        if (any(path %in% save)) {
-                            SUB[sum(path %in% save)] =
-                                SUB[sum(path %in% save)] + 1
-                            SUB[(sum(path %in% save)+1):length(SUB)] = 1
-                        } else {
-                            SUB[nsd] = SUB[nsd] + 1
-                        }
-                    } else {
-                        SUB = c(SUB, 1)
-                    }
-                    id = 1
-                    save = c(save, path[(j+1)])
-                }
+    #                 if (length(SUB) >= nsd) {
+    #                     if (any(path %in% save)) {
+    #                         SUB[sum(path %in% save)] =
+    #                             SUB[sum(path %in% save)] + 1
+    #                         SUB[(sum(path %in% save)+1):length(SUB)] = 1
+    #                     } else {
+    #                         SUB[nsd] = SUB[nsd] + 1
+    #                     }
+    #                 } else {
+    #                     SUB = c(SUB, 1)
+    #                 }
+    #                 id = 1
+    #                 save = c(save, path[(j+1)])
+    #             }
 
-                obj = path[(j+1)]
-                if (args$underscore_to_white) {
-                    obj = gsub("[_]", " ", obj)
-                }
+    #             obj = path[(j+1)]
+    #             if (args$underscore_to_white) {
+    #                 obj = gsub("[_]", " ", obj)
+    #             }
 
-                if (args$add_id) {
-                    path[(j+1)] = paste0(formatC(SUB[j],
-                                                 width=3,
-                                                 flag="0"),
-                                         "_", obj)
-                }
-            }
-        }
+    #             if (args$add_id) {
+    #                 path[(j+1)] = paste0(formatC(SUB[j],
+    #                                              width=3,
+    #                                              flag="0"),
+    #                                      "_", obj)
+    #             }
+    #         }
+    #     }
         
-        IN = c(IN, path[len])
-        DIR = c(DIR, do.call(file.path, as.list(path[-len])))
+    #     IN = c(IN, path[len])
+    #     DIR = c(DIR, do.call(file.path, as.list(path[-len])))
         
-        if (args$add_id) {
-            idC = formatC(id, width=3, flag="0")
-            path[len] = paste0(idC, "_", path[len])
-        }
+    #     if (args$add_id) {
+    #         idC = formatC(id, width=3, flag="0")
+    #         path[len] = paste0(idC, "_", path[len])
+    #     }
         
-        id = id + 1
-        OUT[i] = do.call(file.path, as.list(path))
-    }
+    #     id = id + 1
+    #     OUT[i] = do.call(file.path, as.list(path))
+    # }
 
-    DIR = DIR[!duplicated(DIR)]
-    DIR = file.path(args$CARD_path, DIR)
+    # DIR = DIR[!duplicated(DIR)]
+    # DIR = file.path(args$CARD_path, DIR)
 
-    if (any(dir.exists(DIR)) &
-        args$overwrite |
-        !any(dir.exists(DIR))) {
-        if (any(dir.exists(DIR)) &
-            args$overwrite) {
-            unlink(DIR, recursive=TRUE, force=TRUE)
-        }
-        for (i in 1:n) {
-            dir.create(DIR[i], recursive=TRUE)
-        }
+    # if (any(dir.exists(DIR)) &
+    #     args$overwrite |
+    #     !any(dir.exists(DIR))) {
+    #     if (any(dir.exists(DIR)) &
+    #         args$overwrite) {
+    #         unlink(DIR, recursive=TRUE, force=TRUE)
+    #     }
+    #     for (i in 1:n) {
+    #         dir.create(DIR[i], recursive=TRUE)
+    #     }
 
-        for (i in 1:n) {
-            files = list.files(source_dir, recursive=TRUE)
-            names(files) = basename(files)
+    #     for (i in 1:n) {
+    #         files = list.files(source_dir, recursive=TRUE)
+    #         names(files) = basename(files)
             
-            file.copy(file.path(source_dir, files[IN[i]]),
-                      file.path(args$CARD_path, OUT[i]))
-        }
+    #         file.copy(file.path(source_dir, files[IN[i]]),
+    #                   file.path(args$CARD_path, OUT[i]))
+    #     }
         
-    } else if (any(dir.exists(DIR)) &
-               !args$overwrite) {
-        warning (paste0("Some directories in ", paste0(DIR, collapse=", "),
-                        " already exists. Please use 'overwrite=TRUE' if you want to overwrite current directories."))
-    }
+    # } else if (any(dir.exists(DIR)) &
+    #            !args$overwrite) {
+    #     warning (paste0("Some directories in ", paste0(DIR, collapse=", "),
+    #                     " already exists. Please use 'overwrite=TRUE' if you want to overwrite current directories."))
+    # }
 
-    if (args$verbose) {
-        print("done")
-    }
+    # if (args$verbose) {
+    #     print("done")
+    # }
 }
 
 
