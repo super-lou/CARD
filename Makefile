@@ -2,6 +2,20 @@ all: AEAG MAKAHO MAKAHOapp Explore2_diag Explore2_proj
 .PHONY: AEAG MAKAHO MAKAHOapp Explore2_diag Explore2_proj
 
 
+# build package documentation
+doc:
+	R -e 'devtools::document()'
+
+check:
+	R -e 'devtools::check()'
+
+install:
+	R -e 'remotes::install_github("super-lou/CARD")'
+
+github_check:
+	R -e 'usethis::use_github_action_check_standard()'
+
+
 get_metaEX:
 	Rscript get_metaEX_all.R
 

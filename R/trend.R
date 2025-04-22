@@ -25,6 +25,12 @@
 #   |_|  |_|  \___||_||_|\__,_| ______________________________________
 ## 1. MANN-KENDALL TREND TEST ________________________________________
 ## 1.1. Alpha ________________________________________________________
+#' @title get_MKalpha 
+#' @description description
+#' @param Q discharge
+#' @seealso
+#' @export
+#' @md
 get_MKalpha = function (X, level=0.1) {
     alpha = EXstat::GeneralMannKendall_WRAP(X, level=level,
                                             time_dependency_option='AR1',
@@ -33,6 +39,12 @@ get_MKalpha = function (X, level=0.1) {
 }
 
 ## 1.2. Test result __________________________________________________
+#' @title get_MKH 
+#' @description description
+#' @param Q discharge
+#' @seealso
+#' @export
+#' @md
 get_MKH = function (X, level=0.1) {
     H = EXstat::GeneralMannKendall_WRAP(X, level=level,
                                         time_dependency_option='AR1',
@@ -41,6 +53,12 @@ get_MKH = function (X, level=0.1) {
 }
 
 ## 1.2. Test result __________________________________________________
+#' @title get_MKp 
+#' @description description
+#' @param Q discharge
+#' @seealso
+#' @export
+#' @md
 get_MKp = function (X, level=0.1) {
     p = EXstat::GeneralMannKendall_WRAP(X, level=level,
                                         time_dependency_option='AR1',

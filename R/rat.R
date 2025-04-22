@@ -24,6 +24,12 @@
 # | _ \ __ _ | |_ 
 # |   // _` ||  _|
 # |_|_\\__,_| \__| ___________________________________________________
+#' @title compute_RAT_X 
+#' @description description
+#' @param Q discharge
+#' @seealso
+#' @export
+#' @md
 compute_RAT_X = function (Bias, X, thresh=0.05) {
     isNA_Bias = is.na(Bias)
     isNA_X = is.na(X)

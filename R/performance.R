@@ -235,9 +235,12 @@ compute_KGEracine = function (obs, sim, na.rm=TRUE) {
     return (KGEracine)
 }
 
-
-#' @title STD
+#' @title compute_STD 
+#' @description description
+#' @param Q discharge
+#' @seealso
 #' @export
+#' @md
 compute_STD = function (obs, sim, na.rm=TRUE) {
     STD = sd(sim, na.rm=na.rm) / sd(obs, na.rm=na.rm)
     return (STD)

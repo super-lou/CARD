@@ -31,6 +31,12 @@ inflect = function(x, threshold=1) {
     return (res)
 }
 
+#' @title compute_dtRec 
+#' @description description
+#' @param Q discharge
+#' @seealso
+#' @export
+#' @md
 compute_dtRec = function (Q) {
     # 'V2114010_HYDRO_QJM.txt'
     # cut gap for data = data[10000:11000,]

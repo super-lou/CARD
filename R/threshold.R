@@ -24,6 +24,12 @@
 #   | |  | ' \ | '_|/ -_)(_-<| ' \ / _ \| |/ _` |
 #   |_|  |_||_||_|  \___|/__/|_||_|\___/|_|\__,_| ____________________
 ## 1. THRESHOLD __________________________________________________________  
+#' @title apply_threshold 
+#' @description description
+#' @param Q discharge
+#' @seealso
+#' @export
+#' @md
 apply_threshold = function (X, lim, where="<=", what="X",
                             select="all", Date=NULL, period=NULL) {
 
@@ -144,6 +150,12 @@ apply_threshold = function (X, lim, where="<=", what="X",
 
 
 ## 2. USE ____________________________________________________________
+#' @title compute_VolDef 
+#' @description description
+#' @param Q discharge
+#' @seealso
+#' @export
+#' @md
 compute_VolDef = function (X, upLim, select_longest=TRUE) {
     Xdef = apply_threshold(X,
                            lim=upLim,

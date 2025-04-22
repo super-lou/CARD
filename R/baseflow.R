@@ -23,6 +23,12 @@
 # | _ ) __ _  ___ ___  / _|| | ___ __ __ __
 # | _ \/ _` |(_-</ -_)|  _|| |/ _ \\ V  V /
 # |___/\__,_|/__/\___||_|  |_|\___/ \_/\_/ ___________________________
+#' @title approxExtrap 
+#' @description description
+#' @param Q discharge
+#' @seealso
+#' @export
+#' @md
 approxExtrap = function(x, y, xout, method='linear', n=50, rule=2,
                         f=0, ties='ordered', na.rm=FALSE) {	
     ## Linear interpolation using approx, with linear extrapolation
@@ -66,6 +72,12 @@ approxExtrap = function(x, y, xout, method='linear', n=50, rule=2,
 ## 1. BASEFLOW SEPARATION ____________________________________________
 # Wal : Gustard, A., A. Bullock, et J. M. Dixon. Low Flow Estimation in the United Kingdom. Report / Institute of Hydrology 108. Wallingford: Institute of Hydrology, 1992.
 # LH : Lyne & Hollick
+#' @title BFS 
+#' @description description
+#' @param Q discharge
+#' @seealso
+#' @export
+#' @md
 BFS = function (Q, d=5, w=0.9, a=0.925, passes=3, method='Wal') {
 
     if (method == "Wal") {
@@ -143,6 +155,12 @@ BFS = function (Q, d=5, w=0.9, a=0.925, passes=3, method='Wal') {
     return (BF)
 }
 
+#' @title dBFS 
+#' @description description
+#' @param Q discharge
+#' @seealso
+#' @export
+#' @md
 dBFS = function (Q, d=5, w=0.9, a=0.925, passes=3, method='Wal') {
     BF = BFS(Q, d=d, w=w, a=a, passes=passes, method=method)
     dBF = Q - BF
@@ -244,6 +262,12 @@ get_BFM = function (BFA) {
 
 ## 4. USE ____________________________________________________________
 ### 4.1. Volumic _____________________________________________________
+#' @title compute_VolSnowmelt 
+#' @description description
+#' @param Q discharge
+#' @seealso
+#' @export
+#' @md
 compute_VolSnowmelt = function (X, d=5, w=0.9, a=0.925, passes=3,
                                 method='Wal') {
     BF = BFS(X, d=d, w=w, a=a, passes=passes, method=method)
@@ -252,6 +276,12 @@ compute_VolSnowmelt = function (X, d=5, w=0.9, a=0.925, passes=3,
 }
 
 ### 4.2. Temporal_____________________________________________________
+#' @title compute_tVolSnowmelt
+#' @description description
+#' @param Q discharge
+#' @seealso
+#' @export
+#' @md
 compute_tVolSnowmelt = function (X, p, d=5, w=0.9, a=0.925, passes=3,
                                  method='Wal') {
     BF = BFS(X, d=d, w=w, a=a, passes=passes, method=method)
@@ -262,6 +292,12 @@ compute_tVolSnowmelt = function (X, p, d=5, w=0.9, a=0.925, passes=3,
 }
 
 ### 4.3. Duration ____________________________________________________
+#' @title compute_tSnowmelt 
+#' @description description
+#' @param Q discharge
+#' @seealso
+#' @export
+#' @md
 compute_tSnowmelt = function (X, p1, p2, d=5, w=0.9, a=0.925,
                               passes=3, method='Wal') {
     BF = BFS(X, d=d, w=w, a=a, passes=passes, method=method)

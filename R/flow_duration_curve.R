@@ -34,6 +34,12 @@
 # / _|| || || '_|\ V // -_)
 # \__| \_,_||_|   \_/ \___| __________________________________________
 ## 1. QUANTILE _______________________________________________________
+#' @title compute_Qp 
+#' @description description
+#' @param Q discharge
+#' @seealso
+#' @export
+#' @md
 compute_Qp = function (Q, p) {
     Qp = quantile(Q[!is.na(Q)], 1-p, names=FALSE)
     return (Qp)
@@ -42,6 +48,12 @@ compute_Qp = function (Q, p) {
 
 ## 2. USE ____________________________________________________________
 ### 2.1. Frequency ___________________________________________________
+#' @title compute_fAp
+#' @description description
+#' @param Q discharge
+#' @seealso
+#' @export
+#' @md
 compute_fAp = function (Q, lowLim) {
     lowLimRLE = rle(lowLim[!is.na(lowLim)])
     lowLim = lowLimRLE$values[which.max(lowLimRLE$lengths)]
@@ -105,6 +117,12 @@ compute_FDC = function (Q, n=1000, sort=FALSE, isNormLaw=FALSE, na.rm=TRUE) {
 }
 
 
+#' @title compute_FDC_p 
+#' @description description
+#' @param Q discharge
+#' @seealso
+#' @export
+#' @md
 compute_FDC_p = function (n=1000, sort=FALSE, isNormLaw=FALSE, na.rm=TRUE) {
     if (sort) {
         pfdc = 1-1:n/n
@@ -118,7 +136,12 @@ compute_FDC_p = function (n=1000, sort=FALSE, isNormLaw=FALSE, na.rm=TRUE) {
     return (pfdc)
 }
 
-
+#' @title compute_FDC_Q
+#' @description description
+#' @param Q discharge
+#' @seealso
+#' @export
+#' @md
 compute_FDC_Q = function (Q, n=1000, sort=FALSE, isNormLaw=FALSE, na.rm=TRUE) {
     if (na.rm) {
         Q = Q[!is.na(Q)]

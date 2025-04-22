@@ -1,0 +1,41 @@
+Package: CARD
+Version: 2.0.0
+Date: 2025-04-22
+Title: CARD
+Description: Card of Analyse and Diagnostic in R for a user-friendly experience of data aggregation with EXstat.
+Authors@R: c(
+    person(given = "Louis",
+           family = "Héraut",
+           role = c("cre", "aut"),
+           email = "louis.heraut@inrae.fr"),
+    person(given = "Éric",
+           family = "Sauquet",
+           role = c("ctb"),
+           email = "eric.sauquet@inrae.fr"),
+    person(given = "Jean-Philippe",
+           family = "Vidal",
+           role = c("ctb"),
+           email = "jean-philippe.vidal@inrae.fr"),
+    person(given = "Nathan",
+           family = "Pellerin",
+           role = c("ctb")),
+    person(given = "David",
+           family = "Dorchies",
+           role = c("ctb"),
+	   email = "david.dorchies@inrae.fr")
+	   )
+Maintainer: Louis Héraut <louis.heraut@inrae.fr>
+Encoding: UTF-8
+License: GPL-3 + file LICENSE
+Imports: 
+    RcppRoll,
+    tibble,
+    dplyr,
+    magrittr,
+    stringr,
+    purrr,
+    EXstat
+Remotes:
+    super-lou/EXstat
+RoxygenNote: 7.3.2
+Roxygen: list(markdown = TRUE)

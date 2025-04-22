@@ -24,6 +24,12 @@
 # | (_ || |/ _ \| '_ \/ _` || |
 #  \___||_|\___/|_.__/\__,_||_| ______________________________________
 ## 0. BASIC __________________________________________________________
+#' @title minus 
+#' @description description
+#' @param Q discharge
+#' @seealso
+#' @export
+#' @md
 minus = function (a, b, first=FALSE) {
     if (all(is.na(a)) | all(is.na(b))) {
         return (NA)
@@ -38,6 +44,12 @@ minus = function (a, b, first=FALSE) {
     }
 }
 
+#' @title divided 
+#' @description description
+#' @param Q discharge
+#' @seealso
+#' @export
+#' @md
 divided = function (a, b, first=FALSE) {
     if (all(is.na(a)) | all(is.na(b))) {
         return (NA)
@@ -52,6 +64,12 @@ divided = function (a, b, first=FALSE) {
     }
 }
 
+#' @title get_deltaX
+#' @description description
+#' @param Q discharge
+#' @seealso
+#' @export
+#' @md
 get_deltaX = function (X, Date, past, futur, to_normalise,
                        returnPeriod=NULL, waterType='low',
                        Q_for_BFI=NULL) {
@@ -92,6 +110,12 @@ get_deltaX = function (X, Date, past, futur, to_normalise,
 }
 
 ## 1. MIN MAX ________________________________________________________
+#' @title minNA 
+#' @description description
+#' @param Q discharge
+#' @seealso
+#' @export
+#' @md
 minNA = function (X, div=1, na.rm=TRUE) {
     if (all(is.na(X))) {
         return (NA)
@@ -100,6 +124,12 @@ minNA = function (X, div=1, na.rm=TRUE) {
     }
 }
 
+#' @title maxNA 
+#' @description description
+#' @param Q discharge
+#' @seealso
+#' @export
+#' @md
 maxNA = function (X, div=1, na.rm=TRUE) {
     if (all(is.na(X))) {
         return (NA)
@@ -108,6 +138,12 @@ maxNA = function (X, div=1, na.rm=TRUE) {
     }
 }
 
+#' @title sumNA 
+#' @description description
+#' @param Q discharge
+#' @seealso
+#' @export
+#' @md
 sumNA = function (X, div=1, na.rm=TRUE) {
     if (all(is.na(X))) {
         return (NA)
@@ -118,6 +154,12 @@ sumNA = function (X, div=1, na.rm=TRUE) {
 
 
 ## 2. WHICH MIN MAX __________________________________________________
+#' @title which.minNA 
+#' @description description
+#' @param Q discharge
+#' @seealso
+#' @export
+#' @md
 which.minNA = function (X) {
     idMin = which.min(X)
     if (identical(idMin, integer(0))) {
@@ -126,6 +168,12 @@ which.minNA = function (X) {
     return (idMin)
 }
 
+#' @title which.maxNA 
+#' @description description
+#' @param Q discharge
+#' @seealso
+#' @export
+#' @md
 which.maxNA = function (X) {
     idMax = which.max(X)
     if (identical(idMax, integer(0))) {
@@ -136,8 +184,12 @@ which.maxNA = function (X) {
 
 
 ## 3. ROLLING AVERAGE ________________________________________________
-#' @title Rolling average
+#' @title rollmean_center 
+#' @description description
+#' @param Q discharge
+#' @seealso
 #' @export
+#' @md
 rollmean_center = function (X, k, isCyclical=FALSE) {
     if (isCyclical) {
         n = length(X)
@@ -155,8 +207,12 @@ rollmean_center = function (X, k, isCyclical=FALSE) {
     return (X)
 }
 
-#' @title Rolling sum
+#' @title rollsum_center 
+#' @description description
+#' @param Q discharge
+#' @seealso
 #' @export
+#' @md
 rollsum_center = function (X, k, isCyclical=FALSE) {
     if (isCyclical) {
         n = length(X)
@@ -193,13 +249,25 @@ circularTWEAK = function (X, Y, periodicity) {
     return (res)
 }
 
+#' @title circular_minus 
+#' @description description
+#' @param Q discharge
+#' @seealso
+#' @export
+#' @md
 circular_minus = function (X, Y, periodicity) {
     res = circularTWEAK(X, Y, periodicity)
     X = res$X
     Y = res$Y
     return (X - Y)
 }
-    
+
+#' @title circular_divided 
+#' @description description
+#' @param Q discharge
+#' @seealso
+#' @export
+#' @md
 circular_divided = function (X, Y, periodicity) {
     res = circularTWEAK(X, Y, periodicity)
     X = res$X
@@ -207,6 +275,12 @@ circular_divided = function (X, Y, periodicity) {
     return (X / Y)
 }
 
+#' @title circular_median 
+#' @description description
+#' @param Q discharge
+#' @seealso
+#' @export
+#' @md
 circular_median = function (X, periodicity, na.rm=TRUE) {    
     scalingFactor = 2 * pi / periodicity
     radians = X * scalingFactor
