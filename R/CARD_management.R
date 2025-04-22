@@ -79,7 +79,7 @@
 #' @md
 CARD_list_all = function () {
     inst_dir = system.file(package="CARD")
-    CARD_path_all = file.path(inst_dir, "metaEX_all.csv")
+    CARD_path_all = file.path(inst_dir, "extdata", "metaEX_all.csv")
     metaEX = dplyr::tibble(read.csv(CARD_path_all))
     return (metaEX)
 }
