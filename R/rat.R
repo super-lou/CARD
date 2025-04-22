@@ -27,7 +27,7 @@
 #' @title compute_RAT_X 
 #' @description description
 #' @param Q discharge
-#' @seealso
+#' @seealso ref
 #' @export
 #' @md
 compute_RAT_X = function (Bias, X, thresh=0.05) {

@@ -32,8 +32,8 @@
 #' (2001) suggested (that) a bivariate empirical estimator for the
 #' precipitation elasticity of mean flow".
 #' This is this last estimator that is use in the below function.
-#' @param Q
-#' @param X
+#' @param Q discharge
+#' @param X variable
 #' @return Elasticity given by :
 #' eps_X = median((Q-Qmean)/(X-Xmean) * Xmean/Qmean)
 #' @export

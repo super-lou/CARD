@@ -34,7 +34,7 @@ inflect = function(x, threshold=1) {
 #' @title compute_dtRec 
 #' @description description
 #' @param Q discharge
-#' @seealso
+#' @seealso ref
 #' @export
 #' @md
 compute_dtRec = function (Q) {

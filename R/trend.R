@@ -28,7 +28,7 @@
 #' @title get_MKalpha 
 #' @description description
 #' @param Q discharge
-#' @seealso
+#' @seealso ref
 #' @export
 #' @md
 get_MKalpha = function (X, level=0.1) {
@@ -42,7 +42,7 @@ get_MKalpha = function (X, level=0.1) {
 #' @title get_MKH 
 #' @description description
 #' @param Q discharge
-#' @seealso
+#' @seealso ref
 #' @export
 #' @md
 get_MKH = function (X, level=0.1) {
@@ -56,7 +56,7 @@ get_MKH = function (X, level=0.1) {
 #' @title get_MKp 
 #' @description description
 #' @param Q discharge
-#' @seealso
+#' @seealso ref
 #' @export
 #' @md
 get_MKp = function (X, level=0.1) {

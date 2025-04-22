@@ -37,7 +37,7 @@
 #' @title compute_Qp 
 #' @description description
 #' @param Q discharge
-#' @seealso
+#' @seealso ref
 #' @export
 #' @md
 compute_Qp = function (Q, p) {
@@ -51,7 +51,7 @@ compute_Qp = function (Q, p) {
 #' @title compute_fAp
 #' @description description
 #' @param Q discharge
-#' @seealso
+#' @seealso ref
 #' @export
 #' @md
 compute_fAp = function (Q, lowLim) {
@@ -91,7 +91,7 @@ fdc_slope = function(Q, p=c(0.33, 0.66)) {
 #' of the quantile function ?
 #' @param na.rm logical. Should the missing values be ignored ? (must
 #' be TRUE if the quantile function is used !)
-#' @return
+#' @return res
 #' @export
 compute_FDC = function (Q, n=1000, sort=FALSE, isNormLaw=FALSE, na.rm=TRUE) {
     if (na.rm) {
@@ -120,7 +120,7 @@ compute_FDC = function (Q, n=1000, sort=FALSE, isNormLaw=FALSE, na.rm=TRUE) {
 #' @title compute_FDC_p 
 #' @description description
 #' @param Q discharge
-#' @seealso
+#' @seealso ref
 #' @export
 #' @md
 compute_FDC_p = function (n=1000, sort=FALSE, isNormLaw=FALSE, na.rm=TRUE) {
@@ -139,7 +139,7 @@ compute_FDC_p = function (n=1000, sort=FALSE, isNormLaw=FALSE, na.rm=TRUE) {
 #' @title compute_FDC_Q
 #' @description description
 #' @param Q discharge
-#' @seealso
+#' @seealso ref
 #' @export
 #' @md
 compute_FDC_Q = function (Q, n=1000, sort=FALSE, isNormLaw=FALSE, na.rm=TRUE) {

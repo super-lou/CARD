@@ -114,7 +114,7 @@ compute_LogNormal = function(X, returnPeriod) {
 #' @title get_Xn 
 #' @description description
 #' @param Q discharge
-#' @seealso
+#' @seealso ref
 #' @export
 #' @md
 get_Xn = function (X, returnPeriod, waterType='low',

@@ -12,6 +12,9 @@ check:
 install:
 	R -e 'remotes::install_github("super-lou/CARD")'
 
+install-dev:
+	R -e 'remotes::install_github("super-lou/CARD@dev")'
+
 github_check:
 	R -e 'usethis::use_github_action_check_standard()'
 

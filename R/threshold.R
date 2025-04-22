@@ -27,7 +27,7 @@
 #' @title apply_threshold 
 #' @description description
 #' @param Q discharge
-#' @seealso
+#' @seealso ref
 #' @export
 #' @md
 apply_threshold = function (X, lim, where="<=", what="X",
@@ -153,7 +153,7 @@ apply_threshold = function (X, lim, where="<=", what="X",
 #' @title compute_VolDef 
 #' @description description
 #' @param Q discharge
-#' @seealso
+#' @seealso ref
 #' @export
 #' @md
 compute_VolDef = function (X, upLim, select_longest=TRUE) {

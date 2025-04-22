@@ -27,7 +27,7 @@
 #' @title minus 
 #' @description description
 #' @param Q discharge
-#' @seealso
+#' @seealso ref
 #' @export
 #' @md
 minus = function (a, b, first=FALSE) {
@@ -47,7 +47,7 @@ minus = function (a, b, first=FALSE) {
 #' @title divided 
 #' @description description
 #' @param Q discharge
-#' @seealso
+#' @seealso ref
 #' @export
 #' @md
 divided = function (a, b, first=FALSE) {
@@ -67,7 +67,7 @@ divided = function (a, b, first=FALSE) {
 #' @title get_deltaX
 #' @description description
 #' @param Q discharge
-#' @seealso
+#' @seealso ref
 #' @export
 #' @md
 get_deltaX = function (X, Date, past, futur, to_normalise,
@@ -113,7 +113,7 @@ get_deltaX = function (X, Date, past, futur, to_normalise,
 #' @title minNA 
 #' @description description
 #' @param Q discharge
-#' @seealso
+#' @seealso ref
 #' @export
 #' @md
 minNA = function (X, div=1, na.rm=TRUE) {
@@ -127,7 +127,7 @@ minNA = function (X, div=1, na.rm=TRUE) {
 #' @title maxNA 
 #' @description description
 #' @param Q discharge
-#' @seealso
+#' @seealso ref
 #' @export
 #' @md
 maxNA = function (X, div=1, na.rm=TRUE) {
@@ -141,7 +141,7 @@ maxNA = function (X, div=1, na.rm=TRUE) {
 #' @title sumNA 
 #' @description description
 #' @param Q discharge
-#' @seealso
+#' @seealso ref
 #' @export
 #' @md
 sumNA = function (X, div=1, na.rm=TRUE) {
@@ -157,7 +157,7 @@ sumNA = function (X, div=1, na.rm=TRUE) {
 #' @title which.minNA 
 #' @description description
 #' @param Q discharge
-#' @seealso
+#' @seealso ref
 #' @export
 #' @md
 which.minNA = function (X) {
@@ -171,7 +171,7 @@ which.minNA = function (X) {
 #' @title which.maxNA 
 #' @description description
 #' @param Q discharge
-#' @seealso
+#' @seealso ref
 #' @export
 #' @md
 which.maxNA = function (X) {
@@ -187,7 +187,7 @@ which.maxNA = function (X) {
 #' @title rollmean_center 
 #' @description description
 #' @param Q discharge
-#' @seealso
+#' @seealso ref
 #' @export
 #' @md
 rollmean_center = function (X, k, isCyclical=FALSE) {
@@ -210,7 +210,7 @@ rollmean_center = function (X, k, isCyclical=FALSE) {
 #' @title rollsum_center 
 #' @description description
 #' @param Q discharge
-#' @seealso
+#' @seealso ref
 #' @export
 #' @md
 rollsum_center = function (X, k, isCyclical=FALSE) {
@@ -252,7 +252,7 @@ circularTWEAK = function (X, Y, periodicity) {
 #' @title circular_minus 
 #' @description description
 #' @param Q discharge
-#' @seealso
+#' @seealso ref
 #' @export
 #' @md
 circular_minus = function (X, Y, periodicity) {
@@ -265,7 +265,7 @@ circular_minus = function (X, Y, periodicity) {
 #' @title circular_divided 
 #' @description description
 #' @param Q discharge
-#' @seealso
+#' @seealso ref
 #' @export
 #' @md
 circular_divided = function (X, Y, periodicity) {
@@ -278,7 +278,7 @@ circular_divided = function (X, Y, periodicity) {
 #' @title circular_median 
 #' @description description
 #' @param Q discharge
-#' @seealso
+#' @seealso ref
 #' @export
 #' @md
 circular_median = function (X, periodicity, na.rm=TRUE) {    

@@ -65,7 +65,7 @@ compute_Rc = function(Q, R, na.rm=TRUE) {
 #' @param na.action action to undertake when missing values are found
 #' (default: 'interpolate', any other value leads to the original
 #' cumsum() function)
-#' @return
+#' @return res
 #' @export
 hsaCumsum = function(x, na.action = "interpolate") {
     isna = is.na(x)
@@ -105,7 +105,7 @@ hsaCumsum = function(x, na.action = "interpolate") {
 #' @param bp initial guess of threshold date
 #' @param intercept should the intercept be estimated (default: TRUE)
 #' or fixed to c(0, 0) (FALSE) ?
-#' @return
+#' @return res
 #' @export
 rq_slopes = function(Q, R, hdays, start=15, end=183, bp=mean(c(start, end)), intercept=TRUE) {
     RQ = data.frame(Q, R, hdays) %>% 

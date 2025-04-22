@@ -238,7 +238,7 @@ compute_KGEracine = function (obs, sim, na.rm=TRUE) {
 #' @title compute_STD 
 #' @description description
 #' @param Q discharge
-#' @seealso
+#' @seealso ref
 #' @export
 #' @md
 compute_STD = function (obs, sim, na.rm=TRUE) {

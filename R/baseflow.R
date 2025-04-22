@@ -26,7 +26,7 @@
 #' @title approxExtrap 
 #' @description description
 #' @param Q discharge
-#' @seealso
+#' @seealso ref
 #' @export
 #' @md
 approxExtrap = function(x, y, xout, method='linear', n=50, rule=2,
@@ -75,7 +75,7 @@ approxExtrap = function(x, y, xout, method='linear', n=50, rule=2,
 #' @title BFS 
 #' @description description
 #' @param Q discharge
-#' @seealso
+#' @seealso ref
 #' @export
 #' @md
 BFS = function (Q, d=5, w=0.9, a=0.925, passes=3, method='Wal') {
@@ -158,7 +158,7 @@ BFS = function (Q, d=5, w=0.9, a=0.925, passes=3, method='Wal') {
 #' @title dBFS 
 #' @description description
 #' @param Q discharge
-#' @seealso
+#' @seealso ref
 #' @export
 #' @md
 dBFS = function (Q, d=5, w=0.9, a=0.925, passes=3, method='Wal') {
@@ -227,7 +227,7 @@ verif_LH = function (na.omit=FALSE) {
 #' @param Q Streamflow vector
 #' @param BF Baseflow vector
 #' @param na.rm Should missing values be omited ?
-#' @return
+#' @return res
 #' @export
 get_BFI = function (Q, BF, na.rm=TRUE) {
     if (length(Q) != length(BF)) {
@@ -250,7 +250,7 @@ get_BFI = function (Q, BF, na.rm=TRUE) {
 #' @param BF Baseflow vector
 #' @param days Vector containting the days of the (hydrological) year 
 #' @param n Window size for the rolling mean function
-#' @return
+#' @return res
 #' @export
 get_BFM = function (BFA) {
     BFA_max = max(BFA, na.rm=TRUE)
@@ -265,7 +265,7 @@ get_BFM = function (BFA) {
 #' @title compute_VolSnowmelt 
 #' @description description
 #' @param Q discharge
-#' @seealso
+#' @seealso ref
 #' @export
 #' @md
 compute_VolSnowmelt = function (X, d=5, w=0.9, a=0.925, passes=3,
@@ -279,7 +279,7 @@ compute_VolSnowmelt = function (X, d=5, w=0.9, a=0.925, passes=3,
 #' @title compute_tVolSnowmelt
 #' @description description
 #' @param Q discharge
-#' @seealso
+#' @seealso ref
 #' @export
 #' @md
 compute_tVolSnowmelt = function (X, p, d=5, w=0.9, a=0.925, passes=3,
@@ -295,7 +295,7 @@ compute_tVolSnowmelt = function (X, p, d=5, w=0.9, a=0.925, passes=3,
 #' @title compute_tSnowmelt 
 #' @description description
 #' @param Q discharge
-#' @seealso
+#' @seealso ref
 #' @export
 #' @md
 compute_tSnowmelt = function (X, p1, p2, d=5, w=0.9, a=0.925,
