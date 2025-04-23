@@ -47,7 +47,6 @@ CARD_list_all = function () {
 #' @description Manage your different sets of variables to extract. For CARD advanced users, this function manages the CARD directory structure by performing automatic file operations to get the CARD parameterization files to your wanted directory in order to custom them or create yours to use them in a second step with [CARD_extraction()]. If you want to submit request for new CARD see the [GitHub repo](https://github.com/super-lou/EXstat.CARD)<https://github.com/super-lou/EXstat.CARD>.
 #' @param CARD_name A [vector][base::c()] of [character][base::character] strings to specify which variables you want to extract. See [CARD_list_all()] to get the variable names. By default, `c("QA", "QJXA")`. If `NULL`, all the variable will be extracted, so avoid this value except with `extract_only_metadata = TRUE`.
 #' @param CARD_path An optional [character][base::character] string for the path where to search for custom CARDs that have been created by the [CARD_management] function. By default, `NULL` in order to get the default CARD variable parameters.
-#' @param underscore_to_white [logical][base::logical]. If `TRUE`, underscores in directory names will be replaced with spaces. Default is `TRUE`.
 #' @param add_id [logical][base::logical]. If `TRUE`, numerical IDs will be added to the start of the copied and pasted CARD names to maintain the input order. Default is `TRUE`.
 #' @param overwrite [logical][base::logical]. If `TRUE`, existing CARD files in the analysis directory will be overwritten. Default is `TRUE`.
 #' @param verbose [logical][base::logical]. Should intermediate messages be printed during the execution of the function ? Default `FALSE`.
@@ -63,7 +62,6 @@ CARD_list_all = function () {
 #' @md
 CARD_management = function (CARD_name=c("QA", "QJXA"),
                             CARD_path="./WIP",
-                            underscore_to_white=TRUE,
                             add_id=TRUE,
                             overwrite=FALSE,
                             verbose=FALSE) {
@@ -80,30 +78,6 @@ CARD_management = function (CARD_name=c("QA", "QJXA"),
     } else {
         dir.create(CARD_path)
     }
-    
-    # if (is.null(layout)) {
-    #     layout = c(CARD_dir, "[", CARD_name, "]")
-    # }
-    
-    # if (is.null(args)) {
-        # args = list(CARD_path_system=CARD_path_system, CARD_path=CARD_path,
-                    # layout=layout,
-                    # underscore_to_white=underscore_to_white,
-                    # add_id=add_id, overwrite=overwrite,
-                    # verbose=verbose)        
-    # }
-
-    # if (is.null(args$CARD_path)) {
-        # args$CARD_path = file.path(args$CARD_path_system)
-    # }
-        
-    # if (args$verbose) {
-        # remind(args)
-    # }
-    # if (all(args$layout == "")) {
-        # print("Error : --layout is void\n", stderr())
-        # stop ()
-    # }
 
     source_dir = file.path(CARD_path_system, "__all__")
 
@@ -111,143 +85,56 @@ CARD_management = function (CARD_name=c("QA", "QJXA"),
     Files = basename(Paths)
     names(Paths) = gsub("[.].*", "", Files)
 
-    nCARD = length(CARD_name)
-    
-    for (i in 1:nCARD) {
-        card_name = CARD_name[i]
-        from = Paths[names(Paths) == card_name]
-        id_card_name = paste0(formatC(i, width=3, flag="0"), "_", card_name, ".R")
-        to = file.path(CARD_path, id_card_name)
-        file.copy(from, to)
+    if (!is.list(CARD_name)) {
+        CARD_name = list(CARD_name)
     }
-                   
-    
-    # OUT = unlist(args$layout)
-    # nOUT = length(OUT)
-    # test1 = "[[]|[(]|[]]|[)]"
-    # test2 = "[[]|[(]"
-    # for (i in 1:nOUT) {
-    #     if (i < nOUT & !grepl(test1, OUT[i]) & !grepl(test2, OUT[(i+1)])) {
-    #         OUT[i] = paste0(OUT[i], ".(NA)")
-    #     }
-    #     if (i == nOUT & !grepl(test1, OUT[(i)])) {
-    #         OUT[i] = paste0(OUT[i], ".(NA)")
-    #     }
-    # }
-    # OUT = unlist(sapply(OUT, strsplit, split="[.]"),
-    #              use.names=FALSE)
 
-    # OUT = paste0(OUT, collapse="','")
-    # OUT = gsub("[]]", ")", OUT)
-    # OUT = gsub("[[]|[(]", "=list(", OUT)
-    # OUT = gsub("[,]['][=]", "=", OUT)
-    # OUT = gsub("[(]['][,]", "(", OUT)
-    # OUT = gsub("[,]['][)]", ")", OUT)
-    # OUT = gsub("[)][']", ")", OUT)
-    # OUT = paste0("'", OUT)
-    # OUT = paste0("list(", OUT, ")")    
-    # OUT = eval(parse(text=OUT))
-    # OUT = unlist(OUT)
-    # OUT = names(OUT)
-    # OUT = gsub("[.]", "/", OUT)
-    # OUT = paste0(OUT, ".R")
-
-    # n = length(OUT)
-    # SUB = c()
-    # save = c()
-    # IN = c()
-    # DIR = c()
-    # for (i in 1:n) {
-    #     path = unlist(strsplit(OUT[i], "/"))
-    #     len = length(path)
-    #     nsd = len - 2
-
-    #     if (nsd < 0) {
-    #         print("Error : No tmp detect\n", stderr())
-    #         stop ()
-            
-    #     } else if (nsd == 0) {
-    #         id = i
-            
-    #     } else if (nsd > 0) {
-
-    #         for (j in 1:nsd) {
+    manage_hide = function(CARD_name, CARD_path) {
+        if (is.list(CARD_name)) {
+            for (i in 1:length(CARD_name)) {
                 
-    #             if (!(path[(j+1)] %in% save)) {
+                X = CARD_name[[i]]
+                X_name = names(CARD_name)[i]
 
-    #                 if (length(SUB) >= nsd) {
-    #                     if (any(path %in% save)) {
-    #                         SUB[sum(path %in% save)] =
-    #                             SUB[sum(path %in% save)] + 1
-    #                         SUB[(sum(path %in% save)+1):length(SUB)] = 1
-    #                     } else {
-    #                         SUB[nsd] = SUB[nsd] + 1
-    #                     }
-    #                 } else {
-    #                     SUB = c(SUB, 1)
-    #                 }
-    #                 id = 1
-    #                 save = c(save, path[(j+1)])
-    #             }
-
-    #             obj = path[(j+1)]
-    #             if (args$underscore_to_white) {
-    #                 obj = gsub("[_]", " ", obj)
-    #             }
-
-    #             if (args$add_id) {
-    #                 path[(j+1)] = paste0(formatC(SUB[j],
-    #                                              width=3,
-    #                                              flag="0"),
-    #                                      "_", obj)
-    #             }
-    #         }
-    #     }
-        
-    #     IN = c(IN, path[len])
-    #     DIR = c(DIR, do.call(file.path, as.list(path[-len])))
-        
-    #     if (args$add_id) {
-    #         idC = formatC(id, width=3, flag="0")
-    #         path[len] = paste0(idC, "_", path[len])
-    #     }
-        
-    #     id = id + 1
-    #     OUT[i] = do.call(file.path, as.list(path))
-    # }
-
-    # DIR = DIR[!duplicated(DIR)]
-    # DIR = file.path(args$CARD_path, DIR)
-
-    # if (any(dir.exists(DIR)) &
-    #     args$overwrite |
-    #     !any(dir.exists(DIR))) {
-    #     if (any(dir.exists(DIR)) &
-    #         args$overwrite) {
-    #         unlink(DIR, recursive=TRUE, force=TRUE)
-    #     }
-    #     for (i in 1:n) {
-    #         dir.create(DIR[i], recursive=TRUE)
-    #     }
-
-    #     for (i in 1:n) {
-    #         files = list.files(source_dir, recursive=TRUE)
-    #         names(files) = basename(files)
-            
-    #         file.copy(file.path(source_dir, files[IN[i]]),
-    #                   file.path(args$CARD_path, OUT[i]))
-    #     }
-        
-    # } else if (any(dir.exists(DIR)) &
-    #            !args$overwrite) {
-    #     warning (paste0("Some directories in ", paste0(DIR, collapse=", "),
-    #                     " already exists. Please use 'overwrite=TRUE' if you want to overwrite current directories."))
-    # }
-
-    # if (args$verbose) {
-    #     print("done")
-    # }
+                if (is.character(X)) {
+                    CARD_path_tmp = file.path(CARD_path, X_name)
+                    if (!dir.exists(CARD_path_tmp)) {
+                        dir.create(CARD_path_tmp)
+                    }
+                    nCARD = length(X)
+                    for (j in 1:nCARD) {
+                        card_name = X[j]
+                        from = Paths[names(Paths) == card_name]
+                        id_card_name = paste0(formatC(j, width=3,
+                                                      flag="0"),
+                                              "_",
+                                              card_name, ".R")
+                        to = file.path(CARD_path_tmp, id_card_name)
+                        file.copy(from, to)
+                    }
+                    
+                }
+                if (is.list(X)) {
+                    CARD_path_tmp = file.path(CARD_path, X_name)
+                    if (!dir.exists(CARD_path_tmp)) {
+                        dir.create(CARD_path_tmp)
+                    }
+                }
+                manage_hide(X, CARD_path_tmp)
+            }
+        }
+    }
+    manage_hide(CARD_name, CARD_path)
 }
+
+
+
+
+
+
+
+
+
 
 
 remind = function (args) {
