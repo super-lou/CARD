@@ -1,13 +1,17 @@
 # Authors list for the project
 
 # Main Developer and Maintainer
-Louis Héraut <louis.heraut@inrae.fr> INRAE
+Louis, Héraut, <louis.heraut@inrae.fr>*1
 
 # Scientific Referee
-Jean-Philippe Vidal <jean-philippe.vidal@inrae.fr> INRAE
-Éric Sauquet <eric.sauquet@inrae.fr> INRAE
+Éric, Sauquet, <eric.sauquet@inrae.fr>*1
+Jean-Philippe, Vidal, <jean-philippe.vidal@inrae.fr>*1
 
 # Other Contributors
-David Dorchies
+David, Dorchies. <david.dorchies@inrae.fr>*2
 Ivan Horner
 Leonard Santos
+
+
+*1 INRAE, UR RiverLy, Villeurbanne, France
+*2 INRAE, UMR G-Eau, Montpellier, France
