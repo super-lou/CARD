@@ -9,7 +9,7 @@
 
 **EXstat.CARD** is a set of parameterization files for the banking and simplification of hydroclimatic temporal data aggregation with the [EXstat](https://github.com/super-lou/EXstat) package.
 
-This package lists all the available CARDs and is intended to work in conjunction with EXstat. For information on how to use these CARDs, please refer to the [EXstat documentation](https://github.com/super-lou/EXstat?tab=readme-ov-file#exstat-). This documentation is intended to help advanced users create their own CARD.
+This package lists all the available CARDs and is intended to work in conjunction with EXstat. For information on how to use these CARDs, please refer to the [EXstat documentation](https://github.com/super-lou/EXstat?tab=readme-ov-file#extraction-process-with-card). This documentation is intended to help advanced users create their own CARD.
 
 This project was carried out for National Research Institute for Agriculture, Food and the Environment (Institut National de Recherche pour l’Agriculture, l’Alimentation et l’Environnement, [INRAE](https://agriculture.gouv.fr/inrae-linstitut-national-de-recherche-pour-lagriculture-lalimentation-et-lenvironnement) in french) and is at the core of [MAKAHO](https://github.com/super-lou/MAKAHO).
 
