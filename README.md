@@ -30,7 +30,9 @@ remotes::install_github("super-lou/EXstat.CARD")
 
 ## Documentation
 ### [inst/\_\_all\_\_](https://github.com/super-lou/EXstat.CARD/blob/main/inst/__all__)
-In this directory, you can find all the different CARDs available, stored by topic. All CARDs have the same structure, as exemplified by the annual average daily flow [`QA`](https://github.com/super-lou/EXstat.CARD/blob/main/inst/__all__/Flow/Mean_Flows/serie/QA.R) in [`__all__/Flow/Mean_Flows/serie`](https://github.com/super-lou/EXstat.CARD/tree/main/inst/__all__/Flow/Mean_Flows/serie):
+In this directory, you can find all the different CARDs available, organized by topic and type of aggregation: serie or criteria. In the [EXstat](https://github.com/super-lou/EXstat) terminology, a criterion is an aggregated variable that does not retain any temporal extension, unlike a serie variable, which maintains a temporal extension even after the aggregation process.
+
+All CARDs have the same structure, as exemplified by the annual average daily flow [`QA`](https://github.com/super-lou/EXstat.CARD/blob/main/inst/__all__/Flow/Mean_Flows/serie/QA.R) in [`__all__/Flow/Mean_Flows/serie`](https://github.com/super-lou/EXstat.CARD/tree/main/inst/__all__/Flow/Mean_Flows/serie):
 
 ``` R
 #   ___                _ 
