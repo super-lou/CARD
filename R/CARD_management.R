@@ -88,6 +88,7 @@ CARD_management = function (CARD_name=c("QA", "QJXA"),
     if (!is.list(CARD_name)) {
         CARD_name = list(CARD_name)
     }
+    print(CARD_name)
 
     manage_hide = function(CARD_name, CARD_path) {
         if (is.list(CARD_name)) {
@@ -97,7 +98,11 @@ CARD_management = function (CARD_name=c("QA", "QJXA"),
                 X_name = names(CARD_name)[i]
 
                 if (is.character(X)) {
-                    CARD_path_tmp = file.path(CARD_path, X_name)
+                    if (!is.null(X_name)) {
+                        CARD_path_tmp = file.path(CARD_path, X_name)
+                    } else {
+                        CARD_path_tmp = CARD_path
+                    }
                     if (!dir.exists(CARD_path_tmp)) {
                         dir.create(CARD_path_tmp)
                     }
@@ -115,7 +120,11 @@ CARD_management = function (CARD_name=c("QA", "QJXA"),
                     
                 }
                 if (is.list(X)) {
-                    CARD_path_tmp = file.path(CARD_path, X_name)
+                    if (!is.null(X_name)) {
+                        CARD_path_tmp = file.path(CARD_path, X_name)
+                    } else {
+                        CARD_path_tmp = CARD_path
+                    }
                     if (!dir.exists(CARD_path_tmp)) {
                         dir.create(CARD_path_tmp)
                     }
