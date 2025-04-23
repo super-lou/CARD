@@ -11,7 +11,7 @@
 
 This package lists all the available CARDs and is intended to work in conjunction with EXstat. For information on how to use these CARDs, please refer to the [EXstat documentation](https://github.com/super-lou/EXstat?tab=readme-ov-file#extraction-process-with-card). This documentation is intended to help advanced users create their own CARD.
 
-This project was carried out for National Research Institute for Agriculture, Food and the Environment (Institut National de Recherche pour l’Agriculture, l’Alimentation et l’Environnement, [INRAE](https://agriculture.gouv.fr/inrae-linstitut-national-de-recherche-pour-lagriculture-lalimentation-et-lenvironnement) in french) and is at the core of [MAKAHO](https://github.com/super-lou/MAKAHO).
+This project was carried out for National Research Institute for Agriculture, Food and the Environment (Institut National de Recherche pour l’Agriculture, l’Alimentation et l’Environnement, [INRAE](https://agriculture.gouv.fr/inrae-linstitut-national-de-recherche-pour-lagriculture-lalimentation-et-lenvironnement) in french) and is at the core of [MAKAHO](https://github.com/super-lou/MAKAHO) which won the [2024 Open Science Research Data Award](https://www.enseignementsup-recherche.gouv.fr/fr/remise-des-prix-science-ouverte-des-donnees-de-la-recherche-2024-98045) in the “Creating the Conditions for Reuse” category.
 
 
 ## Installation
@@ -33,7 +33,6 @@ remotes::install_github("super-lou/EXstat.CARD")
 In this directory, you can find all the different CARDs available, organized by topic and type of aggregation: serie or criteria. In the [EXstat](https://github.com/super-lou/EXstat) terminology, a criterion is an aggregated variable that does not retain any temporal extension, unlike a serie variable, which maintains a temporal extension even after the aggregation process.
 
 All CARDs have the same structure, as exemplified by the annual average daily flow [`QA`](https://github.com/super-lou/EXstat.CARD/blob/main/inst/__all__/Flow/Mean_Flows/serie/QA.R) in [`__all__/Flow/Mean_Flows/serie`](https://github.com/super-lou/EXstat.CARD/tree/main/inst/__all__/Flow/Mean_Flows/serie):
-
 ``` R
 #   ___                _ 
 #  / __| __ _  _ _  __| |
