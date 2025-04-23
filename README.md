@@ -15,8 +15,8 @@ This project was carried out for National Research Institute for Agriculture, Fo
 
 
 ## Installation
-For latest development version
-``` 
+For latest development version in R
+``` R
 remotes::install_github("super-lou/EXstat.CARD")
 ```
 (which will take care of EXstat installation also)
