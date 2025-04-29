@@ -26,7 +26,7 @@ Click the **Fork** button at the top right of the [EXstat.CARD GitHub page](http
 Clone your fork to your local machine:
 
 ```bash
-git clone https://github.com/your-username/EXstat.CARD.git
+git clone git@github.com:your-username/EXstat.CARD.git
 cd EXstat.CARD
 ```
 
