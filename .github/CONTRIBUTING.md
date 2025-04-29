@@ -1,4 +1,4 @@
-# 🤝 Contributing to EXstat.CARD
+# Contributing
 
 Thank you for your interest in contributing to **EXstat.CARD** !
 Whether you're fixing bugs, improving documentation, or developing new features, we appreciate your involvement.
