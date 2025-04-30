@@ -36,13 +36,13 @@ CARD$P.description_en = c("Months of December, January, and February",
                           "Months of March, April, and May",
                           "Months of June, July, and August",
                           "Months of September, October, and November")
-CARD$P.method_en = c("1. seasonal annual aggregation [12-01, 02-28(29)] - mean flow and mean liquid precipitation
+CARD$P.method_en = c("1. seasonal annual aggregation [12-01, 02-28(29)] - mean flow and mean total precipitation
 2. no temporal aggregation - calculation of elasticity ε",
-"1. seasonal annual aggregation [03-01, 05-31] - mean flow and mean liquid precipitation
+"1. seasonal annual aggregation [03-01, 05-31] - mean flow and mean total precipitation
 2. no temporal aggregation - calculation of elasticity ε",
-"1. seasonal annual aggregation [06-01, 08-31] - mean flow and mean liquid precipitation
+"1. seasonal annual aggregation [06-01, 08-31] - mean flow and mean total precipitation
 2. no temporal aggregation - calculation of elasticity ε",
-"1. seasonal annual aggregation [09-01, 11-30] - mean flow and mean liquid precipitation
+"1. seasonal annual aggregation [09-01, 11-30] - mean flow and mean total precipitation
 2. no temporal aggregation - calculation of elasticity ε")
 CARD$P.sampling_period_en = c("12-01, 02-28(29)",
                               "03-01, 05-31",
@@ -62,13 +62,13 @@ CARD$P.description_fr = c("Mois de décembre, janvier et février",
                           "Mois de mars, avril et mai",
                           "Mois de juin, juillet et août",
                           "Mois de septembre, octobre et novembre")
-CARD$P.method_fr = c("1. agrégation annuelle saisonnalisée [01-12, 28(29)-02] - débit moyen et précipitations liquides moyennes
+CARD$P.method_fr = c("1. agrégation annuelle saisonnalisée [01-12, 28(29)-02] - débit moyen et précipitations totales moyennes
 2. aucune agrégation temporelle - calcul de l’élasticité ε",
-"1. agrégation annuelle saisonnalisée [01-03, 31-05] - débit moyen et précipitations liquides moyennes
+"1. agrégation annuelle saisonnalisée [01-03, 31-05] - débit moyen et précipitations totales moyennes
 2. aucune agrégation temporelle - calcul de l’élasticité ε",
-"1. agrégation annuelle saisonnalisée [01-06, 31-08] - débit moyen et précipitations liquides moyennes
+"1. agrégation annuelle saisonnalisée [01-06, 31-08] - débit moyen et précipitations totales moyennes
 2. aucune agrégation temporelle - calcul de l’élasticité ε",
-"1. agrégation annuelle saisonnalisée [01-09, 30-11] - débit moyen et précipitations liquides moyennes
+"1. agrégation annuelle saisonnalisée [01-09, 30-11] - débit moyen et précipitations totales moyennes
 2. aucune agrégation temporelle - calcul de l’élasticité ε")
 CARD$P.sampling_period_fr = c("01-12, 28(29)-02",
                               "01-03, 31-05",
