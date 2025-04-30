@@ -40,7 +40,7 @@ CARD$P.name_fr = "Coefficient correctif des précipitations"
 CARD$P.description_fr = ""
 CARD$P.method_fr = ""
 CARD$P.sampling_period_fr = "01-09, 31-08"
-CARD$P.topic_fr = "Précipitations, Modérée, Paramétristation"
+CARD$P.topic_fr = "Précipitations, Modérée, Paramétrisation"
 
 ### Global ___________________________________________________________
 CARD$P.is_date = FALSE
