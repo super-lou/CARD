@@ -2,3 +2,6 @@
 ^\.github$
 test.R
 move.R
+^_pkgdown\.yml$
+^docs$
+^pkgdown$
