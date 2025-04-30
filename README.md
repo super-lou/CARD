@@ -7,9 +7,9 @@
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](code_of_conduct.md) 
 <!-- badges: end -->
 
-**CARD** is an efficient and user friendly aggregation solution of daily hydroclimatological temporal data thanks to the banking of a set of parameterization files.
+**CARD** is an efficient and user-friendly solution for aggregating daily hydroclimatological time series data, made possible through the use of parameterization files.
 
-More previsely, this package regroup all the available CARDs and is a interface to the core aggregation process realised by the [EXstat](https://github.com/louis-heraut/EXstat) package.
+More precisely, this package aims at regroup all relevant aggregated hydroclimatological variable procedures into a CARD and serves as an interface to the core aggregation process carried out by the [EXstat](https://github.com/louis-heraut/EXstat) package.
 
 This project was carried out for National Research Institute for Agriculture, Food and the Environment (Institut National de Recherche pour l’Agriculture, l’Alimentation et l’Environnement, [INRAE](https://agriculture.gouv.fr/inrae-linstitut-national-de-recherche-pour-lagriculture-lalimentation-et-lenvironnement) in french) and is at the core of [MAKAHO](https://github.com/louis-heraut/MAKAHO) which won the [2024 Open Science Research Data Award](https://www.enseignementsup-recherche.gouv.fr/fr/remise-des-prix-science-ouverte-des-donnees-de-la-recherche-2024-98045) in the “Creating the Conditions for Reuse” category.
 
@@ -221,8 +221,6 @@ res = CARD_extraction(data, CARD_name = NULL,
 This will perform the extraction of all the CARDs in the `CARD_path` directory.
 
 If you want to select specific variables to extract from your custom CARD directory, just use the `CARD_name` variable as seen in the [basic workflow](#basic-workflow) section.
-
-For a deeper understanding of the CARD formatting, refer to the [CARD documentation](https://github.com/louis-heraut/CARD?tab=readme-ov-file#exstatcard-).
 
 
 ## What is a CARD ?
