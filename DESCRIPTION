@@ -1,7 +1,7 @@
-Package: EXstat.CARD
+Package: CARD
 Version: 2.0.0
 Date: 2025-04-22
-Title: EXstat.CARD
+Title: CARD
 Description: Card of Analyse and Diagnostic in R for a user-friendly experience of data aggregation with EXstat.
 Authors@R: c(
     person(given = "Louis",
