@@ -1,8 +1,8 @@
 ---
-title: "V02-hydrological_indicators"
+title: "Calculation of hydrological indicators"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{V02-hydrological_indicators}
+  %\VignetteIndexEntry{Calculation of hydrological indicators}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
