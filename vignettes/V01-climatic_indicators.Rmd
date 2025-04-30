@@ -90,7 +90,7 @@ On which we can filter criteria on temperatures:
 metaEX_temp <- metaEX_all %>%
   filter(grepl("Temperature", topic_en),
          !grepl("Sensitivity_to_Climate_Variability", script_path))
-knitr::kable(metaEX_temp %>% select("variable_en", name_en))
+knitr::kable(metaEX_temp %>% select("variable_en", "name_en"))
 ```
 
 Then, we format the data for the function `CARD_extraction()`.
@@ -120,7 +120,7 @@ We select all criteria on evaporation except the one evolving flow.
 metaEX_evap <- metaEX_all %>%
   filter(grepl("Evapotranspiration", topic_en),
          !grepl("Flow", topic_en))
-knitr::kable(metaEX_evap %>% select("variable_en", name_en))
+knitr::kable(metaEX_evap %>% select("variable_en", "name_en"))
 ```
 
 Then, we format the data and run the function `CARD_extraction()`.
@@ -150,7 +150,7 @@ metaEX_prec <- metaEX_all %>%
   filter(grepl("Precipitation", topic_en),
          !grepl("Flow|Parameterization|Sensitivity to Climate Variability|Ratio", topic_en),
          !grepl("liquid|solid|Annual precipitation", name_en))
-knitr::kable(metaEX_prec %>% select("variable_en", name_en))
+knitr::kable(metaEX_prec %>% select("variable_en", "name_en"))
 ```
 
 Then, we format the data and run the function `CARD_extraction()`.

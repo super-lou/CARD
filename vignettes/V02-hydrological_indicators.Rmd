@@ -1,0 +1,95 @@
+---
+title: "V02-hydrological_indicators"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{V02-hydrological_indicators}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+The aim of this vignette is to show the calculation of all statistical indicators
+only related to flow data (indicator evolving precipitation and comparison between
+observed and simulated flows are excluded).
+
+```{r setup}
+library(EXstat.CARD)
+library(airGRdatasets)
+library(dplyr)
+```
+
+# Dataset
+
+We use flow time series of three random gauging stations provided by the package
+**airGRdatasets** (See vignette `V01-climatic_indicators` for more details).
+
+```{r}
+# Get all data sets in the package
+station_ids <- ls("package:airGRdatasets")
+# Sample 3 stations
+sel_ids <- sample(station_ids, size = 3)
+sel_ids
+# "Tidy format" the time series
+df_ts <- dplyr::bind_rows(
+  lapply(sel_ids,
+  function(id){
+    df <- base::get(id)$TS
+    df$id <- id
+    return(df)
+  })
+)
+df_ts$Date <- as.Date(df_ts$Date) # Convert to date format
+str(df_ts)
+```
+
+## Selection of hydrological indicators
+
+We use the function `CARD_list_all()` to get the complete list of available
+indicators.
+
+```{r}
+metaEX_all = CARD_list_all()
+str(metaEX_all)
+```
+
+On which we can filter criteria on flows excluding indicators related to:
+
+- performance of hydrological model
+- indicators computed for future horizon periods
+- sensitivity to climate variability
+- indicators invoking the currently bugged function `GeneralMannKendall_WRAP`
+- the indicator `med{dtRec}` that is currently crashing
+
+```{r}
+metaEX_flow <- metaEX_all %>%
+  filter(grepl("Flow", topic_en),
+         !grepl("Performance", topic_en),
+         !grepl("_H[0-3]*$" , variable_en),
+         !grepl("Sensitivity_to_Climate_Variability", script_path),
+         # 'GeneralMannKendall_WRAP' is not an exported object from 'namespace:EXstat'
+         !grepl("alpha" , variable_en),
+         # Error in `dplyr::arrange()`: In argument: `..1 = get(date_col)`
+         variable_en != "med{dtRec}")
+knitr::kable(metaEX_flow %>% select("variable_en", name_en))
+```
+
+Finally, we format the data and run the function `CARD_extraction()`.
+
+```{r}
+df_flow <- df_ts %>%
+  select("Date", "id", "Qls") %>%
+  rename(Q = "Qls") %>%
+  mutate(Q = Q / 1000) # Convert to m3/s
+str(df_flow)
+res_flow <- CARD_extraction(
+  df_flow,
+  CARD_name = metaEX_flow$variable_en
+)
+str(res_flow)
+```
