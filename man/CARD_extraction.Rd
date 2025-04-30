@@ -109,7 +109,9 @@ res = CARD_extraction(data, CARD_name=c("QA", "QMNA"), verbose=TRUE)
 res
 
 # Or find the closest CARD variable that interests you
-CARD_management(CARD_name=c("VCN10-5"), CARD_path="CARD-WIP")
+CARD_management(CARD_name=c("VCN10-5"),
+                CARD_path="CARD-WIP",
+                overwrite=TRUE)
 # Personalise it in the created  `"CARD-WIP"` directory (for example change the return period)
 # And perform a custom extraction
 res = CARD_extraction(data, CARD_name=NULL,

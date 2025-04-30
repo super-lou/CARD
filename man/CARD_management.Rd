@@ -31,7 +31,9 @@ Manage your different sets of variables to extract. For CARD advanced users, thi
 }
 \examples{
 # Get the QA and QMNA CARD variables in your local CARD_path directory
-CARD_management(CARD_name=c("QA", "QMNA"), CARD_path="CARD-WIP")
+CARD_management(CARD_name=c("QA", "QMNA"),
+                CARD_path="CARD-WIP",
+                overwrite = TRUE)
 }
 \seealso{
 \enumerate{

@@ -1,4 +1,4 @@
-# Copyright 2021-2025 Louis Héraut (louis.heraut@inrae.fr)*1                     
+# Copyright 2021-2025 Louis Héraut (louis.heraut@inrae.fr)*1
 #           2023      Éric Sauquet (eric.sauquet@inrae.fr)*1
 #                     Jean-Philippe Vidal (jean-philippe.vidal@inrae.fr)*1
 #                     Nathan Pellerin
@@ -57,7 +57,9 @@ CARD_list_all = function () {
 #' 3. [CARD_extraction()] for extracting variables using CARD.
 #' @examples
 #' # Get the QA and QMNA CARD variables in your local CARD_path directory
-#' CARD_management(CARD_name=c("QA", "QMNA"), CARD_path="CARD-WIP")
+#' CARD_management(CARD_name=c("QA", "QMNA"),
+#'                 CARD_path="CARD-WIP",
+#'                 overwrite = TRUE)
 #' @export
 #' @md
 CARD_management = function (CARD_name=c("QA", "QJXA"),
@@ -67,7 +69,7 @@ CARD_management = function (CARD_name=c("QA", "QJXA"),
                             verbose=FALSE) {
 
     CARD_path_system = system.file(package="EXstat.CARD")
-    
+
     if (dir.exists(CARD_path)) {
         if (overwrite) {
             unlink(CARD_path, recursive=TRUE)
@@ -93,7 +95,7 @@ CARD_management = function (CARD_name=c("QA", "QJXA"),
     manage_hide = function(CARD_name, CARD_path) {
         if (is.list(CARD_name)) {
             for (i in 1:length(CARD_name)) {
-                
+
                 X = CARD_name[[i]]
                 X_name = names(CARD_name)[i]
 
@@ -117,7 +119,7 @@ CARD_management = function (CARD_name=c("QA", "QJXA"),
                         to = file.path(CARD_path_tmp, id_card_name)
                         file.copy(from, to)
                     }
-                    
+
                 }
                 if (is.list(X)) {
                     if (!is.null(X_name)) {
