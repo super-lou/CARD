@@ -238,9 +238,6 @@ CARD_extraction = function (data,
     topic_to_analyse = topic_to_analyse[topic_to_analyse != ""]
     topic_to_analyse = gsub('.*_', '', topic_to_analyse)
 
-    structure = replicate(length(topic_to_analyse), c())
-    names(structure) = topic_to_analyse
-
     variable_analyse = c()
 
     nScript = length(script_to_analyse)
@@ -265,17 +262,6 @@ CARD_extraction = function (data,
 
         variable = variable_en
         split_script = split_path(script)
-
-        if (length(split_script) == 1) {
-            if (!('None' %in% names(structure))) {
-                structure = append(list(None=c()), structure)
-            }
-            structure[['None']] = c(structure[['None']], variable)
-        } else if (length(split_script) == 2) {
-            dir = split_script[2]
-            dir = gsub('.*_', '', dir)
-            structure[[dir]] = c(structure[[dir]], variable)
-        }
 
         if (any(variable %in% variable_analyse)) {
             next
