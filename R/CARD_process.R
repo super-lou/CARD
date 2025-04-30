@@ -356,7 +356,7 @@ CARD_extraction = function (data,
                                   ### Global ___
                                   input_vars=input_vars,
                                   source=source,
-                                  preferred_hydrological_month=preferred_hydrological_month,
+                                  preferred_sampling_period=preferred_sampling_period,
                                   is_date=is_date,
                                   to_normalise=to_normalise,
                                   palette=palette,
@@ -365,8 +365,8 @@ CARD_extraction = function (data,
     rm ("data")
     gc()
 
-    if ("preferred_hydrological_month" %in% names(metaEX)) {
-        metaEX = dplyr::relocate(metaEX, preferred_hydrological_month, .after=input_vars)
+    if ("preferred_sampling_period" %in% names(metaEX)) {
+        metaEX = dplyr::relocate(metaEX, preferred_sampling_period, .after=input_vars)
     }
     if ("source" %in% names(metaEX)) {
         metaEX = dplyr::relocate(metaEX, source, .after=input_vars)

@@ -141,7 +141,7 @@ CARD$P.topic_fr = rep(c("Débit, Basses Eaux, Saisonnalité",
 
 ### Global ___________________________________________________________
 CARD$P.input_vars = "Q"
-CARD$P.preferred_hydrological_month = 1
+CARD$P.preferred_sampling_period = "01-01"
 CARD$P.is_date = rep(c(TRUE, TRUE, TRUE, FALSE, FALSE), each=3)
 CARD$P.to_normalise = rep(c(FALSE, FALSE, FALSE, FALSE, TRUE), each=3)
 CARD$P.palette = rep(c("#60265e #893687 #c05fbe #dba3da #edd1ec #f6ddd3 #edbaa7 #e08765 #CD5629 #8f3c1d",

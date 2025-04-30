@@ -59,7 +59,7 @@ CARD$P.topic_fr = "Débit, Basses Eaux, Occurrence"
 
 ### Global ___________________________________________________________
 CARD$P.input_vars = "Q"
-CARD$P.preferred_hydrological_month = 1
+CARD$P.preferred_sampling_period = "01-01"
 CARD$P.is_date = FALSE
 CARD$P.to_normalise = TRUE
 CARD$P.palette = NULL
