@@ -15,8 +15,7 @@ knitr::opts_chunk$set(
 ```
 
 The aim of this vignette is to show the calculation of all statistical indicators
-related to meteorological data.
-For this we use data available in the package airGRdatasets.
+only related to meteorological data (indicator evolving flow are excluded).
 
 ```{r setup}
 library(EXstat.CARD)
@@ -88,11 +87,13 @@ str(metaEX_all)
 On which we can filter criteria on temperatures:
 
 ```{r}
-metaEX_temperatures <- metaEX_all %>%
-  dplyr::filter(grepl("Temperature", topic_en),
-                !grepl("Sensitivity_to_Climate_Variability", script_path))
-knitr::kable(metaEX_temperatures %>% select("variable_en", name_en))
+metaEX_temp <- metaEX_all %>%
+  filter(grepl("Temperature", topic_en),
+         !grepl("Sensitivity_to_Climate_Variability", script_path))
+knitr::kable(metaEX_temp %>% select("variable_en", name_en))
 ```
+
+Then, we format the data for the function `CARD_extraction()`.
 
 ```{r}
 df_temp <- df_ts %>%
@@ -101,8 +102,77 @@ df_temp <- df_ts %>%
 str(df_temp)
 ```
 
+And run it!
+
 ```{r}
-res_temp <- CARD_extraction(df_temp,
-                            CARD_name = metaEX_temperatures$variable_en)
+res_temp <- CARD_extraction(
+  df_temp,
+  CARD_name = metaEX_temp$variable_en
+)
 str(res_temp)
+```
+
+## Statistical indicators for potential evapotranspiration
+
+We select all criteria on evaporation except the one evolving flow.
+
+```{r}
+metaEX_evap <- metaEX_all %>%
+  filter(grepl("Evapotranspiration", topic_en),
+         !grepl("Flow", topic_en))
+knitr::kable(metaEX_evap %>% select("variable_en", name_en))
+```
+
+Then, we format the data for the function `CARD_extraction()`.
+
+```{r}
+df_evap <- df_ts %>%
+  select("Date", "id", "Evap") %>%
+  rename(ETP = "Evap") # R is the precipitation variable in the dataframe
+str(df_prec)
+```
+
+And run it!
+
+```{r}
+res_evap <- CARD_extraction(
+  df_evap,
+  CARD_name = metaEX_evap$variable_en
+)
+str(res_evap)
+```
+
+## Statistical indicators for precipitations
+
+We select all criteria on precipitations except:
+
+- criteria using flow,
+- criteria related to parametrization, sensitivity to climate variability, or ratio
+- criteria related to liquid or solid precipitations
+
+```{r}
+metaEX_prec <- metaEX_all %>%
+  filter(grepl("Precipitation", topic_en),
+         !grepl("Flow|Parameterization|Sensitivity to Climate Variability|Ratio", topic_en),
+         !grepl("liquid|solid|Annual precipitation", name_en))
+knitr::kable(metaEX_prec %>% select("variable_en", name_en))
+```
+
+Then, we format the data for the function `CARD_extraction()`.
+
+```{r}
+df_prec <- df_ts %>%
+  select("Date", "id", "Ptot") %>%
+  rename(R = "Ptot") # R is the precipitation variable in the dataframe
+str(df_prec)
+```
+
+And run it!
+
+```{r}
+res_prec <- CARD_extraction(
+  df_prec,
+  CARD_name = metaEX_prec$variable_en
+)
+str(res_prec)
 ```
