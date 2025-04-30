@@ -93,22 +93,37 @@ CARD_management = function (CARD_name=c("QA", "QJXA"),
         CARD_name = list(CARD_name)
     }
     
-    manage_hide = function(CARD_name, CARD_path) {
+    manage_hide = function(CARD_name, CARD_path, id_dir=1) {
         if (is.list(CARD_name)) {
             for (i in 1:length(CARD_name)) {
 
                 X = CARD_name[[i]]
                 X_name = names(CARD_name)[i]
 
-                if (is.character(X)) {
+                if (is.character(X) | is.list(X)) {
                     if (!is.null(X_name)) {
-                        CARD_path_tmp = file.path(CARD_path, X_name)
+                        if (nchar(X_name) > 0) {
+                            CARD_dir_tmp = paste0(formatC(id_dir,
+                                                          width=3,
+                                                          flag="0"),
+                                                  "_",
+                                                  X_name)
+                        } else {
+                            CARD_dir_tmp = X_name
+                        }
+                        CARD_path_tmp = file.path(CARD_path,
+                                                  CARD_dir_tmp)
                     } else {
                         CARD_path_tmp = CARD_path
                     }
+
                     if (!dir.exists(CARD_path_tmp)) {
                         dir.create(CARD_path_tmp)
+                        id_dir = id_dir + 1
                     }
+                }
+                
+                if (is.character(X)) {
                     nCARD = length(X)
                     for (j in 1:nCARD) {
                         card_name = X[j]
@@ -120,19 +135,9 @@ CARD_management = function (CARD_name=c("QA", "QJXA"),
                         to = file.path(CARD_path_tmp, id_card_name)
                         file.copy(from, to)
                     }
+                }
 
-                }
-                if (is.list(X)) {
-                    if (!is.null(X_name)) {
-                        CARD_path_tmp = file.path(CARD_path, X_name)
-                    } else {
-                        CARD_path_tmp = CARD_path
-                    }
-                    if (!dir.exists(CARD_path_tmp)) {
-                        dir.create(CARD_path_tmp)
-                    }
-                }
-                manage_hide(X, CARD_path_tmp)
+                manage_hide(X, CARD_path_tmp, id_dir=1)
             }
         }
     }
