@@ -102,7 +102,7 @@ df_temp <- df_ts %>%
 str(df_temp)
 ```
 
-And run it!
+And run the extraction of indicators!
 
 ```{r}
 res_temp <- CARD_extraction(
@@ -123,18 +123,13 @@ metaEX_evap <- metaEX_all %>%
 knitr::kable(metaEX_evap %>% select("variable_en", name_en))
 ```
 
-Then, we format the data for the function `CARD_extraction()`.
+Then, we format the data and run the function `CARD_extraction()`.
 
 ```{r}
 df_evap <- df_ts %>%
   select("Date", "id", "Evap") %>%
   rename(ETP = "Evap") # R is the precipitation variable in the dataframe
 str(df_evap)
-```
-
-And run it!
-
-```{r}
 res_evap <- CARD_extraction(
   df_evap,
   CARD_name = metaEX_evap$variable_en
@@ -158,18 +153,13 @@ metaEX_prec <- metaEX_all %>%
 knitr::kable(metaEX_prec %>% select("variable_en", name_en))
 ```
 
-Then, we format the data for the function `CARD_extraction()`.
+Then, we format the data and run the function `CARD_extraction()`.
 
 ```{r}
 df_prec <- df_ts %>%
   select("Date", "id", "Ptot") %>%
   rename(R = "Ptot") # R is the precipitation variable in the dataframe
 str(df_prec)
-```
-
-And run it!
-
-```{r}
 res_prec <- CARD_extraction(
   df_prec,
   CARD_name = metaEX_prec$variable_en
