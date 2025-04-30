@@ -1,0 +1,108 @@
+---
+title: "Calculation of climatic indicators"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Calculation of climatic indicators}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+The aim of this vignette is to show the calculation of all statistical indicators
+related to meteorological data.
+For this we use data available in the package airGRdatasets.
+
+```{r setup}
+library(EXstat.CARD)
+library(airGRdatasets)
+library(dplyr)
+```
+
+## Presentation of the dataset
+
+The package **airGRdatasets** provides time series for gauging stations located
+on Metropolitan French territory.
+
+The river basins present in this package are:
+
+```{r}
+# Get all data sets in the package
+station_ids <- ls("package:airGRdatasets")
+
+# Create a table with meta data of each gauging station
+station_metadata <- dplyr::bind_rows(
+  lapply(station_ids,
+  function(id){
+    data <- base::get(id)
+    data.frame(CodeH3 = data$Meta$Code$H3,
+               Name = data$Meta$Name,
+               Latitude = data$Meta$Coor$Y,
+               Longitude = data$Meta$Coor$X,
+               start = first(data$TS$Date),
+               end = last(data$TS$Date))
+  })
+)
+knitr::kable(station_metadata)
+```
+
+We select randomly 3 stations for this vignette.
+
+```{r}
+sel_ids <- sample(station_ids, size = 3)
+sel_ids
+```
+
+And we concat and format the data of these three stations:
+
+```{r}
+df_ts <- dplyr::bind_rows(
+  lapply(sel_ids,
+  function(id){
+    df <- base::get(id)$TS
+    df$id <- id
+    return(df)
+  })
+)
+df_ts$Date <- as.Date(df_ts$Date) # Convert to date format
+str(df_ts)
+```
+
+## Statistical indicators for temperatures
+
+We list all available indicators for temperature data.
+
+We use the function `CARD_list_all()` to get the complete list of available
+indicators.
+
+```{r}
+metaEX_all = CARD_list_all()
+str(metaEX_all)
+```
+
+On which we can filter criteria on temperatures:
+
+```{r}
+metaEX_temperatures <- metaEX_all %>%
+  dplyr::filter(grepl("Temperature", topic_en),
+                !grepl("Sensitivity_to_Climate_Variability", script_path))
+knitr::kable(metaEX_temperatures %>% select("variable_en", name_en))
+```
+
+```{r}
+df_temp <- df_ts %>%
+  select("Date", "id", "Temp") %>%
+  rename(T = "Temp")
+str(df_temp)
+```
+
+```{r}
+res_temp <- CARD_extraction(df_temp,
+                            CARD_name = metaEX_temperatures$variable_en)
+str(res_temp)
+```

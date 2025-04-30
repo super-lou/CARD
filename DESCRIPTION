@@ -41,3 +41,8 @@ Remotes:
 RoxygenNote: 7.3.2
 Roxygen: list(markdown = TRUE)
 URL: https://ddorch.github.io/EXstat.CARD/
+Suggests: 
+    airGRdatasets,
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr
