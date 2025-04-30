@@ -92,8 +92,7 @@ CARD_management = function (CARD_name=c("QA", "QJXA"),
     if (!is.list(CARD_name)) {
         CARD_name = list(CARD_name)
     }
-    print(CARD_name)
-
+    
     manage_hide = function(CARD_name, CARD_path) {
         if (is.list(CARD_name)) {
             for (i in 1:length(CARD_name)) {
