@@ -45,6 +45,7 @@ CARD$P.topic_fr = "Débit / Température, Sensibilité à la variabilité climat
 CARD$P.sampling_period_fr = "01-09, 31-08"
 
 ### Global ___________________________________________________________
+CARD$P.input_vars = "Q_obs, Q_sim, T_obs"
 CARD$P.source = "NICOLLE, P. et al. (2021). « Technical note : RAT – a robustness assessment test for calibrated and uncalibrated hydrological models ». In : Hydrol. Earth Syst. Sci. 25, p. 5013-5027. DOI : 10.5194/hess-25-5013-2021."
 CARD$P.is_date = FALSE
 CARD$P.to_normalise = FALSE

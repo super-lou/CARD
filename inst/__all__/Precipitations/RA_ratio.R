@@ -43,6 +43,7 @@ CARD$P.sampling_period_fr = "01-09, 31-08"
 CARD$P.topic_fr = "Précipitations, Modérée, Ratio"
 
 ### Global ___________________________________________________________
+CARD$P.input_vars = "R, Rl, Rs"
 CARD$P.is_date = FALSE
 CARD$P.to_normalise = FALSE
 CARD$P.palette = NULL

@@ -54,6 +54,7 @@ CARD$P.sampling_period_fr = "01-01, 31-12"
 CARD$P.topic_fr = "Débit, Hautes Eaux, Intensité"
 
 ### Global ___________________________________________________________
+CARD$P.input_vars = "Q"
 CARD$P.preferred_hydrological_month = 1
 CARD$P.is_date = FALSE
 CARD$P.to_normalise = TRUE

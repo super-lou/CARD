@@ -101,6 +101,7 @@ CARD$P.sampling_period_fr = rep(c("01-01, 31-01", "01-02, 28(29)-02", "01-03, 31
 CARD$P.topic_fr = "Débit, Moyennes Eaux, Intensité"
 
 ### Global ___________________________________________________________
+CARD$P.input_vars = "Q"
 CARD$P.is_date = FALSE
 CARD$P.to_normalise = TRUE
 CARD$P.palette = "#452C1A #7F4A23 #B3762A #D4B86A #EFE0B0 #BCE6DB #7ACEB9 #449C93 #2A6863 #193830"

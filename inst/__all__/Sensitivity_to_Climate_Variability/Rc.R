@@ -41,6 +41,7 @@ CARD$P.method_fr = ""
 CARD$P.topic_fr = "Débit / Précipitations, Sensibilité à la variabilité climatique"
 
 ### Global ___________________________________________________________
+CARD$P.input_vars = "Q, R"
 CARD$P.is_date = FALSE
 CARD$P.to_normalise = TRUE
 CARD$P.palette = NULL
@@ -49,7 +50,7 @@ CARD$P.palette = NULL
 ## PROCESS ___________________________________________________________
 ### P1 _______________________________________________________________
 CARD$P1.funct = list(Rc=compute_Rc)
-CARD$P1.funct_args = list("Q", "P")
+CARD$P1.funct_args = list("Q", "R")
 CARD$P1.time_step = "none"
 CARD$P1.NAyear_lim = 10
 

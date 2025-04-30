@@ -63,6 +63,7 @@ CARD$P.sampling_period_fr = c(
 CARD$P.topic_fr = "Précipitations, Modérée, Paramétrisation"
 
 ### Global ___________________________________________________________
+CARD$P.input_vars = "R_obs, R_sim"
 CARD$P.is_date = FALSE
 CARD$P.to_normalise = FALSE
 CARD$P.palette = "#452C1A #7F4A23 #B3762A #D4B86A #EFE0B0 #BCE6DB #7ACEB9 #449C93 #2A6863 #193830"

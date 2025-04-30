@@ -41,6 +41,7 @@ CARD$P.method_fr = "1. aucune agrégation temporelle - extraction du débit de b
 CARD$P.topic_fr = "Débit, Débit de Base, Intensité"
 
 ### Global ___________________________________________________________
+CARD$P.input_vars = "Q"
 CARD$P.is_date = FALSE
 CARD$P.to_normalise = FALSE
 CARD$P.palette = NULL

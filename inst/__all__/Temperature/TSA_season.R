@@ -61,6 +61,7 @@ CARD$P.sampling_period_fr = c("01-12, 28(29)-02",
 CARD$P.topic_fr = "Température, Moyenne, Intensité"
 
 ### Global ___________________________________________________________
+CARD$P.input_vars = "T"
 CARD$P.is_date = FALSE
 CARD$P.to_normalise = FALSE
 CARD$P.palette = "#053061 #2166AC #4393C3 #92C5DE #D1E5F0 #FDDBC7 #F4A582 #D6604D #B2182B #67001F"

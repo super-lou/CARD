@@ -64,6 +64,7 @@ CARD$P.sampling_period_fr = c("01-12, 28(29)-02",
 CARD$P.topic_fr = "Précipitations, Période sèche, Durée"
 
 ### Global ___________________________________________________________
+CARD$P.input_vars = "R"
 CARD$P.is_date = FALSE
 CARD$P.to_normalise = FALSE
 CARD$P.palette = "#003C30 #01665E #35978F #80CDC1 #C7EAE5 #F6E8C3 #DFC27D #BF812D #8C510A #543005"

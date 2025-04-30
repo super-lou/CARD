@@ -45,6 +45,7 @@ CARD$P.sampling_period_fr = "Mois du minimum des débits mensuels"
 CARD$P.topic_fr = "Débit, Hautes Eaux, Intensité"
 
 ### Global ___________________________________________________________
+CARD$P.input_vars = "Q"
 CARD$P.source = "KENDALL, M. G. (1975). « Rank Correlation Methods ». Griffin, London, UK.
 MANN, H. (1945). « Nonparametric tests against trend ». Econometrica, 13(3):245–259.
 SEN, P. K. (1968). « Estimates of the regression coefficient based on Kendall’s tau ». In : Journal of the American Statistical Association 63, p. 1379-1389. DOI : doi:10.2307/2285891."

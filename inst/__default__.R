@@ -43,6 +43,7 @@ CARD$P.sampling_period_fr = NULL
 CARD$P.topic_fr = NULL
 
 ### Global ___________________________________________________________
+CARD$P.input_vars = "X"
 CARD$P.source = NULL
 CARD$P.preferred_hydrological_month = NULL
 CARD$P.is_date = FALSE

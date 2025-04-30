@@ -41,6 +41,7 @@ CARD$P.method_fr = "1. aucune agrégation temporelle - inverse des données jour
 CARD$P.topic_fr = "Débit, Performance"
 
 ### Global ___________________________________________________________
+CARD$P.input_vars = "Q_obs, Q_sim"
 CARD$P.source = "NASH, J. E. et J. V. SUTCLIFFE (1970). « River flow forecasting through conceptual models part I — A discussion of principles ». In : Journal of Hydrology 10.3, p. 282-290. DOI : 10.1016/0022-1694(70)90255-6."
 CARD$P.is_date = FALSE
 CARD$P.to_normalise = FALSE

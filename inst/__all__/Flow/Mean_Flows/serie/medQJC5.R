@@ -43,6 +43,7 @@ CARD$P.method_fr = "1. agrégation par jour de l’année - médiane
 CARD$P.topic_fr = "Débit, Moyennes Eaux, Intensité"
 
 ### Global ___________________________________________________________
+CARD$P.input_vars = "Q"
 CARD$P.is_date = FALSE
 CARD$P.to_normalise = TRUE
 CARD$P.palette = NULL

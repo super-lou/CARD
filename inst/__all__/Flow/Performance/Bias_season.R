@@ -68,6 +68,7 @@ CARD$P.sampling_period_fr = c("01-12, 28(29)-02",
 CARD$P.topic_fr = "Débit, Performance"
 
 ### Global ___________________________________________________________
+CARD$P.input_vars = "Q_obs, Q_sim"
 CARD$P.is_date = FALSE
 CARD$P.to_normalise = FALSE
 CARD$P.palette = NULL

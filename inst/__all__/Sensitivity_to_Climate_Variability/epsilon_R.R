@@ -45,6 +45,7 @@ CARD$P.sampling_period_fr = "Mois du minimum des débits mensuels"
 CARD$P.topic_fr = "Débit / Précipitations, Sensibilité à la variabilité climatique"
 
 ### Global ___________________________________________________________
+CARD$P.input_vars = "Q, R"
 CARD$P.source = "SANKARASUBRAMANIAN, A., R. M. VOGEL et J. F. LIMBRUNNER (1991). « Climate elasticity of streamflow in the United States ». In : Water Resour. Res. 37, p. 1771-1781."
 CARD$P.is_date = FALSE
 CARD$P.to_normalise = TRUE

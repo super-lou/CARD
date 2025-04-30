@@ -45,6 +45,7 @@ CARD$P.sampling_period_fr = "01-09, 31-08"
 CARD$P.topic_fr = "Débit, Débit de Base, Durée"
 
 ### Global ___________________________________________________________
+CARD$P.input_vars = "Q"
 CARD$P.source = "TALLAKSEN, L. et H. VAN LANEN, éd. (2004). Hydrological drought. Processes and estimation methods for streamflow and groundwater. English. Developments in water science 48. Netherlands : Elsevier. ISBN : 9780444516886."
 CARD$P.preferred_hydrological_month = 9
 CARD$P.is_date = FALSE

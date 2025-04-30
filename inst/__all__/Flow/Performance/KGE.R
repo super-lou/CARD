@@ -41,6 +41,7 @@ CARD$P.method_fr = "1. aucune agrégation temporelle - calcul du KGE"
 CARD$P.topic_fr = "Débit, Performance"
 
 ### Global ___________________________________________________________
+CARD$P.input_vars = "Q_obs, Q_sim"
 CARD$P.source = "GUPTA, H. V. et al. (2009). « Decomposition of the mean squared error and NSE performance criteria : Implications for improving hydrological modelling ». In : Journal of Hydrology 377, p. 80-91."
 CARD$P.is_date = FALSE
 CARD$P.to_normalise = FALSE
