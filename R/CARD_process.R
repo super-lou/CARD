@@ -1,4 +1,4 @@
-# Copyright 2021-2025 Louis Héraut (louis.heraut@inrae.fr)*1                     
+# Copyright 2021-2025 Louis Héraut (louis.heraut@inrae.fr)*1
 #           2023      Éric Sauquet (eric.sauquet@inrae.fr)*1
 #                     Jean-Philippe Vidal (jean-philippe.vidal@inrae.fr)*1
 #                     Nathan Pellerin
@@ -37,7 +37,7 @@ reduce_process = function (data, id, Process,
     if (verbose) {
         print(paste0("Process ", id, "/", length(Process)-1))
     }
-    
+
     process = Process[[paste0("P", id)]]
     process_names = names(process)
     for (pp in 1:length(process)) {
@@ -46,11 +46,11 @@ reduce_process = function (data, id, Process,
 
     rm ("process")
     gc()
-    
+
     if (!is.null(expand_overwrite) & id == (length(Process)-1)) {
         expand = expand_overwrite
     }
-    
+
     if (is.null(sampling_period_overwrite)) {
         if (is.function(sampling_period[[1]])) {
             sampling_period = dplyr::tibble(sp=list(sampling_period[[1]]),
@@ -125,8 +125,8 @@ split_path = function (path) {
 #' ```
 #' > data
 #' A tibble: 201 × 4
-#'    time         Q_obs  Q_sim  ID     
-#'    <date>       <dbl>  <dbl>  <chr>  
+#'    time         Q_obs  Q_sim  ID
+#'    <date>       <dbl>  <dbl>  <chr>
 #' 1   2000-02-10   10     97.8  serie 1
 #' 2   2000-02-11   19    -20.5  serie 1
 #' 3   2000-02-12   13    -76.9  serie 1
@@ -140,7 +140,7 @@ split_path = function (path) {
 #' ```
 #' @param CARD_name A [vector][base::c()] of [character][base::character] strings to specify which variables you want to extract. See [CARD_list_all()] to get the variable names. By default, `c("QA", "QJXA")`. If `NULL`, all the variable will be extracted, so avoid this value except with `extract_only_metadata = TRUE` or your custom `CARD_path` directory.
 #' @param CARD_path An optional [character][base::character] string for the path where to search for custom CARDs that have been created by the [CARD_management] function. By default, `NULL` in order to get the default CARD variable parameters.
-#' @param period_default A [vector][base::c()] of two [dates][base::Date] (or two unambiguous [character][base::character] strings that can be coerced to [dates][base::Date]) to restrict the period of analysis. As an example, it can be `c("1950-01-01", "2020-12-31")` to select data from the 1st January of 1950 to the end of December of 2020. Some CARD can have a specific `period` parameter that overide this `period_default` argument. The default option is `period_default=NULL`, which considers all available data for each time serie. 
+#' @param period_default A [vector][base::c()] of two [dates][base::Date] (or two unambiguous [character][base::character] strings that can be coerced to [dates][base::Date]) to restrict the period of analysis. As an example, it can be `c("1950-01-01", "2020-12-31")` to select data from the 1st January of 1950 to the end of December of 2020. Some CARD can have a specific `period` parameter that overide this `period_default` argument. The default option is `period_default=NULL`, which considers all available data for each time serie.
 #' @param suffix A [character][base::character] string [vector][base::c()] representing suffixes to be appended to the column names of the extracted variables. This parameter allows handling multiple extraction scenarios. For example, a cumbersome case can be to have a unique function to apply to a multiple list of column. It is possible to give `funct=list(QA_obs=mean, QA_sim=mean)` and `funct_args=list(list("Q_obs", na.rm=TRUE), list("Q_sim", na.rm=TRUE))` or simply `funct=list(QA=mean)` and `funct_args=list("Q", na.rm=TRUE)` with `suffix=c("obs", "sim")`. The two approach give the same result. Default `NULL`.
 #' @param suffix_delimiter [character][base::character] string specifies the delimiter to use between the variable name and the suffix if not `NULL`. The default is `"_"`.
 #' @param cancel_lim A [logical][base::logical] to specify whether to cancel the NA percentage limits in the CARDs. Default is `FALSE`.
@@ -169,18 +169,18 @@ split_path = function (path) {
 #' metaEX_all = CARD_list_all()
 #' metaEX_all
 #'
-#' Create mock data
+#' # Create mock data
 #' Start = as.Date("2001-03-02")
 #' End = as.Date("2024-11-30")
 #' Date = seq.Date(Start, End, by="day")
 #' data = dplyr::tibble(time=Date,
 #'                      Q=as.numeric(Date),
 #'                      id="serie 1")
-#' 
+#'
 #' # Do a direct extraction
 #' res = CARD_extraction(data, CARD_name=c("QA", "QMNA"), verbose=TRUE)
 #' res
-#' 
+#'
 #' # Or find the closest CARD variable that interests you
 #' CARD_management(CARD_name=c("VCN10-5"), CARD_path="CARD-WIP")
 #' # Personalise it in the created  `"CARD-WIP"` directory (for example change the return period)
@@ -212,7 +212,7 @@ CARD_extraction = function (data,
     if (is.null(CARD_path)) {
         CARD_path = file.path(CARD_path_system, "__all__")
     }
-    
+
     script_to_analyse = list.files(CARD_path,
                                    pattern=".R$",
                                    recursive=TRUE,
@@ -225,7 +225,7 @@ CARD_extraction = function (data,
                                    basename(script_to_analyse)) %in%
                               paste0(CARD_name, ".R")]
     }
-    
+
     script_to_analyse = script_to_analyse[!grepl("__default__.R",
                                                  script_to_analyse)]
 
@@ -248,7 +248,7 @@ CARD_extraction = function (data,
 
         Process_default = sourceProcess(
             file.path(CARD_path_system, "__default__.R"))
-        
+
         Process = sourceProcess(
             file.path(CARD_path, script),
             default=Process_default)
@@ -261,7 +261,7 @@ CARD_extraction = function (data,
 
         variable = variable_en
         split_script = split_path(script)
-        
+
         if (length(split_script) == 1) {
             if (!('None' %in% names(structure))) {
                 structure = append(list(None=c()), structure)
@@ -276,7 +276,7 @@ CARD_extraction = function (data,
         if (any(variable %in% variable_analyse)) {
             next
         }
-        
+
         variable_analyse = c(variable_analyse, variable)
 
         if (verbose) {
@@ -301,8 +301,8 @@ CARD_extraction = function (data,
                               dev=dev,
                               verbose=verbose,
                               .init=data)
-            
-            
+
+
             if (tibble::is_tibble(dataEX[[ss]])) {
                 dataEX[[ss]] = list(dataEX[[ss]])
                 if (!simplify) {
@@ -330,7 +330,7 @@ CARD_extraction = function (data,
             sampling_period_fr = paste0(sampling_period_fr,
                                         collapse=", ")
         }
-        
+
         metaEX =
             dplyr::bind_rows(
                        metaEX,
@@ -354,7 +354,7 @@ CARD_extraction = function (data,
                                   ### Global ___
                                   source=source,
                                   preferred_hydrological_month=preferred_hydrological_month,
-                                  is_date=is_date, 
+                                  is_date=is_date,
                                   to_normalise=to_normalise,
                                   palette=palette,
                                   script_path=script))
@@ -397,7 +397,7 @@ CARD_extraction = function (data,
 #' - [process_trend()] for performing trend analysis on extracted variables.
 #' - [CARD_management()] for managing CARD parameterization files.
 #' - [CARD_extraction()] for extracting variables using CARD parameterization files.
-#' 
+#'
 #' @examples
 #' \dontrun{
 #' Process_default = sourceProcess(path="path/to/CARD/__default__.R")
@@ -416,12 +416,12 @@ sourceProcess = function (path, default=NULL) {
     names(Process) = gsub("P[.]", "", Process_def)
     Process = list(Process)
     names(Process) = "P"
-    
+
     if (!is.null(default)) {
         nOK = !(names(default$P) %in% names(Process$P))
         Process$P = append(Process$P, default$P[nOK])
     }
-    
+
     process_allAtt = lsCARD[grepl("P[[:digit:]][.]", lsCARD)]
     process_allNames = stringr::str_extract(process_allAtt,
                                             "P[[:digit:]]")
@@ -435,7 +435,7 @@ sourceProcess = function (path, default=NULL) {
 
         process_att = process_allAtt[IDprocess]
         process = lapply(process_att, get, envir=CARD)
-        
+
         names(process) = gsub("P[[:digit:]][.]", "",
                               process_att)
         process = list(process)

@@ -34,8 +34,8 @@ e.g.
 
 \if{html}{\out{<div class="sourceCode">}}\preformatted{> data
 A tibble: 201 × 4
-   time         Q_obs  Q_sim  ID     
-   <date>       <dbl>  <dbl>  <chr>  
+   time         Q_obs  Q_sim  ID
+   <date>       <dbl>  <dbl>  <chr>
 1   2000-02-10   10     97.8  serie 1
 2   2000-02-11   19    -20.5  serie 1
 3   2000-02-12   13    -76.9  serie 1
@@ -96,7 +96,7 @@ library(EXstat.CARD)
 metaEX_all = CARD_list_all()
 metaEX_all
 
-Create mock data
+# Create mock data
 Start = as.Date("2001-03-02")
 End = as.Date("2024-11-30")
 Date = seq.Date(Start, End, by="day")
