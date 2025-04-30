@@ -7,7 +7,7 @@
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](code_of_conduct.md) 
 <!-- badges: end -->
 
-**CARD** is an efficient and user-friendly solution for aggregating daily hydroclimatological time series data, made possible through the use of parameterization files.
+**CARD** is an efficient and user-friendly solution for aggregating daily hydroclimatological time series data in R, made possible through the use of parameterization files.
 
 More precisely, this package aims at regroup all relevant aggregated hydroclimatological variable procedures into a CARD and serves as an interface to the core aggregation process carried out by the [EXstat](https://github.com/louis-heraut/EXstat) package.
 
