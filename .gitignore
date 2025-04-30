@@ -4,3 +4,5 @@
 *.emacs*
 .directory
 *.env
+docs
+inst/doc

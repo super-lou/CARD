@@ -34,8 +34,8 @@ e.g.
 
 \if{html}{\out{<div class="sourceCode">}}\preformatted{> data
 A tibble: 201 × 4
-   time         Q_obs  Q_sim  ID     
-   <date>       <dbl>  <dbl>  <chr>  
+   time         Q_obs  Q_sim  ID
+   <date>       <dbl>  <dbl>  <chr>
 1   2000-02-10   10     97.8  serie 1
 2   2000-02-11   19    -20.5  serie 1
 3   2000-02-12   13    -76.9  serie 1
@@ -48,11 +48,11 @@ A tibble: 201 × 4
     ...
 }\if{html}{\out{</div>}}}
 
-\item{CARD_name}{By default, all CARDs in the \code{CARD_dir} directory will be used for the analysis. However, you can specify a \link[base:c]{vector} of \link[base:character]{character} strings with the names of the CARDs to be used. Default is \code{"NULL"} for using all the CARDs.}
+\item{CARD_name}{A \link[base:c]{vector} of \link[base:character]{character} strings to specify which variables you want to extract. See \code{\link[=CARD_list_all]{CARD_list_all()}} to get the variable names. By default, \code{c("QA", "QJXA")}. If \code{NULL}, all the variable will be extracted, so avoid this value except with \code{extract_only_metadata = TRUE} or your custom \code{CARD_path} directory.}
 
-\item{CARD_path}{A \link[base:character]{character} string representing the path to the downloaded CARD directory (it should end with \code{"CARD"}). In this directory, you can copy and paste (and later modify) CARDs from the \code{"__all__"} subdirectory that you want to use for an analysis represented by a subdirectory named \code{CARD_dir} (see \code{CARD_tmp} if you want to locate your \code{CARD_dir} directory elsewhere). In your CARDs, you can specify functions available in the scripts of the \code{"__tools__"} subdirectory.}
+\item{CARD_path}{An optional \link[base:character]{character} string for the path where to search for custom CARDs that have been created by the \link{CARD_management} function. By default, \code{NULL} in order to get the default CARD variable parameters.}
 
-\item{period_default}{A \link[base:c]{vector} of two \link[base:Dates]{dates} (or two unambiguous \link[base:character]{character} strings that can be coerced to \link[base:Dates]{dates}) to restrict the period of analysis. As an example, it can be \code{c("1950-01-01", "2020-12-31")} to select data from the 1st January of 1950 to the end of December of 2020. The default option is \code{period=NULL}, which considers all available data for each time serie.}
+\item{period_default}{A \link[base:c]{vector} of two \link[base:Dates]{dates} (or two unambiguous \link[base:character]{character} strings that can be coerced to \link[base:Dates]{dates}) to restrict the period of analysis. As an example, it can be \code{c("1950-01-01", "2020-12-31")} to select data from the 1st January of 1950 to the end of December of 2020. Some CARD can have a specific \code{period} parameter that overide this \code{period_default} argument. The default option is \code{period_default=NULL}, which considers all available data for each time serie.}
 
 \item{suffix}{A \link[base:character]{character} string \link[base:c]{vector} representing suffixes to be appended to the column names of the extracted variables. This parameter allows handling multiple extraction scenarios. For example, a cumbersome case can be to have a unique function to apply to a multiple list of column. It is possible to give \code{funct=list(QA_obs=mean, QA_sim=mean)} and \code{funct_args=list(list("Q_obs", na.rm=TRUE), list("Q_sim", na.rm=TRUE))} or simply \code{funct=list(QA=mean)} and \code{funct_args=list("Q", na.rm=TRUE)} with \code{suffix=c("obs", "sim")}. The two approach give the same result. Default \code{NULL}.}
 
@@ -78,10 +78,6 @@ Default \code{NULL} to conserve the value specified in the CARDs used.}
 \item{dev}{\link[base:logical]{logical} If \code{TRUE}, development mode is enabled. Default is \code{FALSE}.}
 
 \item{verbose}{\link[base:logical]{logical}. Should intermediate messages be printed during the execution of the function ? Default \code{FALSE}.}
-
-\item{CARD_tmp}{If you want to locate the \code{CARD_dir} directory somewhere other than in the \code{CARD_path} directory, you can specify a \link[base:character]{character} string in \code{CARD_tmp} for a path where the \code{CARD_dir} subdirectory of CARDs will be searched. Default is \code{"NULL"} if you want to locate the \code{CARD_dir} subdirectory of CARDs in \code{CARD_path}.}
-
-\item{CARD_dir}{A \link[base:character]{character} string for the name of a subdirectory in \code{CARD_path} (or \code{CARD_tmp}) where the CARD parameterization files are located for an analysis. Default is \code{"WIP"}.}
 }
 \value{
 A \link[base:list]{list} of two \link[tibble:tibble]{tibbles}.
@@ -94,52 +90,37 @@ A \link[base:list]{list} of two \link[tibble:tibble]{tibbles}.
 Extracts variables from time series (for example, the yearly mean of a time series) using CARD parameterization files.
 }
 \examples{
-## Creation of random data set
-set.seed(99)
-Start = as.Date("2000-02-01")
-End = as.Date("2010-04-04")
+library(EXstat.CARD)
+
+# Get all the available variables
+metaEX_all = CARD_list_all()
+metaEX_all
+
+# Create mock data
+Start = as.Date("2001-03-02")
+End = as.Date("2024-11-30")
 Date = seq.Date(Start, End, by="day")
+data = dplyr::tibble(time=Date,
+                     Q=as.numeric(Date),
+                     id="serie 1")
 
-# First time serie
-data_1 = dplyr::tibble(time=Date,
-                       X_state1=as.numeric(Date) +
-                           rnorm(length(Date), 1e4, 1e3),
-                       X_state2=seq(1, length(Date))/1e2 +
-                           rnorm(length(Date), 0, 1),
-                       id="serie 1")
-data_1$X_state2[round(runif(500, 1, nrow(data_1)))] = NA
+# Do a direct extraction
+res = CARD_extraction(data, CARD_name=c("QA", "QMNA"), verbose=TRUE)
+res
 
-# Second time serie
-data_2 = dplyr::tibble(time=Date,
-                       X_state1=as.numeric(Date) +
-                           rnorm(length(Date), 1e4, 1e3),
-                       X_state2=seq(1, length(Date))/1e2 +
-                           rnorm(length(Date), 0, 1),
-                       id="serie 2")
-data_2$X_state2[round(runif(1000, 1, nrow(data_2)))] = NA
-
-# Final data for testing
-data = dplyr::bind_rows(data_1, data_2)
-
-## Extraction with CARD
-# Copy and paste CARD from __all__ to the CARD_dir directory (or
-# use CARD_tmp with CARD_management function) and then process the
-# extraction
-\dontrun{
-CARD_extraction(data,
-                CARD_path="path/to/CARD",
-                CARD_tmp="path/to/temporary",
-                CARD_dir="WIP",
-                period_default=c("1950-01-01", "2020-12-31"),
-                simplify=FALSE,
-                cancel_lim=TRUE,
-                verbose=TRUE)
-}
-
+# Or find the closest CARD variable that interests you
+CARD_management(CARD_name=c("VCN10-5"),
+                CARD_path="CARD-WIP",
+                overwrite=TRUE)
+# Personalise it in the created  `"CARD-WIP"` directory (for example change the return period)
+# And perform a custom extraction
+res = CARD_extraction(data, CARD_name=NULL,
+                      CARD_path="CARD-WIP",
+                      verbose=TRUE)
+res$dataEX
 }
 \seealso{
 \enumerate{
-\item \code{\link[=CARD_download]{CARD_download()}} for downloading last version of CARD parameterization files.
 \item \code{\link[=CARD_list_all]{CARD_list_all()}} list all available CARD.
 \item \code{\link[=CARD_management]{CARD_management()}} for managing CARD parameterization files.
 }
@@ -148,9 +129,5 @@ CARD_extraction(data,
 \enumerate{
 \item \code{\link[=CARD_extraction]{CARD_extraction()}} for extracting variables using CARD.
 }
-}
-\enumerate{
-\item \code{\link[=process_extraction]{process_extraction()}} for extracting variables.
-\item \code{\link[=process_trend]{process_trend()}} for performing trend analysis on extracted variables.
 }
 }
