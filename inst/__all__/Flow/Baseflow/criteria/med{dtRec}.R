@@ -49,13 +49,7 @@ CARD$P.palette = NULL
 
 ## PROCESS ___________________________________________________________
 ### P1 _______________________________________________________________
-CARD$P1.funct = list("dtRec"=compute_dtRec)
+CARD$P1.funct = list("dtRec"=compute_median_dtRec)
 CARD$P1.funct_args = list(Q="Q")
 CARD$P1.time_step = "none"
 CARD$P1.NAyear_lim = 10
-
-### P2 _______________________________________________________________
-CARD$P2.funct = list("med{dtRec}"=median)
-CARD$P2.funct_args = list("dtRec", na.rm=TRUE)
-CARD$P2.time_step = "none"
-

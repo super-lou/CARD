@@ -151,9 +151,18 @@ compute_dtRec = function (Q) {
 }
 
 
+#' @title compute_median_dtRec 
+#' @description description
+#' @param Q discharge
+#' @seealso ref
+#' @export
+#' @md
+compute_median_dtRec = function (Q, na.rm=TRUE) {
+    dtRec = compute_dtRec(Q)
+    meddtRec = median(dtRec, na.rm=na.rm)
+    return (meddtRec)
+}
+
+
 # compute_dtRec_yday = function (Qyday) {
-    
-    
-    
-    
 # }
