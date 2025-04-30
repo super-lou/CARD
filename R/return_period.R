@@ -1,8 +1,8 @@
-# Copyright 2022 David Dorchies*1,
-#           2022-2025 Louis Héraut (louis.heraut@inrae.fr)*2
+# Copyright 2022      David, Dorchies <david.dorchies@inrae.fr>*1,
+#           2022-2025 Louis, Héraut <louis.heraut@inrae.fr>*2
 #
-# *1   UMR G-EAU, France
-# *2   INRAE, France
+# *1 INRAE, UMR G-Eau, Montpellier, France
+# *2 INRAE, UR RiverLy, Villeurbanne, France
 #
 # This file is part of CARD R package.
 #

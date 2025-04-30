@@ -2,9 +2,9 @@
 #  / __| __ _  _ _  __| |
 # | (__ / _` || '_|/ _` |
 #  \___|\__,_||_|  \__,_|
-# Copyright 2022-2025 Louis Héraut (louis.heraut@inrae.fr)*1
+# Copyright 2022-2025 Louis, Héraut <louis.heraut@inrae.fr>*1
 #
-# *1   INRAE, France
+# *1 INRAE, UR RiverLy, Villeurbanne, France
 #
 # This file is part of CARD R package.
 #

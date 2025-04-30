@@ -1,8 +1,8 @@
-# Copyright 2020 Ivan Horner (ivan.horner@irstea.fr)*1,
-#           2022-2025 Louis Héraut (louis.heraut@inrae.fr)*2
+# Copyright 2020      Ivan Horner (ivan.horner@irstea.fr)*1,
+#           2022-2025 Louis, Héraut <louis.heraut@inrae.fr>*2
 #
-# *1   IRSTEA, France
-# *2   INRAE, France
+# *1 IRSTEA, France
+# *2 INRAE, UR RiverLy, Villeurbanne, France
 #
 # This file is part of CARD R package.
 #
