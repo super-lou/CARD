@@ -5,20 +5,20 @@
 #
 # *1   INRAE, France
 #
-# This file is part of EXstat.CARD R package.
+# This file is part of CARD R package.
 #
-# EXstat.CARD R package is free software: you can redistribute it
+# CARD R package is free software: you can redistribute it
 # and/or modify it under the terms of the GNU General Public License
 # as published by the Free Software Foundation, either version 3 of
 # the License, or (at your option) any later version.
 #
-# EXstat.CARD R package is distributed in the hope that it will be
+# CARD R package is distributed in the hope that it will be
 # useful, but WITHOUT ANY WARRANTY; without even the implied warranty
 # of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 # See the GNU General Public License for more details.
 #
 # You should have received a copy of the GNU General Public License
-# along with EXstat.CARD R package.
+# along with CARD R package.
 # If not, see <https://www.gnu.org/licenses/>.
 
 
@@ -36,7 +36,7 @@
 #' @export
 #' @md
 CARD_list_all = function () {
-    inst_dir = system.file(package="EXstat.CARD")
+    inst_dir = system.file(package="CARD")
     CARD_path_all = file.path(inst_dir, "extdata", "metaEX_all.csv")
     metaEX = dplyr::tibble(read.csv(CARD_path_all))
     return (metaEX)
@@ -44,7 +44,7 @@ CARD_list_all = function () {
 
 
 #' @title CARD_management
-#' @description Manage your different sets of variables to extract. For CARD advanced users, this function manages the CARD directory structure by performing automatic file operations to get the CARD parameterization files to your wanted directory in order to custom them or create yours to use them in a second step with [CARD_extraction()]. If you want to submit request for new CARD see the [GitHub repo](https://github.com/super-lou/EXstat.CARD)<https://github.com/super-lou/EXstat.CARD>.
+#' @description Manage your different sets of variables to extract. For CARD advanced users, this function manages the CARD directory structure by performing automatic file operations to get the CARD parameterization files to your wanted directory in order to custom them or create yours to use them in a second step with [CARD_extraction()]. If you want to submit request for new CARD see the [GitHub repo](https://github.com/super-lou/CARD)<https://github.com/super-lou/CARD>.
 #' @param CARD_name A [vector][base::c()] of [character][base::character] strings to specify which variables you want to extract. See [CARD_list_all()] to get the variable names. By default, `c("QA", "QJXA")`. If `NULL`, all the variable will be extracted, so avoid this value except with `extract_only_metadata = TRUE`.
 #' @param CARD_path An optional [character][base::character] string for the path where to search for custom CARDs that have been created by the [CARD_management] function. By default, `NULL` in order to get the default CARD variable parameters.
 #' @param add_id [logical][base::logical]. If `TRUE`, numerical IDs will be added to the start of the copied and pasted CARD names to maintain the input order. Default is `TRUE`.
@@ -66,7 +66,7 @@ CARD_management = function (CARD_name=c("QA", "QJXA"),
                             overwrite=FALSE,
                             verbose=FALSE) {
 
-    CARD_path_system = system.file(package="EXstat.CARD")
+    CARD_path_system = system.file(package="CARD")
     
     if (dir.exists(CARD_path)) {
         if (overwrite) {
