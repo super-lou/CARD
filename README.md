@@ -227,7 +227,7 @@ For a deeper understanding of the CARD formatting, refer to the [CARD documentat
 
 ## What is a CARD ?
 
-### [inst/\_\_all\_\_](https://github.com/louis-heraut/CARD/blob/main/inst/__all__)
+### [inst/\_\_all\_\_](https://github.com/louis-heraut/CARD/blob/main/inst/__all__) directory
 In this directory, you can find all the different CARDs available, organized by topic and type of aggregation: serie or criteria. In the [EXstat](https://github.com/louis-heraut/EXstat) terminology, a criterion is an aggregated variable that does not retain any temporal extension, unlike a serie variable, which maintains a temporal extension even after the aggregation process.
 
 All CARDs have the same structure, as exemplified by the annual average daily flow [`QA`](https://github.com/louis-heraut/CARD/blob/main/inst/__all__/Flow/Mean_Flows/serie/QA.R) in [`__all__/Flow/Mean_Flows/serie`](https://github.com/louis-heraut/CARD/tree/main/inst/__all__/Flow/Mean_Flows/serie):
@@ -314,7 +314,7 @@ CARD$P2.time_step = "none"
 
 And that will now be the modulus of the flow, which is the average of the annual average daily flow, labeled as `meanQA`.
 
-### [R/](https://github.com/louis-heraut/CARD/tree/main/R)
+### [R/](https://github.com/louis-heraut/CARD/tree/main/R) directory
 In this directory, you can find all the different functions needed for the aggregation process in CARDs. They are ordered by type of application, but it may take some time to search and understand what is available or not. This is where you can modify or add your own function.
 
 This directory also contains the core functions for [CARD management](https://github.com/louis-heraut/CARD/blob/main/R/CARD_management.R) and [CARD extraction](https://github.com/louis-heraut/CARD/blob/main/R/CARD_process.R), which allow users to interact with the CARD formatting in connection with the [EXstat](https://github.com/louis-heraut/EXstat) package.
