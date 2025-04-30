@@ -31,10 +31,10 @@
 #' @seealso ref
 #' @export
 #' @md
-get_MKalpha = function (X, level=0.1) {
-    alpha = EXstat::GeneralMannKendall_WRAP(X, level=level,
-                                            time_dependency_option='AR1',
-                                            DoDetrending=TRUE)$a
+get_MKalpha = function (X, level=0.1, time_dependency_option="AR1") {
+    alpha = EXstat::GeneralMannKendall(X, level=level,
+                                       time_dependency_option=time_dependency_option,
+                                       do_detrending=TRUE)$a
     return (alpha)
 }
 
@@ -45,10 +45,10 @@ get_MKalpha = function (X, level=0.1) {
 #' @seealso ref
 #' @export
 #' @md
-get_MKH = function (X, level=0.1) {
-    H = EXstat::GeneralMannKendall_WRAP(X, level=level,
-                                        time_dependency_option='AR1',
-                                        DoDetrending=TRUE)$H
+get_MKH = function (X, level=0.1, time_dependency_option="AR1") {
+    H = EXstat::GeneralMannKendall(X, level=level,
+                                   time_dependency_option=time_dependency_option,
+                                   do_detrending=TRUE)$H
     return (H)    
 }
 
@@ -59,10 +59,10 @@ get_MKH = function (X, level=0.1) {
 #' @seealso ref
 #' @export
 #' @md
-get_MKp = function (X, level=0.1) {
-    p = EXstat::GeneralMannKendall_WRAP(X, level=level,
-                                        time_dependency_option='AR1',
-                                        DoDetrending=TRUE)$p
+get_MKp = function (X, level=0.1, time_dependency_option="AR1") {
+    p = EXstat::GeneralMannKendall(X, level=level,
+                                   time_dependency_option=time_dependency_option,
+                                   do_detrending=TRUE)$p
     return (p)    
 }
 
