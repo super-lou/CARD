@@ -7,12 +7,15 @@
 CARD_list_all()
 }
 \description{
-List all the CARD parametrization files in a \link[tibble:tibble]{tibble}.
+List all the CARD parametrization files in a \link[tibble:tibble]{tibble} to get all the metadata of the aggregation variables available.
+}
+\examples{
+# Get all the available variables
+metaEX_all = CARD_list_all()
+# And why note filter it by topic
+dplyr::filter(metaEX_all, grepl("Low Flow", topic_en))
 }
 \seealso{
-\enumerate{
-\item \code{\link[=CARD_download]{CARD_download()}} for downloading last version of CARD parameterization files.
-}
 \itemize{
 \item 
 \enumerate{
@@ -22,7 +25,5 @@ List all the CARD parametrization files in a \link[tibble:tibble]{tibble}.
 \enumerate{
 \item \code{\link[=CARD_management]{CARD_management()}} for managing CARD parameterization files.
 \item \code{\link[=CARD_extraction]{CARD_extraction()}} for extracting variables using CARD.
-\item \code{\link[=process_extraction]{process_extraction()}} for extracting variables.
-\item \code{\link[=process_trend]{process_trend()}} for performing trend analysis on extracted variables.
 }
 }

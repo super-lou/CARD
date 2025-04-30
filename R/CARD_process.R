@@ -165,7 +165,7 @@ split_path = function (path) {
 #' @examples
 #' library(EXstat.CARD)
 #'
-#' Get all the available variables
+#' # Get all the available variables
 #' metaEX_all = CARD_list_all()
 #' metaEX_all
 #'
