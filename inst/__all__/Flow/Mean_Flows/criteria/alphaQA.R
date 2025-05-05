@@ -28,9 +28,9 @@
 CARD$P.variable_en = c("alphaQA", "HYPalphaQA")
 CARD$P.unit_en = "m^{3}.s^{-1}.year^{-1}"
 CARD$P.name_en = "Slope of Sen and Mann-Kendall Test result calculated on the series of annual mean daily flows"
-CARD$P.description_en = "1. annual aggregation [09-01, 08-31] - mean
+CARD$P.description_en = ""
+CARD$P.method_en = "1. annual aggregation [09-01, 08-31] - mean
 2. no temporal aggregation - Sen's slope of the series where the Mann-Kendall test is significant at a 10 % risk level"
-CARD$P.method_en = ""
 CARD$P.sampling_period_en = "09-01, 08-31"
 CARD$P.topic_en = "Flow, Mean Flows, Intensity"
 
@@ -38,9 +38,9 @@ CARD$P.topic_en = "Flow, Mean Flows, Intensity"
 CARD$P.variable_fr = c("alphaQA", "HYPalphaQA")
 CARD$P.unit_fr = "m^{3}.s^{-1}.an^{-1}"
 CARD$P.name_fr = "Pente de Sen et résultat du test de Mann-Kendall calculés sur la série des moyennes annuelles des débits journaliers"
-CARD$P.description_fr = "1. agrégation annuelle [01-09, 31-08] - moyenne
+CARD$P.description_fr = ""
+CARD$P.method_fr = "1. agrégation annuelle [01-09, 31-08] - moyenne
 2. aucune agrégation temporelle - pente de Sen de la série dont le test de Mann-Kendall est significatif à un risque de 10 %"
-CARD$P.method_fr = ""
 CARD$P.sampling_period_fr = "01-09, 31-08"
 CARD$P.topic_fr = "Débit, Moyennes Eaux, Intensité"
 
