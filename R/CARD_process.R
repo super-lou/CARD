@@ -342,6 +342,7 @@ CARD_extraction = function (data,
                                   sampling_period_fr=sampling_period_fr,
                                   topic_fr=topic_fr,
                                   ### Global ___
+                                  is_experimental=is_experimental,
                                   input_vars=input_vars,
                                   source=source,
                                   preferred_sampling_period=preferred_sampling_period,
@@ -358,6 +359,9 @@ CARD_extraction = function (data,
     }
     if ("source" %in% names(metaEX)) {
         metaEX = dplyr::relocate(metaEX, source, .after=input_vars)
+    }
+    if ("is_experimental" %in% names(metaEX)) {
+        metaEX = dplyr::relocate(metaEX, is_experimental, .before=input_vars)
     }
 
     if (extract_only_metadata) {

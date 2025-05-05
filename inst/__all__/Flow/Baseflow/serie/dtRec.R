@@ -41,6 +41,7 @@ CARD$P.method_fr = ""
 CARD$P.topic_fr = "Débit, Débit de Base, Durée"
 
 ### Global ___________________________________________________________
+CARD$P.is_experimental = TRUE
 CARD$P.input_vars = "Q"
 CARD$P.is_date = FALSE
 CARD$P.to_normalise = TRUE

@@ -20,7 +20,7 @@ github_check:
 
 
 get_metaEX:
-	Rscript get_metaEX_all.R
+	Rscript dev/get_metaEX_all.R
 
 
 ## 1. ________________________________________________________________
