@@ -17,13 +17,3 @@ parameter
 \description{
 Computes Gumbel's laws parameters
 }
-\examples{
-# load data
-data(L0123001, package="airGR")
-# define vector of flows, time step is the day
-flows = BasinObs$Qls
-# define vector of dates
-dates= BasinObs$DatesR
-QJXA = calcQJXA(x=dates, flows=flows)
-gumbel = getGumbelParams(QJXA)
-}
