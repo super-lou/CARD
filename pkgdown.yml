@@ -4,7 +4,7 @@ pkgdown_sha: ~
 articles:
   V01-climatic_indicators: V01-climatic_indicators.html
   V02-hydrological_indicators: V02-hydrological_indicators.html
-last_built: 2025-05-05T09:52Z
+last_built: 2025-05-05T12:37Z
 urls:
   reference: https://louis-heraut.github.io/CARD/reference
   article: https://louis-heraut.github.io/CARD/articles
