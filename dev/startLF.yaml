@@ -1,0 +1,121 @@
+#   ___                _ 
+#  / __| __ _  _ _  __| |
+# | (__ / _` || '_|/ _` |
+#  \___|\__,_||_|  \__,_|
+# Copyright 2022-2025 Louis, Héraut <louis.heraut@inrae.fr>*1
+#           2025      David, Dorchies <david.dorchies@inrae.fr>*2
+#
+# *1 INRAE, UR RiverLy, Villeurbanne, France
+# *2 INRAE, UMR G-Eau, Montpellier, France
+#
+# This file is part of CARD R package.
+#
+# CARD R package is free software: you can redistribute it
+# and/or modify it under the terms of the GNU General Public License
+# as published by the Free Software Foundation, either version 3 of
+# the License, or (at your option) any later version.
+#
+# CARD R package is distributed in the hope that it will be
+# useful, but WITHOUT ANY WARRANTY; without even the implied warranty
+# of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+# See the GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with CARD R package.
+# If not, see <https://www.gnu.org/licenses/>.
+
+
+INFO:
+  english:
+    variable: startLF
+    unit: yearday
+    name: Start of low flows
+    description: >
+      Date of the first 10-day mean flow value below the threshold set at the maximum of VCN10
+    method: |
+      1. no temporal aggregation - 10-day centered moving average
+      2. annual aggregation [Month of maximum monthly flows] - minimum (series of VCN10)
+      3. no temporal aggregation - the maximum of the previous series is taken as the threshold
+      4. annual aggregation [Month of maximum monthly flows] - date of the first day of the longest period below the previous threshold
+    sampling_period: Month of maximum monthly flows
+    topic: Flow, Low Flows, Seasonality
+
+  french:
+    variable: debutBE
+    unit: jour de l'année
+    name: Début des basses eaux
+    description: >
+      Date de la première valeur de débits moyens sur 10 jours sous le seuil fixé au maximum des VCN10
+    method: |
+      1. aucune agrégation temporelle - moyenne mobile centrée sur 10 jours
+      2. agrégation annuelle [Mois du maximum des débits mensuels] - minimum (série des VCN10)
+      3. aucune agrégation temporelle - le maximum de la précédente série est pris comme seuil
+      4. agrégation annuelle [Mois du maximum des débits mensuels] - date du premier jour de la plus longue période sous le précédent seuil
+    sampling_period: Mois du maximum des débits mensuels
+    topic:
+      - "Débit"
+      - Basses Eaux"
+      - Saisonnalité
+
+  Global:
+    input_vars: Q
+    preferred_sampling_period: 01-01
+    is_date: true
+    to_normalise: false
+    palette:
+      - "#60265e"
+      - "#893687"
+      - "#c05fbe"
+      - "#dba3da"
+      - "#edd1ec"
+      - "#f6ddd3"
+      - "#edbaa7"
+      - "#e08765"
+      - "#CD5629"
+      - "#8f3c1d"
+
+PROCESS:
+  P1:
+    funct: VC10
+    funct_args:
+      - "Q"
+      - k: 10
+    time_step: none
+    keep: all
+
+  P2:
+    funct: VCN10
+    funct_args:
+      - "VC10"
+      - na.rm: true
+    time_step: year
+    sampling_period:
+      - max
+      - ["Q", na.rm: true]
+    NApct_lim: 3
+    NAyear_lim: 10
+    keep: all
+
+  P3:
+    funct: upLim
+    funct_args:
+      - "VCN10"
+      - na.rm: true
+    time_step: none
+    keep: all
+
+  P4:
+    funct: startLF
+    funct_args:
+      - "VC10"
+      - lim: upLim
+      - where: "<="
+      - what: first
+      - select: longest
+    time_step: year
+    sampling_period:
+      - max
+      - ["Q", na.rm: true]
+    is_date: true
+    NApct_lim: 3
+
