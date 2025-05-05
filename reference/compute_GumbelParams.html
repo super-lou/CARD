@@ -60,23 +60,6 @@ daily flow per year)</p></dd>
 parameter</p>
     </div>
 
-    <div class="section level2">
-    <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># load data</span></span></span>
-<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">L0123001</span>, package<span class="op">=</span><span class="st">"airGR"</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in find.package(package, lib.loc, verbose = verbose):</span> there is no package called ‘airGR’</span>
-<span class="r-in"><span><span class="co"># define vector of flows, time step is the day</span></span></span>
-<span class="r-in"><span><span class="va">flows</span> <span class="op">=</span> <span class="va">BasinObs</span><span class="op">$</span><span class="va">Qls</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error:</span> object 'BasinObs' not found</span>
-<span class="r-in"><span><span class="co"># define vector of dates</span></span></span>
-<span class="r-in"><span><span class="va">dates</span><span class="op">=</span> <span class="va">BasinObs</span><span class="op">$</span><span class="va">DatesR</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error:</span> object 'BasinObs' not found</span>
-<span class="r-in"><span><span class="va">QJXA</span> <span class="op">=</span> <span class="fu">calcQJXA</span><span class="op">(</span>x<span class="op">=</span><span class="va">dates</span>, flows<span class="op">=</span><span class="va">flows</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in calcQJXA(x = dates, flows = flows):</span> could not find function "calcQJXA"</span>
-<span class="r-in"><span><span class="va">gumbel</span> <span class="op">=</span> <span class="fu">getGumbelParams</span><span class="op">(</span><span class="va">QJXA</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in getGumbelParams(QJXA):</span> could not find function "getGumbelParams"</span>
-</code></pre></div>
-    </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside></div>
 
