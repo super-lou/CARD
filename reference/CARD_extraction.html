@@ -167,7 +167,7 @@ Default <code>NULL</code> to conserve the value specified in the CARDs used.</p>
 <span class="r-in"><span><span class="co"># Get all the available variables</span></span></span>
 <span class="r-in"><span><span class="va">metaEX_all</span> <span class="op">=</span> <span class="fu"><a href="CARD_list_all.html">CARD_list_all</a></span><span class="op">(</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="va">metaEX_all</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 565 × 22</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 563 × 23</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    CARD_name          variable_en       unit_en name_en description_en method_en</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>              <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>             <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>          <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> ETPA               ETPA              mm      Cumula… <span style="color: #949494;">""</span>             <span style="color: #949494;">""</span>       </span>
@@ -180,12 +180,13 @@ Default <code>NULL</code> to conserve the value specified in the CARDs used.</p>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> delta{BFI}_Wal_H2  delta{BFI}_Wal_H2 withou… Change… <span style="color: #949494;">"</span>Ratio betwee… <span style="color: #949494;">"</span>1. no t…</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> delta{BFI}_Wal_H3  delta{BFI}_Wal_H3 withou… Change… <span style="color: #949494;">"</span>Ratio betwee… <span style="color: #949494;">"</span>1. no t…</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> delta{centerBF}_H1 delta{centerBF}_… day     Averag… <span style="color: #949494;">"</span>Date when 50… <span style="color: #949494;">"</span>1. annu…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 555 more rows</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 16 more variables: sampling_period_en &lt;chr&gt;, topic_en &lt;chr&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 553 more rows</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 17 more variables: sampling_period_en &lt;chr&gt;, topic_en &lt;chr&gt;,</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   variable_fr &lt;chr&gt;, unit_fr &lt;chr&gt;, name_fr &lt;chr&gt;, description_fr &lt;chr&gt;,</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   method_fr &lt;chr&gt;, sampling_period_fr &lt;chr&gt;, topic_fr &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   input_vars &lt;chr&gt;, source &lt;chr&gt;, preferred_hydrological_month &lt;int&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   is_date &lt;lgl&gt;, to_normalise &lt;lgl&gt;, palette &lt;chr&gt;, script_path &lt;chr&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   is_experimental &lt;lgl&gt;, input_vars &lt;chr&gt;, source &lt;chr&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   preferred_sampling_period &lt;chr&gt;, is_date &lt;lgl&gt;, to_normalise &lt;lgl&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   palette &lt;chr&gt;, script_path &lt;chr&gt;</span></span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># Create mock data</span></span></span>
 <span class="r-in"><span><span class="va">Start</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/as.Date.html" class="external-link">as.Date</a></span><span class="op">(</span><span class="st">"2001-03-02"</span><span class="op">)</span></span></span>
@@ -348,16 +349,16 @@ Default <code>NULL</code> to conserve the value specified in the CARDs used.</p>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 15 more rows</span></span>
 <span class="r-in"><span><span class="va">res</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $metaEX</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 2 × 20</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 2 × 21</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   variable_en unit_en      name_en   description_en method_en sampling_period_en</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>          <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>             </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span> QMNA        m^{3}.s^{-1} Annual m… <span style="color: #949494;">""</span>             <span style="color: #949494;">"</span>1. mont… Month of maximum …</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">2</span> QA          m^{3}.s^{-1} Annual m… <span style="color: #949494;">""</span>             <span style="color: #949494;">"</span>1. annu… 09-01, 08-31      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 14 more variables: topic_en &lt;chr&gt;, variable_fr &lt;chr&gt;, unit_fr &lt;chr&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 15 more variables: topic_en &lt;chr&gt;, variable_fr &lt;chr&gt;, unit_fr &lt;chr&gt;,</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   name_fr &lt;chr&gt;, description_fr &lt;chr&gt;, method_fr &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   sampling_period_fr &lt;chr&gt;, topic_fr &lt;chr&gt;, input_vars &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   preferred_sampling_period &lt;chr&gt;, is_date &lt;lgl&gt;, to_normalise &lt;lgl&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   palette &lt;chr&gt;, script_path &lt;chr&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   sampling_period_fr &lt;chr&gt;, topic_fr &lt;chr&gt;, is_experimental &lt;lgl&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   input_vars &lt;chr&gt;, preferred_sampling_period &lt;chr&gt;, is_date &lt;lgl&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   to_normalise &lt;lgl&gt;, palette &lt;chr&gt;, script_path &lt;chr&gt;</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $dataEX</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $dataEX$QMNA</span>

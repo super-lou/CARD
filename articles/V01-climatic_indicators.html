@@ -312,29 +312,30 @@ list of available indicators.</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">metaEX_all</span> <span class="op">=</span> <span class="fu"><a href="../reference/CARD_list_all.html">CARD_list_all</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/str.html" class="external-link">str</a></span><span class="op">(</span><span class="va">metaEX_all</span><span class="op">)</span></span>
-<span><span class="co">#&gt; tibble [565 × 22] (S3: tbl_df/tbl/data.frame)</span></span>
-<span><span class="co">#&gt;  $ CARD_name                   : chr [1:565] "ETPA" "BFI_Wal" "BFM" "delta{BFI}_LH_H1" ...</span></span>
-<span><span class="co">#&gt;  $ variable_en                 : chr [1:565] "ETPA" "BFI_Wal" "BFM" "delta{BFI}_LH_H1" ...</span></span>
-<span><span class="co">#&gt;  $ unit_en                     : chr [1:565] "mm" "without unit" "without unit" "without unit" ...</span></span>
-<span><span class="co">#&gt;  $ name_en                     : chr [1:565] "Cumulative annual evapotranspiration" "Baseflow index" "Baseflow magnitude" "Change of baseflow index between the near horizon and historical period (Lyne and Hollick)" ...</span></span>
-<span><span class="co">#&gt;  $ description_en              : chr [1:565] "" "Ratio between mean inter-annual base flow and mean inter-annual flow" "" "Ratio between mean inter-annual base flow and mean inter-annual flow" ...</span></span>
-<span><span class="co">#&gt;  $ method_en                   : chr [1:565] "" "1. no temporal aggregation - extraction of the base flow (Wallingford)\n2. no temporal aggregation - calculatio"| __truncated__ "1. no temporal aggregation - extraction of the base flow (Wallingford)\n2. aggregation by day of the year - ave"| __truncated__ "1. no temporal aggregation - extraction of the base flow (Lyne and Hollick)\n2. no temporal aggregation - calcu"| __truncated__ ...</span></span>
-<span><span class="co">#&gt;  $ sampling_period_en          : chr [1:565] "09-01, 08-31" NA NA NA ...</span></span>
-<span><span class="co">#&gt;  $ topic_en                    : chr [1:565] "Evapotranspiration, Average, Intensity" "Flow, Base Flow, Intensity" "Flow, Base Flow, Intensity" "Flow, Base Flow, Intensity" ...</span></span>
-<span><span class="co">#&gt;  $ variable_fr                 : chr [1:565] "ETPA" "BFI_Wal" "BFM" "delta{BFI}_LH_H1" ...</span></span>
-<span><span class="co">#&gt;  $ unit_fr                     : chr [1:565] "mm" "sans unité" "sans unité" "sans unité" ...</span></span>
-<span><span class="co">#&gt;  $ name_fr                     : chr [1:565] "Cumul des évapotranspirations annuelles" "Indice de débit de base" "Magnitude du débit de base" "Changement de l'indice de débit de base entre l'horizon proche et la période historique (Lyne et Hollick)" ...</span></span>
-<span><span class="co">#&gt;  $ description_fr              : chr [1:565] "" "Rapport entre débit de base moyen inter-annuel et débit moyen inter-annuel" "" "Rapport entre débit de base moyen inter-annuel et débit moyen inter-annuel" ...</span></span>
-<span><span class="co">#&gt;  $ method_fr                   : chr [1:565] "" "1. aucune agrégation temporelle - extraction du débit de base (Wallingford)\n2. aucune agrégation temporelle - calcul du BFI" "1. aucune agrégation temporelle - extraction du débit de base (Wallingford)\n2. agrégation par jour de l’année "| __truncated__ "1. aucune agrégation temporelle - extraction du débit de base (Lyne et Hollick)\n2. aucune agrégation temporell"| __truncated__ ...</span></span>
-<span><span class="co">#&gt;  $ sampling_period_fr          : chr [1:565] "01-09, 31-08" NA NA NA ...</span></span>
-<span><span class="co">#&gt;  $ topic_fr                    : chr [1:565] "Évapotranspiration, Moyenne, Intensité" "Débit, Débit de Base, Intensité" "Débit, Débit de Base, Intensité" "Débit, Débit de Base, Intensité" ...</span></span>
-<span><span class="co">#&gt;  $ input_vars                  : chr [1:565] "ETP" "Q" "Q" "Q" ...</span></span>
-<span><span class="co">#&gt;  $ source                      : chr [1:565] NA "TALLAKSEN, L. et H. VAN LANEN, éd. (2004). Hydrological drought. Processes and estimation methods for streamflo"| __truncated__ "TALLAKSEN, L. et H. VAN LANEN, éd. (2004). Hydrological drought. Processes and estimation methods for streamflo"| __truncated__ NA ...</span></span>
-<span><span class="co">#&gt;  $ preferred_hydrological_month: int [1:565] NA NA NA NA NA NA NA NA NA 9 ...</span></span>
-<span><span class="co">#&gt;  $ is_date                     : logi [1:565] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
-<span><span class="co">#&gt;  $ to_normalise                : logi [1:565] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
-<span><span class="co">#&gt;  $ palette                     : chr [1:565] "#452C1A #7F4A23 #B3762A #D4B86A #EFE0B0 #BCE6DB #7ACEB9 #449C93 #2A6863 #193830" NA NA NA ...</span></span>
-<span><span class="co">#&gt;  $ script_path                 : chr [1:565] "Evapotranspiration/ETPA.R" "Flow/Baseflow/criteria/BFI_Wal.R" "Flow/Baseflow/criteria/BFM.R" "Flow/Baseflow/criteria/delta{BFI}_LH_H.R" ...</span></span></code></pre></div>
+<span><span class="co">#&gt; tibble [563 × 23] (S3: tbl_df/tbl/data.frame)</span></span>
+<span><span class="co">#&gt;  $ CARD_name                : chr [1:563] "ETPA" "BFI_Wal" "BFM" "delta{BFI}_LH_H1" ...</span></span>
+<span><span class="co">#&gt;  $ variable_en              : chr [1:563] "ETPA" "BFI_Wal" "BFM" "delta{BFI}_LH_H1" ...</span></span>
+<span><span class="co">#&gt;  $ unit_en                  : chr [1:563] "mm" "without unit" "without unit" "without unit" ...</span></span>
+<span><span class="co">#&gt;  $ name_en                  : chr [1:563] "Cumulative annual evapotranspiration" "Baseflow index" "Baseflow magnitude" "Change of baseflow index between the near horizon and historical period (Lyne and Hollick)" ...</span></span>
+<span><span class="co">#&gt;  $ description_en           : chr [1:563] "" "Ratio between mean inter-annual base flow and mean inter-annual flow" "" "Ratio between mean inter-annual base flow and mean inter-annual flow" ...</span></span>
+<span><span class="co">#&gt;  $ method_en                : chr [1:563] "" "1. no temporal aggregation - extraction of the base flow (Wallingford)\n2. no temporal aggregation - calculatio"| __truncated__ "1. no temporal aggregation - extraction of the base flow (Wallingford)\n2. aggregation by day of the year - ave"| __truncated__ "1. no temporal aggregation - extraction of the base flow (Lyne and Hollick)\n2. no temporal aggregation - calcu"| __truncated__ ...</span></span>
+<span><span class="co">#&gt;  $ sampling_period_en       : chr [1:563] "09-01, 08-31" NA NA NA ...</span></span>
+<span><span class="co">#&gt;  $ topic_en                 : chr [1:563] "Evapotranspiration, Average, Intensity" "Flow, Base Flow, Intensity" "Flow, Base Flow, Intensity" "Flow, Base Flow, Intensity" ...</span></span>
+<span><span class="co">#&gt;  $ variable_fr              : chr [1:563] "ETPA" "BFI_Wal" "BFM" "delta{BFI}_LH_H1" ...</span></span>
+<span><span class="co">#&gt;  $ unit_fr                  : chr [1:563] "mm" "sans unité" "sans unité" "sans unité" ...</span></span>
+<span><span class="co">#&gt;  $ name_fr                  : chr [1:563] "Cumul des évapotranspirations annuelles" "Indice de débit de base" "Magnitude du débit de base" "Changement de l'indice de débit de base entre l'horizon proche et la période historique (Lyne et Hollick)" ...</span></span>
+<span><span class="co">#&gt;  $ description_fr           : chr [1:563] "" "Rapport entre débit de base moyen inter-annuel et débit moyen inter-annuel" "" "Rapport entre débit de base moyen inter-annuel et débit moyen inter-annuel" ...</span></span>
+<span><span class="co">#&gt;  $ method_fr                : chr [1:563] "" "1. aucune agrégation temporelle - extraction du débit de base (Wallingford)\n2. aucune agrégation temporelle - calcul du BFI" "1. aucune agrégation temporelle - extraction du débit de base (Wallingford)\n2. agrégation par jour de l’année "| __truncated__ "1. aucune agrégation temporelle - extraction du débit de base (Lyne et Hollick)\n2. aucune agrégation temporell"| __truncated__ ...</span></span>
+<span><span class="co">#&gt;  $ sampling_period_fr       : chr [1:563] "01-09, 31-08" NA NA NA ...</span></span>
+<span><span class="co">#&gt;  $ topic_fr                 : chr [1:563] "Évapotranspiration, Moyenne, Intensité" "Débit, Débit de Base, Intensité" "Débit, Débit de Base, Intensité" "Débit, Débit de Base, Intensité" ...</span></span>
+<span><span class="co">#&gt;  $ is_experimental          : logi [1:563] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
+<span><span class="co">#&gt;  $ input_vars               : chr [1:563] "ETP" "Q" "Q" "Q" ...</span></span>
+<span><span class="co">#&gt;  $ source                   : chr [1:563] NA "TALLAKSEN, L. et H. VAN LANEN, éd. (2004). Hydrological drought. Processes and estimation methods for streamflo"| __truncated__ "TALLAKSEN, L. et H. VAN LANEN, éd. (2004). Hydrological drought. Processes and estimation methods for streamflo"| __truncated__ NA ...</span></span>
+<span><span class="co">#&gt;  $ preferred_sampling_period: chr [1:563] NA NA NA NA ...</span></span>
+<span><span class="co">#&gt;  $ is_date                  : logi [1:563] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
+<span><span class="co">#&gt;  $ to_normalise             : logi [1:563] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
+<span><span class="co">#&gt;  $ palette                  : chr [1:563] "#452C1A #7F4A23 #B3762A #D4B86A #EFE0B0 #BCE6DB #7ACEB9 #449C93 #2A6863 #193830" NA NA NA ...</span></span>
+<span><span class="co">#&gt;  $ script_path              : chr [1:563] "Evapotranspiration/ETPA.R" "Flow/Baseflow/criteria/BFI_Wal.R" "Flow/Baseflow/criteria/BFM.R" "Flow/Baseflow/criteria/delta{BFI}_LH_H.R" ...</span></span></code></pre></div>
 <p>On which we can filter criteria on temperatures:</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">metaEX_temp</span> <span class="op">&lt;-</span> <span class="va">metaEX_all</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
@@ -464,7 +465,7 @@ October and November)</td>
 <span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/str.html" class="external-link">str</a></span><span class="op">(</span><span class="va">res_temp</span><span class="op">)</span></span>
 <span><span class="co">#&gt; List of 2</span></span>
-<span><span class="co">#&gt;  $ metaEX: tibble [2 × 19] (S3: tbl_df/tbl/data.frame)</span></span>
+<span><span class="co">#&gt;  $ metaEX: tibble [2 × 20] (S3: tbl_df/tbl/data.frame)</span></span>
 <span><span class="co">#&gt;   ..$ variable_en       : chr [1:2] "meanTA" "TA"</span></span>
 <span><span class="co">#&gt;   ..$ unit_en           : chr [1:2] "°C" "°C"</span></span>
 <span><span class="co">#&gt;   ..$ name_en           : chr [1:2] "Average of annual average temperatures" "Annual mean temperature"</span></span>
@@ -479,6 +480,7 @@ October and November)</td>
 <span><span class="co">#&gt;   ..$ method_fr         : chr [1:2] "1. agrégation annuelle [01-09, 31-08] - moyenne\n2. aucune agrégation temporelle - moyenne" ""</span></span>
 <span><span class="co">#&gt;   ..$ sampling_period_fr: chr [1:2] "01-09, 31-08" "01-09, 31-08"</span></span>
 <span><span class="co">#&gt;   ..$ topic_fr          : chr [1:2] "Température, Moyenne, Intensité" "Température, Moyenne, Intensité"</span></span>
+<span><span class="co">#&gt;   ..$ is_experimental   : logi [1:2] FALSE FALSE</span></span>
 <span><span class="co">#&gt;   ..$ input_vars        : chr [1:2] "Q" "T"</span></span>
 <span><span class="co">#&gt;   ..$ is_date           : logi [1:2] FALSE FALSE</span></span>
 <span><span class="co">#&gt;   ..$ to_normalise      : logi [1:2] FALSE FALSE</span></span>
@@ -530,7 +532,7 @@ flow.</p>
 <span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/str.html" class="external-link">str</a></span><span class="op">(</span><span class="va">res_evap</span><span class="op">)</span></span>
 <span><span class="co">#&gt; List of 2</span></span>
-<span><span class="co">#&gt;  $ metaEX: tibble [1 × 19] (S3: tbl_df/tbl/data.frame)</span></span>
+<span><span class="co">#&gt;  $ metaEX: tibble [1 × 20] (S3: tbl_df/tbl/data.frame)</span></span>
 <span><span class="co">#&gt;   ..$ variable_en       : chr "ETPA"</span></span>
 <span><span class="co">#&gt;   ..$ unit_en           : chr "mm"</span></span>
 <span><span class="co">#&gt;   ..$ name_en           : chr "Cumulative annual evapotranspiration"</span></span>
@@ -545,6 +547,7 @@ flow.</p>
 <span><span class="co">#&gt;   ..$ method_fr         : chr ""</span></span>
 <span><span class="co">#&gt;   ..$ sampling_period_fr: chr "01-09, 31-08"</span></span>
 <span><span class="co">#&gt;   ..$ topic_fr          : chr "Évapotranspiration, Moyenne, Intensité"</span></span>
+<span><span class="co">#&gt;   ..$ is_experimental   : logi FALSE</span></span>
 <span><span class="co">#&gt;   ..$ input_vars        : chr "ETP"</span></span>
 <span><span class="co">#&gt;   ..$ is_date           : logi FALSE</span></span>
 <span><span class="co">#&gt;   ..$ to_normalise      : logi FALSE</span></span>
@@ -1050,7 +1053,7 @@ precipitation</td>
 <span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/str.html" class="external-link">str</a></span><span class="op">(</span><span class="va">res_prec</span><span class="op">)</span></span>
 <span><span class="co">#&gt; List of 2</span></span>
-<span><span class="co">#&gt;  $ metaEX: tibble [7 × 19] (S3: tbl_df/tbl/data.frame)</span></span>
+<span><span class="co">#&gt;  $ metaEX: tibble [7 × 20] (S3: tbl_df/tbl/data.frame)</span></span>
 <span><span class="co">#&gt;   ..$ variable_en       : chr [1:7] "dtCDDA" "dtCWDA" "dtRA01mm" "dtRA20mm" ...</span></span>
 <span><span class="co">#&gt;   ..$ unit_en           : chr [1:7] "day" "day" "day" "day" ...</span></span>
 <span><span class="co">#&gt;   ..$ name_en           : chr [1:7] "Maximum number of consecutive dry days in the year" "Maximum number of consecutive rainy days in the year" "Number of rainy days in the year" "Number of heavy rain days in the year" ...</span></span>
@@ -1065,6 +1068,7 @@ precipitation</td>
 <span><span class="co">#&gt;   ..$ method_fr         : chr [1:7] "" "" "" "" ...</span></span>
 <span><span class="co">#&gt;   ..$ sampling_period_fr: chr [1:7] "01-09, 31-08" "01-09, 31-08" "01-09, 31-08" "01-09, 31-08" ...</span></span>
 <span><span class="co">#&gt;   ..$ topic_fr          : chr [1:7] "Précipitations, Période sèche, Durée" "Précipitations, Faibles, Durée" "Précipitations, Faible, Durée" "Précipitations, Forte, Durée" ...</span></span>
+<span><span class="co">#&gt;   ..$ is_experimental   : logi [1:7] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
 <span><span class="co">#&gt;   ..$ input_vars        : chr [1:7] "R" "R" "R" "R" ...</span></span>
 <span><span class="co">#&gt;   ..$ is_date           : logi [1:7] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
 <span><span class="co">#&gt;   ..$ to_normalise      : logi [1:7] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
