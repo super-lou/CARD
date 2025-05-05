@@ -4,7 +4,7 @@
 \alias{get_MKp}
 \title{get_MKp}
 \usage{
-get_MKp(X, level = 0.1)
+get_MKp(X, level = 0.1, time_dependency_option = "AR1")
 }
 \arguments{
 \item{Q}{discharge}

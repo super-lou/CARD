@@ -4,7 +4,7 @@
 \alias{get_MKalpha}
 \title{get_MKalpha}
 \usage{
-get_MKalpha(X, level = 0.1)
+get_MKalpha(X, level = 0.1, time_dependency_option = "AR1")
 }
 \arguments{
 \item{Q}{discharge}
