@@ -21,7 +21,7 @@
 # If not, see <https://www.gnu.org/licenses/>.
 
 
-#  ___       _                                        _          _ 
+#  ___       _                                        _          _
 # | _ \ ___ | |_  _  _  _ _  _ _      _ __  ___  _ _ (_) ___  __| |
 # |   // -_)|  _|| || || '_|| ' \    | '_ \/ -_)| '_|| |/ _ \/ _` |
 # |_|_\\___| \__| \_,_||_|  |_||_| _ | .__/\___||_|  |_|\___/\__,_| __
@@ -32,15 +32,6 @@
 #' daily flow per year)
 #' @return A [list] with `a` the location parameter and `b` the scale
 #' parameter
-#' @examples
-#'# load data
-#'data(L0123001, package="airGR")
-#'# define vector of flows, time step is the day
-#'flows = BasinObs$Qls
-#'# define vector of dates
-#'dates= BasinObs$DatesR
-#' QJXA = calcQJXA(x=dates, flows=flows)
-#' gumbel = getGumbelParams(QJXA)
 #' @export
 compute_GumbelParams = function (X) {
     if (!is.numeric(X)) {
@@ -51,7 +42,7 @@ compute_GumbelParams = function (X) {
     # Scale parameter
     b = sqrt(6) / pi * sd(X, na.rm=TRUE)
     # Location parameter
-    a = mean(X, na.rm=TRUE) - b*c_euler    
+    a = mean(X, na.rm=TRUE) - b*c_euler
     GumbelParams = list(a=a, b=b)
     return (GumbelParams)
 }
@@ -76,7 +67,7 @@ compute_GumbelLaw = function (a, b, returnPeriod) {
     # Reduced gumbel variable
     u = -log(-log(F_x))
 
-    Xn = b*u + a 
+    Xn = b*u + a
     return (Xn)
 }
 
@@ -111,7 +102,7 @@ compute_LogNormal = function(X, returnPeriod) {
 
 
 ## 3. USE ____________________________________________________________
-#' @title get_Xn 
+#' @title get_Xn
 #' @description description
 #' @param Q discharge
 #' @seealso ref
@@ -124,7 +115,7 @@ get_Xn = function (X, returnPeriod, waterType='low',
         ok = period[1] <= Date & Date <= period[2]
         X = X[ok]
     }
-    
+
     if (waterType == "high") {
         res = compute_GumbelParams(X)
         a = res$a
@@ -137,4 +128,4 @@ get_Xn = function (X, returnPeriod, waterType='low',
         Xn = compute_LogNormal(X, returnPeriod)
     }
     return (Xn)
-} 
+}

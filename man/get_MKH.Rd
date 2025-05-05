@@ -4,7 +4,7 @@
 \alias{get_MKH}
 \title{get_MKH}
 \usage{
-get_MKH(X, level = 0.1)
+get_MKH(X, level = 0.1, time_dependency_option = "AR1")
 }
 \arguments{
 \item{Q}{discharge}

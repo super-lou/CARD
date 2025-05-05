@@ -125,7 +125,7 @@ res$dataEX
 \item \code{\link[=CARD_management]{CARD_management()}} for managing CARD parameterization files.
 }
 \itemize{
-\item
+\item 
 \enumerate{
 \item \code{\link[=CARD_extraction]{CARD_extraction()}} for extracting variables using CARD.
 }

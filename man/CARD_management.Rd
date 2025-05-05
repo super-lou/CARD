@@ -40,7 +40,7 @@ CARD_management(CARD_name=c("QA", "QMNA"),
 \item \code{\link[=CARD_list_all]{CARD_list_all()}} list all available CARD.
 }
 \itemize{
-\item
+\item 
 \enumerate{
 \item \code{\link[=CARD_management]{CARD_management()}} for managing CARD parameterization files.
 }
