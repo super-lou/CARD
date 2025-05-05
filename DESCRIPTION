@@ -27,7 +27,7 @@ Authors@R: c(
 Maintainer: Louis Héraut <louis.heraut@inrae.fr>
 Encoding: UTF-8
 License: GPL-3 + file LICENSE
-Imports: 
+Imports:
     RcppRoll,
     tibble,
     dplyr,
@@ -40,8 +40,8 @@ Remotes:
     super-lou/EXstat
 RoxygenNote: 7.3.2
 Roxygen: list(markdown = TRUE)
-URL: https://ddorch.github.io/EXstat.CARD/
-Suggests: 
+URL: https://louis-heraut.github.io/CARD/
+Suggests:
     airGRdatasets,
     knitr,
     rmarkdown

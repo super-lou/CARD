@@ -19,7 +19,7 @@ only related to flow data (indicator evolving precipitation and comparison betwe
 observed and simulated flows are excluded).
 
 ```{r setup}
-library(EXstat.CARD)
+library(CARD)
 library(airGRdatasets)
 library(dplyr)
 ```

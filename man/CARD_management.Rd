@@ -27,7 +27,7 @@ CARD_management(
 Selected CARD parameterization files will be created in the \code{CARD_path} directory.
 }
 \description{
-Manage your different sets of variables to extract. For CARD advanced users, this function manages the CARD directory structure by performing automatic file operations to get the CARD parameterization files to your wanted directory in order to custom them or create yours to use them in a second step with \code{\link[=CARD_extraction]{CARD_extraction()}}. If you want to submit request for new CARD see the \href{https://github.com/super-lou/EXstat.CARD}{GitHub repo}\url{https://github.com/super-lou/EXstat.CARD}.
+Manage your different sets of variables to extract. For CARD advanced users, this function manages the CARD directory structure by performing automatic file operations to get the CARD parameterization files to your wanted directory in order to custom them or create yours to use them in a second step with \code{\link[=CARD_extraction]{CARD_extraction()}}. If you want to submit request for new CARD see the \href{https://github.com/super-lou/CARD}{GitHub repo}\url{https://github.com/super-lou/CARD}.
 }
 \examples{
 # Get the QA and QMNA CARD variables in your local CARD_path directory
@@ -40,7 +40,7 @@ CARD_management(CARD_name=c("QA", "QMNA"),
 \item \code{\link[=CARD_list_all]{CARD_list_all()}} list all available CARD.
 }
 \itemize{
-\item 
+\item
 \enumerate{
 \item \code{\link[=CARD_management]{CARD_management()}} for managing CARD parameterization files.
 }
