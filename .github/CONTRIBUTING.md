@@ -1,13 +1,13 @@
 # Contributing
 
-Thank you for your interest in contributing to **EXstat.CARD** !
+Thank you for your interest in contributing to **CARD** !
 Whether you're fixing bugs, improving documentation, or developing new features, we appreciate your involvement.
 
 
 ## 🚀 Getting Started
 
 If you're unsure where to begin:
-- Check out our [open issues](https://github.com/louis-heraut/EXstat.CARD/issues).
+- Check out our [open issues](https://github.com/louis-heraut/CARD/issues).
 - Feel free to open a new issue to ask questions or suggest ideas.
 
 #### Want to Work on Something?
@@ -20,14 +20,14 @@ If you plan to tackle an issue or develop something new :
 Here’s a step-by-step guide to contributing :
 
 #### 1. **Fork the Repository**
-Click the **Fork** button at the top right of the [EXstat.CARD GitHub page](https://github.com/louis-heraut/EXstat.CARD) to create a copy of the repo under your GitHub account.
+Click the **Fork** button at the top right of the [CARD GitHub page](https://github.com/louis-heraut/CARD) to create a copy of the repo under your GitHub account.
 
 #### 2. **Clone Your Fork**
 Clone your fork to your local machine:
 
 ```bash
-git clone git@github.com:your-username/EXstat.CARD.git
-cd EXstat.CARD
+git clone git@github.com:your-username/CARD.git
+cd CARD
 ```
 
 #### 3. **Create a New Branch**
@@ -74,7 +74,7 @@ To sync your fork with the main repo:
 #### Option 2: Using Git (advanced)
 
 ```bash
-git remote add upstream https://github.com/louis-heraut/EXstat.CARD.git
+git remote add upstream https://github.com/louis-heraut/CARD.git
 git fetch upstream
 git merge upstream/main
 git push origin main
@@ -84,7 +84,7 @@ git push origin main
 ## 🤝 Work Collaboration
 
 If we’re connected through work or you’d like to collaborate more deeply :
-- [Reach out via email](mailto:louis.heraut@inrae.fr?subject=%5BEXstat.CARD%5D) to discuss becoming a project collaborator.
+- [Reach out via email](mailto:louis.heraut@inrae.fr?subject=%5BCARD%5D) to discuss becoming a project collaborator.
 
 
 ## 📌 Notes
@@ -94,4 +94,4 @@ If we’re connected through work or you’d like to collaborate more deeply :
 - Protected branches may require reviews or checks to pass before merging.
 
 
-Thank you for contributing to EXstat.CARD ! 🧪✨
+Thank you for contributing to CARD ! 🧪✨

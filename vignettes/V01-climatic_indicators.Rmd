@@ -18,7 +18,7 @@ The aim of this vignette is to show the calculation of all statistical indicator
 only related to meteorological data (indicator evolving flow are excluded).
 
 ```{r setup}
-library(EXstat.CARD)
+library(CARD)
 library(airGRdatasets)
 library(dplyr)
 ```

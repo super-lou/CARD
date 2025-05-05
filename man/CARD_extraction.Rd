@@ -90,7 +90,7 @@ A \link[base:list]{list} of two \link[tibble:tibble]{tibbles}.
 Extracts variables from time series (for example, the yearly mean of a time series) using CARD parameterization files.
 }
 \examples{
-library(EXstat.CARD)
+library(CARD)
 
 # Get all the available variables
 metaEX_all = CARD_list_all()
@@ -125,7 +125,7 @@ res$dataEX
 \item \code{\link[=CARD_management]{CARD_management()}} for managing CARD parameterization files.
 }
 \itemize{
-\item 
+\item
 \enumerate{
 \item \code{\link[=CARD_extraction]{CARD_extraction()}} for extracting variables using CARD.
 }
