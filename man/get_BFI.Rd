@@ -2,24 +2,58 @@
 % Please edit documentation in R/baseflow.R
 \name{get_BFI}
 \alias{get_BFI}
-\title{baseflow_index}
+\title{Compute Baseflow Index}
 \usage{
 get_BFI(Q, BF, na.rm = TRUE)
 }
 \arguments{
-\item{Q}{Streamflow vector}
+\item{Q}{Numeric vector of streamflow/discharge values \link{L³/T}}
 
-\item{BF}{Baseflow vector}
+\item{BF}{Numeric vector of baseflow values \link{L³/T}, typically obtained from a
+baseflow separation method (must be same length as Q)}
 
-\item{na.rm}{Should missing values be omited ?}
+\item{na.rm}{Logical indicating whether to ignore missing values (NA) in the calculations.
+Default is TRUE.}
 }
 \value{
-res
+A numeric value between 0 and 1 representing the baseflow index:
+\itemize{
+\item 0 indicates all streamflow is quickflow (surface runoff)
+\item 1 indicates all streamflow is baseflow
+}
 }
 \description{
-Compute the baseflow index: the ratio between the
-total baseflow volume and the total streamflow volume.
-Warning : No checks are done on inputs ! You should have selected
-the proper period before hand (i.e. both vector should be of same
-length and span over the same period).
+Calculates the Baseflow Index (BFI), defined as the ratio of total baseflow
+volume to total streamflow volume over a given period. The BFI represents the proportion
+of streamflow that comes from baseflow (groundwater contributions).
+}
+\details{
+The Baseflow Index is calculated as:
+\deqn{BFI = \frac{\sum BF}{\sum Q}}
+
+\strong{Important notes:}
+\itemize{
+\item The function assumes both vectors cover the same time period
+\item No automatic alignment of time series is performed
+\item Negative values in either vector will produce invalid results
+\item Results are only meaningful when using consistent units for Q and BF
+}
+}
+\examples{
+# Example using synthetic data
+Q <- c(10, 12, 15, 20, 18, 16, 14, 12, 10, 9)  # Streamflow
+BF <- c(8, 8, 9, 9, 9, 8, 8, 8, 7, 7)          # Baseflow
+
+# Calculate BFI
+bfi <- get_BFI(Q, BF)
+print(paste("Baseflow Index:", round(bfi, 3)))
+
+# With missing values
+Q[3] <- NA
+get_BFI(Q, BF)               # Returns NA
+get_BFI(Q, BF, na.rm=TRUE)   # Ignores NA
+
+}
+\seealso{
+\code{\link{BFS}} for baseflow separation methods that can generate the BF input.
 }

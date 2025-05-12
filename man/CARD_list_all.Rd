@@ -4,7 +4,7 @@
 \alias{CARD_list_all}
 \title{CARD_list_all}
 \usage{
-CARD_list_all()
+CARD_list_all(include_experimental = FALSE)
 }
 \description{
 List all the CARD parametrization files in a \link[tibble:tibble]{tibble} to get all the metadata of the aggregation variables available.

@@ -2,7 +2,7 @@
 % Please edit documentation in R/threshold.R
 \name{apply_threshold}
 \alias{apply_threshold}
-\title{apply_threshold}
+\title{Apply Threshold to Identify Events}
 \usage{
 apply_threshold(
   X,
@@ -15,11 +15,64 @@ apply_threshold(
 )
 }
 \arguments{
-\item{Q}{discharge}
+\item{X}{Numeric vector of values to analyze (typically discharge or other hydro-meteorological variable)}
+
+\item{lim}{Numeric threshold value or vector of same length as X}
+
+\item{where}{String specifying threshold condition:
+\itemize{
+\item "<", "<=", "==", ">=", ">" for standard comparisons
+}}
+
+\item{what}{String specifying return type:
+\itemize{
+\item "X": Values meeting condition
+\item "length": Duration of events (time steps)
+\item "first"/"last": First/last index of events
+\item Any function name (e.g., "which.max"): Applied to event values
+}}
+
+\item{select}{String or numeric specifying event selection:
+\itemize{
+\item "all": All events (default)
+\item "longest"/"shortest": Longest/shortest event
+\item Numeric value: Event containing this value
+}}
+
+\item{Date}{Optional date vector for period filtering}
+
+\item{period}{Optional vector of 2 dates (start/end) for period filtering}
+}
+\value{
+Depends on \code{what} parameter:
+\itemize{
+\item Numeric vector of values ("X")
+\item Integer duration ("length")
+\item Single index ("first"/"last")
+\item Function application result
+\item NA if no events found
+}
 }
 \description{
-description
+Identifies and extracts events in a time series based on threshold criteria,
+with options for event selection and characterization.
 }
-\seealso{
-ref
+\details{
+Handles multiple threshold scenarios:
+\itemize{
+\item For vector \code{lim}, uses most frequent value via \code{rle()}
+\item For period filtering, subsets data before analysis
+\item For event selection, identifies contiguous periods
+}
+}
+\examples{
+set.seed(1)
+Q <- rnorm(100, 50, 10) # Simulated discharge
+
+# Get longest drought period (Q <= 45)
+drought_days <- apply_threshold(Q, 45, where="<=", what="length", select="longest")
+
+# Get first index of all flood events (Q >= 60)
+flood_starts <- apply_threshold(Q, 60, where=">=", what="first")
+
 }

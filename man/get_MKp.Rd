@@ -2,16 +2,48 @@
 % Please edit documentation in R/trend.R
 \name{get_MKp}
 \alias{get_MKp}
-\title{get_MKp}
+\title{Get Mann-Kendall P-Value}
 \usage{
 get_MKp(X, level = 0.1, time_dependency_option = "AR1")
 }
 \arguments{
-\item{Q}{discharge}
+\item{X}{Numeric vector of values to test for trend}
+
+\item{level}{numeric in (0,1), level of the test.}
+
+\item{time_dependency_option}{string, option for handling temporal dependence.
+Available :
+\enumerate{
+\item 'INDE', assume independence (i.e. the standard MK test)
+\item 'AR1', assumes AR1 short-term dependence structure (i.e.
+Hamed and Rao's version of the MK test)
+\item 'LTP', assume long-term persistence (i.e. Hamed's version
+of the MK test)
+}}
+}
+\value{
+Numeric p-value between 0 and 1 indicating the probability of observing
+the trend by chance if no true trend exists.
 }
 \description{
-description
+Extracts the p-value from the Generalized Mann-Kendall trend test.
+}
+\details{
+Interpretation guidelines:
+\itemize{
+\item p ≤ 0.01: Very strong evidence against null hypothesis
+\item 0.01 < p ≤ 0.05: Strong evidence
+\item 0.05 < p ≤ 0.1: Weak evidence
+\item p > 0.1: Little or no evidence
+}
+}
+\examples{
+data(temperature)
+# Get p-value for temperature trend
+pval <- get_MKp(temperature$T)
+print(paste("Trend significance:", ifelse(pval < 0.05, "Significant", "Not significant")))
+
 }
 \seealso{
-ref
+\code{\link[EXstat]{GeneralMannKendall}} for the full test implementation
 }

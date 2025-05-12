@@ -2,16 +2,25 @@
 % Please edit documentation in R/rat.R
 \name{compute_RAT_X}
 \alias{compute_RAT_X}
-\title{compute_RAT_X}
+\title{Compute Robustness Assessment Test (RAT) Indicator}
 \usage{
 compute_RAT_X(Bias, X, thresh = 0.05)
 }
 \arguments{
-\item{Q}{discharge}
+\item{Bias}{Numeric vector of model performance scores (e.g., Bias) across sub-basins, time periods, or experiments.}
+
+\item{X}{Numeric vector of an explanatory variable (e.g., flow regime characteristic) of the same length as \code{Bias}.}
+
+\item{thresh}{Numeric threshold for the p-value of the Spearman correlation test. Default is 0.05 (5\% significance level).}
+}
+\value{
+Logical. Returns \code{TRUE} if the correlation is significant (i.e., p-value < \code{thresh}), indicating a lack of robustness; \code{FALSE} otherwise.
 }
 \description{
-description
+Evaluates the robustness of a hydrological model performance metric (e.g., Bias) with respect to an explanatory variable (e.g., discharge characteristics), using a Spearman correlation test. The function returns a Boolean indicating whether a significant correlation exists, implying potential lack of robustness.
+
+Based on the RAT (Robustness Assessment Test) methodology introduced by Nicolle et al. (2020), this function tests whether the variability of a model performance criterion can be explained by an explanatory variable, suggesting a lack of robustness if so.
 }
-\seealso{
-ref
+\references{
+Nicolle, P., Andréassian, V., Royer-Gaspard, P., Perrin, C., Thirel, G., Coron, L., & Santos, L. (2020). \emph{RAT – a robustness assessment test for calibrated and uncalibrated hydrological models}. Hydrological Sciences Journal, 65(6), 959–972. https://doi.org/10.1080/02626667.2020.1737689
 }

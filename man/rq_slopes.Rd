@@ -2,7 +2,7 @@
 % Please edit documentation in R/seasonal_dynamic.R
 \name{rq_slopes}
 \alias{rq_slopes}
-\title{pq_slopes}
+\title{Compute R-Q Seasonal Slopes}
 \usage{
 rq_slopes(
   Q,
@@ -15,29 +15,32 @@ rq_slopes(
 )
 }
 \arguments{
-\item{Q}{Streamflow vector}
+\item{Q}{Numeric vector of streamflow values \link{L³/T}}
 
-\item{R}{precipitation vector}
+\item{R}{Numeric vector of precipitation values \link{L/T}}
 
-\item{hdays}{Days of the (Hydrological) years vector}
+\item{hdays}{Numeric vector of hydrological day indices (1-365/366)}
 
-\item{start}{start of period to search for change of trend in R-Q}
+\item{start}{Integer first day to analyze (default: 15)}
 
-\item{end}{end of period to search for change of trend in R-Q}
+\item{end}{Integer last day to analyze (default: 183)}
 
-\item{bp}{initial guess of threshold date}
+\item{bp}{Initial guess for breakpoint day (default: midpoint between start/end)}
 
-\item{intercept}{should the intercept be estimated (default: TRUE)
-or fixed to c(0, 0) (FALSE) ?}
+\item{intercept}{Logical indicating whether to estimate intercepts (TRUE) or fix at 0 (FALSE)}
 }
 \value{
-res
+Named numeric vector containing:
+\itemize{
+\item bp: Breakpoint day
+\item bp_strength: Magnitude of slope change
+\item slp_dry: Dry period slope
+\item b_dry: Dry period intercept
+\item slp_wet: Wet period slope
+\item b_wet: Wet period intercept
+}
 }
 \description{
-Computes the cumulative inter-annual daily average of
-R and Q as well as the difference R-Q. Then, compute the seasonal
-response change signatures following the so-called R-Q approach :
-breackpoint date, first period slope (dry), second period slope
-(wet) and the intercepts associated with these two slopes (only
-there for plotting purposes).
+Analyzes seasonal response changes using cumulative precipitation-runoff (R-Q)
+differences, identifying breakpoints between dry and wet periods.
 }

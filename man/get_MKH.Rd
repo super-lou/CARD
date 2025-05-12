@@ -2,16 +2,49 @@
 % Please edit documentation in R/trend.R
 \name{get_MKH}
 \alias{get_MKH}
-\title{get_MKH}
+\title{Get Mann-Kendall Test Decision}
 \usage{
 get_MKH(X, level = 0.1, time_dependency_option = "AR1")
 }
 \arguments{
-\item{Q}{discharge}
+\item{X}{Numeric vector of values to test for trend}
+
+\item{level}{numeric in (0,1), level of the test.}
+
+\item{time_dependency_option}{string, option for handling temporal dependence.
+Available :
+\enumerate{
+\item 'INDE', assume independence (i.e. the standard MK test)
+\item 'AR1', assumes AR1 short-term dependence structure (i.e.
+Hamed and Rao's version of the MK test)
+\item 'LTP', assume long-term persistence (i.e. Hamed's version
+of the MK test)
+}}
+}
+\value{
+Logical value indicating test result:
+\itemize{
+\item TRUE if significant trend exists (reject null hypothesis)
+\item FALSE if no significant trend (fail to reject null hypothesis)
+}
 }
 \description{
-description
+Extracts the hypothesis test result (H) from the Generalized Mann-Kendall
+trend test, indicating whether a significant trend exists.
+}
+\details{
+The H statistic indicates:
+\itemize{
+\item TRUE (significant trend) when p-value ≤ alpha
+\item FALSE (no significant trend) when p-value > alpha
+}
+}
+\examples{
+data(precipitation)
+# Check for significant trend in precipitation
+trend_exists <- get_MKH(precipitation$P)
+
 }
 \seealso{
-ref
+\code{\link[EXstat]{GeneralMannKendall}} for the full test implementation
 }

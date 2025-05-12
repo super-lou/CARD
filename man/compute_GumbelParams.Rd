@@ -2,18 +2,16 @@
 % Please edit documentation in R/return_period.R
 \name{compute_GumbelParams}
 \alias{compute_GumbelParams}
-\title{compute_GumbelParams}
+\title{Estimate Gumbel Distribution Parameters}
 \usage{
 compute_GumbelParams(X)
 }
 \arguments{
-\item{X}{Maximum flow at a given time step (usually the maximum
-daily flow per year)}
+\item{X}{Numeric vector representing the maximum flows (e.g., annual daily maxima).}
 }
 \value{
-A \link{list} with \code{a} the location parameter and \code{b} the scale
-parameter
+A \link{list} with \code{a} the location parameter and \code{b} the scale parameter).
 }
 \description{
-Computes Gumbel's laws parameters
+Computes the location (\code{a}) and scale (\code{b}) parameters of the Gumbel distribution based on a numeric vector of annual maximum flows.
 }

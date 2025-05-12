@@ -17,11 +17,62 @@ approxExtrap(
 )
 }
 \arguments{
-\item{Q}{discharge}
+\item{x}{Either a vector of x-coordinates of points to be interpolated, or a list with
+components \code{x} and \code{y}. If a list is provided, the \code{y} parameter is ignored.}
+
+\item{y}{Vector of y-coordinates of points to be interpolated, corresponding to \code{x}.}
+
+\item{xout}{Vector of points at which to evaluate the interpolation/extrapolation.}
+
+\item{method}{Specifies the interpolation method. Only "linear" is currently supported.
+The default is "linear".}
+
+\item{n}{If \code{xout} is not specified, interpolation is done at \code{n} equally spaced points
+covering the range of \code{x}. The default is 50.}
+
+\item{rule}{An integer (1 or 2) describing how interpolation is to take place outside
+the interval \link{min(x), max(x)}. See \code{approx()} for details. The default is 2.}
+
+\item{f}{For \code{method = "constant"}, a number between 0 and 1 inclusive, indicating how
+interpolation should behave at jump discontinuities. See \code{approx()} for details.
+The default is 0.}
+
+\item{ties}{Handling of tied \code{x} values. See \code{approx()} for details. The default is "ordered".}
+
+\item{na.rm}{Logical indicating whether NA values should be removed before interpolation.
+The default is FALSE.}
+}
+\value{
+A list with components:
+\item{x}{The x-coordinates where interpolation was performed (same as input \code{xout})}
+\item{y}{The interpolated/extrapolated y-values corresponding to \code{xout}}
 }
 \description{
-description
+Performs linear interpolation using \code{approx()} with linear extrapolation beyond the data range.
+This function is particularly useful when you need to estimate values outside the range of
+your observed data points.
+}
+\details{
+The function first performs standard linear interpolation using \code{approx()}. For points
+outside the range of the input data, it performs linear extrapolation using the slope
+defined by the first two points (for low extrapolation) or last two points (for high
+extrapolation).
+
+The function handles duplicate x-values by removing them and orders the data by x-values
+to ensure proper interpolation and extrapolation.
+}
+\examples{
+# Basic interpolation and extrapolation
+x <- 1:5
+y <- c(2, 4, 3, 6, 5)
+approxExtrap(x, y, xout = c(0, 1, 3.5, 5, 6))
+
+# With NA values (when na.rm = TRUE)
+x <- c(1, 2, NA, 4, 5)
+y <- c(2, 4, 5, 6, 5)
+approxExtrap(x, y, xout = 1:6, na.rm = TRUE)
+
 }
 \seealso{
-ref
+\code{\link[stats]{approx}} for the base interpolation function.
 }

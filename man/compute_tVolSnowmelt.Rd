@@ -2,10 +2,10 @@
 % Please edit documentation in R/baseflow.R
 \name{compute_tVolSnowmelt}
 \alias{compute_tVolSnowmelt}
-\title{compute_tVolSnowmelt}
+\title{Compute Snowmelt Progress Time}
 \usage{
 compute_tVolSnowmelt(
-  X,
+  Q,
   p,
   d = 5,
   w = 0.9,
@@ -15,11 +15,29 @@ compute_tVolSnowmelt(
 )
 }
 \arguments{
-\item{Q}{discharge}
+\item{p}{Numeric (0-1) specifying target progress percentage}
+}
+\value{
+Integer index when cumulative snowmelt reaches p\% of total volume.
 }
 \description{
-description
+Finds the time index when a certain percentage of total snowmelt volume
+has been reached.
+}
+\details{
+Computes:
+\enumerate{
+\item Cumulative sum of baseflow (snowmelt)
+\item Normalizes to 0-1 range
+\item Finds closest time index to target percentage p
+}
+}
+\examples{
+Q <- c(10,15,20,18,12,8,5,7,9,12)
+# Find when 50\% of snowmelt has occurred:
+compute_tVolSnowmelt(Q, p=0.5) 
+
 }
 \seealso{
-ref
+\code{\link{compute_VolSnowmelt}} for total volume calculation
 }

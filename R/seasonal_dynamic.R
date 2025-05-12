@@ -31,19 +31,44 @@
 # \__,_| \_, ||_||_|\__,_||_|_|_||_|\__| _____________________________
 #        |__/  
 ## 1. RUNOFF COEFFICIENT _____________________________________________
-#' @title runoff_coefficient
-#' @description Computes the runoff coefficient or ratio: the ratio
-#' between the total strealfow volume and the total precipitaion
-#' volume. Warning: No checks are done on inputs ! You should have
-#' selected the proper period beforehand: both vector should be of
-#' same length and span over the same period. In addition the runoff
-#' coefficient should be compute from the start of a hydrological
-#' year to the end of a hydrological year.
-#' @param Q Streamflow vector
-#' @param R Precipitation vector
-#' @param na.rm Should missing values be omited ?
-#' @return Runoff coefficient
+#' @title Compute Runoff Coefficient
+#' @description Calculates the runoff coefficient (Rc) as the ratio of total streamflow volume 
+#' to total precipitation volume over a specified period, typically a hydrological year.
+#'
+#' @param Q Numeric vector of streamflow/discharge values [L³/T]
+#' @param R Numeric vector of precipitation values [L/T]
+#' @param na.rm Logical indicating whether to ignore missing values (NA) in calculations. 
+#'              Default is TRUE.
+#'
+#' @return A numeric value representing the runoff coefficient (dimensionless):
+#' \itemize{
+#'   \item 0 indicates no runoff
+#'   \item 1 indicates all precipitation becomes runoff
+#'   \item Values >1 suggest groundwater contributions or measurement errors
+#' }
+#'
+#' @details 
+#' The runoff coefficient is calculated as:
+#' \deqn{Rc = \frac{\sum Q}{\sum R}}
+#' 
+#' \strong{Important notes:}
+#' \itemize{
+#'   \item Input vectors must cover the same time period
+#'   \item Should be computed for complete hydrological years
+#'   \item No unit conversion is performed - ensure consistent units
+#'   \item Negative values will produce invalid results
+#' }
+#'
+#' @examples
+#' # Example for a hydrological year
+#' Q <- c(10, 12, 15, 20, 18, 16, 14, 12, 10, 9, 8, 7)  # Streamflow (mm/month)
+#' P <- c(20, 25, 30, 35, 40, 45, 40, 35, 30, 25, 20, 15) # Precipitation (mm/month)
+#' 
+#' rc <- compute_Rc(Q, P)
+#' print(paste("Runoff coefficient:", round(rc, 3)))
+#'
 #' @export
+#' @md
 compute_Rc = function(Q, R, na.rm=TRUE) {
     if (length(Q) != length(R)) {
         warning("'Q' and 'R' don't have the same length!")
@@ -53,20 +78,45 @@ compute_Rc = function(Q, R, na.rm=TRUE) {
 }
 
 
-## 2 PQ SLOPE ________________________________________________________
-# TODO : implement an option to verify the 'validity' of the
-# interpolation. For example, it should not be longer than 'n' time
-# step or I could provide a value indicating how much the interpolated
-# value weight on the resulting cumulative curve
-#' @title hsaCumsum
-#' @description Wrapper around cumsum() to linearly interpolate
-#' missing values
-#' @param x vector to use to compute cumulated values
-#' @param na.action action to undertake when missing values are found
-#' (default: 'interpolate', any other value leads to the original
-#' cumsum() function)
-#' @return res
+## 2 RQ SLOPE ________________________________________________________
+#' @title Enhanced Cumulative Sum Calculation
+#' @description Computes cumulative sums with options for handling missing values (NA), 
+#' including linear interpolation between existing values.
+#'
+#' @param x Numeric vector for which to compute cumulative sums
+#' @param na.action Character or numeric specifying NA handling:
+#' \itemize{
+#'   \item "interpolate": Linearly interpolates missing values (default)
+#'   \item numeric value: Replaces NAs with specified value
+#'   \item any other value: Uses base cumsum() with NAs propagating
+#' }
+#'
+#' @return Numeric vector of cumulative sums with same length as x:
+#' \itemize{
+#'   \item NAs at start/end remain after warning
+#'   \item Interpolated values for internal NAs when na.action="interpolate"
+#' }
+#'
+#' @details 
+#' For na.action="interpolate":
+#' \itemize{
+#'   \item Uses linear interpolation via stats::approx()
+#'   \item Leading/trailing NAs are set to 0 with warning
+#'   \item Returns NA for positions where input was NA
+#' }
+#'
+#' @examples
+#' x <- c(1, 2, NA, 4, 5, NA, 7)
+#' 
+#' # With interpolation
+#' hsaCumsum(x) 
+#' 
+#' # With NA replacement
+#' hsaCumsum(x, na.action=0)
+#'
+#' @seealso \code{\link[stats]{approx}} for interpolation method
 #' @export
+#' @md
 hsaCumsum = function(x, na.action = "interpolate") {
     isna = is.na(x)
     if (all(isna)) stop("'x' cannot be only missing values!")
@@ -89,24 +139,27 @@ hsaCumsum = function(x, na.action = "interpolate") {
     cumsum(x)
 }
 
-# TODO : check dims of inputs !
-#' @title pq_slopes
-#' @description Computes the cumulative inter-annual daily average of
-#' R and Q as well as the difference R-Q. Then, compute the seasonal
-#' response change signatures following the so-called R-Q approach :
-#' breackpoint date, first period slope (dry), second period slope
-#' (wet) and the intercepts associated with these two slopes (only
-#' there for plotting purposes).
-#' @param Q Streamflow vector
-#' @param R precipitation vector
-#' @param hdays Days of the (Hydrological) years vector
-#' @param start start of period to search for change of trend in R-Q
-#' @param end end of period to search for change of trend in R-Q
-#' @param bp initial guess of threshold date
-#' @param intercept should the intercept be estimated (default: TRUE)
-#' or fixed to c(0, 0) (FALSE) ?
-#' @return res
-#' @export
+#' @title Compute R-Q Seasonal Slopes
+#' @description Analyzes seasonal response changes using cumulative precipitation-runoff (R-Q) 
+#' differences, identifying breakpoints between dry and wet periods.
+#'
+#' @param Q Numeric vector of streamflow values [L³/T]
+#' @param R Numeric vector of precipitation values [L/T]
+#' @param hdays Numeric vector of hydrological day indices (1-365/366)
+#' @param start Integer first day to analyze (default: 15)
+#' @param end Integer last day to analyze (default: 183)
+#' @param bp Initial guess for breakpoint day (default: midpoint between start/end)
+#' @param intercept Logical indicating whether to estimate intercepts (TRUE) or fix at 0 (FALSE)
+#'
+#' @return Named numeric vector containing:
+#' \itemize{
+#'   \item bp: Breakpoint day
+#'   \item bp_strength: Magnitude of slope change
+#'   \item slp_dry: Dry period slope
+#'   \item b_dry: Dry period intercept
+#'   \item slp_wet: Wet period slope
+#'   \item b_wet: Wet period intercept
+#' }
 rq_slopes = function(Q, R, hdays, start=15, end=183, bp=mean(c(start, end)), intercept=TRUE) {
     RQ = data.frame(Q, R, hdays) %>% 
         group_by(hdays) %>%

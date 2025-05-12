@@ -2,16 +2,52 @@
 % Please edit documentation in R/trend.R
 \name{get_MKalpha}
 \alias{get_MKalpha}
-\title{get_MKalpha}
+\title{Get Sen-Theil Slope Estimate}
 \usage{
 get_MKalpha(X, level = 0.1, time_dependency_option = "AR1")
 }
 \arguments{
-\item{Q}{discharge}
+\item{X}{Numeric vector of values to analyze}
+
+\item{level}{numeric in (0,1), level of the test.}
+
+\item{time_dependency_option}{string, option for handling temporal dependence.
+Available :
+\enumerate{
+\item 'INDE', assume independence (i.e. the standard MK test)
+\item 'AR1', assumes AR1 short-term dependence structure (i.e.
+Hamed and Rao's version of the MK test)
+\item 'LTP', assume long-term persistence (i.e. Hamed's version
+of the MK test)
+}}
+}
+\value{
+Numeric value representing the Sen-Theil slope estimate (α) in \link{units of X}/time.
+\itemize{
+\item Positive value indicates increasing trend
+\item Negative value indicates decreasing trend
+\item Zero indicates no trend
+}
 }
 \description{
-description
+Calculates the Sen-Theil estimator (α) of trend magnitude from the
+Generalized Mann-Kendall test, representing the median slope between all pairs of points.
+}
+\details{
+The Sen-Theil estimator:
+\itemize{
+\item Non-parametric median of all pairwise slopes: \eqn{\alpha = median\left(\frac{X_j - X_i}{j-i}\right)} for all i < j
+\item Robust to outliers and missing values
+\item Measures trend magnitude in original units/time
+}
+}
+\examples{
+data(streamflow)
+# Get trend slope in m³/s per time unit
+trend_slope <- get_MKalpha(streamflow$Q)
+print(paste("Trend slope:", round(trend_slope, 4), "m³/s per time unit"))
+
 }
 \seealso{
-ref
+\code{\link[EXstat]{GeneralMannKendall}} for the full test implementation
 }

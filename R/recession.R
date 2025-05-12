@@ -23,6 +23,13 @@
 # | _ \ ___  __  ___  ___ ___(_) ___  _ _  
 # |   // -_)/ _|/ -_)(_-<(_-<| |/ _ \| ' \ 
 # |_|_\\___|\__|\___|/__//__/|_|\___/|_||_| __________________________
+#' @title Detect Inflection Points in a Time Series
+#' @description Identifies local minima and maxima in a numeric vector using a sliding window of a given threshold. Used to detect changes in trend in smoothed hydrological data.
+#' @param x Numeric vector (e.g., smoothed discharge time series).
+#' @param threshold Integer. Number of neighbors on each side to consider for identifying a local extremum.
+#' @return A list with two integer vectors: `minima` (indices of local minima) and `maxima` (indices of local maxima).
+#' @export
+#' @md
 inflect = function(x, threshold=1) {
     up = sapply(1:threshold, function (n) c(x[-(seq(n))], rep(NA, n)))
     down =  sapply(-1:-threshold, function (n) c(rep(NA, abs(n)), x[-seq(length(x), length(x) - abs(n) + 1)]))
@@ -31,10 +38,10 @@ inflect = function(x, threshold=1) {
     return (res)
 }
 
-#' @title compute_dtRec 
-#' @description description
-#' @param Q discharge
-#' @seealso ref
+#' @title Compute Characteristic Recovery Times from Flow Time Series
+#' @description Applies smoothing and inflection point detection to estimate recovery durations (Tau) between hydrological peaks and valleys in a discharge time series.
+#' @param Q Numeric vector of discharge values.
+#' @return A numeric vector of recovery times (Tau) between peak and valley periods, filtered by quantile thresholds.
 #' @export
 #' @md
 compute_dtRec = function (Q) {
@@ -151,10 +158,11 @@ compute_dtRec = function (Q) {
 }
 
 
-#' @title compute_median_dtRec 
-#' @description description
-#' @param Q discharge
-#' @seealso ref
+#' @title Compute Median Recovery Time
+#' @description Calculates the median of recovery times (Tau) estimated by `compute_dtRec`, optionally removing `NA` values.
+#' @param Q Numeric vector of discharge values.
+#' @param na.rm Logical indicating whether to remove `NA` values before computing the median.
+#' @return A single numeric value representing the median recovery time.
 #' @export
 #' @md
 compute_median_dtRec = function (Q, na.rm=TRUE) {

@@ -2,16 +2,16 @@
 % Please edit documentation in R/recession.R
 \name{compute_dtRec}
 \alias{compute_dtRec}
-\title{compute_dtRec}
+\title{Compute Characteristic Recovery Times from Flow Time Series}
 \usage{
 compute_dtRec(Q)
 }
 \arguments{
-\item{Q}{discharge}
+\item{Q}{Numeric vector of discharge values.}
+}
+\value{
+A numeric vector of recovery times (Tau) between peak and valley periods, filtered by quantile thresholds.
 }
 \description{
-description
-}
-\seealso{
-ref
+Applies smoothing and inflection point detection to estimate recovery durations (Tau) between hydrological peaks and valleys in a discharge time series.
 }

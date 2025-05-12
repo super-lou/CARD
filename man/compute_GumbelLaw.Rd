@@ -2,21 +2,20 @@
 % Please edit documentation in R/return_period.R
 \name{compute_GumbelLaw}
 \alias{compute_GumbelLaw}
-\title{compute_GumbelLaw}
+\title{Compute Quantile from Gumbel Law}
 \usage{
 compute_GumbelLaw(a, b, returnPeriod)
 }
 \arguments{
-\item{a}{The location parameter of Gumbel law}
+\item{a}{Numeric value of the Gumbel distribution location parameter.}
 
-\item{b}{The scale parameter of Gumbel law}
+\item{b}{Numeric value of the Gumbel distribution scale parameter.}
 
-\item{returnPeriod}{\link{numeric} Return period. Its unit is given by
-the aggregation time step used for the Gumbel law.}
+\item{returnPeriod}{Numeric value of the return period (in years or consistent time unit).}
 }
 \value{
-Gumbel law value
+Numeric value representing the estimated discharge for the given return period.
 }
 \description{
-Computes Gumbel law
+Calculates the discharge value (quantile) associated with a given return period using the Gumbel distribution parameters.
 }

@@ -24,10 +24,59 @@
 #   | |  | ' \ | '_|/ -_)(_-<| ' \ / _ \| |/ _` |
 #   |_|  |_||_||_|  \___|/__/|_||_|\___/|_|\__,_| ____________________
 ## 1. THRESHOLD __________________________________________________________  
-#' @title apply_threshold 
-#' @description description
-#' @param Q discharge
-#' @seealso ref
+#' @title Apply Threshold to Identify Events
+#' @description Identifies and extracts events in a time series based on threshold criteria, 
+#' with options for event selection and characterization.
+#'
+#' @param X Numeric vector of values to analyze (typically discharge or other hydro-meteorological variable)
+#' @param lim Numeric threshold value or vector of same length as X
+#' @param where String specifying threshold condition:
+#' \itemize{
+#'   \item "<", "<=", "==", ">=", ">" for standard comparisons
+#' }
+#' @param what String specifying return type:
+#' \itemize{
+#'   \item "X": Values meeting condition
+#'   \item "length": Duration of events (time steps)
+#'   \item "first"/"last": First/last index of events
+#'   \item Any function name (e.g., "which.max"): Applied to event values
+#' }
+#' @param select String or numeric specifying event selection:
+#' \itemize{
+#'   \item "all": All events (default)
+#'   \item "longest"/"shortest": Longest/shortest event
+#'   \item Numeric value: Event containing this value
+#' }
+#' @param Date Optional date vector for period filtering
+#' @param period Optional vector of 2 dates (start/end) for period filtering
+#'
+#' @return Depends on `what` parameter:
+#' \itemize{
+#'   \item Numeric vector of values ("X")
+#'   \item Integer duration ("length")
+#'   \item Single index ("first"/"last")
+#'   \item Function application result
+#'   \item NA if no events found
+#' }
+#'
+#' @details 
+#' Handles multiple threshold scenarios:
+#' \itemize{
+#'   \item For vector `lim`, uses most frequent value via `rle()`
+#'   \item For period filtering, subsets data before analysis
+#'   \item For event selection, identifies contiguous periods
+#' }
+#'
+#' @examples
+#' set.seed(1)
+#' Q <- rnorm(100, 50, 10) # Simulated discharge
+#' 
+#' # Get longest drought period (Q <= 45)
+#' drought_days <- apply_threshold(Q, 45, where="<=", what="length", select="longest")
+#' 
+#' # Get first index of all flood events (Q >= 60)
+#' flood_starts <- apply_threshold(Q, 60, where=">=", what="first")
+#'
 #' @export
 #' @md
 apply_threshold = function (X, lim, where="<=", what="X",
@@ -150,18 +199,42 @@ apply_threshold = function (X, lim, where="<=", what="X",
 
 
 ## 2. USE ____________________________________________________________
-#' @title compute_VolDef 
-#' @description description
-#' @param Q discharge
-#' @seealso ref
+#' @title Compute Volume Deficit Below Threshold
+#' @description Calculates the cumulative volume deficit below a specified threshold 
+#' for the longest continuous deficit period.
+#'
+#' @param Q Numeric vector of streamflow values [m³/s]
+#' @param upLim Numeric upper threshold for deficit calculation
+#' @param select_longest Logical indicating whether to use only the longest deficit 
+#'        period (TRUE) or all periods (FALSE). Currently only TRUE is implemented.
+#'
+#' @return Numeric value of volume deficit in cubic hectometers (hm³)
+#'
+#' @details 
+#' Computes:
+#' \deqn{VolDef = \frac{\sum (Q_{deficit}) \times 86400}{10^6}}
+#' Where:
+#' \itemize{
+#'   \item $Q_{deficit}$ are flows below threshold from longest event
+#'   \item 86400 converts seconds to days
+#'   \item 10^6 converts m³ to hm³
+#' }
+#'
+#' @examples
+#' Q <- c(45, 42, 39, 38, 40, 50, 48, 37, 36, 35, 40)
+#' # Calculate volume deficit below 40 m³/s
+#' vol_def <- compute_VolDef(Q, upLim=40)
+#' print(paste("Volume deficit:", round(vol_def, 2), "hm³"))
+#'
+#' @seealso \code{\link{apply_threshold}} for the underlying event identification
 #' @export
 #' @md
-compute_VolDef = function (X, upLim, select_longest=TRUE) {
-    Xdef = apply_threshold(X,
+compute_VolDef = function (Q, upLim, select_longest=TRUE) {
+    Qdef = apply_threshold(Q,
                            lim=upLim,
                            where="<=",
                            what="X",
                            select="longest")
-    Vol = sum(Xdef, na.rm=TRUE)*24*3600 / 10^6 # m^3.s-1 * jour / 10^6 -> hm^3
+    Vol = sum(Qdef, na.rm=TRUE)*24*3600 / 10^6 # m^3.s-1 * jour / 10^6 -> hm^3
     return (Vol)
 }

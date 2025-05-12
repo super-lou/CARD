@@ -2,10 +2,10 @@
 % Please edit documentation in R/baseflow.R
 \name{compute_tSnowmelt}
 \alias{compute_tSnowmelt}
-\title{compute_tSnowmelt}
+\title{Compute Snowmelt Period Duration}
 \usage{
 compute_tSnowmelt(
-  X,
+  Q,
   p1,
   p2,
   d = 5,
@@ -16,11 +16,28 @@ compute_tSnowmelt(
 )
 }
 \arguments{
-\item{Q}{discharge}
+\item{p1, p2}{Numerics (0-1) specifying start and end percentages}
+}
+\value{
+Integer duration (in time steps) between p1 and p2 snowmelt percentages.
 }
 \description{
-description
+Calculates the duration between two percentage points of snowmelt progression.
+}
+\details{
+Typical usage:
+\itemize{
+\item p1=0.05 (start of melt period)
+\item p2=0.95 (end of melt period)
+\item Returns number of days between these events
+}
+}
+\examples{
+Q <- c(rep(5,30), seq(5,25,length.out=30), rep(25,30), seq(25,5,length.out=30))
+# Calculate duration between 10\% and 90\% snowmelt:
+compute_tSnowmelt(Q, p1=0.1, p2=0.9)
+
 }
 \seealso{
-ref
+\code{\link{compute_tVolSnowmelt}} for single timing calculation
 }

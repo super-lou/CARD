@@ -2,26 +2,48 @@
 % Please edit documentation in R/seasonal_dynamic.R
 \name{compute_Rc}
 \alias{compute_Rc}
-\title{runoff_coefficient}
+\title{Compute Runoff Coefficient}
 \usage{
 compute_Rc(Q, R, na.rm = TRUE)
 }
 \arguments{
-\item{Q}{Streamflow vector}
+\item{Q}{Numeric vector of streamflow/discharge values \link{L³/T}}
 
-\item{R}{Precipitation vector}
+\item{R}{Numeric vector of precipitation values \link{L/T}}
 
-\item{na.rm}{Should missing values be omited ?}
+\item{na.rm}{Logical indicating whether to ignore missing values (NA) in calculations.
+Default is TRUE.}
 }
 \value{
-Runoff coefficient
+A numeric value representing the runoff coefficient (dimensionless):
+\itemize{
+\item 0 indicates no runoff
+\item 1 indicates all precipitation becomes runoff
+\item Values >1 suggest groundwater contributions or measurement errors
+}
 }
 \description{
-Computes the runoff coefficient or ratio: the ratio
-between the total strealfow volume and the total precipitaion
-volume. Warning: No checks are done on inputs ! You should have
-selected the proper period beforehand: both vector should be of
-same length and span over the same period. In addition the runoff
-coefficient should be compute from the start of a hydrological
-year to the end of a hydrological year.
+Calculates the runoff coefficient (Rc) as the ratio of total streamflow volume
+to total precipitation volume over a specified period, typically a hydrological year.
+}
+\details{
+The runoff coefficient is calculated as:
+\deqn{Rc = \frac{\sum Q}{\sum R}}
+
+\strong{Important notes:}
+\itemize{
+\item Input vectors must cover the same time period
+\item Should be computed for complete hydrological years
+\item No unit conversion is performed - ensure consistent units
+\item Negative values will produce invalid results
+}
+}
+\examples{
+# Example for a hydrological year
+Q <- c(10, 12, 15, 20, 18, 16, 14, 12, 10, 9, 8, 7)  # Streamflow (mm/month)
+P <- c(20, 25, 30, 35, 40, 45, 40, 35, 30, 25, 20, 15) # Precipitation (mm/month)
+
+rc <- compute_Rc(Q, P)
+print(paste("Runoff coefficient:", round(rc, 3)))
+
 }

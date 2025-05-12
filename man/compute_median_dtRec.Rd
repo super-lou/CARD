@@ -2,16 +2,18 @@
 % Please edit documentation in R/recession.R
 \name{compute_median_dtRec}
 \alias{compute_median_dtRec}
-\title{compute_median_dtRec}
+\title{Compute Median Recovery Time}
 \usage{
 compute_median_dtRec(Q, na.rm = TRUE)
 }
 \arguments{
-\item{Q}{discharge}
+\item{Q}{Numeric vector of discharge values.}
+
+\item{na.rm}{Logical indicating whether to remove \code{NA} values before computing the median.}
+}
+\value{
+A single numeric value representing the median recovery time.
 }
 \description{
-description
-}
-\seealso{
-ref
+Calculates the median of recovery times (Tau) estimated by \code{compute_dtRec}, optionally removing \code{NA} values.
 }

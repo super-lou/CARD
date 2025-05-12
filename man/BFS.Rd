@@ -2,16 +2,78 @@
 % Please edit documentation in R/baseflow.R
 \name{BFS}
 \alias{BFS}
-\title{BFS}
+\title{BFS - Baseflow Separation}
 \usage{
 BFS(Q, d = 5, w = 0.9, a = 0.925, passes = 3, method = "Wal")
 }
 \arguments{
-\item{Q}{discharge}
+\item{Q}{Numeric vector of discharge (streamflow) values. Missing values (NA) are allowed.}
+
+\item{d}{Integer specifying the window size (in days) for identifying minima in the Wallingford
+method. Default is 5.}
+
+\item{w}{Numeric weighting factor (0-1) used in the Wallingford method to identify turning
+points. Default is 0.9.}
+
+\item{a}{Numeric filter parameter (0-1) for the Lyne & Hollick method, where higher values
+result in smoother baseflow. Default is 0.925.}
+
+\item{passes}{Integer specifying the number of forward/backward passes for the Lyne & Hollick
+method. Default is 3 (recommended for optimal results).}
+
+\item{method}{Character specifying the separation method: "Wal" for Wallingford or "LH" for
+Lyne & Hollick. Default is "Wal".}
+}
+\value{
+A numeric vector of baseflow values corresponding to the input discharge values.
+Returns NA if the input contains only NA values or if insufficient turning points are found
+(Wallingford method).
 }
 \description{
-description
+Performs baseflow separation from streamflow data using either the Wallingford
+method or the Lyne & Hollick digital filter approach. The Wallingford method identifies
+turning points in the hydrograph, while the Lyne & Hollick method applies a recursive
+digital filter.
+}
+\details{
+For the Wallingford method (\code{method = "Wal"}):
+\itemize{
+\item The hydrograph is divided into \code{d}-day segments
+\item The minimum flow in each segment is identified
+\item Turning points are identified where w*Qmin < adjacent minima
+\item Baseflow is interpolated between these turning points
+}
+
+For the Lyne & Hollick method (\code{method = "LH"}):
+\itemize{
+\item Applies a recursive digital filter with parameter \code{a}
+\item Performs multiple forward/backward passes (specified by \code{passes})
+\item The filter equation is: SF\link{i} = a*SF\link{i-1} + (1+a)/2 * (Q\link{i}-Q\link{i-1})
+}
+}
+\examples{
+# Load sample streamflow data
+Q <- c(10, 12, 15, 20, 18, 16, 14, 12, 10, 9)  # Streamflow
+
+# Apply Wallingford method
+baseflow_wal <- BFS(Q, method = "Wal")
+
+# Apply Lyne & Hollick method with custom parameters
+baseflow_lh <- BFS(Q, method = "LH", a = 0.95, passes = 5)
+
+# Plot results
+plot(Q, type = "l")
+lines(baseflow_wal, col = "blue")
+lines(baseflow_lh, col = "red")
+
+}
+\references{
+Gustard, A., Bullock, A., & Dixon, J. M. (1992). Low Flow Estimation in the United Kingdom.
+Institute of Hydrology Report No. 108. Wallingford, UK.
+
+Lyne, V., & Hollick, M. (1979). Stochastic time-variable rainfall-runoff modelling.
+Institute of Engineers Australia National Conference, 89-93.
 }
 \seealso{
-ref
+\code{\link{approxExtrap}} for the interpolation function used in the Wallingford method.
 }

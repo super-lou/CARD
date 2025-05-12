@@ -7,11 +7,54 @@
 dBFS(Q, d = 5, w = 0.9, a = 0.925, passes = 3, method = "Wal")
 }
 \arguments{
-\item{Q}{discharge}
+\item{Q}{Numeric vector of discharge (streamflow) values. Missing values (NA) are allowed.}
+
+\item{d}{Integer specifying the window size (in days) for identifying minima in the Wallingford
+method. Default is 5.}
+
+\item{w}{Numeric weighting factor (0-1) used in the Wallingford method to identify turning
+points. Default is 0.9.}
+
+\item{a}{Numeric filter parameter (0-1) for the Lyne & Hollick method, where higher values
+result in smoother baseflow. Default is 0.925.}
+
+\item{passes}{Integer specifying the number of forward/backward passes for the Lyne & Hollick
+method. Default is 3 (recommended for optimal results).}
+
+\item{method}{Character specifying the separation method: "Wal" for Wallingford or "LH" for
+Lyne & Hollick. Default is "Wal".}
+}
+\value{
+A numeric vector of (Q - baseflow) values. The interpretation depends on the method:
+\itemize{
+\item For \code{method = "Wal"}: Represents quickflow (surface runoff + interflow)
+\item For \code{method = "LH"}: Represents filtered quickflow component
+}
+Returns NA if the input contains only NA values.
 }
 \description{
-description
+Calculates the difference between total streamflow and baseflow (Q - baseflow)
+using \code{\link{BFS}}. This typically represents quickflow (surface runoff + interflow),
+but interpretation depends on the baseflow separation method used.
+}
+\details{
+This function computes the difference between total streamflow (Q) and baseflow
+as estimated by \code{\link{BFS}}:
+\deqn{quickflow = Q - BFS(Q, ...)}
+
+Note that:
+\itemize{
+\item The result is NOT direct runoff in the hydrological sense
+\item The components depend on the separation method's assumptions
+\item Negative values are possible due to separation artifacts
+}
+}
+\examples{
+# Calculate quickflow component using Wallingford method
+Q <- c(10, 12, 15, 20, 18, 16, 14, 12, 10, 9)
+quickflow <- dBFS(Q, method = "Wal")
+
 }
 \seealso{
-ref
+\code{\link{BFS}} for the baseflow separation function and its parameter documentation.
 }

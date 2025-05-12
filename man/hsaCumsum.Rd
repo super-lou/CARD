@@ -2,21 +2,49 @@
 % Please edit documentation in R/seasonal_dynamic.R
 \name{hsaCumsum}
 \alias{hsaCumsum}
-\title{hsaCumsum}
+\title{Enhanced Cumulative Sum Calculation}
 \usage{
 hsaCumsum(x, na.action = "interpolate")
 }
 \arguments{
-\item{x}{vector to use to compute cumulated values}
+\item{x}{Numeric vector for which to compute cumulative sums}
 
-\item{na.action}{action to undertake when missing values are found
-(default: 'interpolate', any other value leads to the original
-cumsum() function)}
+\item{na.action}{Character or numeric specifying NA handling:
+\itemize{
+\item "interpolate": Linearly interpolates missing values (default)
+\item numeric value: Replaces NAs with specified value
+\item any other value: Uses base cumsum() with NAs propagating
+}}
 }
 \value{
-res
+Numeric vector of cumulative sums with same length as x:
+\itemize{
+\item NAs at start/end remain after warning
+\item Interpolated values for internal NAs when na.action="interpolate"
+}
 }
 \description{
-Wrapper around cumsum() to linearly interpolate
-missing values
+Computes cumulative sums with options for handling missing values (NA),
+including linear interpolation between existing values.
+}
+\details{
+For na.action="interpolate":
+\itemize{
+\item Uses linear interpolation via stats::approx()
+\item Leading/trailing NAs are set to 0 with warning
+\item Returns NA for positions where input was NA
+}
+}
+\examples{
+x <- c(1, 2, NA, 4, 5, NA, 7)
+
+# With interpolation
+hsaCumsum(x) 
+
+# With NA replacement
+hsaCumsum(x, na.action=0)
+
+}
+\seealso{
+\code{\link[stats]{approx}} for interpolation method
 }

@@ -2,24 +2,57 @@
 % Please edit documentation in R/baseflow.R
 \name{get_BFM}
 \alias{get_BFM}
-\title{baseflow_regime_magnitude}
+\title{Baseflow Magnitude}
 \usage{
 get_BFM(BFA)
 }
 \arguments{
-\item{BF}{Baseflow vector}
-
-\item{days}{Vector containting the days of the (hydrological) year}
-
-\item{n}{Window size for the rolling mean function}
+\item{BFA}{Numeric vector of inter-annual daily average of baseflow values \link{L³/T}}
 }
 \value{
-res
+A numeric value between 0 and 1 representing baseflow variability:
+\itemize{
+\item 0 indicates no seasonal variability (constant baseflow)
+\item 1 indicates extreme variability (minimum baseflow approaches zero)
+}
 }
 \description{
-Computes the baseflow magnitude: it is the relative
-difference between the maxima and minima of the 'n'-days smoothed
-inter-annual daily average of baseflow time series. Note in this
-second version, the min and the max are also returned and the
-default smoothing is 1 (i.e. no smoothing)
+Calculates the relative difference between maximum and minimum values in a
+baseflow time series, representing the seasonal variability of baseflow contributions.
+}
+\details{
+The Baseflow Regime Magnitude is calculated as:
+\deqn{BFM = \frac{BFA_{max} - BFA_{min}}{BFA_{max}}}
+
+Where:
+\itemize{
+\item \eqn{BFA_{max}} is the maximum baseflow in the series
+\item \eqn{BFA_{min}} is the minimum baseflow in the series
+}
+
+\strong{Key characteristics:}
+\itemize{
+\item Returns a value between 0 (no variability) and 1 (maximum variability)
+\item Handles missing values (NA) automatically
+\item No smoothing is applied to the input series
+\item Particularly useful for comparing seasonal baseflow patterns between catchments
+}
+}
+\examples{
+# Example with synthetic baseflow data (annual cycle)
+baseflow <- c(rep(5,90), rep(8,90), rep(12,90), rep(7,95)) # Seasonal pattern
+result <- get_BFM(baseflow)
+
+print(paste("Baseflow variability:", round(result$magnitude, 2)))
+print(paste("Maximum baseflow:", round(result$max, 2)))
+print(paste("Minimum baseflow:", round(result$min, 2)))
+
+# Example with real data (would need actual baseflow series)
+# data(streamflow)
+# bf <- BFS(streamflow$Q, method="LH")
+# get_BFM(bf)
+
+}
+\seealso{
+\code{\link{BFS}} for baseflow separation methods that can generate baseflow inputs.
 }

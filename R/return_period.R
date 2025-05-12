@@ -26,12 +26,10 @@
 # |   // -_)|  _|| || || '_|| ' \    | '_ \/ -_)| '_|| |/ _ \/ _` |
 # |_|_\\___| \__| \_,_||_|  |_||_| _ | .__/\___||_|  |_|\___/\__,_| __
 ## 1. GUMBEL LAW ___________________ |_| _____________________________
-#' @title compute_GumbelParams
-#' @description Computes Gumbel's laws parameters
-#' @param X Maximum flow at a given time step (usually the maximum
-#' daily flow per year)
-#' @return A [list] with `a` the location parameter and `b` the scale
-#' parameter
+#' @title Estimate Gumbel Distribution Parameters
+#' @description Computes the location (`a`) and scale (`b`) parameters of the Gumbel distribution based on a numeric vector of annual maximum flows.
+#' @param X Numeric vector representing the maximum flows (e.g., annual daily maxima).
+#' @return A [list] with `a` the location parameter and `b` the scale parameter).
 #' @export
 compute_GumbelParams = function (X) {
     if (!is.numeric(X)) {
@@ -47,13 +45,12 @@ compute_GumbelParams = function (X) {
     return (GumbelParams)
 }
 
-#' @title compute_GumbelLaw
-#' @description Computes Gumbel law
-#' @param a The location parameter of Gumbel law
-#' @param b The scale parameter of Gumbel law
-#' @param returnPeriod [numeric] Return period. Its unit is given by
-#' the aggregation time step used for the Gumbel law.
-#' @return Gumbel law value
+#' @title Compute Quantile from Gumbel Law
+#' @description Calculates the discharge value (quantile) associated with a given return period using the Gumbel distribution parameters.
+#' @param a Numeric value of the Gumbel distribution location parameter.
+#' @param b Numeric value of the Gumbel distribution scale parameter.
+#' @param returnPeriod Numeric value of the return period (in years or consistent time unit).
+#' @return Numeric value representing the estimated discharge for the given return period.
 #' @export
 compute_GumbelLaw = function (a, b, returnPeriod) {
     if (!is.numeric(returnPeriod)) {
@@ -73,10 +70,11 @@ compute_GumbelLaw = function (a, b, returnPeriod) {
 
 
 ## 2. LOG NORMAL _____________________________________________________
-#' Calculation of a value according to a return period according to a Galton distribution (log-normal)
-#' @param X [numeric] vector of annual data to process
-#' @param returnPeriod [numeric] Return period in years
-#' @return The value for the return period according to Galton distribution
+#' @title Estimate Return Value using Log-Normal Distribution
+#' @description Calculation of a value according to a return period according to a Galton distribution (log-normal)
+#' @param X Numeric vector of annual data (e.g., minimum or maximum discharge).
+#' @param returnPeriod Numeric value of the return period in years.
+#' @return Numeric value for the return period according to Galton distribution.
 #' @export
 compute_LogNormal = function(X, returnPeriod) {
     if (!is.numeric(returnPeriod)) {
@@ -102,10 +100,15 @@ compute_LogNormal = function(X, returnPeriod) {
 
 
 ## 3. USE ____________________________________________________________
-#' @title get_Xn
-#' @description description
-#' @param Q discharge
-#' @seealso ref
+#' @title Generalized Return Value Calculator
+#' @description Computes the return discharge value for a given time series and return period, based on the specified hydrological regime (`low` or `high` waters).
+#' @param X Numeric vector of flow values.
+#' @param returnPeriod Numeric value of the return period.
+#' @param waterType Character string, either `'low'` for log-normal estimation or `'high'` for Gumbel-based estimation.
+#' @param Date Optional vector of dates corresponding to the flow values.
+#' @param period Optional length-2 vector specifying the start and end of the period to consider (must match class of `Date`).
+#' @return Numeric value of the estimated discharge for the given return period.
+#' @seealso \code{\link{compute_GumbelParams}}, \code{\link{compute_GumbelLaw}}, \code{\link{compute_LogNormal}}
 #' @export
 #' @md
 get_Xn = function (X, returnPeriod, waterType='low',

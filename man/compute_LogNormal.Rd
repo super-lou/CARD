@@ -2,17 +2,17 @@
 % Please edit documentation in R/return_period.R
 \name{compute_LogNormal}
 \alias{compute_LogNormal}
-\title{Calculation of a value according to a return period according to a Galton distribution (log-normal)}
+\title{Estimate Return Value using Log-Normal Distribution}
 \usage{
 compute_LogNormal(X, returnPeriod)
 }
 \arguments{
-\item{X}{\link{numeric} vector of annual data to process}
+\item{X}{Numeric vector of annual data (e.g., minimum or maximum discharge).}
 
-\item{returnPeriod}{\link{numeric} Return period in years}
+\item{returnPeriod}{Numeric value of the return period in years.}
 }
 \value{
-The value for the return period according to Galton distribution
+Numeric value for the return period according to Galton distribution.
 }
 \description{
 Calculation of a value according to a return period according to a Galton distribution (log-normal)

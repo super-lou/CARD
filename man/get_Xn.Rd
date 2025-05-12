@@ -2,16 +2,27 @@
 % Please edit documentation in R/return_period.R
 \name{get_Xn}
 \alias{get_Xn}
-\title{get_Xn}
+\title{Generalized Return Value Calculator}
 \usage{
 get_Xn(X, returnPeriod, waterType = "low", Date = NULL, period = NULL)
 }
 \arguments{
-\item{Q}{discharge}
+\item{X}{Numeric vector of flow values.}
+
+\item{returnPeriod}{Numeric value of the return period.}
+
+\item{waterType}{Character string, either \code{'low'} for log-normal estimation or \code{'high'} for Gumbel-based estimation.}
+
+\item{Date}{Optional vector of dates corresponding to the flow values.}
+
+\item{period}{Optional length-2 vector specifying the start and end of the period to consider (must match class of \code{Date}).}
+}
+\value{
+Numeric value of the estimated discharge for the given return period.
 }
 \description{
-description
+Computes the return discharge value for a given time series and return period, based on the specified hydrological regime (\code{low} or \code{high} waters).
 }
 \seealso{
-ref
+\code{\link{compute_GumbelParams}}, \code{\link{compute_GumbelLaw}}, \code{\link{compute_LogNormal}}
 }

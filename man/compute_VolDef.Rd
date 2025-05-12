@@ -2,16 +2,42 @@
 % Please edit documentation in R/threshold.R
 \name{compute_VolDef}
 \alias{compute_VolDef}
-\title{compute_VolDef}
+\title{Compute Volume Deficit Below Threshold}
 \usage{
-compute_VolDef(X, upLim, select_longest = TRUE)
+compute_VolDef(Q, upLim, select_longest = TRUE)
 }
 \arguments{
-\item{Q}{discharge}
+\item{Q}{Numeric vector of streamflow values \link{m³/s}}
+
+\item{upLim}{Numeric upper threshold for deficit calculation}
+
+\item{select_longest}{Logical indicating whether to use only the longest deficit
+period (TRUE) or all periods (FALSE). Currently only TRUE is implemented.}
+}
+\value{
+Numeric value of volume deficit in cubic hectometers (hm³)
 }
 \description{
-description
+Calculates the cumulative volume deficit below a specified threshold
+for the longest continuous deficit period.
+}
+\details{
+Computes:
+\deqn{VolDef = \frac{\sum (Q_{deficit}) \times 86400}{10^6}}
+Where:
+\itemize{
+\item $Q_{deficit}$ are flows below threshold from longest event
+\item 86400 converts seconds to days
+\item 10^6 converts m³ to hm³
+}
+}
+\examples{
+Q <- c(45, 42, 39, 38, 40, 50, 48, 37, 36, 35, 40)
+# Calculate volume deficit below 40 m³/s
+vol_def <- compute_VolDef(Q, upLim=40)
+print(paste("Volume deficit:", round(vol_def, 2), "hm³"))
+
 }
 \seealso{
-ref
+\code{\link{apply_threshold}} for the underlying event identification
 }
